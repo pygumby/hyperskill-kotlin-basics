@@ -11,6 +11,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Compatibility" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Hello, Kotlin" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Interoperability with Java" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Paradigms" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Theory" />
             <option value="$PROJECT_DIR$/Version Control System/task" />
             <option value="$PROJECT_DIR$/util" />
           </set>

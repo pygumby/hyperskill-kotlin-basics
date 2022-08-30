@@ -1,0 +1,34 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 9_876
+- text: 123_456_789_
+- text: 5_000_000
+- text: “42”
+- text: _1_00
+- text: ‘123_456’
+- text: 1_2_3
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13657#comment
+status: Solved
+feedback:
+  message: |-
+    <html>Integer values can be separated by one or more underscores with one
+    exception, underscores can't appear at the beginning and at the end of
+    the number.</html>
+  time: Tue, 30 Aug 2022 18:50:11 UTC
+record: -1
+selected_options:
+- 0
+- 2
+- 6
+local_check: false

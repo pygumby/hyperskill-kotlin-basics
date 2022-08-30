@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: If you do not follow the conventions, your program will not work.
+- text: The conventions are recommendations, not rules.
+- text: If you follow the conventions, it will be easier for others to read your code.
+- text: Kotlin has its own coding style conventions.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4426#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 20:10:39 UTC
+record: -1
+selected_options:
+- 0
+custom_name: Statements
+local_check: false

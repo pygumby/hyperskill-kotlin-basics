@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: It helps in finding errors in programs
+- text: These rules are followed not only in personal but also in enterprise projects
+- text: It makes code more readable
+- text: It is necessary
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20638#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 20:07:41 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

@@ -11,10 +11,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Topics/Basic literals/Address in a city" />
-            <option value="$PROJECT_DIR$/Topics/Basic literals/Character literals" />
-            <option value="$PROJECT_DIR$/Topics/Basic literals/Theory" />
-            <option value="$PROJECT_DIR$/Topics/Basic literals/Valid number literals" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Compatibility" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Hello, Kotlin" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Interoperability with Java" />

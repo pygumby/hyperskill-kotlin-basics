@@ -25,6 +25,11 @@
             <option value="$PROJECT_DIR$/Topics/Basic literals/String to characters" />
             <option value="$PROJECT_DIR$/Topics/Basic literals/Theory" />
             <option value="$PROJECT_DIR$/Topics/Basic literals/Valid number literals" />
+            <option value="$PROJECT_DIR$/Topics/Data types/Fill in the type" />
+            <option value="$PROJECT_DIR$/Topics/Data types/Fix the program" />
+            <option value="$PROJECT_DIR$/Topics/Data types/Statements" />
+            <option value="$PROJECT_DIR$/Topics/Data types/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Data types/Type mismatch" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Compatibility" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Hello, Kotlin" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Interoperability with Java" />

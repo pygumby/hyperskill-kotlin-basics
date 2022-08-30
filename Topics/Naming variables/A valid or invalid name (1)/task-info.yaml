@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: A valid name.
+- text: 'Not valid because it does not make sense for humans (what is val?) '
+- text: Not valid because it starts with a letter.
+- text: Not valid because it is a keyword.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4611#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 20:17:56 UTC
+record: -1
+selected_options:
+- 3
+custom_name: A valid or invalid name
+local_check: false

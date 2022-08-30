@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: em@il
+- text: val
+- text: just_a_value
+- text: errorText
+- text: value
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4391#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 20:21:28 UTC
+record: -1
+selected_options:
+- 2
+- 3
+- 4
+custom_name: Valid and invalid names
+local_check: false

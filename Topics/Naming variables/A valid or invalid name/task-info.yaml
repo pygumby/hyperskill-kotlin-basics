@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Not valid because it is a keyword.
+- text: A valid name.
+- text: Not valid because it does not make sense.
+- text: Not valid because it ends with a digit.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4612#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 20:17:19 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

@@ -1,0 +1,49 @@
+<h2>Naming variables</h2>
+<html><body><h5 id="why-naming-is-important" style="text-align: center;"> Why naming is important</h5>
+<p>As you know, every variable should have a unique name that identifies it. Naming variables can seem easy. However, it is not true. Experienced programmers are very cautious with choosing names for variables, so their code is easy to follow. It is very important, as programmers spend a lot of time reading code written by others. Trust us — your code will become unreadable if variables have bad names.</p>
+<p>How can we avoid this? Always give descriptive and concise names to all variables. In this case, your colleagues will enjoy reading your code. There are <strong>two sets of rules </strong>that restrict possible names for variables.</p>
+<h5 id="naming-rules" style="text-align: center;">Naming rules</h5>
+<p>Kotlin has several rules:</p>
+<ul>
+<li>Names are case-sensitive (<code class="language-kotlin">number</code> is not the same as <code class="language-kotlin">Number</code>);</li>
+<li>Each name can include only letters, digits, and underscores;</li>
+<li>A name cannot start with a digit;</li>
+<li>A name cannot be a keyword (for example, <code class="language-kotlin">val</code>, <code class="language-kotlin">var</code>, <code class="language-kotlin">fun</code> are illegal).</li>
+</ul>
+<p>So, no whitespaces are allowed in a variable's name. You can use spaces only with backticks:</p>
+<pre><code class="language-kotlin">val `good name` = 5
+val bad name = 2 // will not work</code></pre>
+<p></p><div class="alert alert-warning">If you break these rules, your program will not work.</div><p></p>
+<p>Take a look at valid variable names:</p>
+<pre><code class="language-kotlin">score, level, fruitType, i, j, abc, _cost, number1, `name with space`, Int</code></pre>
+<p>Below are the incorrect ones:</p>
+<pre><code class="language-kotlin">@pple, $dollar, 1number, !ab, val, var, _, name with space</code></pre>
+<h5 id="conventions-for-naming-variables" style="text-align: center;">Conventions for naming variables</h5>
+<p>Kotlin also provides the following conventions:</p>
+<ul>
+<li>If a variable name is a single word, put it in lowercase (for example — <code class="language-kotlin">number</code>, <code class="language-kotlin">value</code>);</li>
+<li>If a variable name includes multiple words, put them in <code class="language-kotlin">lowerCamelCase</code>, so that the first word is lowercase, while other words start with a capital letter (for example — <code class="language-kotlin">numberOfCoins</code>);</li>
+<li>Do not start variables with an underscore <code class="language-kotlin">_</code>. Technically, you can do it, though;</li>
+<li>Choose meaningful names for your variables, for example, <code class="language-kotlin">score</code> makes more sense than <code class="language-kotlin">s</code>, although they are both valid.</li>
+</ul>
+<h5 id="magic-numbers" style="text-align: center;">Magic numbers</h5>
+<p>Now, let's discuss the naming of constant numbers and their usage. Sometimes, you need to use a constant in your code: for example, when you want to print the number of weekdays, which is always equal to 7. However, the following code won't be very informative for others (or even for yourself in a while):</p>
+<pre><code class="language-kotlin">println(7)</code></pre>
+<p>What is <code class="language-kotlin">7</code>? Why is it being printed? No clue. Such values in code are called <strong>magic numbers</strong>. Magic numbers are not necessarily numbers – it's not about the data type but rather about the "magical" essence of such variables: no one knows where they came from, what they are for, and what they mean. So, avoid them.</p>
+<p>What should we do with such values then?</p>
+<p>First, such values must be stored in immutable variables, namely constants. Here we are not talking about just any values declared as <code class="language-kotlin">val</code>. By constants we mean values which we denote as <code class="language-kotlin">const val</code> outside of the <code class="language-kotlin">main()</code> function or any other function. These are <strong>completely</strong> immutable constants (this is not an exhaustive explanation; we will discuss the topic in detail later). Here's an example:</p>
+<pre><code class="language-kotlin">const val DAYS_OF_THE_WEEK = 7
+
+fun main() {
+    // ...
+    println(DAYS_OF_THE_WEEK) // 7
+    // ...
+}</code></pre>
+<p>Second, the name of a constant should be meaningful, and when naming constants, we use the <code class="language-kotlin">SCREAMING_SNAKE_CASE</code> style.<br/>
+Here is a bad example of a constant name:</p>
+<pre><code class="language-kotlin">const val s = 4</code></pre>
+<p>This will compile, but the code is not self-explanatory. And here's a good example:</p>
+<pre><code class="language-kotlin">const val SEASONS = 4</code></pre>
+<p></p><div class="alert alert-primary">Create a constant, give it a meaningful name, and replace the number with it.</div><p></p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Naming variables is a serious business indeed, but the conventions above are <strong>optional</strong>. We recommend that you follow them. As we have mentioned before, they improve the readability of your code and can make things easy for your colleagues. </p></body></html>

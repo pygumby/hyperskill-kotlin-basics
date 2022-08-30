@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: var postLikes = 6_000
+- text: var var = 3_0_00.0
+- text: var _ = 6000_.0
+- text: 'var #CONS = 2_000.0'
+- text: var %C = 6_000_
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16080#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 20:14:57 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

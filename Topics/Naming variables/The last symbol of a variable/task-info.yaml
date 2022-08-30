@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Dollar sign ($)
+- text: Letter of the Latin alphabet (a..z)
+- text: Underscore (_)
+- text: Any digit (0..9)
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4394#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 20:13:45 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

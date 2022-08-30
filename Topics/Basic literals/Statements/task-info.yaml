@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: <b>"abc"</b> is a correct string
+- text: <b>"123"</b> is a correct number
+- text: <b>'ab'</b> is a correct character literal
+- text: '<b>10</b> is a correct number '
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4442#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 19:47:59 UTC
+record: -1
+selected_options:
+- 0
+- 3
+local_check: false

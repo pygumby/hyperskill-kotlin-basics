@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: single, double
+- text: single, single
+- text: double, double
+- text: double, single
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13658#comment
+status: Solved
+feedback:
+  message: "<html>'c' is a Char data type, \"c\" is a String data type.\nNote: Char\
+    \ can accommodate single char between single quotes \nwhereas String can have\
+    \ zero or more characters between double quotes</html>"
+  time: Tue, 30 Aug 2022 19:48:26 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

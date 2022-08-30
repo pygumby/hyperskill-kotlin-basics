@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: <b>'8'</b> is a correct character
+- text: <b>"123456"</b> is a correct number
+- text: <b>"1"</b> is a correct string
+- text: <b>1</b> is not a correct number
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4443#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 30 Aug 2022 19:48:16 UTC
+record: -1
+selected_options:
+- 0
+- 2
+custom_name: Statements
+local_check: false

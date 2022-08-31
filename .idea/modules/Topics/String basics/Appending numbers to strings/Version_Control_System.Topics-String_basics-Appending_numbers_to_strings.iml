@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-String_basics-Appending_numbers_to_strings" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/String basics/Appending numbers to strings" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Version Control System" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/String basics/Appending numbers to strings">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/String basics/Appending numbers to strings/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/String basics/Appending numbers to strings/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/String basics/Appending numbers to strings/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

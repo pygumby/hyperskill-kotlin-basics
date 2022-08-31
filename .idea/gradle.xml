@@ -48,6 +48,11 @@
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Interoperability with Java" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Paradigms" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Invoking functions/Correct statements" />
+            <option value="$PROJECT_DIR$/Topics/Invoking functions/Returning a result" />
+            <option value="$PROJECT_DIR$/Topics/Invoking functions/Square root" />
+            <option value="$PROJECT_DIR$/Topics/Invoking functions/The magic of println" />
+            <option value="$PROJECT_DIR$/Topics/Invoking functions/Theory" />
             <option value="$PROJECT_DIR$/Topics/Naming variables/A valid or invalid name" />
             <option value="$PROJECT_DIR$/Topics/Naming variables/A valid or invalid name (1)" />
             <option value="$PROJECT_DIR$/Topics/Naming variables/Correct declaration" />

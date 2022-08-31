@@ -93,6 +93,10 @@
             <option value="$PROJECT_DIR$/Topics/String basics/Concatenation" />
             <option value="$PROJECT_DIR$/Topics/String basics/Fix it" />
             <option value="$PROJECT_DIR$/Topics/String basics/Theory" />
+            <option value="$PROJECT_DIR$/Topics/String templates/Date and time formatting" />
+            <option value="$PROJECT_DIR$/Topics/String templates/Repetitions and templates" />
+            <option value="$PROJECT_DIR$/Topics/String templates/Theory" />
+            <option value="$PROJECT_DIR$/Topics/String templates/What are string templates" />
             <option value="$PROJECT_DIR$/Topics/The classification of basic types/Existing types" />
             <option value="$PROJECT_DIR$/Topics/The classification of basic types/Size, min and max" />
             <option value="$PROJECT_DIR$/Topics/The classification of basic types/Sizes of Float and Double" />

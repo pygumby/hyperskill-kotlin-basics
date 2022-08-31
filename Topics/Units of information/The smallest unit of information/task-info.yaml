@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: minibit
+- text: microbyte
+- text: bit
+- text: byte
+- text: kilobyte
+- text: bite
+- text: microbit
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6866#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 31 Aug 2022 19:16:17 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: decimal-based system uses kibibyte, mebibyte, gibibyte
+- text: decimal-based system uses kilobyte, megabyte, gigabyte
+- text: binary-based system uses kibibyte, mebibyte, gibibyte
+- text: binary-based system uses kilobyte, megabyte, gigabyte
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18221#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 31 Aug 2022 19:16:03 UTC
+record: -1
+selected_options:
+- 1
+- 2
+local_check: false

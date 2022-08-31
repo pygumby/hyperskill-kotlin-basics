@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: 1 Kibibyte
+- text: 1 Kibibit
+- text: 1 Mebibit
+- text: 1 Mebibyte
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18316#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 31 Aug 2022 19:20:45 UTC
+record: -1
+selected_options:
+- 1
+custom_name: The smallest unit of information
+local_check: false

@@ -1,0 +1,33 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: '&lt;&gt;'
+- text: ==
+- text: '!='
+- text: '&lt;='
+- text: '&lt;&lt;'
+- text: '&gt;&gt;&gt;'
+- text: '&gt;'
+- text: =
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4529#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 01 Sep 2022 19:46:13 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+- 6
+local_check: false

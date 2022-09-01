@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Long
+- text: Int
+- text: Byte
+- text: Short
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9510#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 01 Sep 2022 19:23:47 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

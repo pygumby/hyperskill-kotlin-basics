@@ -1,0 +1,10 @@
+<h2>Declare a variable</h2>
+<html><body><p>Select all <strong>invalid </strong>lines in the following snippet:</p>
+<pre><code class="language-kotlin">val b1: Byte = 5         // Line 1
+val b2: Byte = 2 + 3     // Line 2
+val s1: Short = 2 + b1   // Line 3
+val s2: Short = 10 + 3L  // Line 4</code></pre>
+<p><button class="btn-sm btn-outline-secondary" onclick="getElementById('hint-324').style.display='inline'">
+        Hint
+      </button>
+</p><div id="hint-324" style="display:none;">The default type for <code class="language-kotlin">val num = 5</code> is <code class="language-kotlin">Int</code>, but you may declare <code class="language-kotlin">val shortNum: Short = 5</code> and this declaration is correct. Try to think about what happens if you add 2 and 3! This is just the sum of two numbers, there is no type inference.</div></body></html>

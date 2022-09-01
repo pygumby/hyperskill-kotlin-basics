@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 1
+- text: 2
+- text: 3
+- text: 4
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9899#comment
+status: Solved
+feedback:
+  message: <html>2+3 is 5 and this is an acceptable value for Byte type. It just a
+    sum of two numbers, so you don't need any type conversion. But if you add 10 and
+    3L, it will be an expression with different types, and the result will be 13L.</html>
+  time: Thu, 01 Sep 2022 19:26:03 UTC
+record: -1
+selected_options:
+- 2
+- 3
+local_check: false

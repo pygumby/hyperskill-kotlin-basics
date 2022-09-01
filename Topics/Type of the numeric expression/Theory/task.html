@@ -1,0 +1,57 @@
+<h2>Type of the numeric expression</h2>
+<html><body><p>You already know how to perform type conversion. There are more advanced aspects of it: for example, you know that we cannot assign a variable of  <code class="language-kotlin"><span style="color: #000000;">Int</span></code> type to a <code class="language-kotlin"><span style="color: #000000;">Long</span></code> variable. But what happens if we calculate the sum of <code class="language-kotlin">Int</code> and <code class="language-kotlin">Long</code> variables?  In this case, the type is inferred from the context. </p>
+<h5 id="type-coercion">Type coercion</h5>
+<p>In such cases, the compiler automatically sets all components (it's called <strong>type coercion</strong>) and the result type to the widest type in the expression. The picture below illustrates the direction of this casting:</p>
+<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/f6fd5591-06db-4ba1-a67f-9c6bfcffd526/"/></p>
+<p>Since the type of the result is wider than the previous type, there is no loss of information. </p>
+<p></p><div class="alert alert-primary">Type coercion is rare in Kotlin. It works only with numbers and strings.</div><p></p>
+<h5 id="examples">Examples</h5>
+<p>The theory looks pretty clear, so let's take a look at some examples of type coercion.</p>
+<ul>
+<li>from <code class="language-kotlin">Int</code> to <code class="language-kotlin">Long</code>:</li>
+</ul>
+<pre><code class="language-kotlin">val num: Int = 100
+val longNum: Long = 1000
+val result = num + longNum // 1100, Long</code></pre>
+<p>Although <code class="language-kotlin">result</code> is just 1100, it is the sum of <code class="language-kotlin">Long</code> and <code class="language-kotlin">Int</code> variables, so the type is automatically cast to <code class="language-kotlin">Long</code>. If you try to declare a result as <code class="language-kotlin">Int</code>, you get an error because you cannot assign the value of  <span style="color: #000000;">Long</span> type to an <span style="color: #000000;">Int</span> variable. You can assign only an <code class="language-kotlin">Int</code> value or an integer number to a variable of <code class="language-kotlin">Int</code> type.</p>
+<ul>
+<li>from <code class="language-kotlin">Long</code> to <code class="language-kotlin">Double</code>:</li>
+</ul>
+<pre><code class="language-kotlin">val bigNum: Long = 100000
+val doubleNum: Double = 0.0
+val bigFraction = bigNum - doubleNum // 100000.0, Double</code></pre>
+<h5 id="short-and-byte-types">Short and Byte types</h5>
+<p>You can see how the result of an expression with variables of different types is automatically cast to the widest type. However, the <code class="language-kotlin">Byte</code> and <code class="language-kotlin">Short</code> types are unusual in this respect. If you need to do some calculations with these types, the result of the calculation is <code class="language-kotlin">Int</code>:</p>
+<ul>
+<li><code class="language-kotlin">Byte</code> and <code class="language-kotlin">Byte</code></li>
+</ul>
+<pre><code class="language-kotlin">val one: Byte = 1
+val two: Byte = 2
+val three = one + two // 3, Int</code></pre>
+<ul>
+<li><code class="language-kotlin">Short</code> and <code class="language-kotlin">Short</code></li>
+</ul>
+<pre><code class="language-kotlin">val fourteen: Short = 14
+val ten: Short = 10
+val four = fourteen - ten // 4, Int</code></pre>
+<ul>
+<li><code class="language-kotlin">Short</code> and <code class="language-kotlin">Byte</code></li>
+</ul>
+<pre><code class="language-kotlin">val hundred: Short = 100
+val five: Byte = 5
+val zero = hundred % five // 0, Int</code></pre>
+<p>So what should we do if we want to sum two <code class="language-kotlin">Byte</code> variables and get a <code class="language-kotlin">Byte</code> result? Well, in this case, you must manually perform type conversion:</p>
+<pre><code class="language-kotlin">val one: Byte = 1
+val five: Byte = 5
+val six = (one + five).toByte() // 6, Byte</code></pre>
+<h5 id="summary">Summary</h5>
+<p>To sum up, if you have an expression with different numeric types, use these rules to know the type of the result:</p>
+<ol>
+<li>If either operand is of type <code class="language-kotlin">Double</code>, the result is <code class="language-kotlin">Double</code>.</li>
+<li>Otherwise, if either operand is of type <code class="language-kotlin">Float</code>, the result is <code class="language-kotlin">Float</code>.</li>
+<li>Otherwise, if either operand is of type <code class="language-kotlin">Long</code>, the result is <code class="language-kotlin">Long</code>.</li>
+<li>Otherwise, the result is <code class="language-kotlin">Int</code>.</li>
+</ol>
+<p></p><div class="alert alert-primary"> Type coercion does not occur when a value is put into the variable. For example, <code class="language-kotlin">val longValue: Long = 10.toInt()</code> is incorrect, because 10 is <code class="language-kotlin">Int</code> and <code class="language-kotlin">longValue</code> requires <code class="language-kotlin">Long</code> type.</div><p></p>
+<h5 id="conclusion">Conclusion</h5>
+<p>The compiler automatically deduces the type of expression. It helps you omit type conversion in simple cases, but you need to understand how it works to prevent confusion and errors.</p></body></html>

@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: <pre>1000</pre>
+- text: <pre>1111</pre>
+- text: <pre>110</pre>
+- text: <pre>0111</pre>
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5551#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 01 Sep 2022 19:10:08 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

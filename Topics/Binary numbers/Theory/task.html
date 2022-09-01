@@ -1,0 +1,83 @@
+<h2>Binary numbers</h2>
+<html><body><p><strong>Binary numeral system </strong>or<strong> base-2 numeral system </strong>is a way of writing numbers using only two digits, 0 and 1. Each digit is referred to as a <strong>bit </strong>(<strong>bi</strong>nary digi<strong>t</strong>). These two digits are enough to represent any number. How is it possible? Let's find out.</p>
+<h5 id="decimal-vs-binary" style="text-align: center;">Decimal vs Binary</h5>
+<p>In everyday life we use the <strong>decimal</strong> number system, or, simply put, we have 10 digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9). We don't think about it, but every number is represented as 1 <span class="math-tex">\(\cdot\)</span> one of the digits + 10 <span class="math-tex">\(\cdot\)</span> one of the digits + 100 <span class="math-tex">\(\cdot\)</span> one of the digits etc. (that is, every power of 10 multiplied by some digit).</p>
+<p>Let's look at a number in the decimal system, for example, 4251. It is :</p>
+<p> <span class="math-tex">\(4\cdot10^3+2\cdot10^2+5\cdot10^1+1\cdot10^0\)</span></p>
+<p>So when we read this number, we just look at each digit starting from the last and multiply each digit by its corresponding power of 10: the rightmost is always 1, then goes 10, 100, 1000, and so on.</p>
+<p>In the <strong>binary</strong> number system, we do exactly the same, except the base is 2, not 10. Let's look at some number in the binary system, for example, 1011.</p>
+<p><span class="math-tex">\(1\cdot2^3+0\cdot2^2+1\cdot2^1+1\cdot2^0\)</span></p>
+<h5 id="binary-counting" style="text-align: center;">Binary counting</h5>
+<p>In the decimal numerical system, we have exactly 10 digits (from 0 to 9) to represent any number. We assume you know how to count in decimal: 0, 1, 2, ..., 9, 10, 11, ..., 19, 20, and so on.</p>
+<p>But how to count in the binary system? The table below shows it.</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 650px;">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Decimal</strong></td>
+<td style="text-align: center;"><strong>Binary</strong></td>
+<td style="text-align: center;"><strong>Powers of two</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>1</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>1</sup> + <strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>2</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>1</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>2</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>1</sup> + <strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>2</sup> + <strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>1</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>2</sup> + <strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>1</sup> + <strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;"><strong>1</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>3</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>2</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>1</sup> + <strong>0</strong> <span class="math-tex">\(\cdot\)</span> 2<sup>0</sup></td>
+</tr>
+</tbody>
+</table>
+<p>To understand why 5 equals to 101 in binary format, let's write the number in power of twos: <span class="math-tex">\(1 \cdot 2 ^ 2 + 0 \cdot 2 ^ 1 + 1 \cdot 2 ^ 0\)</span>. Look at the coefficients closely, they exactly match the binary representation: 101.</p>
+<p>As you can see, we start from 0 as before, then comes 1, and then 10. So, <strong>binary counting</strong> goes like this: when a digit reaches 1, the next number resets this digit to 0 and causes the digit to the left to raise. After some practice it should become more clear.</p>
+<h5 id="zero-padding" style="text-align: center;">Zero padding</h5>
+<p>Sometimes you will need to work with binary numbers of a fixed length. To do this, you can add insignificant zeros to any binary number on the left side, for example: 11 → 0011, 101 → 0101. This operation does not change the number but allows you to format them.</p>
+<p>You will often meet the following formats:</p>
+<ul>
+<li><strong>triads:</strong> 000, 001, 010, and so on;</li>
+<li><strong>tetrads:</strong> 0110, 0111, and so on; </li>
+<li><strong>8-</strong><strong>digit</strong><strong> numbers:</strong> 00000000, 01010101, and so on.</li>
+</ul>
+<h5 id="why-where" style="text-align: center;">Why &amp; where</h5>
+<p>Almost all modern digital devices use the binary number system. The reason for this lies in the hardware. As technology advanced, the computers started using <strong>transistors</strong>, which could be used to represent two states and quickly change from one to the other.</p>
+<p>If we look closer, even the computer memory is binary: we either have something in the memory cell or not. It is conventional to group information in 8-digit binary numbers, where each 8-digit number is referred to as a <strong>byte</strong>. An 8-digit binary number may represent each of 256 possible values from 0 to 255, and can therefore be used for storing a wide variety of data. Such a way of storing information is called the <strong>binary code</strong> and is used almost everywhere. For example, an English text is usually encoded with <strong>ASCII</strong> (American Standard Code for Information Interchange) <strong>code</strong>, where each character in the text string is represented by 7-digit binary number (lowercase <em>a</em> is 1100001, and so on...).</p>
+<p>Colors can also be encoded that way. The <strong>RGB</strong> (stands for <strong>Red, Green, Blue</strong>) color encoding system stores 3 binary values, 1 binary number for each color, representing the saturation of red, green, and blue color components respectively. The (11111111, 00000000, 00000000) color, for example, is pure red, with no shade of green or blue.</p>
+<p>In fact, everything can be (and is) encoded using the binary code.</p>
+<ul>
+</ul></body></html>

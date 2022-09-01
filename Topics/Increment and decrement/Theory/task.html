@@ -1,0 +1,89 @@
+<h2>Increment and decrement</h2>
+<html><body><p></p><p>In our daily lives, we calculate things quite often: steps taken, the cost of groceries, days before vacation, and so on. In programming, arithmetic operations are also commonly used. In this topic, you will learn how to write arithmetic operations shorter and clearer.</p>
+<h5 id="assignment-operations">Assignment operations</h5>
+<p>You already know that Kotlin supports basic arithmetic operations such as addition and subtraction:</p>
+<pre><code class="language-kotlin">var a = 3
+a = a + 1 // 4
+a = a - 1 // 3
+</code></pre>
+<p>Besides this, there are <strong>compound</strong> <strong>assignment operations</strong> that combine arithmetic operations and assignments. The assignment operator <code class="language-kotlin">=</code> has several forms that combine it with an operation to avoid repeating the variable twice:</p>
+<ul>
+<li><code class="language-kotlin">+=</code> assignment after addition: <strong>A += B</strong> equals <strong>A = A + B</strong></li>
+<li><code class="language-kotlin">-=</code> assignment after subtraction: <strong>A -= B</strong> equals <strong>A = A - B</strong></li>
+<li><code class="language-kotlin">*=</code> assignment after multiplication: <strong>A *= B</strong> equals <strong>A = A * B</strong></li>
+<li><code class="language-kotlin">/=</code> assignment after division: <strong>A /= B</strong> equals <strong>A = A / B</strong></li>
+<li><code class="language-kotlin">%=</code> assignment of the remainder after division: <strong>A %= B </strong>equals <strong>A = A % B</strong></li>
+</ul>
+<p>Let's take a look at assignment operations performed on a single variable. Here is something very basic: </p>
+<pre><code class="language-kotlin">var a = 3
+a += 2 // 5
+a -= 2 // 3
+a *= 2 // 6
+a /= 2 // 3
+a %= 2 // 1</code></pre>
+<p>Here, we performed calculations with number 2 and our variable <code class="language-kotlin">a</code> and then assigned the values to it. As you can see, these operations made the code shorter and clearer.</p>
+<p>Compound assignment operators can be applied only to a variable that is already defined and cannot be used to declare a new variable:</p>
+<pre><code class="language-kotlin">var a: Int
+a += 5 // compile-time error, Variable 'a' must be initialized</code></pre>
+<h5 id="using-increment-and-decrement">Using increment and decrement</h5>
+<p>Another common operation is increasing or decreasing a number by one. Of course, you can use <code class="language-kotlin">+= 1</code> or <code class="language-kotlin">-= 1</code>, but Kotlin provides an even better way to do this:<strong> increment</strong> and <strong>decrement</strong> operations. Let's look at an example:</p>
+<pre><code class="language-kotlin">var num = 3
+num++  // 4, increment
+num--  // 3, decrement</code></pre>
+<p>The code above is actually the same as below:</p>
+<pre><code class="language-kotlin">var num = 3
+num += 1  // 4
+num -= 1  // 3</code></pre>
+<p>As you can see, increment <code class="language-kotlin">++</code> does the same as <code class="language-kotlin">+=1</code> but in a simpler way. The same is true for decrement <code class="language-kotlin">--</code>.</p>
+<p></p><div class="alert alert-primary">Note that this works only when you are increasing or decreasing a number by one.</div><p></p>
+<p>This looks easy, but increment and decrement operations are more complicated than you might think. Both increment and decrement operators have two forms that are very important to distinguish: <strong>prefix</strong> and <strong>postfix</strong>.</p>
+<h5 id="prefix-form">Prefix form</h5>
+<p>Prefix form changes the value of a variable before it is used. Let's look at some examples.</p>
+<p>Prefix increment returns the incremented value:</p>
+<pre><code class="language-kotlin">var a = 10
+val b = ++a
+println(a)  // a = 11
+println(b)  // b = 11</code></pre>
+<p>First, the value of the variable <strong><code class="language-kotlin">a</code></strong> is increased by one, and then its value is assigned to the variable <strong><code class="language-kotlin">b</code></strong>. So, <code class="language-kotlin"><strong>a</strong></code> and <strong><code class="language-kotlin">b</code></strong> are both 11.</p>
+<p>Prefix decrement returns the following:</p>
+<pre><code class="language-kotlin">var a = 10
+val b = --a
+println(a)  // a = 9
+println(b)  // b = 9</code></pre>
+<p>Here, you see the same thing happening: the value of the variable <strong><code class="language-kotlin">a</code></strong> is decreased by one, and then its value is assigned to the variable <strong><code class="language-kotlin">b</code></strong>.</p>
+<h5 id="postfix-form">Postfix form</h5>
+<p>By contrast, postfix form changes the value of a variable after it is used. Let's look at the examples.</p>
+<p>Postfix increment returns the value before incrementing by one:</p>
+<pre><code class="language-kotlin">var a = 10
+val b = a++
+println(a)  // a = 11
+println(b)  // b = 10</code></pre>
+<p>First, the value of the variable <code class="language-kotlin"><strong>a</strong></code> is assigned to the variable <code class="language-kotlin"><strong>b</strong></code>, and then the value of the variable <strong><code class="language-kotlin">a</code></strong> is increased by one. This way, <code class="language-kotlin"><strong>a</strong></code> is 11 and <strong><code class="language-kotlin">b</code></strong> is 10. </p>
+<p>Similarly, postfix decrement returns the following:</p>
+<pre><code class="language-kotlin">var a = 10
+val b = a--
+println(a)  // a = 9
+println(b)  // b = 10</code></pre>
+<h5 id="order-of-precedence">Order of precedence</h5>
+<p>Some operations take precedence over others, that is, they are performed first. Take a look at the list of operations in decreasing order of priority:</p>
+<ol>
+<li>Parentheses ( (expr) );</li>
+<li>Postfix increment/decrement ( expr++, expr--);</li>
+<li>Unary plus/minus, prefix increment/decrement ( -expr, ++expr, --expr );</li>
+<li>Multiplication, division, and modulus ( *, /, % );</li>
+<li>Addition and subtraction ( +, - );</li>
+<li>Assignment operations ( =, +=, -=, *=, /=, %= ).</li>
+</ol>
+<p>The priority of operations should be taken into account when executing a set of arithmetic expressions:</p>
+<pre><code class="language-kotlin">val a = 2
+var b = 3
+val c = a + 4 * --b  
+println(c)   // this is 10</code></pre>
+<p>Decrement has a higher priority than multiplication and addition, so <code class="language-kotlin">--b</code> is calculated first. Like in arithmetic, parentheses can be used to increase the priority of operation. You can also use them for clarity:</p>
+<pre><code class="language-kotlin">var a = 5
+val b = 9
+val c = 3
+val d = a++ + (b / 2) - c - 4
+println(d)   // this is 2</code></pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>It is a good idea to use assignment operations and increment/decrement operations to make your code shorter and clearer. Remember about the prefix and postfix forms of their recording: the prefix changes the variable before using it, and the postfix changes it after. Hopefully, now you understand how to use these operations in Kotlin.</p></body></html>

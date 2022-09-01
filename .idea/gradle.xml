@@ -11,6 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Arithmetic operations/Second-to-last" />
+            <option value="$PROJECT_DIR$/Topics/Arithmetic operations/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Arithmetic operations/Two digits" />
             <option value="$PROJECT_DIR$/Topics/Basic literals/A valid string" />
             <option value="$PROJECT_DIR$/Topics/Basic literals/Address in a city" />
             <option value="$PROJECT_DIR$/Topics/Basic literals/An incorrect literal" />

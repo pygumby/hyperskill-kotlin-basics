@@ -1,0 +1,147 @@
+<h2>Arithmetic operations</h2>
+<html><body><p>We often perform arithmetic operations in our daily life. We need to calculate the change, measure the area of a room, count the number of people in a queue, and so on. The computer can help us with these operations.</p>
+<h5 id="binary-operators" style="text-align: center;">Binary operators</h5>
+<p>Kotlin has five arithmetic operators:</p>
+<ul>
+<li>addition <code class="language-kotlin">+</code></li>
+<li>subtraction <code class="language-kotlin">-</code></li>
+<li>multiplication <code class="language-kotlin">*</code></li>
+<li>integer division <code class="language-kotlin">/</code></li>
+<li>modulus <code class="language-kotlin">%</code></li>
+</ul>
+<p>These operators are binary, which means they take two values as operands. The operand is the value or variable the operator is being applied to. For example, in expression 1 + 3, 1 and 3 are the operands, and + is the operator.</p>
+<p>The piece of code below prints the results of <strong>addition</strong>, <strong>subtraction</strong>, and <strong>multiplication</strong>:</p>
+<pre><code class="language-kotlin">println(13 + 25) // prints 38
+println(20 + 70) // prints 90
+
+println(70 - 30) // prints 40
+println(30 - 70) // prints -40
+
+println(21 * 3)  // prints 63
+println(20 * 10) // prints 200</code></pre>
+<p>The <code class="language-kotlin">/</code> operator <strong>divides</strong> the integer parts of two numbers; the fractional part is discarded. You may read about modulo division in our <a href="https://hyperskill.org/learn/step/10586" rel="noopener noreferrer nofollow" target="_blank">topic</a>.</p>
+<pre><code class="language-kotlin">println(8 / 3)  // prints 2
+println(41 / 5) // prints 8</code></pre>
+<p>The <code class="language-kotlin">%</code> operator finds the <strong>remainder</strong> of a division:</p>
+<pre><code class="language-kotlin">println(10 % 3) // prints 1 because 10 divided by 3 leaves a remainder of 1
+println(12 % 4) // prints 0 because 12 divided by 4 leaves no remainder</code></pre>
+<p>As you may know, division with negative numbers is different. You may read our <a href="https://hyperskill.org/learn/step/13541" rel="noopener noreferrer nofollow" target="_blank">topic </a>to find more. Let's look at how it works in Kotlin:</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+<tbody>
+<tr>
+<td style="text-align: center;">Expression</td>
+<td style="text-align: center;">Quotient (<code class="language-kotlin">/</code> result)</td>
+<td style="text-align: center;">Remainder (<code class="language-kotlin">%</code> result)</td>
+<td style="text-align: center;">The result </td>
+</tr>
+<tr>
+<td style="text-align: center;">11 / -4</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math-tex">\(11 = -4*-2 + 3\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">-11 / 4</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;"><span class="math-tex">\(-11 = 4*-2 + (-3)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">-11 / -4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;"><span class="math-tex">\(-11 = -4*2 + (-3)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Division examples in Kotlin:</p>
+<pre><code class="language-kotlin">println(11 / -4)   // prints -2
+println(11 % -4)   // prints 3
+println(-11 / 4)   // prints -2
+println(-11 % 4)   // prints -3
+println(-11 / -4)  // prints 2
+println(-11 % -4)  // prints -3</code></pre>
+<p>Since Kotlin 1.5, you may also use another type of division. All you need is to use <code class="language-kotlin">floorDiv</code> instead of <code class="language-kotlin">/</code> and <code class="language-kotlin">mod</code> instead of <code class="language-kotlin">%</code>:</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+<tbody>
+<tr>
+<td style="text-align: center;"> Expression</td>
+<td style="text-align: center;">
+<p>Quotient</p>
+<p>(<code class="language-kotlin"><span style="color: #000000;">floorDiv</span></code> result)</p>
+</td>
+<td style="text-align: center;">
+<p>Remainder</p>
+<p>(<code class="language-kotlin"><span style="color: #000000;">mod</span></code> result)</p>
+</td>
+<td style="text-align: center;">The result </td>
+</tr>
+<tr>
+<td style="text-align: center;">11 / -4</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;"><span class="math-tex">\(11 = -4*-3 + (-1)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">-11 / 4</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math-tex">\(-11 = 4*-3 + 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">-11 / -4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;"><span class="math-tex">\(-11 = -4*2 + (-3)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Division examples in Kotlin:</p>
+<pre><code class="language-kotlin">println(11.floorDiv(-4))    // prints -3
+println(11.mod(-4))         // prints -1
+println((-11).floorDiv(4))  // prints -3
+println((-11).mod(4))       // prints 1
+println((-11).floorDiv(-4)) // prints 2
+println((-11).mod(-4))      // prints -3</code></pre>
+<h5 id="complex-expressions" style="text-align: center;">Complex expressions</h5>
+<p>You can combine arithmetic operations to write complex expressions:</p>
+<pre><code class="language-kotlin">println(1 + 3 * 4 - 2) // prints 11</code></pre>
+<p>The calculation order coincides with the rules of arithmetic operations. Multiplication has a higher priority than addition or subtraction, so <code class="language-kotlin">3 * 4</code> is calculated first.</p>
+<p><span style="background-color: transparent; color: #000000; font-size: 11pt; font-variant: normal;"></span></p><div class="alert alert-primary">Consider an expression as a part of code that produces a value (for example, <code class="language-kotlin">14 + 5</code> or <code class="language-kotlin">15 - 3 * 4</code>). Further, we will take a closer look at expressions.<span style="background-color: transparent; color: #000000; font-size: 11pt; font-variant: normal;"></span></div><p></p>
+<p>Use <strong>parentheses </strong>to specify the order of execution.<strong> </strong>Let's take a look at the example below:</p>
+<pre><code class="language-kotlin">println((1 + 3) * (4 - 2)) // prints 8
+</code></pre>
+<p>Parentheses can be nested. You can also use them to simplify the notation.</p>
+<p>For example, here is a program that prints all digits of the number <code class="language-kotlin">54</code> in reverse order. We will use arithmetic operations to extract the digits.</p>
+<pre><code class="language-kotlin">fun main() {
+    println(54 % 10) // it prints 4
+    println((54 / 10) % 10) // it prints 5
+}</code></pre>
+<p>The program outputs:</p>
+<pre><code class="language-no-highlight">4
+5</code></pre>
+<h5 id="unary-operators" style="text-align: center;">Unary operators</h5>
+<p>A unary operator takes a single value as the operand.</p>
+<ul>
+<li>A<strong> unary plus</strong> just gives you a value. It is an optional operator, so you omit it in practice:</li>
+</ul>
+<pre><code class="language-kotlin">println(+5) // prints 5
+println(+(-5)) // prints -5
+</code></pre>
+<ul>
+<li>A <strong>unary minus</strong> negates a value or expression:</li>
+</ul>
+<pre><code class="language-kotlin">println(-8)  // prints -8
+println(-(100 + 4)) // prints -104</code></pre>
+<p>They both have <strong>higher precedence </strong>than the multiplication and division operators.</p>
+<h5 id="precedence-order" style="text-align: center;">Precedence order</h5>
+<p>Take a look at the precedence order of arithmetic operators, including parentheses. The list is sorted from the highest to the lowest priority.</p>
+<ol>
+<li>Parentheses;</li>
+<li>Unary plus/minus;</li>
+<li>Multiplication, division, and modulus;</li>
+<li>Addition and subtraction.</li>
+</ol>
+<p>Mind this order: it's important for correct calculations. Also, you can use the acronym BODMAS (Brackets, Order, Division, Multiplication, Addition, Subtraction) to remember priority.</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>In this topic, we have covered five main arithmetic operations (<code class="language-kotlin">+</code>, <code class="language-kotlin">-</code>, <code class="language-kotlin">*</code>, <code class="language-kotlin">/</code>, and <code class="language-kotlin">%</code>). Of course, you can combine them into complex expressions with parenthesis (to simplify the notation) and with unary operators. However, mind the precedence. The good news is that in Kotlin, the precedence order follows the rules you've learned in high school.</p></body></html>

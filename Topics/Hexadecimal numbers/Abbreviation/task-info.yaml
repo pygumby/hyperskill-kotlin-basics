@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Hexadecimal Number System
+- text: Hogwarts EXpress
+- text: Highly Evolvable System
+- text: Hexadecimal Number Systematics
+- text: Hex Number System
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8789#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 01 Sep 2022 19:15:22 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 42x
+- text: 42h
+- text: 0x42
+- text: 42x0
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8791#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 01 Sep 2022 19:13:39 UTC
+record: -1
+selected_options:
+- 1
+- 2
+local_check: false

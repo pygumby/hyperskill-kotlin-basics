@@ -101,6 +101,10 @@
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Interoperability with Java" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Paradigms" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Kotlin/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to MutableList/Initializing a mutable list of characters" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to MutableList/Printing the last element" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to MutableList/Swap" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to MutableList/Theory" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Operating systems/OS features" />
             <option value="$PROJECT_DIR$/Topics/Introduction to Operating systems/Theory" />
             <option value="$PROJECT_DIR$/Topics/Invoking functions/Correct statements" />

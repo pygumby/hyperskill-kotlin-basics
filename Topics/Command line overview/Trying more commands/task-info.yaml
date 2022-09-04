@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: terminal returns to the home directory
+- text: terminal returns the name of the directory you are currently using
+- text: terminal returns nothing
+- text: terminal returns the list of files and folder in the directory you are currently
+    using
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8983#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 04 Sep 2022 10:49:12 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

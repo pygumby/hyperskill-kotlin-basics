@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: terminal returns all the folders in the directory that you are currently using
+- text: terminal returns all the files and folders including hidden ones in the directory
+    that you are currently using
+- text: terminal returns nothing
+- text: terminal returns all the files in the directory that you are currently using
+- text: terminal returns all the non-hidden files and folders in the directory that
+    you are currently using
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8981#comment
+status: Solved
+feedback:
+  message: <html>By default, dir and ls commands return only non-hidden files and
+    subfolders. If you want to view hidden files use "dir /A" or "ls -a" command!</html>
+  time: Sun, 04 Sep 2022 10:46:34 UTC
+record: -1
+selected_options:
+- 4
+local_check: false

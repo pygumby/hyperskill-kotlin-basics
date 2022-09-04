@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Unicode-Find_symbols" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Unicode/Find symbols" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Version Control System" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Unicode/Find symbols">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Unicode/Find symbols/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Unicode/Find symbols/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Unicode/Find symbols/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

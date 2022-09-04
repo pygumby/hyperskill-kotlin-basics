@@ -130,6 +130,11 @@
             <option value="$PROJECT_DIR$/Topics/Parameters and Options/Pushd and popd" />
             <option value="$PROJECT_DIR$/Topics/Parameters and Options/Recursive list of directories" />
             <option value="$PROJECT_DIR$/Topics/Parameters and Options/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Ranges/Between two numbers" />
+            <option value="$PROJECT_DIR$/Topics/Ranges/Correct statements" />
+            <option value="$PROJECT_DIR$/Topics/Ranges/How to create a range" />
+            <option value="$PROJECT_DIR$/Topics/Ranges/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Ranges/Within both ranges" />
             <option value="$PROJECT_DIR$/Topics/Reading data with a readln/Check the input" />
             <option value="$PROJECT_DIR$/Topics/Reading data with a readln/Fix the input" />
             <option value="$PROJECT_DIR$/Topics/Reading data with a readln/Invoke readLine()" />

@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: <code>ls</code> on Windows and <code>list</code> on Linux/macOS
+- text: <code>man</code> on Windows and <code>help</code> on Linux/macOS
+- text: <code>commands</code> on Windows and <code>list</code> on Linux/macOS
+- text: <code>help</code> on Windows and <code>man</code> on Linux/macOS
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9749#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 04 Sep 2022 10:55:18 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: <code>dir /L</code> (win), <code>ls -F</code> (Linux/macOS)
+- text: <code>dir /O</code> (Win), <code>ls -d</code> (Linux/macOS)
+- text: <code>dir /D</code> (Win), <code>ls -l</code> (Linux/macOS)
+- text: <code>dir /S</code> (Win), <code>ls -R</code> (Linux/macOS)
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9752#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 04 Sep 2022 10:54:42 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

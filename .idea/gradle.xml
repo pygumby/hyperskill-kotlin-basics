@@ -120,6 +120,11 @@
             <option value="$PROJECT_DIR$/Topics/Objects/Wise choice" />
             <option value="$PROJECT_DIR$/Topics/Overview of the basic program/The eternal truth" />
             <option value="$PROJECT_DIR$/Topics/Overview of the basic program/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Parameters and Options/Manual" />
+            <option value="$PROJECT_DIR$/Topics/Parameters and Options/Parent Directory" />
+            <option value="$PROJECT_DIR$/Topics/Parameters and Options/Pushd and popd" />
+            <option value="$PROJECT_DIR$/Topics/Parameters and Options/Recursive list of directories" />
+            <option value="$PROJECT_DIR$/Topics/Parameters and Options/Theory" />
             <option value="$PROJECT_DIR$/Topics/Reading data with a readln/Check the input" />
             <option value="$PROJECT_DIR$/Topics/Reading data with a readln/Fix the input" />
             <option value="$PROJECT_DIR$/Topics/Reading data with a readln/Invoke readLine()" />

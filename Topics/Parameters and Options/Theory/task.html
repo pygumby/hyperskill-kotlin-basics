@@ -1,0 +1,58 @@
+<h2>Parameters and Options</h2>
+<html><body><p>We hope that you already know how to open the command-line interpreter and run some basic commands. Now let's take a step further and learn how to expand the functionality of the commands and how to get more information about them.</p>
+<h5 id="commands-with-parameters" style="text-align: center;">Commands with parameters</h5>
+<p>Sometimes using just one command is not enough. Let's take a look at the command <code class="language-bash">mkdir</code>, which is used to create a new folder in the current directory. If you try to use it as it is, you will get an error. The terminal needs to know how to name a new folder! That's where parameters come in handy. A <strong>parameter</strong> is some additional information that you give to the command. Simply put, parameters are variables that commands can take.</p>
+<p>Now, type the command <code class="language-bash">mkdir</code> with a parameter <code class="language-bash">papers</code>. We use this command to create a folder named <em>papers</em>:</p>
+<pre><code class="language-bash">C:\users\student&gt; mkdir papers</code></pre>
+<p>Although the current directory stays the same, if you follow this path, you will see that the new folder <em>papers</em> was created in the <em>student </em>directory.</p>
+<p></p><div class="alert alert-primary">All examples in this topic are for Windows OS, but the listed commands are relevant for Linux and macOS too. Note that the path separator in Windows is a backslash but in Linux/macOS it's a forward slash.</div><p></p>
+<p>Now let's change our location and go to the folder you've just created! Use the <code class="language-bash">cd</code> command with the path to the<em> papers</em> folder as a parameter.</p>
+<pre><code class="language-bash">C:\users\student&gt; cd C:\users\student\papers
+C:\users\student\papers&gt;</code></pre>
+<p>Another useful parameter of the <code class="language-bash">cd</code> command is <code class="language-bash">..</code>. It allows you to go to the <strong>parent directory</strong><em>,</em> the directory one level above the current one.</p>
+<pre><code class="language-bash">C:\users\student\papers&gt; cd ..
+C:\users\student&gt;</code></pre>
+<p>You can also go back to the <strong>root folder</strong>, a top-level directory in the file system. To go back to the root directory, you can use the<code class="language-bash">/</code>parameter:</p>
+<pre><code class="language-bash">C:\users\student&gt; cd /
+C:\</code></pre>
+<p>Thanks to commands and parameters, it seems like we are back to the roots! Actually, without parameters, most commands would be useless.</p>
+<h5 id="options" style="text-align: center;">Options</h5>
+<p>If you google anything about commands and a terminal, you'll encounter the term "options". Don't be afraid of it! Let's briefly explore what it means.</p>
+<p><strong>Options</strong>, as the name suggests, are usually optional and are used to somehow change the common behavior of the command. If you use Windows and are already sick and tired of exploring the current drive, you can change it by adding the <code class="language-bash">/d</code> option to <code class="language-bash">cd</code>. Don't forget to set the path you want to follow as the parameter, for example, <code class="language-bash">F:\Codepen snippets</code>:</p>
+<pre><code class="language-bash">C:\users\student\Desktop&gt; cd /d F:\Codepen snippets
+F:\Codepen snippets&gt;</code></pre>
+<p>Now you see that with options and parameters you can transform a simple command into something complicated.</p>
+<p>To sum up: what are essentially options and parameters? Both of them are just two particular types of arguments. While an <strong>option</strong> changes the behavior of a command, a <strong>parameter</strong> is used to assign information to either a command or one of its options. One of the key differences between them is that the number of possible values in options is limited and locked in the code, while with parameters users have more freedom as they don't have such limitations.</p>
+<h5 id="help-manual" style="text-align: center;">Help Manual</h5>
+<p>No one can remember all the existing commands, options, and parameters. Don't worry about that. The <code class="language-bash">help</code> command is there for you. Type it in Windows, and you will get a list of commands available to you. </p>
+<p></p><div class="alert alert-primary">For Linux and macOS, a way to get information about the commands depends on the shell you use. The simplest way for Linux is a<code class="language-bash">--help</code> flag. There is also the <code class="language-bash">man</code> command, short for <em>manual</em>. You can use it similar to the help command in Windows:<code class="language-bash"> man mkdir</code>.</div><p></p>
+<p>That's not all. The <code class="language-bash">help</code> command can take any command as a parameter and return all the available options. Let's try. We will use the simplest command we've learned so far, the <code class="language-bash">cd</code> command.</p>
+<pre><code class="language-bash">C:\users\student&gt; help cd
+
+Displays the name of or changes the current directory.
+ 
+CD [/D] [drive:][path]
+CD [..]
+
+   ..  Specifies that you want to change to the parent directory.
+
+Type CD drive: to display the current directory in the specified drive.
+Type CD without parameters to display the current drive and directory.
+
+Use the /D switch to change the current drive in addition to changing the current directory for a drive.
+
+&lt;...&gt;</code></pre>
+<p>As you can see, these are all the details you need to know about the <code class="language-bash">cd</code> command. We call this description the <strong>help manual</strong>.</p>
+<p>Let's discuss what the help manual includes. First, it states what the command is supposed to do. For <code class="language-bash">cd</code> command, it reads, <em>"Displays the name of or changes the current directory".</em> Then it returns all the combinations<strong> </strong>of that command along with all possible parameters that you can use. You can also notice that in Windows commands are case insensitive unlike in Linux and macOS. Let's look at the example from the manual:</p>
+<pre><code class="language-bash">CD [/D] [drive:][path]</code></pre>
+<p>So, the above command has three parts. <code class="language-bash">CD</code> is the command name. <code class="language-bash">[/D]</code> is an option, and <code class="language-bash">[drive:][path]</code> is a parameter. You might wonder what these <code class="language-bash">[]</code> brackets mean. Well, they are just <em>notation</em> that means that the parameters are optional to the commands. You shouldn't add these brackets when you use commands.</p>
+<p>You can read <a href="https://www.lifewire.com/how-to-read-command-syntax-2618082" rel="noopener noreferrer nofollow" target="_blank">this article</a> for Windows or the manual for the <a href="https://www.hscripts.com/tutorials/linux-commands/cat.html" rel="noopener noreferrer nofollow" target="_blank">cat command</a> on Linux/macOS to learn more about the command-line syntax and look through the examples.</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Let's summarize what we've learned so far:</p>
+<ul>
+<li>You can use options and parameters to extend the functionality of commands.</li>
+<li>You can pass different values with the parameters.</li>
+<li>You can get a full list of commands using the <code class="language-bash">help</code> and <code class="language-bash">man</code> commands.</li>
+<li>You can open a help manual for a command by typing <code class="language-bash">help [command_name]</code> or <code class="language-bash">man [command_name]</code>. This manual explains how to use a command properly and what options and parameters it has if any.</li>
+</ul>
+<p>Although you may feel that using these commands would slow down developer's work and that they are less efficient, we would still urge you to try them out. You have to get used to these commands as early as possible. Once you get accustomed to working with them, you will find that using them is much easier than resorting to the GUI on many occasions.</p></body></html>

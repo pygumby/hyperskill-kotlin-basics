@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: the directory one level above the current directory
+- text: the directory one level below the current directory
+- text: the directory you are currently in
+- text: the same as the home directory
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9748#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 04 Sep 2022 10:54:22 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

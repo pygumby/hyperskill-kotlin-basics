@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: ~
+- text: ~~
+- text: ==
+- text: compare
+- text: is
+- text: ===
+- text: =
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11237#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 04 Sep 2022 10:35:03 UTC
+record: -1
+selected_options:
+- 2
+- 5
+custom_name: How to compare?
+local_check: false

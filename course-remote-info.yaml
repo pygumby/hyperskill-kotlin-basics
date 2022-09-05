@@ -7,7 +7,7 @@ update_date: Fri, 02 Sep 2022 14:15:39 UTC
 stages:
 - id: 909
   step: 13042
-  is_completed: false
+  is_completed: true
 - id: 910
   step: 13043
   is_completed: false

@@ -1,2 +1,4 @@
 .DS_Store
-.gradle
+/.gradle
+/Version Control System/task/build
+/Version Control System/task/out

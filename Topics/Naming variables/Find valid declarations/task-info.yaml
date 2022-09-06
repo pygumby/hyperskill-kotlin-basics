@@ -1,12 +1,12 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: val _ = "im a valid variable name"
-- text: val fun = 5
-- text: val numofpets = 2
 - text: val var = "some string"
+- text: val numofpets = 2
 - text: val persons = 10
 - text: val coinsInPocket = 42
+- text: val fun = 5
+- text: val _ = "im a valid variable name"
 files:
 - name: src/Main.kt
   visible: true

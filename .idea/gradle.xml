@@ -300,6 +300,11 @@
             <option value="$PROJECT_DIR$/Topics/Working with strings/Name Card" />
             <option value="$PROJECT_DIR$/Topics/Working with strings/Statements" />
             <option value="$PROJECT_DIR$/Topics/Working with strings/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Duplication" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Nonexistent file path" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Overwriting" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Writing files/Writing in a file" />
             <option value="$PROJECT_DIR$/Version Control System/task" />
             <option value="$PROJECT_DIR$/util" />
           </set>

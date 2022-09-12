@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Computer_algorithms-To_drink_or_not_to_drink" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Computer algorithms/To drink or not to drink" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Version Control System" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Computer algorithms/To drink or not to drink">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Computer algorithms/To drink or not to drink/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Computer algorithms/To drink or not to drink/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Computer algorithms/To drink or not to drink/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

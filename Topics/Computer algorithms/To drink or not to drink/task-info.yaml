@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Hamlet forgot to add sugar
+- text: The water in the kettle has run out
+- text: Hamlet added the ingredients and went walking
+- text: There was no coffee beans
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20727#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 12 Sep 2022 15:36:47 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 3
+local_check: false

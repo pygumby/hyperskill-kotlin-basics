@@ -1,0 +1,38 @@
+<h2>Hashing: overview</h2>
+<p>Hashing is a technique widely used in programming. Whether you send a message over the internet, log in to a website, or search for a file on your computer, you are using <strong>hash functions</strong>! But what are they and what do they do?</p>
+
+<h5 id="what-is-hashing" style="text-align: center;">What is hashing?</h5>
+
+<p>Formally, hash functions are functions that we can use to map data of arbitrary size to fixed-size values. That's quite vague, so let's look at a real-life comparison to understand them better:</p>
+
+<p>Imagine you have a friend Paul who keeps a phone book. Your friend is lazy and doesn't want to spend a lot of time writing the full names of his contacts. So, instead, Paul writes only the consonants in their names. For example, instead of <em>John Smith,</em> Paul writes <em>Jhn Smth.</em> In quite a few ways, this process is similar to <strong>hashing</strong>. We can consider that "remove all vowels" is the <strong>hash function</strong>. We call the result of applying a hash function to some input a <strong>hash value</strong>, or simply its hash. In our case, <em>Jhn Smth</em> is the hash value of <em>John Smith</em>. Now, not all hash values will be distinct: think about two people with names <em>Tim Black</em> and <em>Tom Black</em>. The hash value for both of those names will be <em>Tm Blck. </em>When this happens, we call it a <strong>collision</strong>.</p>
+
+<p style="text-align: center;"><img alt="" height="364" src="https://ucarecdn.com/2b8e67e4-1546-47d2-80da-e5227653dd26/" width="841"></p>
+
+<p>The main difference between our example and a real hash function is that, in our case, the hash values do not have a fixed size. A more accurate example would be if Paul wrote the first 5 letters in their names. The hash value for <em>John Smith</em> would be <em>John S</em>, for <em>Tim Black</em> it would be <em>Tim Bl</em>, and for <em>Tim Blacksmith,</em> it would be <em>Tim Bl</em> too. There are more names than possible ways to write 5 letters, so we are guaranteed to have collisions. The same thing is also true for hash functions. They take input that can be really big and return something of a fixed size, so there is no way to completely avoid collisions!</p>
+
+<h5 id="applications-of-hash-functions" style="text-align: center;">Applications of hash functions</h5>
+
+<p>As we mentioned in the beginning, hash functions have many applications. Let's look at a few of the most important ones:</p>
+
+<ul>
+	<li>Message digests</li>
+</ul>
+
+<p>Say you have a message that you want to send to a friend over the internet but are afraid that someone might change its contents before it reaches your friend. One of the things you can do is to compute a hash value for your message before sending it. When your friends receive it, they compute the hash value of the message using the same hash function as you. You can then compare the two hashes and check that they are equal. Hash functions used for this have the property that it is hard to find collisions. Such hash functions are called <strong>cryptographic </strong>hash functions. They can have other properties too, like the one in the following example.</p>
+
+<ul>
+	<li>Password Storage</li>
+</ul>
+
+<p>Ever wondered why websites don't have an option to send you your password in case you forget it, and they make you reset it? To be able to send it back, they have to store it in plain text. By doing so, if someone gets access to the password database, they can easily steal all the accounts! What websites do is store a hash of your password. When you send the password to log in, they compute its hash and check if it is equal to what they have stored. In this case, finding collisions is not such a big problem. Here, you need to know that if someone finds the hash of your password, they should not be able to find out your password from it.</p>
+
+<ul>
+	<li>Hash tables</li>
+</ul>
+
+<p>A more common use in day-to-day programming is hash tables. They are fast and convenient data structures that use hashing. With them, you can search, insert, or remove elements from a table. The main idea behind them is that you want to use hash values to index data in an array. For example, if you want to use a hash table to store a phone book, you can save the pair <em>(</em><em>Tim Black, 0123456789) </em>at index <em>Tm Blck.</em> Then, to find Tim's phone number, you only have to search at index <em>Tm Blck.</em> After that, you can also save <em>(Tom Black</em><em>, 9876543210)</em> at the same index and, whenever you need to find Tim's or Tom's phone number, you only have to search between two pairs, rather than the whole phone book. Hash functions used in hash tables are less restrictive than the ones used for message digests and password storage, and their hash values are, generally, numbers. We will look closer at hash tables in the following topics.</p>
+
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+
+<p>You now have an idea about hashing and hash functions, what they are and where you can use them. This should be more than enough for now to emphasize their importance. In the next topics, we will study in more detail hash functions, hash tables, and collisions.</p>

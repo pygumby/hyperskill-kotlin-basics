@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: the first 5 consonant letters of the name
+- text: the first 3 letters of the name
+- text: displacement
+- text: number of platoons (there are 50 people in the platoon)
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21383#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 12 Sep 2022 16:14:21 UTC
+record: -1
+selected_options:
+- 0
+- 3
+local_check: false

@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: A function that receives an address and returns its postcode. This function
+    works within a single city.
+- text: A function that receives a number and returns its first digit.
+- text: A function that receives a text and removes all spaces from it.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21385#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 12 Sep 2022 16:10:23 UTC
+record: -1
+selected_options:
+- 0
+- 1
+local_check: false

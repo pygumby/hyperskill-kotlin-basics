@@ -37,8 +37,8 @@ fun getVcsFile(vcsFile: VcsFile): File {
     val s = File.separator
     return when (vcsFile) {
         VcsFile.VCS_DIR -> File("vcs")
-        VcsFile.CONFIG_TXT -> File("vcs${File.separator}config.txt")
-        VcsFile.INDEX_TXT -> File("vcs${File.separator}index.txt")
+        VcsFile.CONFIG_TXT -> File("vcs${s}config.txt")
+        VcsFile.INDEX_TXT -> File("vcs${s}index.txt")
     }
 }
 

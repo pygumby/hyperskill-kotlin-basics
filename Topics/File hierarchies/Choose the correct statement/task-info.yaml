@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: file.list() returns null
+- text: file.listFiles() returns an empty array
 - text: file.getParentFile() returns null
 - text: file.getParent() returns null
-- text: file.listFiles() returns an empty array
+- text: file.list() returns null
 files:
 - name: src/Main.kt
   visible: true

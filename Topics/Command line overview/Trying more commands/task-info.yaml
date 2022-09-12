@@ -1,8 +1,8 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: terminal returns to the home directory
 - text: terminal returns the name of the directory you are currently using
+- text: terminal returns to the home directory
 - text: terminal returns nothing
 - text: terminal returns the list of files and folder in the directory you are currently
     using

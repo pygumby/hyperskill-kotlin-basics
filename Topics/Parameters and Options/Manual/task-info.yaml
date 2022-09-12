@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: <code>ls</code> on Windows and <code>list</code> on Linux/macOS
-- text: <code>man</code> on Windows and <code>help</code> on Linux/macOS
 - text: <code>commands</code> on Windows and <code>list</code> on Linux/macOS
+- text: <code>ls</code> on Windows and <code>list</code> on Linux/macOS
 - text: <code>help</code> on Windows and <code>man</code> on Linux/macOS
+- text: <code>man</code> on Windows and <code>help</code> on Linux/macOS
 files:
 - name: src/Main.kt
   visible: true

@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: The same array can have different hash values
+- text: Does not take all the values in the array into consideration
+- text: For arrays of up to 5 values, the hash value is the same no matter the order
+    of the values
+- text: It is too slow
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10883#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 12 Sep 2022 18:59:10 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

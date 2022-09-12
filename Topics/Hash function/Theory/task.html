@@ -1,0 +1,79 @@
+<h2>Hash function</h2>
+<h5 id="introduction" style="text-align: center;">Introduction</h5>
+
+<p>In theory, a <strong>hash function</strong> is any function that can take any large value and output a fixed-sized value. However, not all functions with this property are useful as different use cases need different properties. To understand it better, we will now look at some general properties of hash functions and a few examples of them.</p>
+
+<h5 id="defining-a-good-hash-function" style="text-align: center;">Defining a good hash function</h5>
+
+<p>What's the difference between just any hash function and a good one? To define a good hash function, we need to learn three of its properties: efficient, deterministic, and uniform.</p>
+
+<p>An efficient hash function should compute the hash value in constant time: O(1) in the size of the input. Say you have an array of <span class="math-tex">\(n\)</span> integers. Then, a good hash function would take time O(n), as n is the size of the input, and would be able to compute hashes for <span class="math-tex">\(n &gt; 100,000,000\)</span> in under a second. Now say another hash function takes time O(n^2). Then it could barely compute hashes for <span class="math-tex">\(n \sim 10,000\)</span> in one second.</p>
+
+<p>If two inputs are equal, they should have the same hash value, that's why we need a hash function to be deterministic. There are two things to remember here:</p>
+
+<ul>
+	<li>First, deterministic means that the function cannot be random. For example, the function that returns 0 or 1 randomly, independently of the input, is a hash function, but not a deterministic one.</li>
+	<li>Secondly, imagine you have two distinct variables, both with the same value, say 7. For a computer, they take different spots in memory, so they are different, but these variables are equal if the values are compared. In this case, we want the hash function to return the same value. An example of a hash function that does not do that is the function that returns the address in memory of the value.</li>
+</ul>
+
+<p>As you already know, the third property is uniform:<strong> </strong>the hash values are distributed uniformly.<strong> </strong>This means that the inputs should be mapped equally among the possible hash values. Another way to put it: if we group possible inputs by their hash value, we want the groups to have sizes close to each other.</p>
+
+<p>Those are the general properties that any hash function should have. Let's look at some common ones to see how it works.</p>
+
+<h5 id="standard-hash-functions" style="text-align: center;">Standard hash functions</h5>
+
+<p>To use hash functions, we need to learn the notation first.<span style="color: #66cc66;"> </span>Hash functions are usually denoted by <em><span class="math-tex">\(h\)</span></em>. The hash value for a particular object <span class="math-tex">\(x\)</span> is denoted by <em><span class="math-tex">\(h(x)\)</span></em>. Hash functions used in day-to-day programming usually take one type of value and return integers. They are used in hash tables and have all three properties we discussed above. These are some of the easiest and most commonly used hashes:</p>
+
+<ul>
+	<li>Integers<em>: </em>we use the identity function, which always returns the value it is given: <strong><strong><span class="math-tex">\(h(x) = x\)</span></strong></strong>, or the modulo operation: <strong><strong><span class="math-tex">\(h(x) = x \ \%\ p\)</span></strong></strong>, for some number <strong><span class="math-tex">\(p\)</span></strong> (usually a prime). The <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://en.wikipedia.org/wiki/Modulo_operation" rel="noopener noreferrer nofollow">modulo</a> operation <span class="math-tex">\(x\ \%\ p\)</span> returns the remainder when dividing <span class="math-tex">\(x\)</span> by <span class="math-tex">\(p\)</span>. Let's see how these functions work for some random number, say 10. The identity function will always return the number it is given, so we have <span class="math-tex">\(h(10)=10\)</span>. For the modulo operation, if we pick <span class="math-tex">\(p = 7\)</span>, then we have <span class="math-tex">\(h(10) = 10\ \%\ 7 = 3\)</span>. If we pick <span class="math-tex">\(p = 10\)</span>, then we have <span class="math-tex">\(h(10) = 10\ \%\ 10 = 0\)</span>.</li>
+	<li>Integer arrays: say the array has the form <span class="math-tex">\([v_1, v_2,...,v_n]\)</span>. The idea is to start from left to right and convert each value to a single integer. At each step, multiply the integer you have by some number and add the next value to it. We can write this mathematically as <span class="math-tex">\(h_0 = 0,\ h_{i+1}=h_i*p\ +\ v_{i+1}\)</span>, where <span class="math-tex">\(p\)</span> is some number (usually a prime). Then <span class="math-tex">\(h_n\)</span> will be the hash value. Let's look at what we get: <span class="math-tex">\(h_n= v_1*p^{n-1} + v_2*p^{n-2}+...+v_n\)</span>. This considers every element but in different proportions. What if we take just the normal sum of all elements? Then all arrays with the same elements, possibly in a different order, will have the same hash value. But they are not equal! This trick helps distinguish between such cases.</li>
+	<li>General arrays: what if your arrays have some other type of data, rather than integers? First, choose a hash function for that data type, let's call it <span class="math-tex">\(h'\)</span>, which has the properties above and outputs integers. Then, you can do the same thing as before, but, instead of adding the next value, add its hash. Mathematically, the only change is: <span class="math-tex">\(h_{i+1}=h_i*p\ +\ h'(v_{i+1})\)</span>, that's it! For example, imagine we want to calculate the hash for an array of integer arrays. We can use the updated hash formula if we choose <span class="math-tex">\(h'\)</span> to be a hash function for integer arrays.</li>
+	<li>Strings: strings are nothing more than arrays of characters. A character is, in general, an integer between 0 and 255, so we can compute the hash function in the same way as for an array of integers!</li>
+</ul>
+
+<p>To make it clear, let's look at how we compute the hash value for the array <span class="math-tex">\([1, 2, 3, 4]\)</span> using <span class="math-tex">\(p = 5\)</span>:</p>
+
+<ul>
+	<li><span class="math-tex">\(h_1 = h_0*p\ +\ v_1 = 0*5\ +\ 1=1\)</span></li>
+	<li><span class="math-tex">\(h_2 = h_1*p\ +\ v_2 = 1*5\ +\ 2=7\)</span></li>
+	<li><span class="math-tex">\(h_3 = h_2*p\ +\ v_3 = 7*5\ +\ 3=38\)</span></li>
+	<li><span class="math-tex">\(h_4 = h_3*p\ +\ v_4 = 38*5\ +\ 4=194\)</span></li>
+</ul>
+
+<p>So we have hash value <span class="math-tex">\(194\)</span>. Note that the hash grows fast! Because of this, we usually choose another prime <span class="math-tex">\(q\)</span> different from <span class="math-tex">\(p\)</span> and much larger, and we modify the step to <span class="math-tex">\(h_{i+1}=(h_i*p\ +\ h'(v_{i+1}))\ \%\ q\)</span>. The modulo is the remainder of dividing by <span class="math-tex">\(q\)</span>, so, this way, the hash value will always be less than <span class="math-tex">\(q\)</span>. With a bit of math, we can show that taking the modulo at every step gives the same result as only taking the modulo of <span class="math-tex">\(h_n\)</span>, so we keep all the properties that we want!</p>
+
+<p>Now, what happens if we change the order of the values in the array while keeping <span class="math-tex">\(p=5\)</span>? For <span class="math-tex">\([2,1,3,4]\)</span> the hash value is <span class="math-tex">\(h_4' = 294\)</span> and for <span class="math-tex">\([1, 2, 4, 3]\)</span> we have <span class="math-tex">\(h_4''=198\)</span>. The closer to the start, the bigger the difference!</p>
+
+<p> </p>
+
+<h5 id="cryptographic-hash-functions" style="text-align: center;">Cryptographic hash functions</h5>
+
+<p>Cryptographic hashes are made to work with any input of any length and type by considering it as a sequence of bits: 1's and 0's. They also output a sequence of bits, but of fixed length. The computer can work quite well with it, but for us, it's quite hard to "see" if we don't format it clearly. Typically, there are a few hundred bits in the output, so what we do is consider it as a large number in base 2, convert it to base 16 and write it as a string.</p>
+
+<p>Cryptographic hashes still respect the properties above, but they are more complex. They have fewer use cases but are extremely important in security. Let's see what properties they need:</p>
+
+<ul>
+	<li>Imagine a company that stores a table of username-password pairs for a website you use. If that table gets leaked, then anyone can see your password. So, what they do is save the hash of your password instead. Whenever you send them your password, they compute the hash and check if it is the same as the one saved. Now, if the table is leaked, an attacker must find a password that hashes to the same value as your password to be able to log in as you. So, the hash function must make it very difficult for an attacker to find such a password. Such a function is called <strong>pre-image resistant</strong>: given a hash value <span class="math-tex">\(h\)</span>, it is hard<em> </em>to find a message <span class="math-tex">\(m\)</span> with <span class="math-tex">\(hash(m) = h\)</span>.</li>
+	<li>One of the ways we can make sure a message was not changed is by sending the hash of the message together with the message itself. Suppose that an attacker wants to change the message, but cannot change the hash. Then she or he has to find a different message that hashes to the same value. Even if the new message might not make sense, it can affect communication in some ways. To prevent such situations, we can use a <strong>second pre-image resistant</strong>, or <strong>weak collision-resistant</strong> hash function. When we use it, given a message <span class="math-tex">\(m_1\)</span>, it will be hard<em> </em>to find a different message <span class="math-tex">\(m_2\)</span> with <span class="math-tex">\(hash(m_1) = hash(m_2)\)</span>.</li>
+	<li>In some very specific use cases, finding any pair of messages that have the same hash might result in problems. A hash function that makes sure it is hard<em> </em>to find any messages <span class="math-tex">\(m_1, m_2\)</span> such that <span class="math-tex">\(hash(m_1) = hash(m_2)\)</span> is called <strong>collision-resistant</strong>, or <strong>strong collision-resistant</strong>.</li>
+</ul>
+
+<p>When we say it's hard to find some value, that means that finding a value with the needed properties would take years, even with the most powerful supercomputers. If you think that it's hard to get those properties, you're right! Not everyone can create such a function. Fortunately, there are a few standard ones that are widely used today. Their implementations are complicated, so we will not go into detail.</p>
+
+<p>First, let's look at MD5. It was created in 1992 as a better alternative to its predecessor, MD4. It takes any input and outputs a 128-bit hash value. Initially, it was believed to be collision-resistant, but in 2004 it was proved that it wasn't the case. It took 12 years and a lot of research to find this, so it's better to stick with existing hashes than try and create new ones!</p>
+
+<p>Another cryptographic hash function, more secure, is SHA256. Its output is 256-bit long and is used in many places, one of them being the <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://en.bitcoin.it/wiki/Proof_of_work" rel="noopener noreferrer nofollow">Bitcoin proof of work</a>. Let's look at some examples and see what small changes in the input do to the hash value:</p>
+
+<p><span class="math-tex">\(SHA256("Hashes\ are\ fun!") = c128f0e84f60397828b11eaa3cbb67262b99f4d11f3ad630139ffa36cc600278\)</span></p>
+
+<p><span class="math-tex">\(SHA256("hashes\ are\ fun!"\ )=9659f1fcdf143e3e1f66a922d71500d86c3b7d8f3a5ef03e1d9676547632317e\)</span></p>
+
+<p><span class="math-tex">\(SHA256("Hashes\ are\ fun.")=b2cde78b638667158fb91d0c665d1d20cc247925b45d9eccb7d25c08721fea12\)</span></p>
+
+<p><span class="math-tex">\(SHA256("Hashes\ are\ fnu!")=c75bb5fed45a21695e0c607376cc1c925939a02c38fac8e7d5488b8820487bca\)</span></p>
+
+<p>Even small changes produce huge differences! This is the consequence of collision resistance and pre-image resistance.</p>
+
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+
+<p>Now you know what hash functions and cryptographic hash functions are. We learned the standard properties of hash functions: efficient, deterministic, and uniform, and how to build hash functions for some standard data types. We also saw the different use cases of cryptographic hash functions and their importance. Now you are ready to dig deeper and learn some other hashing techniques, for example, hash tables!</p>

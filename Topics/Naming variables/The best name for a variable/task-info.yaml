@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: userHomeAddress
 - text: _uha
-- text: user_home_address
+- text: userHomeAddress
 - text: userhomeaddress
+- text: user_home_address
 files:
 - name: src/Main.kt
   visible: true

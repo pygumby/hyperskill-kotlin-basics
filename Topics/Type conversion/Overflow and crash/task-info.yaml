@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: No, it will continue running without any error
-- text: Immediately
 - text: It will print an error to stdout and then crash
+- text: No, it will continue running without any error
 - text: It will continue running until another overflow will occur and then crash
+- text: Immediately
 files:
 - name: src/Main.kt
   visible: true

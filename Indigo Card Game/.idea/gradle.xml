@@ -11,8 +11,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Indigo Card Game/task" />
+            <option value="$PROJECT_DIR$/Topics/List/Are you there" />
+            <option value="$PROJECT_DIR$/Topics/List/Concise" />
             <option value="$PROJECT_DIR$/Topics/List/It's all about the List" />
+            <option value="$PROJECT_DIR$/Topics/List/My position" />
             <option value="$PROJECT_DIR$/Topics/List/Number of occurrences" />
+            <option value="$PROJECT_DIR$/Topics/List/Sum of numbers" />
             <option value="$PROJECT_DIR$/Topics/List/Theory" />
             <option value="$PROJECT_DIR$/util" />
           </set>

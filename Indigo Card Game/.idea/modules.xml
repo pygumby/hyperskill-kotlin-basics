@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Indigo_Card_Game.iml" filepath="$PROJECT_DIR$/.idea/modules/Indigo_Card_Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Indigo Card Game/task/Indigo_Card_Game.Indigo_Card_Game-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Indigo Card Game/task/Indigo_Card_Game.Indigo_Card_Game-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Indigo Card Game/task/Indigo_Card_Game.Indigo_Card_Game-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Indigo Card Game/task/Indigo_Card_Game.Indigo_Card_Game-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Indigo Card Game/task/Indigo_Card_Game.Indigo_Card_Game-task.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Indigo Card Game/task/Indigo_Card_Game.Indigo_Card_Game-task.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/It's all about the List/Indigo_Card_Game.Topics-List-It's_all_about_the_List.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/It's all about the List/Indigo_Card_Game.Topics-List-It's_all_about_the_List.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/It's all about the List/Indigo_Card_Game.Topics-List-It's_all_about_the_List.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/It's all about the List/Indigo_Card_Game.Topics-List-It's_all_about_the_List.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/It's all about the List/Indigo_Card_Game.Topics-List-It's_all_about_the_List.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/It's all about the List/Indigo_Card_Game.Topics-List-It's_all_about_the_List.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/Number of occurrences/Indigo_Card_Game.Topics-List-Number_of_occurrences.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/Number of occurrences/Indigo_Card_Game.Topics-List-Number_of_occurrences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/Number of occurrences/Indigo_Card_Game.Topics-List-Number_of_occurrences.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/Number of occurrences/Indigo_Card_Game.Topics-List-Number_of_occurrences.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/Number of occurrences/Indigo_Card_Game.Topics-List-Number_of_occurrences.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/Number of occurrences/Indigo_Card_Game.Topics-List-Number_of_occurrences.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/Theory/Indigo_Card_Game.Topics-List-Theory.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/Theory/Indigo_Card_Game.Topics-List-Theory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/Theory/Indigo_Card_Game.Topics-List-Theory.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/Theory/Indigo_Card_Game.Topics-List-Theory.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/List/Theory/Indigo_Card_Game.Topics-List-Theory.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/List/Theory/Indigo_Card_Game.Topics-List-Theory.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Indigo_Card_Game.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Indigo_Card_Game.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Indigo_Card_Game.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Indigo_Card_Game.util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Indigo_Card_Game.util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Indigo_Card_Game.util.test.iml" />
+    </modules>
+  </component>
+</project>

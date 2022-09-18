@@ -1,7 +1,7 @@
 content:
 - Theory
 - Character literals
-- Valid number literals
+# - Valid number literals
 - An invalid literal
 - Address in a city
 - An incorrect literal

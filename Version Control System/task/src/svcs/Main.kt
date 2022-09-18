@@ -1,8 +1,10 @@
 package svcs
 
 import java.io.File
+import java.security.MessageDigest
+import java.time.LocalDateTime
 
-fun help(arg: String = "--help"): Unit {
+fun help(arg: String = "--help") {
     val config = "Get and set a username."
     val add = "Add a file to the index."
     val log = "Show commit logs."
@@ -29,35 +31,35 @@ fun help(arg: String = "--help"): Unit {
 
 enum class VcsFile {
     VCS_DIR,
+    COMMITS_DIR,
     CONFIG_TXT,
-    INDEX_TXT
+    INDEX_TXT,
+    LOG_TXT,
 }
 
-fun getVcsFile(vcsFile: VcsFile): File {
-    val s = File.separator
-    return when (vcsFile) {
-        VcsFile.VCS_DIR -> File("vcs")
-        VcsFile.CONFIG_TXT -> File("vcs${s}config.txt")
-        VcsFile.INDEX_TXT -> File("vcs${s}index.txt")
-    }
+fun getVcsFile(vcsFile: VcsFile): File = when (vcsFile) {
+    VcsFile.VCS_DIR -> File("vcs")
+    VcsFile.COMMITS_DIR -> File("vcs${File.separator}commits")
+    VcsFile.CONFIG_TXT -> File("vcs${File.separator}config.txt")
+    VcsFile.INDEX_TXT -> File("vcs${File.separator}index.txt")
+    VcsFile.LOG_TXT -> File("vcs${File.separator}log.txt")
 }
 
 fun validateVcsDir() {
     val vcsDir = getVcsFile(VcsFile.VCS_DIR)
+    val commitDir = getVcsFile(VcsFile.COMMITS_DIR)
     val configFile = getVcsFile(VcsFile.CONFIG_TXT)
     val indexFile = getVcsFile(VcsFile.INDEX_TXT)
+    val logFile = getVcsFile(VcsFile.LOG_TXT)
 
-    if (vcsDir.exists()) {
-        if (!configFile.exists()) configFile.createNewFile()
-        if (!indexFile.exists()) indexFile.createNewFile()
-    } else {
-        vcsDir.mkdir()
-        configFile.createNewFile()
-        indexFile.createNewFile()
-    }
+    if (!getVcsFile(VcsFile.VCS_DIR).exists()) vcsDir.mkdir()
+    if (!commitDir.exists()) commitDir.mkdir()
+    if (!configFile.exists()) configFile.createNewFile()
+    if (!indexFile.exists()) indexFile.createNewFile()
+    if (!logFile.exists()) logFile.createNewFile()
 }
 
-fun config(userName: String?): Unit {
+fun config(userName: String?) {
     validateVcsDir()
 
     val configFile = getVcsFile(VcsFile.CONFIG_TXT)
@@ -76,7 +78,7 @@ fun config(userName: String?): Unit {
     }
 }
 
-fun add(fileName: String?): Unit {
+fun add(fileName: String?) {
     validateVcsDir()
 
     val indexFile = getVcsFile(VcsFile.INDEX_TXT)
@@ -99,13 +101,82 @@ fun add(fileName: String?): Unit {
     }
 }
 
-fun main(args: Array<String>): Unit {
+fun log() {
+    validateVcsDir()
+
+    val logFile = getVcsFile(VcsFile.LOG_TXT)
+    val logFileText = logFile.readText()
+
+    if (logFileText.isEmpty()) {
+        println("No commits yet.")
+    } else {
+        println(logFileText)
+    }
+}
+
+fun commit(message: String?) {
+    fun getAddedFilesNames(): List<String> =
+        getVcsFile(VcsFile.INDEX_TXT).readText().split("\n").filter { it != "" }
+
+    fun getHash(s: String): String {
+        val sha256 = MessageDigest.getInstance("SHA-256")
+        val hash = sha256.digest(s.toByteArray())
+        return hash.fold("") { acc, b -> acc + "%02x".format(b) }
+    }
+
+    fun haveFilesChanged(addedFilesNames: List<String>): Boolean {
+        val logFileFirstLine = getVcsFile(VcsFile.LOG_TXT).useLines { it.firstOrNull() }
+        val lastCommitId = if (logFileFirstLine == null) null else logFileFirstLine.split(" ")[1]
+        val commitsDirPath = getVcsFile(VcsFile.COMMITS_DIR).path
+
+        return lastCommitId == null || addedFilesNames.any { addedFileName ->
+            val addedFile = File(addedFileName)
+            val addedFileHash = getHash(addedFile.readText())
+            val lastCommittedFile = File("$commitsDirPath${File.separator}$lastCommitId${File.separator}$addedFileName")
+            val lastCommittedFileHash = getHash(lastCommittedFile.readText())
+            addedFileHash != lastCommittedFileHash
+        }
+    }
+
+    fun logCommit(newCommitId: String) {
+        val author = getVcsFile(VcsFile.CONFIG_TXT).readText()
+        val commitLog = "commit $newCommitId\nAuthor: $author\n$message\n\n"
+        val logFile = getVcsFile(VcsFile.LOG_TXT)
+        logFile.writeText(commitLog + logFile.readText())
+    }
+
+    validateVcsDir()
+
+    if (message == null) return println("Message was not passed.")
+
+    val addedFilesNames = getAddedFilesNames()
+    if (addedFilesNames.isEmpty()) return println("No files were added.")
+    if (!haveFilesChanged(addedFilesNames)) return println("Nothing to commit.")
+
+    val commitsDirPath = getVcsFile(VcsFile.COMMITS_DIR).path
+
+    val newCommitId = getHash(LocalDateTime.now().toString() + message)
+    val newCommitDir = File("$commitsDirPath${File.separator}$newCommitId")
+    newCommitDir.mkdir()
+
+    for (addedFileName in addedFilesNames) {
+        val addedFile = File(addedFileName)
+        val committedFile = File("$commitsDirPath${File.separator}$newCommitId${File.separator}$addedFileName")
+        addedFile.copyTo(committedFile, overwrite = true)
+    }
+
+    logCommit(newCommitId)
+
+    println("Changes are committed.")
+}
+
+fun main(args: Array<String>) {
     if (args.isEmpty()) return help()
     when (args[0]) {
         "config" -> config(args.elementAtOrNull(1))
         "add" -> add(args.elementAtOrNull(1))
-        "log" -> help(args[0])
-        "commit" -> help(args[0])
+        "log" -> log()
+        "commit" -> commit(args.elementAtOrNull(1))
         "checkout" -> help(args[0])
         "--help" -> help(args[0])
         else -> println("'${args[0]}' is not a SVCS command.")

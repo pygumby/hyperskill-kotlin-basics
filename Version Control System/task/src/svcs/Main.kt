@@ -4,7 +4,7 @@ import java.io.File
 import java.security.MessageDigest
 import java.time.LocalDateTime
 
-fun help(arg: String = "--help") {
+fun help(arg: String) {
     val config = "Get and set a username."
     val add = "Add a file to the index."
     val log = "Show commit logs."
@@ -44,6 +44,9 @@ fun getVcsFile(vcsFile: VcsFile): File = when (vcsFile) {
     VcsFile.INDEX_TXT -> File("vcs${File.separator}index.txt")
     VcsFile.LOG_TXT -> File("vcs${File.separator}log.txt")
 }
+
+fun getAddedFilesNames(): List<String> =
+    getVcsFile(VcsFile.INDEX_TXT).readText().split("\n").filter { it != "" }
 
 fun validateVcsDir() {
     val vcsDir = getVcsFile(VcsFile.VCS_DIR)
@@ -115,9 +118,6 @@ fun log() {
 }
 
 fun commit(message: String?) {
-    fun getAddedFilesNames(): List<String> =
-        getVcsFile(VcsFile.INDEX_TXT).readText().split("\n").filter { it != "" }
-
     fun getHash(s: String): String {
         val sha256 = MessageDigest.getInstance("SHA-256")
         val hash = sha256.digest(s.toByteArray())
@@ -170,15 +170,35 @@ fun commit(message: String?) {
     println("Changes are committed.")
 }
 
+fun checkout(commitId: String?) {
+    fun getListOfCommitIds(): List<String> {
+        val commitDirs = getVcsFile(VcsFile.COMMITS_DIR).listFiles()
+        return commitDirs?.map { it.name } ?: listOf<String>()
+    }
+
+    if (commitId == null) return println("Commit id was not passed.")
+    if (!getListOfCommitIds().contains(commitId)) return println("Commit does not exist.")
+
+    val addedFilesNames = getAddedFilesNames()
+    val commitsDirPath = getVcsFile(VcsFile.COMMITS_DIR).path
+
+    for (addedFileName in addedFilesNames) {
+        val addedFile = File(addedFileName)
+        val committedFile = File("$commitsDirPath${File.separator}$commitId${File.separator}$addedFileName")
+        committedFile.copyTo(addedFile, overwrite = true)
+    }
+
+    println("Switched to commit $commitId.")
+}
+
 fun main(args: Array<String>) {
-    if (args.isEmpty()) return help()
+    if (args.isEmpty() || args[0] == "--help") return help("--help")
     when (args[0]) {
         "config" -> config(args.elementAtOrNull(1))
         "add" -> add(args.elementAtOrNull(1))
         "log" -> log()
         "commit" -> commit(args.elementAtOrNull(1))
-        "checkout" -> help(args[0])
-        "--help" -> help(args[0])
+        "checkout" -> checkout(args.elementAtOrNull(1))
         else -> println("'${args[0]}' is not a SVCS command.")
     }
 }

@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Python
+- text: PHP
+- text: Java
+- text: CSS
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18497#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 19 Sep 2022 19:29:57 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

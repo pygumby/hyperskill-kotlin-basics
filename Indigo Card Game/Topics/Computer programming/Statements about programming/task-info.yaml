@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: The more sophisticated the task, the harder to learn language for it.
+- text: You need to learn every programming language to be good programmer.
+- text: JavaScript is used in a field of front-end development.
+- text: It is better to learn programming languages needed for your field of work
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18498#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 19 Sep 2022 19:27:11 UTC
+record: -1
+selected_options:
+- 2
+- 3
+local_check: false

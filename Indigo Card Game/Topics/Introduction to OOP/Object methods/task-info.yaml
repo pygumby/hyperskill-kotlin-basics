@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: submerge
+- text: walk
+- text: takeOff
+- text: goToSpace
+- text: ' approachLanding'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17539#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 20 Sep 2022 16:33:43 UTC
+record: -1
+selected_options:
+- 2
+- 4
+local_check: false

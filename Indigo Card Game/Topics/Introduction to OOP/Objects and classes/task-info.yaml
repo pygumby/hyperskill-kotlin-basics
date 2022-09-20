@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Classes are used to create objects
+- text: 'A class is an instance of some object. '
+- text: Each class has only a single object.
+- text: An object is an instance of some class.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/1973#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 20 Sep 2022 16:40:43 UTC
+record: -1
+selected_options:
+- 0
+- 3
+local_check: false

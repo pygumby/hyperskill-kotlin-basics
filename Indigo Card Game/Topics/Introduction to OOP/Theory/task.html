@@ -1,0 +1,99 @@
+<h2>Introduction to OOP</h2>
+<h5 id="fundamentals" style="text-align: center;">Fundamentals</h5>
+
+<p><strong>Object-oriented programming (OOP)</strong> is a programming paradigm based on the concept of <strong>objects</strong> that interact with each other to perform the program functions. Each object can be characterized by a state and behavior. An object’s current state is represented by its <strong>fields</strong>, and an object’s behavior is represented by its <strong>methods</strong>.</p>
+
+<h5 id="basic-principles-of-oop" style="text-align: center;">Basic principles of OOP</h5>
+
+<p>There are four basic principles of OOP. They are <strong>encapsulation, abstraction, inheritance, </strong>and <strong>polymorphism. </strong></p>
+
+<ul>
+	<li><strong>Encapsulation</strong> ensures bundling (=encapsulating) of data and the methods operating on that data into a single unit. It also refers to the ability of an object to hide the internal structure of its properties and methods.</li>
+	<li><strong>Data abstraction </strong>means that objects should provide the simplified, abstract version of their implementations. The details of their internal work usually aren't necessary for the user, so there's no need to represent them. Abstraction also means that only the most relevant features of the object will be presented.</li>
+	<li><strong>Inheritance </strong>is a mechanism for defining parent-child relationships between classes. Often objects are very similar, so inheritance allows programmers to reuse common logic and at the same time introduce unique concepts into the classes.</li>
+	<li><strong>Polymorphism</strong> literally means "having many forms" and is a concept related to inheritance. It allows programmers to define different implementations for the same method. Thus, the name (or interface) remains the same, but the actions performed may differ. For example, imagine a website that posts three main types of text: news, announcements, and articles. They are somewhat similar in that they all have a headline, some text, and a date. In other ways, they are different: articles have authors, news bulletins have sources, and announcements have a date after which they become irrelevant. It is convenient to write an abstract class with general information for all publications to avoid copying it every time and store what is different in the appropriate derived classes.</li>
+</ul>
+
+<p>These are the key concepts of OOP. Each object-oriented language implements these principles in its own way, but the essence stays the same from language to language.</p>
+
+<h5 id="objects" style="text-align: center;">Objects</h5>
+
+<p>The key notion of OOP is, naturally, an <strong>object. </strong>There are a lot of real-world objects around you: pets, buildings, cars, computers, planes, you name it. Even a computer program may be considered as an object.</p>
+
+<p>It's possible to identify some important characteristics of real-world objects. For instance, for a building, we can consider the number of floors, the year of construction, and the total area. Another example is a plane, which can accommodate a certain number of passengers and transfer you from one city to another. These characteristics constitute the object's <strong>attributes</strong> and <strong>methods</strong>. Attributes characterize the states or data of an object, and methods characterize its behavior.</p>
+
+<p>In OOP, everything can be viewed as an object; a class, for example, is also an object. Programs are made up of different objects that interact with each other. Object state and behavior are usually combined, but this is not always the case. Sometimes we see objects without a state or methods. This, of course, depends on the purpose of the program and the nature of the object.</p>
+
+<p>For example, there is such a thing as an interface. Not a user interface, but a class that only serves to be inherited from in order to guarantee an interface to its descendant classes. It is a stateless class. Structures exist in C++ for historical reasons. Now a structure is also a class, but once upon a time, a structure had only properties and did not have any methods – a type for storing data and nothing else. These are special cases, and they are sometimes useful.</p>
+
+<h5 id="classes" style="text-align: center;">Classes</h5>
+
+<p>Often, many individual objects have similar characteristics. We can say these objects belong to the same <strong>type</strong> or <strong>class</strong>.</p>
+
+<p>A class is another important notion of OOP. A class describes a common structure of similar objects: their fields and methods. It may be considered a template or a blueprint for similar objects. An object is an individual <strong>instance</strong> of a class.</p>
+
+<p>In accordance with the principle of encapsulation mentioned above, any class should be considered as a blackbox, that is, the user of the class should see and use only the interface part of the class, namely, the list of declared properties and methods, and should not delve into the internal implementation.</p>
+
+<p>Let's look at some examples below.</p>
+
+<p><strong>Example 1. The building class</strong></p>
+
+<p style="text-align: center;"> </p>
+
+<p style="text-align: center;"><strong><img alt="" height="172px" src="https://ucarecdn.com/b0bcc13c-0f35-40f9-97bc-e78b56f5a556/" width="172px"></strong></p>
+
+<p> </p>
+
+<p style="text-align: center;"><strong>An abstract building for describing buildings as a type of object (class)</strong></p>
+
+<p style="text-align: left;">Each building has the same attributes:</p>
+
+<ul>
+	<li>Number of floors (an integer number);</li>
+	<li>Area (a floating-point number, square meters);</li>
+	<li>Year of construction (an integer number).</li>
+</ul>
+
+<p style="text-align: left;">Each object of the building type has the same attributes but different values.</p>
+
+<p style="text-align: left;">For instance:</p>
+
+<ul>
+	<li>Building 1: number of floors = 4, area = 2400.16, year of construction = 1966;</li>
+	<li>Building 2: number of floors = 6, area = 3200.54, year of construction = 2001.</li>
+</ul>
+
+<p style="text-align: left;">It's quite difficult to determine the behavior of a building, but this example demonstrates attributes pretty well.</p>
+
+<p style="text-align: left;"><strong>Example 2. The plane class</strong></p>
+
+<p style="text-align: left;">Unlike with a building, it is easy to define the behavior of a plane: it can fly and transfer you between two points on the planet.</p>
+
+<p style="text-align: center;"> </p>
+
+<p style="text-align: center;"><strong><img alt="" height="160px" src="https://ucarecdn.com/e2dd006a-b80c-4761-98c9-5c76f563fec8/" width="160px"></strong></p>
+
+<p style="text-align: center;"><strong>An abstract plane for describing all planes as a type of object (class)</strong></p>
+
+<p>Each plane has the following attributes:</p>
+
+<ul>
+	<li>Name (a string, for example, "Airbus A320" or "Boeing 777");</li>
+	<li>Passenger capacity (an integer number);</li>
+	<li>Standard speed (an integer number);</li>
+	<li>Current coordinates (they are needed to navigate).</li>
+</ul>
+
+<p>Also, it has a behavior (a method): transferring passengers from one geographical point to another. This behavior changes the state of a plane, namely, its current coordinates.</p>
+
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+
+<p>To put it concisely, you should remember the following:</p>
+
+<ul>
+	<li>An object-oriented program consists of a set of interacting objects.</li>
+	<li>According to the principle of encapsulation, the internal implementation of the object is not accessible to the user.</li>
+	<li>An object may have characteristics: fields and methods.</li>
+	<li>An object is an instance of a class (type);</li>
+	<li>A class is a more abstract concept than an individual object; it may be considered a template or blueprint that describes the common structure of a set of similar objects.</li>
+</ul>

@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Member functions can implement an uncommon behavior of an object
+- text: Member functions are the same as methods
+- text: Member functions have access to the fields of the class
+- text: The keyword "this" may represent a member function
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20648#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 21 Sep 2022 18:49:07 UTC
+record: -1
+selected_options:
+- 1
+- 2
+local_check: false

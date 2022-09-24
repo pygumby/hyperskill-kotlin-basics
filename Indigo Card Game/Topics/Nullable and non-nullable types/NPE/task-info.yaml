@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Access to a property of a null object
+- text: Explicit throwing of a NullPointerException
+- text: '!! syntax'
+- text: Bad initializations, for example, in constructors
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7614#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 24 Sep 2022 23:20:44 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

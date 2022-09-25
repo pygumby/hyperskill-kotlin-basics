@@ -57,6 +57,11 @@
             <option value="$PROJECT_DIR$/Topics/Mutable List/Banana" />
             <option value="$PROJECT_DIR$/Topics/Mutable List/New List" />
             <option value="$PROJECT_DIR$/Topics/Mutable List/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Null safety/Avoiding an NPE" />
+            <option value="$PROJECT_DIR$/Topics/Null safety/Check length" />
+            <option value="$PROJECT_DIR$/Topics/Null safety/Elvis throwing exceptions" />
+            <option value="$PROJECT_DIR$/Topics/Null safety/Nullable Boolean" />
+            <option value="$PROJECT_DIR$/Topics/Null safety/Theory" />
             <option value="$PROJECT_DIR$/Topics/Nullable and non-nullable types/Declare null" />
             <option value="$PROJECT_DIR$/Topics/Nullable and non-nullable types/NPE" />
             <option value="$PROJECT_DIR$/Topics/Nullable and non-nullable types/Null or not null" />

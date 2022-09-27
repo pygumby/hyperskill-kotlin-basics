@@ -13,3 +13,4 @@ content:
 - Nullable and non-nullable types
 - Null safety
 - Type system
+- Secondary constructor

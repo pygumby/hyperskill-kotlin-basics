@@ -1,0 +1,124 @@
+<h2>Pseudocode basics</h2>
+<html><body><p>As you already know, pseudocode is the way to show the structure of the algorithm without any pictures or explanations. Now, it is important to find out how our custom pseudocode looks like. </p>
+<p>In this topic, we will agree upon several rules: how to assign a variable, how to print the output, how to create a simple "if-else" branch. We hope that you already know some programming languages, so it should be easy for you to learn how to read our custom pseudocode. And remember: the more you look at the pseudocode, the easier it is to understand it!</p>
+<h5 id="variables-and-assigning" style="text-align: center;">Variables and assigning</h5>
+<p>Note that every line in our algorithm is one action. Actions are performed sequentially.</p>
+<p>Let's start learning our language with basic constructions such as <strong>variables</strong> and <strong>assigning</strong>. Look at the example below:</p>
+<pre><code class="language-python">a = 93</code></pre>
+<p>Here, we create a variable named <code class="language-python">a</code> and assign an integer number <code class="language-python">93</code> to it. The syntax is pretty simple: the name of the variable is on the left, the value is on the right, the assignment operator is in between. Let's look at some other examples:</p>
+<pre><code class="language-python">b = 3.14
+s = "Hello"</code></pre>
+<p>Here, we assign a floating-point number <code class="language-python">3.14</code> to the variable <code class="language-python">b</code> and the string <code class="language-python">Hello</code> to the variable <code class="language-python">s</code>. For simplicity, we don't use types: we don't declare that the variable <code class="language-python">s</code> is a string or the variable <code class="language-python">b</code> is a floating-point number.</p>
+<p>Sometimes, there is a need to initialize several variables together. To do that, we will use the following syntax:</p>
+<pre><code class="language-python">a = 3
+b = "text"
+c = 5.5</code></pre>
+<p>Here, the variable <code class="language-python">a</code> is equal to <code class="language-python">3</code>, the variable <code class="language-python">b</code> is the string <code class="language-python"><span style="color: #000000;">text</span></code>, and the variable <code class="language-python">c</code> is <code class="language-python">5.5</code>.</p>
+<p>If you need to change the value of a variable, you can assign a different value to it:</p>
+<pre><code class="language-python">a = 3
+a = 5</code></pre>
+<p>First, you assign <code class="language-python">3</code> to the variable <code class="language-python">a</code>. The next action assigns <code class="language-python">5</code> to <code class="language-python">a</code>. Hence, after this snippet <code class="language-python">a</code> is equal to <code class="language-python">5</code>.</p>
+<p>Also, you can assign a value of one variable to another variable:</p>
+<pre><code class="language-python">a = 1.5
+b = a</code></pre>
+<p>First, you assign <code class="language-python">1.5</code> to the variable <code class="language-python">a</code>. The next action assigns the value of <code class="language-python">a</code> to the variable <code class="language-python">b</code>.  After this snippet, <code class="language-python">a</code> is equal to <code class="language-python">1.5</code>, and <code class="language-python">b</code> is also <code class="language-python">1.5</code>.</p>
+<h5 id="input-and-output-data" style="text-align: center;">Input and output data</h5>
+<p>In our algorithms, we will typically avoid input and output. When you describe how an algorithm works, it is irrelevant how you get the data and what happens next. However, if we need some external data, we will use this:</p>
+<pre><code class="language-python">a = input() // a is a number
+b = input() // b is a string</code></pre>
+<p>Note that we don't care about the input format. Besides, <code class="language-python">a</code> and <code class="language-python">b</code> can be not only numbers or strings. You can also read a table or a sequence of values. However, make sure to add a comment for the reader.</p>
+<p>Some algorithms require sending data to the screen. We will use the following syntax for this task:</p>
+<pre><code class="language-python">s = "Hello"
+print(s)</code></pre>
+<p>Here, we assign a string <code class="language-python">Hello</code> to the variable <code class="language-python">s</code>. Then, in order to print it, we use the <code class="language-python">print</code> keyword with the variable <code class="language-python">s</code> in parentheses. Quite simple and natural.</p>
+<h5 id="comments" style="text-align: center;">Comments</h5>
+<p>Another important thing is how to write <strong>comments</strong>. A comment is not a part of a program, it's just a text you leave for yourself or other readers. We indicate comments with the <code class="language-python">//</code>. For example:</p>
+<pre><code class="language-python">// this is a comment
+a = 10  // assigning 10 to the variable a
+b = 42  // another assignment</code></pre>
+<p>You can write comments either on a separate line or right after statements.</p>
+<h5 id="arithmetic-operations" style="text-align: center;">Arithmetic operations</h5>
+<p>Almost any program requires processing <strong>numerical data</strong>. For that, we use arithmetic operations. In our pseudocode, they look like this:</p>
+<pre><code class="language-python">a = 7
+b = 2
+
+sum = a + b   // addition, sum is equal to 9
+dif = a - b   // subtraction, dif is equal to 5
+ 
+prod = a * b  // multiplication, prod is equal to 14
+quot = a / b  // division, quot is equal to 3.5
+rem = a mod b   // modulo division, rem is equal to 1
+quot_int = a div b // integer division, quot_int is equal to 3</code></pre>
+<p>To perform an arithmetic operation with two numbers, we write the first one on the left, the second one on the right, and the operator in between. If we want to assign the result to one of the variables, we use the following syntax:</p>
+<pre><code class="language-python">a = 3
+b = 5
+
+a = a + b
+a = a - b  </code></pre>
+<p>The same goes for multiplication and division.</p>
+<h5 id="relational-and-logical-operators" style="text-align: center;">Relational and logical operators</h5>
+<p> You can also use these relational operators in your pseudocode:</p>
+<pre><code class="language-python">a == b // a equal to b
+a != b // a is not equal to b
+a &lt; b  // a is less than b
+a &lt;= b // a is less or equal to b
+a &gt; b  // a is more than b
+a &gt;= b // a is more or equal to b</code></pre>
+<p>All these operations return <code class="language-python">true</code> or <code class="language-python">false</code>. </p>
+<p>In case of a complex condition, you can use logical operators. The <code class="language-python">and</code> returns <code class="language-python">true</code> only if both conditions are true. The <code class="language-python">or</code> returns <code class="language-python">false</code> only if both conditions are false. The <code class="language-python">not</code> just reverses a value. It works this way:</p>
+<pre><code class="language-python">true and true == true
+true and false == false
+false and true == false
+false and false == false
+
+true or true == true
+true or false == true
+false or true == true
+false or false == false
+
+not true == false
+not false == true</code></pre>
+<h5 id="conditional-operators" style="text-align: center;">Conditional operators</h5>
+<p>Another commonly used type of construction is conditional operators. Let's have a look at an example:</p>
+<pre><code class="language-python">a = 3
+
+if a &lt; 5 then
+    print(a)
+</code></pre>
+<p>Here, we create a variable <code class="language-python">a</code> and initialize it with a number <code class="language-python">3</code>. Then, we check if <code class="language-python">a</code> is less than <code class="language-python">5</code> and if it is true, we print it to the screen. The syntax is clear: the <code class="language-python">if</code> keyword is followed by a condition, and the next line gets executed only if the condition is true. If you need to combine several conditions, you can use <code class="language-python">and</code>, <code class="language-python">or</code>, and <code class="language-python">not</code> operators:</p>
+<pre><code class="language-python">a = 10 
+b = 20
+
+if (a == 10 and b == 20) or not (a == 20 and b == 10) then
+    print(a)
+    print(b) </code></pre>
+<p>To avoid ambiguity, we may need to wrap the conditions into parentheses, like in the example above.</p>
+<p>Now, you can put an <code class="language-python">else</code> branch after the <code class="language-python">if</code> condition. This branch gets executed if the condition is <code class="language-python">false</code>. Below you can see an example with the <code class="language-python">if-else</code> construction: </p>
+<pre><code class="language-python">a = -3
+
+if a &gt; 0 then
+    print("positive")
+else:
+    print("negative or zero") // prints this</code></pre>
+<p>Besides, you can use an <code class="language-python">elif</code> branch. The operator <code class="language-python">elif</code> is just an abbreviation for <code class="language-python">else if</code>. The program checks this condition if the first one is false:  </p>
+<pre><code class="language-python">a = -5
+
+if a &gt; 0 then            // false
+    print("positive")
+elif a == 0 then        // checks this 
+    print("zero")
+else:
+    print("negative")  // output</code></pre>
+<p>Here, we check whether <code class="language-python">a</code> is more than 0, then we check whether it equals 0 using the <code class="language-python">elif</code> branch, and finally we execute the last <code class="language-python">else</code> branch. Below you can see the same code without the <code class="language-python">elif</code> branch: </p>
+<pre><code class="language-python">a = -5
+
+if a &gt; 0 then              
+    print("positive")
+else:
+    if a == 0 then          
+        print("zero")
+    else:
+        print("negative") </code></pre>
+<h5 id="summary" style="text-align: center;">Summary</h5>
+<p>In this topic, we started introducing one possible version of pseudocode. We considered such constructions as variables, assigning, arithmetic operations, and others. These basics are already enough to express some algorithmic ideas. However, they don't cover all the necessary concepts that some sophisticated algorithms might require. We will have a closer look at the rest of such constructions in the following topic.</p>
+<p>And now, let's have some practice!</p></body></html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Complex_constructions_in_pseudocode-I_love_democracy" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Complex constructions in pseudocode/I love democracy" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Indigo Card Game" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Complex constructions in pseudocode/I love democracy">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Complex constructions in pseudocode/I love democracy/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Complex constructions in pseudocode/I love democracy/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Complex constructions in pseudocode/I love democracy/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

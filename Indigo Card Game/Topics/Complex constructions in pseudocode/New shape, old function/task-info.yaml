@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: It finds the number of identical elements
+- text: It returns the number of elements in the array
+- text: It sorts the array
+- text: It searches for the maximum value
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20946#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 27 Sep 2022 19:54:44 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: <img alt="" height="280" src="https://ucarecdn.com/a0b82897-be2f-47a0-9017-3f45793af768/-/preview/-/enhance/100/"
+    width="280">
+- text: <img alt="" height="280" src="https://ucarecdn.com/7c216b40-d6ef-450f-bd71-ba9c40c17ec1/-/preview/-/enhance/100/"
+    width="280">
+- text: <img alt="" height="280" src="https://ucarecdn.com/c05b432c-3780-4319-bd32-16bf11ca1b95/-/preview/-/enhance/100/"
+    width="280">
+- text: <img alt="" height="280" src="https://ucarecdn.com/6c4c2e02-8669-4228-b37c-b5605d675b76/-/preview/-/enhance/100/"
+    width="280">
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20941#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 27 Sep 2022 19:50:29 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

@@ -1,0 +1,23 @@
+<h2>New shape, old function</h2>
+<html><body></p>
+<p>The pseudocode below is a remake of some piece of pseudocode in the theory part. Your task is to find out which one, i.e. to determine what it does:</p>
+<pre><code class="java">function punk(l, m):
+if m − l &gt;= 2 then
+    punk(l, (l + m) div 2) 
+    punk((l + m) div 2, m) 
+    funk(l, (l + m) div 2, m)
+
+function funk(l, p, m):
+    for x in [1, p - l]:
+        b[x] = a[l + x - 1]
+    for x in [1, m - p]:
+        c[x] = a[p + x - 1]
+    i = 1 
+    j = 1 
+    for t in [l, m − 1]:
+        if (j == m − p) or ((i &lt; p − l) and (b[i] &lt;= c[j])) then
+            a[t] = b[i] 
+            i = i + 1 
+        else:
+            a[t] = c[j] 
+            j = j + 1</code></pre></body></html>

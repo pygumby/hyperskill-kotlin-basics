@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Pseudocode cannot be launched on the computer
+- text: Pseudocode has lower human interpretability
+- text: Pseudocode avoids important details like memory allocation
+- text: Pseudocode is usually longer than a real program
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15093#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 27 Sep 2022 19:13:56 UTC
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

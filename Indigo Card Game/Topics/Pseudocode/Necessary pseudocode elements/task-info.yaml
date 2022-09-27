@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Declaration of functions
+- text: Loop syntax elements
+- text: Data type declarations
+- text: Importing the needed libraries
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15095#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 27 Sep 2022 19:16:44 UTC
+record: -1
+selected_options:
+- 0
+- 1
+local_check: false

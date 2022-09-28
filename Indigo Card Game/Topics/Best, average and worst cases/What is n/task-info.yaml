@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Running time in seconds
+- text: Memory that the algorithm occupies in bits
+- text: Number of parameters that are fed into the program
+- text: Dimension of input data
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20087#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 28 Sep 2022 20:54:48 UTC
+record: -1
+selected_options:
+- 3
+custom_name: What is n?
+local_check: false

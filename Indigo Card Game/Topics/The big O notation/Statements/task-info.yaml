@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: It can be used to measure the efficiency of algorithms.
+- text: It describes the upper bound of the growth rate of a function and could be
+    thought of as the worst case scenario.
+- text: It depends on an algorithm's implementation details such as programming language
+    and operating system.
+- text: As a rule, an algorithm works even worse than big O shows.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4994#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 28 Sep 2022 20:32:05 UTC
+record: -1
+selected_options:
+- 0
+- 1
+local_check: false

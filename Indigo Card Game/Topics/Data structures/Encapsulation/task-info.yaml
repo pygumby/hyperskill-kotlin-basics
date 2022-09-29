@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: It is the process of combining data and code into a single entity.
+- text: It is a concept in object-oriented programming; it "shows" only essential
+    attributes and "hides" abstract classes or interfaces.
+- text: 'It is a data type that is defined by a set of values and a set of possible
+    external operations from the user''s point of view. '
+- text: It is a way to view the data structure, seeing its functions and general behavior,
+    whereas the data structure itself is the implementation of these functions.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20959#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 29 Sep 2022 19:16:22 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

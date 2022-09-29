@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: It is a synonym for data structure.
+- text: A type that has a specific size but an undefined number of operations.
+- text: A type that is defined by a set of values and a set of possible operations.
+- text: A type that represents a platform-independent way to organize data.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5163#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 29 Sep 2022 19:13:28 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

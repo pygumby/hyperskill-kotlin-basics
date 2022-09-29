@@ -1,0 +1,34 @@
+<h2>Stack</h2>
+<h5 id="stack-essentials" style="text-align: center;">Stack essentials</h5>
+
+<p>A<strong> stack</strong> is an abstract data type where elements are inserted and removed according to the <strong>last-in-first-out (LIFO)</strong> principle. The <strong>push</strong> operation inserts an item at the top of the stack, the <strong>pop</strong> operation removes the top item from the stack. Access to arbitrary elements is restricted. As a rule, a stack also supports the <strong>peek</strong> operation that just returns the current top element. In some cases, it may also be useful to check whether the stack is empty or what is its size, so these operations should also be supported.</p>
+
+<p>The following image demonstrates the basic mechanism:</p>
+
+<p style="text-align: center;"><img alt="" height="269" src="https://ucarecdn.com/7a995b9c-41db-4e90-abed-86897e1d98f0/" width="287"></p>
+
+<p>Here, element<strong> 1</strong> was added first and will be removed last, while element <strong>5</strong> was added last and it's the first to be removed.</p>
+
+<p>The underlying data structure to implement a stack can be an array or a linked list with restricted access to its elements.</p>
+
+<h5 id="stacks-in-real-life-and-programming" style="text-align: center;">Stacks in real-life and programming</h5>
+
+<p>The simplest real-life example is a stack of books. Only a book placed at the top can be removed, and a new book is always added to the top of the stack.</p>
+
+<p> </p>
+
+<p style="text-align: center;"><img alt="" height="201" src="https://ucarecdn.com/d4e6eb22-3e97-4f9e-ad40-f6f8a8738223/" width="712"></p>
+
+<p>You can also imagine it as a stack of plates or a pistol magazine. Also, you might have seen the <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://s3.amazonaws.com/media.eremedia.com/uploads/2012/08/24111405/stackoverflow-logo-700x467.png" rel="nofollow noopener noreferrer" title="Link: https://s3.amazonaws.com/media.eremedia.com/uploads/2012/08/24111405/stackoverflow-logo-700x467.png">StackOverflow logo</a> before.</p>
+
+<p>In programming, stacks are used to:</p>
+
+<ul>
+	<li>evaluate arithmetic expressions;</li>
+	<li>store arguments of functions and result of the functions' calls;</li>
+	<li>reverse the order of elements.</li>
+</ul>
+
+<h5 id="the-efficiency-of-stacks" style="text-align: center;">The efficiency of stacks</h5>
+
+<p>If you use a linked list or a classic array (non-resizable) as an internal structure, both <strong>push</strong> and <strong>pop</strong> operations always take constant O(1) time. It does not depend on how many elements there are in the stack, so the operations are very quick.</p>

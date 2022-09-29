@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Plates stacked over one another.
+- text: A task distribution according to the priority in a task management system.
+- text: A huge queue outside an Apple store.
+- text: A hospital service by an appointment.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5292#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 29 Sep 2022 19:53:39 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

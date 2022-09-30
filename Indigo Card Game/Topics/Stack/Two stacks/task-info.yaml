@@ -2,9 +2,9 @@ type: choice
 is_multiple_choice: false
 options:
 - text: b c a
-- text: c a b
-- text: a b c
 - text: b a c
+- text: a b c
+- text: c a b
 files:
 - name: src/Main.kt
   visible: true

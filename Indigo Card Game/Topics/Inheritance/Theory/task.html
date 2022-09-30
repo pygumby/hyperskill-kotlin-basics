@@ -1,0 +1,38 @@
+<h2>Inheritance</h2>
+<html><body><p>Software development is strongly associated with real-world entities. However, we should consider not only the entities themselves but also the interactions between them. One of the ways it is presented in object-oriented programming is <strong>inheritance</strong>.</p>
+<p>In this topic, we will talk about this technique and see how it can be useful in your code.</p>
+<h5 id="what-is-inheritance" style="text-align: center;">What is inheritance?</h5>
+<p>We start making our program with basic objects and methods. Imagine a messenger application. The main objects in messengers are chats, so we start ours with the <code class="java">CHAT</code> class. Then, we decide to break it into three categories:</p>
+<ul>
+<li>direct messages;</li>
+<li>group chat;</li>
+<li>saved messages only for yourself.</li>
+</ul>
+<p>If we want to make more types of chats, do we need to write the code from scratch for each one? The answer is no! With the help of inheritance, we can reuse the code we already have.</p>
+<p><strong>Inheritance</strong> is a relation between entities that we interpret as <em>"is a"</em> or <em>"is a kind of"</em> relation. In the case of programming methods and attributes, it means that a child entity has every feature of the parent entity. However, we can also change inherited features or define new ones for child classes.</p>
+<p>Here are some examples of inheritance:</p>
+<ul>
+<li>
+<p>A swan <em>is a </em>bird. A swan can do everything that a typical bird can do, but it has an additional feature: it can swim.</p>
+</li>
+<li>
+<p>A Python developer <em>is</em> <em>a</em> programmer. They, like all programmers, develop algorithms and computer programs based on special mathematical models, but they do it using a specific language, namely Python.</p>
+</li>
+<li>A laptop <em>is a </em>computer. It has processor units, memory, keyboard, and all the stuff computers typically have, but it is also portable.</li>
+</ul>
+<p style="text-align: center;"><img alt="" height="366" src="https://ucarecdn.com/10d415c0-718e-4e10-ba52-ec7e1c5553cc/" width="611"/></p>
+<h5 id="inheritance-modeling" style="text-align: center;">Inheritance modeling</h5>
+<p>Let's stick to the example with a chat and see how we can model the classes of our program. </p>
+<p>We can start by moving all the shared methods and attributes to the base <code class="java">CHAT</code> class. For the sake of simplicity, we define only one attribute and only one method:</p>
+<p style="text-align: center;"><img alt="" height="199" src="https://ucarecdn.com/dedf3f05-e4f0-4672-9019-3d7d61f584ca/" width="423"/></p>
+<p> </p>
+<p> To make our base class more useful, we can add some more features like <code class="java">SEND_FILE</code>, <code class="java">EDIT_MESSAGE</code>, <code class="java">POSTPONE_MESSAGE</code>, and others.</p>
+<p> </p>
+<p>Next, we draw child classes and methods that need to work properly:</p>
+<p style="text-align: center;"><img alt="" height="322" src="https://ucarecdn.com/c31af8cc-2f7f-46e9-8cde-d462a0a40350/" width="850"/></p>
+<p>Let's take a closer look at the diagram and figure out what benefits inheritance gives us. First, we don't need to implement any other methods to make a new class <code class="java">SEND_MESSAGE</code>: we add only one participant there, and<span style="color: #66cc66;"> </span>it can work right out of the box! For the other two classes, we implement only some new methods like <code class="java">FETCH_MESSAGES</code> to get updates from other participants and <code class="java">ADD_PARTICIPANT</code> to add a new person to a group chat.</p>
+<p> </p>
+<p>You may notice that we can even inherit the <code class="java">GROUP_CHAT</code> from the <code class="java">DIRECT_MESSAGES</code> to reuse its methods. It makes sense because there is not much difference if two, three, or a hundred persons communicate in a chat, but the<span style="color: #66cc66;"> </span>hierarchy is fine, too. </p>
+<p> </p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Inheritance is a very flexible and useful mechanism in software development. It allows us to simplify and speed up the development process by reusing the code we've already written. As you have learned, it also reflects the dependency between the parent and child classes that we can express as <em>"is a kind of"</em> relation.</p></body></html>

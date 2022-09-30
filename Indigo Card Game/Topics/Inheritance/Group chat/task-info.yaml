@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: <code>SEND_MESSAGE</code>
+- text: <code>DELETE_APP</code>
+- text: <code>ADD_PARTICIPANT</code>
+- text: <code>ADD_CHAT</code>
+- text: <code>FIND_CHAT</code>
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17973#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 30 Sep 2022 11:02:41 UTC
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

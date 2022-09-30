@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: It reflects the relations between real-world objects
+- text: It's the only way to add new methods to a class
+- text: It allows to reuse the code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9847#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 30 Sep 2022 11:04:27 UTC
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

@@ -1,0 +1,11 @@
+open class Car(val model: String, val speed: Int)
+
+class Bus(val typeOfBus: String, model: String, speed: Int) : Car(model, speed) {
+    fun printInfo() =
+        println("Type of bus: ${this.typeOfBus}, model: ${this.model}, speed: ${this.speed}")
+}
+
+fun main() {
+    val bus = Bus("Personal", "N4", 130)
+    bus.printInfo()
+}

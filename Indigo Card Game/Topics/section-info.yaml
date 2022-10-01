@@ -27,3 +27,4 @@ content:
 - Polymorphism
 - Overriding functions
 - toString()
+- Data class

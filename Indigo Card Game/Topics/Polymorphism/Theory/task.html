@@ -1,0 +1,28 @@
+<h2>Polymorphism</h2>
+<html><body><p>With the object-oriented paradigm, it's as if we are working with real-life objects in our code. We choose simple names for classes and methods, so anyone who speaks English can catch up with what's actually happening in the code. Sometimes methods just slightly differ from one another but do we have to create myriads of specializations for our objects with methods <code class="java">DO_SMTH_WITH_OBJECT_A</code>, <code class="java">DO_SMTH_WITH_OBJECT_B</code>, etc...? Of course, we should distinguish them, but with the help of polymorphism, we can do it rather smoothly.</p>
+<h5 id="polymorphism">Polymorphism</h5>
+<p><strong>Polymorphism</strong> is the ability of an object or its methods to take on many forms depending on its type and the parameters of this or that method. This definition may seem a little vague, so let's look closer at what polymorphism is in practice.</p>
+<p>Assume you're programming robots that move boxes in a smart warehouse. For now, we only have two types of boxes: <code class="java">USUAL_BOX</code> and <code class="java">FRAGILE_BOX</code> but it doesn't mean that there won't be other different types of boxes in the future. To make working with robots easier, we create only one method <code class="java">MOVE</code>:</p>
+<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/99709817-7b0b-4517-a39a-862ddef48e65/"/></p>
+<p></p><div class="alert alert-primary">Not all languages support this kind of polymorphism. For example, you can define such methods in Java or Scala, but not in Python or JavaScript. </div><p></p>
+<p>Now, when we order a robot to move something, it checks the type of a box and adjusts its actions accordingly. It slows down when moving something fragile compared to a regular box and maybe it places this fragile box onto the designated spot for fragile boxes. The mechanism of defining several methods with the same name but with different parameters is known as <strong>overloading</strong>.</p>
+<p>You can see that depending on the type of a box a robot can perform different tasks. We can call it a <strong>polymorphic method</strong>. Let's go a step further and look at how we can create polymorphic classes.</p>
+<h5 id="subtyping">Subtyping</h5>
+<p>Our warehouse may have high ceilings, so it's possible to make a big rack with boxes on it. Robots can reach a certain height, but we cannot expect them to reach the highest shelves. For this kind of task we can create the <code class="java">DRONE</code> subclass of robots.</p>
+<p style="text-align: center;"><img alt="" height="306" src="https://ucarecdn.com/01ce3be7-7755-44b6-8fd7-334a4e391bcd/" width="511"/></p>
+<p>Basically, these drones do the same thing as the robots that run on the ground: they <code class="java">MOVE</code> all kinds of boxes. However, we know that they do it differently by moving in the air. We can say that our robots take various forms, so we have a polymorphic object that may be a usual robot, or a drone, and how they perform the task depends on their type.</p>
+<p>The technique to redefine methods of the parent class in its subclasses is called <strong>overriding</strong>. We override methods to extend or change their execution flow. In our example, we change the navigation method of robots to correctly control the drones.</p>
+<h5 id="duck-typing">Duck typing</h5>
+<p>Another way to make polymorphic objects is called duck typing. <strong>Duck typing</strong> term comes from the <strong>duck test</strong> reasoning "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably <em>is</em> a duck."</p>
+<p style="text-align: center;"><img alt="" height="329" src="https://ucarecdn.com/ab7db87c-cdbb-4fa4-b96a-dd279efeb3a7/" width="309"/></p>
+<p>In programming, if an object <em>A</em> has the same methods or attributes as an object <em>B</em>, we can say that the object <em>A</em> is a form of <em>B</em>. In our example if we encounter an object with the method <code class="java">MOVE</code>, we can use it to move boxes in a warehouse. Although this form of polymorphism is weak because all we know is that an object has a method with the same signature.</p>
+<p>Imagine that we make two new kinds of robots <code class="java">HEAVYLIFTER</code> and <code class="java">SCAVENGER</code> with the method <code class="java">MOVE</code>. We can use a <code class="java">HEAVYLIFTER</code> as a usual robot, its behavior doesn't differ much. However, a <code class="java">SCAVENGER</code> has an algorithm that moves boxes only to the waste container, so if we try to use it, we shouldn't be surprised to find our boxes in the garbage. No one is safe from such mistakes, so don't forget to check the work of your code with tests, if you prefer to use duck typing.</p>
+<p></p><div class="alert alert-primary">We can use duck typing in languages like Python or JavaScript, but not in Java or Scala.</div><p></p>
+<h5 id="conclusion">Conclusion</h5>
+<p>We can use polymorphism to define how we want our objects to behave depending on their type or the parameters of their methods. We can:</p>
+<ul>
+<li>overload methods with different parameters;</li>
+<li>override methods in subclasses;</li>
+<li>use duck typing.</li>
+</ul>
+<p>Not all of these techniques are possible to use in your programming language, so you should check the information about it in other topics or refer to the documentation.</p></body></html>

@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Using an object as the subset of its features similar to other objects
+- text: Make objects behave similarly to other objects
+- text: Casting objects of one type to another type
+- text: Creating subclasses of a parent class
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10030#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 01 Oct 2022 11:14:07 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

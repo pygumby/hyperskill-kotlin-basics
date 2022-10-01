@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: To reset values of an object
+- text: It's the only way to change an object
+- text: To control access to object attributes
+- text: To operate on the object rather than on its data
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8521#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 01 Oct 2022 17:47:48 UTC
+record: -1
+selected_options:
+- 2
+- 3
+local_check: false

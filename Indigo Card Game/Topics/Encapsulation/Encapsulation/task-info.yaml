@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Using data access methods
+- text: Restricting direct access to inner components
+- text: Preventing an object from being changed
+- text: Replacing attributes with methods
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8520#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 01 Oct 2022 17:54:46 UTC
+record: -1
+selected_options:
+- 0
+- 1
+local_check: false

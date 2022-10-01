@@ -1,0 +1,33 @@
+<h2>Encapsulation</h2>
+<html><body><p>Once you enter a software development career, you will most likely start sharing your code with other programmers. Sometimes, being unaware of your intentions, they might use the code in unexpected ways. It could be such a shame when you discover that they've changed the variables and called the methods from inner implementation that you were hoping they wouldn't use. Here comes the question: can your code be more precise about what parts of it are for public access and what are not? Most programming languages that implement the object-oriented paradigm can provide you with those tools. The common name for them is encapsulation.</p>
+<h5 id="encapsulation">Encapsulation</h5>
+<p><strong>Encapsulation</strong> refers to bundling data with the methods operating with it while restricting direct access to some components.</p>
+<p>When we're programming using an object-oriented language, we are in control of all modifications. The object doesn't change by itself; it always needs a reason to do so, which is usually some action that you're performing on it. To understand it better, you can think of the wall color. What is more effective, to rewrite this attribute manually, or to call the <code class="java"><span style="background-color: #f3f4f6; font-size: 14.4px;">paintTheWall()</span></code> method? The second way looks more clear as the wall can't change its color by itself!</p>
+<p>We recommend you to be very careful, as direct access to the inner data of an object is similar to moving gears in a clock mechanism to set the time: you can break it easily! Instead of getting inside, you can use the knobs the manufacturer has designed for you. As you can see, it is better to hide the details crucial for operation from a common user.</p>
+<p style="text-align: center;"><img alt="" height="239" src="https://ucarecdn.com/b54bffb4-e5a8-4c7f-b76e-0f2176f14647/-/crop/1874x770/32,317/-/preview/" width="583"/></p>
+<p> </p>
+<p></p><div class="alert alert-primary"> Like people who make clocks, we need to hide the inner implementation of an object. We need a mechanism we can use to change the code without affecting the users. The methods of an object will stay stable while the attributes may change. </div>
+<p> </p>
+<p>It seems like it's a hard task to change an object, but maybe there is a simple solution for this routine.</p>
+<h5 id="getters-and-setters">Getters and setters</h5>
+<p>Being a programmer is like being an engineer. You can create a class with some data that no one can change, while it is also possible to provide it with some safety mechanism prohibiting any modification. For the data that should never change from the outside, let's not allow any ways at all. It seems reasonable to keep the user away from dangerous and unpredictable operations.</p>
+<p>The easiest way to do so, which is also a common practice in many object-oriented languages, is to create methods to get and set data. These methods are known as <strong>getters</strong> and <strong>setters</strong>. You might think it's needless, as with them, we can still arbitrarily change an object, but it's not true. Using setters, we can declare that there should be an actor to change an object. Moreover, with the <code class="java">set()</code> method, we can check if the new data is correct and doesn't break the integrity of the object. In case it does, we can prevent the operation causing that.</p>
+<p>As we said, most but not all languages use setters. What are the other methods to change an object?</p>
+<h5 id="domain-specific-methods">Domain-specific methods</h5>
+<p>Assume that you're working on the <code class="java">Clock</code> class. What are the operations that you can provide a user with to change the time? It can be <code class="java"><span style="background-color: #f3f4f6; font-size: 14.4px;">setTime()</span></code>, but if the user wants to change the time more granularly, you can create such methods as <code class="java">addHour()</code>, <code class="java">addMinute()</code>, <code class="java">addSeconds()</code>. Now we can emulate the real action for our domain of knowledge.</p>
+<p>Users may also want to adjust the timezone without setting the minutes and seconds. If you're following the main idea, you can propose a solution which is creating a method <code class="java">changeTimezone()</code>. It's more clear for a user how to do it now. A user passes a timezone or even a city, and the method does the rest.</p>
+<p style="text-align: center;"><img alt="" height="360" src="https://ucarecdn.com/e5ade60d-1110-458e-af8e-91ebb71f077c/-/crop/2146x1049/0,294/-/preview/" width="737"/></p>
+<p>Now you know how to control the changes of the data through methods, but what about protecting the attributes of our classes?</p>
+<h5 id="protecting-data">Protecting data</h5>
+<p>The problem of protecting data doesn't have a universal solution for all the programming languages. Some of them give you keywords to restrict access to the attributes of a class. Others can have name conventions or even name mangling. You should read the documentation of your language to figure out how to do it properly.</p>
+<p>Some languages are using <strong>keywords</strong> to set the visibility for the fields of a class. With their help, you can choose the exact scope where you can access the variable. The other method is <strong>name conventions</strong>. For example, you can set up a rule that all the attributes starting with a capital letter are public, but all the variables starting with a lowercase letter are accessible only in the inner scope.</p>
+<p> </p>
+<p></p><div class="alert alert-primary"> Public access means that an attribute can be accessed directly by name. </div>
+<p> </p>
+<p><strong>Name mangling</strong> is a principle of changing a field name for external access. Assume that your class has an attribute <code class="java">minutes</code>, and for all the other scopes out of this class, this attribute will be available as <code class="java">do_not_use_these_minutes</code>. It doesn't restrict access to an attribute but shows a red flag to do so.</p>
+<p> </p>
+<p></p><div class="alert alert-primary"> If you want to give read-only access to the field, you should use a getter. </div>
+<p> </p>
+<h5 id="conclusion">Conclusion</h5>
+<p>The object-oriented way implies interacting with objects through the methods. You can use getters, setters, and domain-specific methods to provide access to the attributes. You can control the scope of visibility of all the attributes by applying the rules for your language.</p>
+<p>We need these instruments to hide the inner implementation of an object and to make it easier to maintain.</p></body></html>

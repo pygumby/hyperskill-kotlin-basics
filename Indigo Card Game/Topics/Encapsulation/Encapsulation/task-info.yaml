@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: Using data access methods
-- text: Restricting direct access to inner components
 - text: Preventing an object from being changed
+- text: Restricting direct access to inner components
+- text: Using data access methods
 - text: Replacing attributes with methods
 files:
 - name: src/Main.kt

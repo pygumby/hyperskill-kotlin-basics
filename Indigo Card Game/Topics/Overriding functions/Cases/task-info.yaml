@@ -7,7 +7,7 @@ files:
     length: 3
     placeholder_text: type your solution here
     initial_state:
-      length: 3
+      length: 23
       offset: 0
     initialized_from_dependency: false
     selected: true

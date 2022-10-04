@@ -23,6 +23,8 @@ enum class Suit(val symbol: String) {
     DIAMONDS("♦"),
 }
 
-class Card(private val rank: Rank, private val suit: Suit) {
+class Card(val rank: Rank, val suit: Suit) {
+    fun hasSameSuitOrRank(card: Card) = this.rank == card.rank || this.suit == card.suit
+
     override fun toString(): String = "${rank.symbol}${suit.symbol}"
 }

@@ -1,13 +1,17 @@
 package indigo
 
-abstract class Player(private val deck: Deck) {
+abstract class Player {
+    var cardsWon = setOf<Card>()
+        private set
+
     protected var cardsOnHand = ArrayDeque<Card>()
-        get() {
-            if (field.isEmpty()) field.addAll(this.deck.draw(6))
-            return field
-        }
 
     protected abstract fun pickCardIndex(): Int
+    protected abstract fun printWinCardsMessage()
+
+    fun hasCardsOnHand() = !this.cardsOnHand.isEmpty()
+
+    fun drawCards(n: Int, deck: Deck) = this.cardsOnHand.addAll(deck.drawCards(n))
 
     fun playTurn(): Card {
         val chosenCardIndex = this.pickCardIndex()
@@ -15,9 +19,14 @@ abstract class Player(private val deck: Deck) {
         this.cardsOnHand.removeAt(chosenCardIndex)
         return chosenCard
     }
+
+    fun winCards(cards: Collection<Card>, silently: Boolean = false) {
+        this.cardsWon += cards
+        if (!silently) this.printWinCardsMessage()
+    }
 }
 
-class HumanPlayer(deck: Deck) : Player(deck) {
+class HumanPlayer : Player() {
     private fun promptCardIndex(): Int {
         println("Choose a card to play (1-${this.cardsOnHand.size}):")
 
@@ -39,12 +48,20 @@ class HumanPlayer(deck: Deck) : Player(deck) {
         println("Cards in hand: ${this.cardsOnHand.mapIndexed() { i, card -> "${i + 1})$card" }.joinToString(" ")}")
         return this.promptCardIndex()
     }
+
+    override fun printWinCardsMessage() {
+        println("Player wins cards")
+    }
 }
 
-class ComputerPlayer(deck: Deck) : Player(deck) {
+class ComputerPlayer : Player() {
     override fun pickCardIndex(): Int {
         val chosenCardIndex = (0 until this.cardsOnHand.size).random()
         println("Computer plays ${this.cardsOnHand[chosenCardIndex]}")
         return chosenCardIndex
+    }
+
+    override fun printWinCardsMessage() {
+        println("Computer wins cards")
     }
 }

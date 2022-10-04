@@ -4,21 +4,21 @@ class Deck {
     private var cards = listOf<Card>()
 
     init {
-        this.reset()
-        this.shuffle()
+        this.resetCards()
+        this.shuffleCards()
     }
 
-    private fun reset() {
+    private fun resetCards() {
         this.cards = Rank.values()
             .map { rank -> Suit.values().map { Card(rank, it) } }
             .flatten()
     }
 
-    private fun shuffle() {
+    private fun shuffleCards() {
         this.cards = this.cards.shuffled()
     }
 
-    fun draw(n: Int): List<Card> {
+    fun drawCards(n: Int): List<Card> {
         return when (n) {
             !in 1 .. 52 -> throw Exception("Invalid number of cards.")
             !in 1 .. this.cards.size -> throw Exception("The remaining cards are insufficient to meet the request.")
@@ -33,4 +33,6 @@ class Deck {
             }
         }
     }
+
+    fun isEmpty() = this.cards.isEmpty()
 }

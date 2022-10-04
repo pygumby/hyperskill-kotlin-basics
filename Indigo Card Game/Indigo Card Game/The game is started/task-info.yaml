@@ -475,9 +475,12 @@ files:
 - name: src/indigo/Card.kt
   visible: true
   learner_created: true
+- name: src/indigo/Player.kt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/16510#comment
 status: Solved
 feedback:
   message: Congratulations!
-  time: Tue, 04 Oct 2022 18:44:27 UTC
+  time: Tue, 04 Oct 2022 20:21:46 UTC
 record: 3

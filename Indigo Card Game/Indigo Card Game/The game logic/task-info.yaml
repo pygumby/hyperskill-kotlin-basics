@@ -655,7 +655,8 @@ files:
 
         position = checkOutput(output.lowercase(), position, "Cards in hand:".lowercase())
         if ( position  == -1 ) return ErrorData(false, "Wrong cards in hand message.")
-        var cardsInHand = output.substring(position).lines().map { it.trim() }.first { it != "" }
+        val cardsInHand = output.substring(position).lines().map { it.trim() }.firstOrNull() { it != "" }
+            ?: return ErrorData(false, "Wrong cards in hand message.")
         if (!checkOIfValidCardsInHand(cardsInHand, numOfCards)) return ErrorData(false, "Wrong cards in hand message.")
         val listCardsInHand = cardsInHand.split(" ").map { it.substring(2) }
         var strCardsInHand = ""
@@ -699,6 +700,216 @@ files:
         return count
     }
   learner_created: false
+- name: src/indigo/Card.kt
+  visible: true
+  text: |
+    package indigo
+
+    enum class Rank(val symbol: String) {
+        ACE("A"),
+        TWO("2"),
+        THREE("3"),
+        FOUR("4"),
+        FIVE("5"),
+        SIX("6"),
+        SEVEN("7"),
+        EIGHT("8"),
+        NINE("9"),
+        TEN("10"),
+        JACK("J"),
+        QUEEN("Q"),
+        KING("K"),
+    }
+
+    enum class Suit(val symbol: String) {
+        HEARTS("♥"),
+        CLUBS("♣"),
+        SPADES("♠"),
+        DIAMONDS("♦"),
+    }
+
+    class Card(private val rank: Rank, private val suit: Suit) {
+        override fun toString(): String = "${rank.symbol}${suit.symbol}"
+    }
+  learner_created: true
+- name: src/indigo/Deck.kt
+  visible: true
+  text: |
+    package indigo
+
+    class Deck {
+        private var cards = listOf<Card>()
+
+        init {
+            this.reset()
+            this.shuffle()
+        }
+
+        private fun reset() {
+            this.cards = Rank.values()
+                .map { rank -> Suit.values().map { Card(rank, it) } }
+                .flatten()
+        }
+
+        private fun shuffle() {
+            this.cards = this.cards.shuffled()
+        }
+
+        fun draw(n: Int): List<Card> {
+            return when (n) {
+                !in 1 .. 52 -> throw Exception("Invalid number of cards.")
+                !in 1 .. this.cards.size -> throw Exception("The remaining cards are insufficient to meet the request.")
+                else -> {
+                    val drawnCards = this.cards.slice(0 until n)
+                    if (n <= this.cards.lastIndex) {
+                        this.cards = this.cards.slice(n .. this.cards.lastIndex)
+                    } else {
+                        this.cards = emptyList<Card>()
+                    }
+                    drawnCards
+                }
+            }
+        }
+    }
+  learner_created: true
+- name: src/indigo/Game.kt
+  visible: true
+  text: |
+    package indigo
+
+    import kotlin.system.exitProcess
+
+    class Game() {
+        private val deck = Deck()
+        private val stack = ArrayDeque<Card>()
+        private val playersHand = ArrayDeque<Card>()
+        private val computersHand = ArrayDeque<Card>()
+
+        private var playersTurn = true
+
+        private fun promptPlayFirst() {
+            println("Play first?")
+            val playFirst = readln().lowercase()
+
+            return if (playFirst == "yes" || playFirst == "no") {
+                this.playersTurn = playFirst == "yes"
+            } else {
+                promptPlayFirst()
+            }
+        }
+
+        private fun promptCardNumber(max: Int): Int {
+            println("Choose a card to play (1-$max):")
+
+            val userInput = readln()
+
+            if (userInput == "exit") {
+                println("Game Over")
+                exitProcess(0)
+            }
+
+            return when (val n = userInput.toIntOrNull()) {
+                null -> promptCardNumber(max)
+                in 1..max -> n
+                else -> promptCardNumber(max)
+            }
+        }
+
+        private fun runGameLoop() {
+            println("${this.stack.size} cards on the table, and the top card is ${this.stack.last()}")
+            if (this.stack.size == 52) return println("Game Over")
+
+            if (this.playersTurn) {
+                if (this.playersHand.isEmpty()) this.playersHand.addAll(this.deck.draw(6))
+
+                val playersHandFormatted = this.playersHand.mapIndexed() { i, card -> "${i + 1})$card" }
+                println("Cards in hand: ${playersHandFormatted.joinToString(" ")}")
+                val chosenCardIndex = this.promptCardNumber(this.playersHand.size) - 1
+                this.stack.addLast(this.playersHand[chosenCardIndex])
+                this.playersHand.removeAt(chosenCardIndex)
+
+                this.playersTurn = false
+            } else {
+                if (this.computersHand.isEmpty()) this.computersHand.addAll(this.deck.draw(6))
+
+                val chosenCardIndex = (0 until this.computersHand.size).random()
+                println("Computer plays ${this.computersHand[chosenCardIndex]}")
+                this.stack.addLast(this.computersHand[chosenCardIndex])
+                this.computersHand.removeAt(chosenCardIndex)
+
+                this.playersTurn = true
+            }
+
+            println()
+            runGameLoop()
+        }
+
+        fun start() {
+            println("Indigo Card Game")
+            promptPlayFirst()
+
+            this.stack.addAll(this.deck.draw(4))
+            println("Initial cards on the table: ${this.stack.joinToString(" ")}")
+
+            println()
+            runGameLoop()
+        }
+    }
+  learner_created: true
+- name: src/indigo/Player.kt
+  visible: true
+  text: |-
+    package indigo
+
+    abstract class Player(private val deck: Deck) {
+        protected var cardsOnHand = ArrayDeque<Card>()
+            get() {
+                if (field.isEmpty()) field.addAll(this.deck.draw(6))
+                return field
+            }
+
+        protected abstract fun pickCardIndex(): Int
+
+        fun playTurn(): Card {
+            val chosenCardIndex = this.pickCardIndex()
+            val chosenCard = this.cardsOnHand[chosenCardIndex]
+            this.cardsOnHand.removeAt(chosenCardIndex)
+            return chosenCard
+        }
+    }
+
+    class HumanPlayer(deck: Deck) : Player(deck) {
+        private fun promptCardIndex(): Int {
+            println("Choose a card to play (1-${this.cardsOnHand.size}):")
+
+            val userInput = readln()
+            if (userInput == "exit") {
+                println("Game Over")
+                kotlin.system.exitProcess(0)
+            }
+
+            val userInputInt = userInput.toIntOrNull()
+            return if (userInputInt == null || userInputInt !in 1..this.cardsOnHand.size) {
+                this.promptCardIndex()
+            } else {
+                userInputInt - 1
+            }
+        }
+
+        override fun pickCardIndex(): Int {
+            println("Cards in hand: ${this.cardsOnHand.mapIndexed() { i, card -> "${i + 1})$card" }.joinToString(" ")}")
+            return this.promptCardIndex()
+        }
+    }
+
+    class ComputerPlayer(deck: Deck) : Player(deck) {
+        override fun pickCardIndex(): Int {
+            val chosenCardIndex = (0 until this.cardsOnHand.size).random()
+            println("Computer plays ${this.cardsOnHand[chosenCardIndex]}")
+            return chosenCardIndex
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/16511#comment
 status: Unchecked
-record: -1
+record: 4

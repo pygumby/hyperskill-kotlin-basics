@@ -1,2 +1,2 @@
 # hyperskill-kotlin-basics
-Me following along JetBrains's Hyperskill track "Kotlin Basics"
+Me following along JetBrains' Hyperskill track "Kotlin Basics"

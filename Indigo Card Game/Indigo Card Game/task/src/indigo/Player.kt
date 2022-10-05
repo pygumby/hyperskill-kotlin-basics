@@ -4,10 +4,7 @@ abstract class Player {
     var cardsWon = setOf<Card>()
         private set
 
-    protected var cardsOnHand = ArrayDeque<Card>()
-
-    protected abstract fun pickCardIndex(): Int
-    protected abstract fun printWinCardsMessage()
+    protected val cardsOnHand = ArrayDeque<Card>()
 
     fun hasCardsOnHand() = !this.cardsOnHand.isEmpty()
 
@@ -24,6 +21,9 @@ abstract class Player {
         this.cardsWon += cards
         if (!silently) this.printWinCardsMessage()
     }
+
+    protected abstract fun pickCardIndex(): Int
+    protected abstract fun printWinCardsMessage()
 }
 
 class HumanPlayer : Player() {

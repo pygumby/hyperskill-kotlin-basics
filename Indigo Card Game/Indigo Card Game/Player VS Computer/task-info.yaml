@@ -618,6 +618,257 @@ files:
 
 
   learner_created: false
+- name: src/indigo/Player.kt
+  visible: true
+  text: |
+    package indigo
+
+    abstract class Player {
+        var cardsWon = setOf<Card>()
+            private set
+
+        protected val cardsOnHand = ArrayDeque<Card>()
+
+        fun hasCardsOnHand() = !this.cardsOnHand.isEmpty()
+
+        fun drawCards(n: Int, deck: Deck) = this.cardsOnHand.addAll(deck.drawCards(n))
+
+        fun winCards(cards: Collection<Card>, silently: Boolean = false) {
+            this.cardsWon += cards
+            if (!silently) this.printWinCardsMessage()
+        }
+
+        fun playCard(cardOnTop: Card?): Card {
+            val chosenCardIndex = this.chooseCardToPlay(cardOnTop)
+            val chosenCard = this.cardsOnHand[chosenCardIndex]
+            this.cardsOnHand.removeAt(chosenCardIndex)
+            return chosenCard
+        }
+
+        protected abstract fun chooseCardToPlay(cardOnTop: Card?): Int
+        protected abstract fun printWinCardsMessage()
+    }
+
+    class HumanPlayer : Player() {
+        override fun chooseCardToPlay(cardOnTop: Card?): Int {
+            println("Cards in hand: ${this.cardsOnHand.mapIndexed() { i, card -> "${i + 1})$card" }.joinToString(" ")}")
+            return this.promptCardIndex()
+        }
+
+        override fun printWinCardsMessage() {
+            println("Player wins cards")
+        }
+
+        private fun promptCardIndex(): Int {
+            println("Choose a card to play (1-${this.cardsOnHand.size}):")
+
+            val userInput = readln()
+            if (userInput == "exit") {
+                println("Game Over")
+                kotlin.system.exitProcess(0)
+            }
+
+            val userInputInt = userInput.toIntOrNull()
+            return if (userInputInt == null || userInputInt !in 1..this.cardsOnHand.size) {
+                this.promptCardIndex()
+            } else {
+                userInputInt - 1
+            }
+        }
+    }
+
+    class ComputerPlayer(private val strategy: Strategy) : Player() {
+        override fun chooseCardToPlay(cardOnTop: Card?): Int {
+            println(this.cardsOnHand.joinToString(" "))
+            val chosenCardIndex = this.strategy.getBestCard(this.cardsOnHand, cardOnTop)
+            println("Computer plays ${this.cardsOnHand[chosenCardIndex]}")
+            return chosenCardIndex
+        }
+
+        override fun printWinCardsMessage() {
+            println("Computer wins cards")
+        }
+    }
+  learner_created: true
+- name: src/indigo/Card.kt
+  visible: true
+  text: |
+    package indigo
+
+    enum class Rank(val symbol: String) {
+        ACE("A"),
+        TWO("2"),
+        THREE("3"),
+        FOUR("4"),
+        FIVE("5"),
+        SIX("6"),
+        SEVEN("7"),
+        EIGHT("8"),
+        NINE("9"),
+        TEN("10"),
+        JACK("J"),
+        QUEEN("Q"),
+        KING("K"),
+    }
+
+    enum class Suit(val symbol: String) {
+        HEARTS("♥"),
+        CLUBS("♣"),
+        SPADES("♠"),
+        DIAMONDS("♦"),
+    }
+
+    class Card(val rank: Rank, val suit: Suit) {
+        fun hasSameRank(card: Card) = this.rank == card.rank
+        fun hasSameSuit(card: Card) = this.suit == card.suit
+        fun hasSameRankOrSuit(card: Card) = this.hasSameRank(card) || this.hasSameSuit(card)
+
+        override fun toString(): String = "${rank.symbol}${suit.symbol}"
+    }
+  learner_created: true
+- name: src/indigo/Deck.kt
+  visible: true
+  text: |
+    package indigo
+
+    class Deck {
+        private var cards = listOf<Card>()
+
+        init {
+            this.resetCards()
+            this.shuffleCards()
+        }
+
+        private fun resetCards() {
+            this.cards = Rank.values()
+                .map { rank -> Suit.values().map { Card(rank, it) } }
+                .flatten()
+        }
+
+        private fun shuffleCards() {
+            this.cards = this.cards.shuffled()
+        }
+
+        fun drawCards(n: Int): List<Card> {
+            return when (n) {
+                !in 1 .. 52 -> throw Exception("Invalid number of cards.")
+                !in 1 .. this.cards.size -> throw Exception("The remaining cards are insufficient to meet the request.")
+                else -> {
+                    val drawnCards = this.cards.slice(0 until n)
+                    if (n <= this.cards.lastIndex) {
+                        this.cards = this.cards.slice(n .. this.cards.lastIndex)
+                    } else {
+                        this.cards = emptyList<Card>()
+                    }
+                    drawnCards
+                }
+            }
+        }
+
+        fun isEmpty() = this.cards.isEmpty()
+    }
+  learner_created: true
+- name: src/indigo/Game.kt
+  visible: true
+  text: |
+    package indigo
+
+    class Game {
+        private val deck = Deck()
+        private val cardsOnTable = ArrayDeque<Card>()
+
+        private val humanPlayer = HumanPlayer()
+        private val computerPlayer = ComputerPlayer(BasicStrategy())
+
+        private var currentPlayer: Player = this.humanPlayer
+        private var startingPlayer: Player = this.humanPlayer
+        private var lastWinningPlayer: Player? = null
+
+        private fun promptPlayFirst() {
+            println("Play first?")
+
+            return when(readln().lowercase()) {
+                "yes" -> return
+                "no" -> {
+                    this.currentPlayer = this.computerPlayer
+                    this.startingPlayer = this.computerPlayer
+                }
+                else -> promptPlayFirst()
+            }
+        }
+
+        private fun printScore(hasGameEnded: Boolean = false) {
+            val humanPlayersWonCards = this.humanPlayer.cardsWon
+            val computerPlayersWonCards = this.computerPlayer.cardsWon
+
+            val winningRanks = setOf(Rank.ACE, Rank.TEN, Rank.JACK, Rank.QUEEN, Rank.KING)
+            var humanPlayersScore = humanPlayersWonCards.count { it.rank in winningRanks }
+            var computerPlayersScore = computerPlayersWonCards.count { it.rank in winningRanks }
+
+            if (hasGameEnded) {
+                if (humanPlayersWonCards.size > computerPlayersWonCards.size) {
+                    humanPlayersScore += 3
+                } else if (humanPlayersWonCards.size < computerPlayersWonCards.size) {
+                    computerPlayersScore += 3
+                } else {
+                    if (this.startingPlayer == this.humanPlayer) humanPlayersScore += 3 else computerPlayersScore += 3
+                }
+            }
+
+            println("Score: Player $humanPlayersScore - Computer $computerPlayersScore")
+            println("Cards: Player ${humanPlayersWonCards.size} - Computer ${computerPlayersWonCards.size}")
+        }
+
+        private fun runGameLoop() {
+            if (this.cardsOnTable.isEmpty()) {
+                println("No cards on the table")
+            } else {
+                println("${this.cardsOnTable.size} cards on the table, and the top card is ${this.cardsOnTable.last()}")
+            }
+
+            if (this.deck.isEmpty() && !this.currentPlayer.hasCardsOnHand()) {
+                this.lastWinningPlayer?.winCards(this.cardsOnTable, silently = true) ?:
+                        this.startingPlayer.winCards(this.cardsOnTable, silently = true)
+                this.printScore(hasGameEnded = true)
+                return println("Game Over")
+            }
+
+            if (!this.currentPlayer.hasCardsOnHand()) this.currentPlayer.drawCards(6, this.deck)
+
+            val playedCard = this.currentPlayer.playCard(this.cardsOnTable.lastOrNull())
+            if (!this.cardsOnTable.isEmpty() && playedCard.hasSameRankOrSuit(this.cardsOnTable.last())) {
+                this.currentPlayer.winCards(this.cardsOnTable.plus(playedCard))
+                this.lastWinningPlayer = this.currentPlayer
+                this.cardsOnTable.clear()
+                this.printScore()
+            } else {
+                this.cardsOnTable.addLast(playedCard)
+            }
+
+            this.currentPlayer = if (this.currentPlayer == this.humanPlayer) this.computerPlayer else this.humanPlayer
+
+            println()
+            runGameLoop()
+        }
+
+        fun start() {
+            println("Indigo Card Game")
+            this.promptPlayFirst()
+
+            this.cardsOnTable.addAll(this.deck.drawCards(4))
+            println("Initial cards on the table: ${this.cardsOnTable.joinToString(" ")}\n")
+
+            runGameLoop()
+        }
+    }
+  learner_created: true
+- name: src/indigo/Strategy.kt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/16512#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Thu, 06 Oct 2022 22:43:34 UTC
+record: 5

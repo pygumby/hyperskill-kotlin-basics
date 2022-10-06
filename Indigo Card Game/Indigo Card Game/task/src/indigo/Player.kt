@@ -10,23 +10,32 @@ abstract class Player {
 
     fun drawCards(n: Int, deck: Deck) = this.cardsOnHand.addAll(deck.drawCards(n))
 
-    fun playTurn(): Card {
-        val chosenCardIndex = this.pickCardIndex()
-        val chosenCard = this.cardsOnHand[chosenCardIndex]
-        this.cardsOnHand.removeAt(chosenCardIndex)
-        return chosenCard
-    }
-
     fun winCards(cards: Collection<Card>, silently: Boolean = false) {
         this.cardsWon += cards
         if (!silently) this.printWinCardsMessage()
     }
 
-    protected abstract fun pickCardIndex(): Int
+    fun playCard(cardOnTop: Card?): Card {
+        val chosenCardIndex = this.chooseCardToPlay(cardOnTop)
+        val chosenCard = this.cardsOnHand[chosenCardIndex]
+        this.cardsOnHand.removeAt(chosenCardIndex)
+        return chosenCard
+    }
+
+    protected abstract fun chooseCardToPlay(cardOnTop: Card?): Int
     protected abstract fun printWinCardsMessage()
 }
 
 class HumanPlayer : Player() {
+    override fun chooseCardToPlay(cardOnTop: Card?): Int {
+        println("Cards in hand: ${this.cardsOnHand.mapIndexed() { i, card -> "${i + 1})$card" }.joinToString(" ")}")
+        return this.promptCardIndex()
+    }
+
+    override fun printWinCardsMessage() {
+        println("Player wins cards")
+    }
+
     private fun promptCardIndex(): Int {
         println("Choose a card to play (1-${this.cardsOnHand.size}):")
 
@@ -43,20 +52,12 @@ class HumanPlayer : Player() {
             userInputInt - 1
         }
     }
-
-    override fun pickCardIndex(): Int {
-        println("Cards in hand: ${this.cardsOnHand.mapIndexed() { i, card -> "${i + 1})$card" }.joinToString(" ")}")
-        return this.promptCardIndex()
-    }
-
-    override fun printWinCardsMessage() {
-        println("Player wins cards")
-    }
 }
 
-class ComputerPlayer : Player() {
-    override fun pickCardIndex(): Int {
-        val chosenCardIndex = (0 until this.cardsOnHand.size).random()
+class ComputerPlayer(private val strategy: Strategy) : Player() {
+    override fun chooseCardToPlay(cardOnTop: Card?): Int {
+        println(this.cardsOnHand.joinToString(" "))
+        val chosenCardIndex = this.strategy.getBestCard(this.cardsOnHand, cardOnTop)
         println("Computer plays ${this.cardsOnHand[chosenCardIndex]}")
         return chosenCardIndex
     }

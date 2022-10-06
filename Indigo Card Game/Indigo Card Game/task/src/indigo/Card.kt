@@ -24,7 +24,9 @@ enum class Suit(val symbol: String) {
 }
 
 class Card(val rank: Rank, val suit: Suit) {
-    fun hasSameSuitOrRank(card: Card) = this.rank == card.rank || this.suit == card.suit
+    fun hasSameRank(card: Card) = this.rank == card.rank
+    fun hasSameSuit(card: Card) = this.suit == card.suit
+    fun hasSameRankOrSuit(card: Card) = this.hasSameRank(card) || this.hasSameSuit(card)
 
     override fun toString(): String = "${rank.symbol}${suit.symbol}"
 }

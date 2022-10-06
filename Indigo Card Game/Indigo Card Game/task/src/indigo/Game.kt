@@ -5,7 +5,7 @@ class Game {
     private val cardsOnTable = ArrayDeque<Card>()
 
     private val humanPlayer = HumanPlayer()
-    private val computerPlayer = ComputerPlayer()
+    private val computerPlayer = ComputerPlayer(BasicStrategy())
 
     private var currentPlayer: Player = this.humanPlayer
     private var startingPlayer: Player = this.humanPlayer
@@ -62,8 +62,8 @@ class Game {
 
         if (!this.currentPlayer.hasCardsOnHand()) this.currentPlayer.drawCards(6, this.deck)
 
-        val playedCard = this.currentPlayer.playTurn()
-        if (!this.cardsOnTable.isEmpty() && playedCard.hasSameSuitOrRank(this.cardsOnTable.last())) {
+        val playedCard = this.currentPlayer.playCard(this.cardsOnTable.lastOrNull())
+        if (!this.cardsOnTable.isEmpty() && playedCard.hasSameRankOrSuit(this.cardsOnTable.last())) {
             this.currentPlayer.winCards(this.cardsOnTable.plus(playedCard))
             this.lastWinningPlayer = this.currentPlayer
             this.cardsOnTable.clear()

@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
+- text: Getters may return zero or one value
 - text: Getters give you better control over access to your variables
 - text: Getters are public by default
 - text: Getters are immutable
-- text: Getters may return zero or one value
 files:
 - name: src/Main.kt
   visible: true

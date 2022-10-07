@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: File | Settings for Windows and Linux, or IntelliJ IDEA | Preferences for
+    macOS
+- text: Help
+- text: View | Tool Windows
+- text: Tools
+- text: File | Project Structure
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3810#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 07 Oct 2022 21:43:17 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

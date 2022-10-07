@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#JAVA_INTERNAL" />
+        <option name="gradleJvm" value="java version &quot;17.0.3+7&quot;" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -14,6 +15,11 @@
             <option value="$PROJECT_DIR$/Topics/IDE/Theory" />
             <option value="$PROJECT_DIR$/Topics/IDE/What about text editor" />
             <option value="$PROJECT_DIR$/Topics/IDE/What components IDE has" />
+            <option value="$PROJECT_DIR$/Topics/IntelliJ IDEA/Change JDK" />
+            <option value="$PROJECT_DIR$/Topics/IntelliJ IDEA/Project content" />
+            <option value="$PROJECT_DIR$/Topics/IntelliJ IDEA/Start the program" />
+            <option value="$PROJECT_DIR$/Topics/IntelliJ IDEA/Theme" />
+            <option value="$PROJECT_DIR$/Topics/IntelliJ IDEA/Theory" />
             <option value="$PROJECT_DIR$/Topics/Nested and inner classes/Busy internship" />
             <option value="$PROJECT_DIR$/Topics/Nested and inner classes/Clothing problem" />
             <option value="$PROJECT_DIR$/Topics/Nested and inner classes/Heroes and villains" />

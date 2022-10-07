@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: in a special pre-installed search app
+- text: in File | Settings | Shortcuts
+- text: in File | Settings | Keymap
+- text: there are no shortcut schemes in IntelliJ IDEA
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16098#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 07 Oct 2022 22:02:19 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

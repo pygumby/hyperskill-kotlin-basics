@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: ' Alt + F1 / ⌥ F1'
+- text: View | Tool Windows | Terminal
+- text: Alt + F / ⌥ F
+- text: Alt + F12 / ⌥ F12
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16099#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 07 Oct 2022 22:01:35 UTC
+record: -1
+selected_options:
+- 1
+- 3
+local_check: false

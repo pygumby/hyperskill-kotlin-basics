@@ -10,6 +10,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/IDE/Fixing code errors" />
+            <option value="$PROJECT_DIR$/Topics/IDE/Theory" />
+            <option value="$PROJECT_DIR$/Topics/IDE/What about text editor" />
+            <option value="$PROJECT_DIR$/Topics/IDE/What components IDE has" />
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Generating bytecode" />
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Lifecycle of code" />
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Statements" />

@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: You need to write your code on a really old computer
+- text: You want to make a tiny change to the file
+- text: You are writing a massive application
+- text: You are designing a program with graphical user interface
+- text: You need to debug a lot
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3804#comment
+status: Solved
+feedback:
+  message: <html>Modern IDEs are usually "heavy", so if you are temporarily limited
+    by your machine capabilities, choose Notepad++! Minor changes to your code can
+    be done in a text editor as well</html>
+  time: Fri, 07 Oct 2022 17:56:22 UTC
+record: -1
+selected_options:
+- 0
+- 1
+custom_name: What about text editor?
+local_check: false

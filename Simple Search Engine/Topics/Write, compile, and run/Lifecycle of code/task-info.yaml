@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Add something into existing code
+- text: 'Add a new program to this system '
+- text: Create a new app for a JVM machine
+- text: Fix problem in a source code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10830#comment
+status: Solved
+feedback:
+  message: <html>You cannot change something in the existing code because you do not
+    know this language. But you can write something new for this system in another
+    JVM language.</html>
+  time: Fri, 07 Oct 2022 15:17:05 UTC
+record: -1
+selected_options:
+- 1
+- 2
+local_check: false

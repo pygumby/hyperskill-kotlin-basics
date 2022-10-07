@@ -10,6 +10,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Generating bytecode" />
+            <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Lifecycle of code" />
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Statements" />
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Theory" />
             <option value="$PROJECT_DIR$/util" />

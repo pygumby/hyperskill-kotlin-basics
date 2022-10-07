@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: analyze the code
+- text: start the debugger
+- text: just run the code again
+- text: print the current program state
+- text: rewrite the whole code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14852#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 07 Oct 2022 21:01:22 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 3
+custom_name: How to locate a bug?
+local_check: false

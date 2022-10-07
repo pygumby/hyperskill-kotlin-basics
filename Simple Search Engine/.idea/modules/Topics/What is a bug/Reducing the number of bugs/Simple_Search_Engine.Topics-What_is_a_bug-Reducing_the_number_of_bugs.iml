@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-What_is_a_bug-Reducing_the_number_of_bugs" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/What is a bug/Reducing the number of bugs" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Simple Search Engine" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/What is a bug/Reducing the number of bugs">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/What is a bug/Reducing the number of bugs/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/What is a bug/Reducing the number of bugs/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/What is a bug/Reducing the number of bugs/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

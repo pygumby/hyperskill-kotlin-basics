@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: create a set of input values and run the program manually
+- text: look through the program and guess if it is correct
+- text: write automated tests
+- text: hope everything is just fine
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14853#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 07 Oct 2022 21:01:56 UTC
+record: -1
+selected_options:
+- 0
+- 2
+custom_name: How to get rid of bugs?
+local_check: false

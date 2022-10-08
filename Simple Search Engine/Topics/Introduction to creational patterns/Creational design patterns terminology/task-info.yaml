@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Realization of a concept of copying existing class for the creation of a new
+    one
+- text: Dealing with object creation methods and separating it from other parts of
+    the system
+- text: Explaining how to assemble objects and classes into larger structures
+- text: Forming the connection between different objects in the system
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16252#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 19:12:47 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

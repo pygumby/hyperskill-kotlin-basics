@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: ⌃ R
+- text: Ctrl+Shift + F10
+- text: Shift + F10
+- text: ^ C
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16111#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 14:11:52 UTC
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

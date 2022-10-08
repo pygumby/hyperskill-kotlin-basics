@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Those are chosen by Java Development Community
+- text: Those depend on your local legal acts
+- text: It will always check you for IDEA style conformity
+- text: Any of them, it is up to you
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5832#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 14:12:26 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

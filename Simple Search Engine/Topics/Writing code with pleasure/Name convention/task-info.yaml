@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: ab
+- text: 2cd
+- text: 3_a
+- text: 123
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16112#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 14:13:09 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

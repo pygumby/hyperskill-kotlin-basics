@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: When you need to provide a roadmap to the development team
+- text: When you are setting up a company network
+- text: When you designing the application's user interface
+- text: When you need to describe interactions between app parts
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18502#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 15:35:11 UTC
+record: -1
+selected_options:
+- 0
+- 3
+local_check: false

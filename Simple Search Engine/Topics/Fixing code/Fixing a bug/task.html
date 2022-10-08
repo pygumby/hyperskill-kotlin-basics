@@ -1,0 +1,18 @@
+<h2>Fixing a bug</h2>
+<p>Create a file Triangle_area.java and copy the following code into it:</p>
+
+<pre><code class="language-java">import java.lang.Math;
+import java.lang.Integer;
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 15;
+        int b = 7;
+        int c = 10;
+        int p1 = (a + b + c) / 2;
+        double s = Math.sqrt(p1 * ((p1 - a * p1 - b) * (p1 - c)));
+        System.out.println(s);
+    }
+}</code></pre>
+
+<p>This program calculates the area of a triangle on three sides, but the result is NaN. On which line should you put a breakpoint to find the error?</p>

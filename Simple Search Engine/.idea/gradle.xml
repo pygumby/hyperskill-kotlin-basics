@@ -11,6 +11,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Fixing code/Attention to red" />
+            <option value="$PROJECT_DIR$/Topics/Fixing code/Breakpoint" />
+            <option value="$PROJECT_DIR$/Topics/Fixing code/Debug the counter" />
+            <option value="$PROJECT_DIR$/Topics/Fixing code/Fixing a bug" />
+            <option value="$PROJECT_DIR$/Topics/Fixing code/On pause" />
+            <option value="$PROJECT_DIR$/Topics/Fixing code/Theory" />
             <option value="$PROJECT_DIR$/Topics/IDE/Fixing code errors" />
             <option value="$PROJECT_DIR$/Topics/IDE/Theory" />
             <option value="$PROJECT_DIR$/Topics/IDE/What about text editor" />
@@ -44,7 +50,9 @@
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Lifecycle of code" />
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Statements" />
             <option value="$PROJECT_DIR$/Topics/Write, compile, and run/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Writing code with pleasure/Check the code" />
             <option value="$PROJECT_DIR$/Topics/Writing code with pleasure/Finding the package" />
+            <option value="$PROJECT_DIR$/Topics/Writing code with pleasure/Name convention" />
             <option value="$PROJECT_DIR$/Topics/Writing code with pleasure/Run the code" />
             <option value="$PROJECT_DIR$/Topics/Writing code with pleasure/Theory" />
             <option value="$PROJECT_DIR$/util" />

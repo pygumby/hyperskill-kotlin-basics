@@ -1,0 +1,83 @@
+<h2>Navigation through code</h2>
+<p>It is pretty hard to remember all the shortcuts and all the actions and productivity boosters IntelliJ IDEA has. However, don't worry about that. All you need to remember is the one action that rules them all, <strong>Help | Find Action</strong> command (<code class="java">⌘ ⇧ A </code> / <code class="java">Ctrl + Shift + A</code>). Just start typing the action you need, and you will get the list:</p>
+
+<p style="text-align: center;"><img alt="" height="158" src="https://i.imgur.com/bJy10OF.png" width="571"></p>
+
+<h5 id="code-search" style="text-align: center;">Code search</h5>
+
+<p>IntelliJ IDEA lets you find and replace text strings in an active editor.</p>
+
+<p><strong>Search through the current file</strong></p>
+
+<ul>
+	<li>From the main menu, choose <strong>Edit | Find | Find</strong>, or press <code class="java">⌘ F</code> / <code class="java">Ctrl + F</code>. The search pane appears at the top of the active editor.</li>
+	<li>If necessary, specify the search options.</li>
+	<li>In the search field, start typing the search string:
+	<p style="text-align: center;"><img alt="" height="255" src="https://i.imgur.com/RnqKVR9.png" width="537"></p>
+	 <br>
+	As you type, the first occurrence of the search string after the current cursor position is selected; the other occurrences are highlighted in the editor. In addition, the matching occurrences are marked in the right gutter with stripes.</li>
+	<li>To search for a multi-line fragment, click in the search box.</li>
+	<li>Explore the search results.</li>
+</ul>
+
+<p><strong>Replace in the current file</strong></p>
+
+<ul>
+	<li>From the main menu, choose <strong>Edit | Find | Replace</strong>, or press <code class="java">⌘ R</code> / <code class="java">Ctrl + R</code>. The search and replace pane appears on top of the active editor.</li>
+	<li>If necessary, specify the search and replace options.</li>
+	<li>In the search field, start typing the search string. As you type, the matching occurrences are highlighted in the editor, and a Replace pop-up dialog box opens at the first occurrence, suggesting to replace the current occurrence, or all of them, with an empty string.</li>
+	<li>Start typing the replacing string.</li>
+	<li>Explore the search results, and, using the buttons of the replace dialog box, replace occurrences as required.</li>
+</ul>
+
+<p>See <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-file.html#work_with_search_results" rel="nofollow noopener noreferrer">Manage your search</a> page for the detailed description of search and replace options.</p>
+
+<h5 id="navigating-to-class-file-or-symbol-by-name" style="text-align: center;">Navigating to Class, File, or Symbol by Name</h5>
+
+<p><strong>Navigate</strong> commands enable you to quickly jump to the desired classes, files, or symbols specified by names. IntelliJ IDEA suggests a look-up list of matching names, from which you can select the desired one, and open it in the editor. This navigation honors <strong>CamelCase</strong> and <strong>snake_case</strong> capitalization. Refer to the <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://www.jetbrains.com/help/idea/searching-everywhere.html" rel="nofollow noopener noreferrer">tips</a> for the detailed list of available techniques.</p>
+
+<p><strong>Declaration and list of usages</strong></p>
+
+<p>Programming is much more about understanding and reading existing code than about writing some new code. While learning, it is also quite important to see your code as a whole and to understand how it works.</p>
+
+<p>When you use any variable, function, or method and need a tip on how it works, let the code speak for itself. Take a look at the definition with <code class="java">⌘ Y</code> / <code class="java">Ctrl + Shift + I</code>:</p>
+
+<p style="text-align: center;"><img alt="" height="264" src="https://i.imgur.com/cjHG6Du.png" width="537"></p>
+
+<p>There's one more option: press <code class="java">⌘ B</code> / <code class="java">Ctrl + B</code> to navigate to the declaration of an entity; use it one more time on the declaration to see the list of usages:</p>
+
+<p style="text-align: center;"><img alt="" height="420" src="https://i.imgur.com/PWACFKY.png" width="512"></p>
+
+<h5 id="navigating-by-name" style="text-align: center;">Navigating by name</h5>
+
+<p>On the main menu, point to <strong>Navigate</strong>, and then choose <strong>Class</strong>, <strong>File</strong>, or <strong>Symbol </strong>respectively, or use the following shortcuts:</p>
+
+<ul>
+	<li>Class: <code class="java">⌘ O</code> / <code class="java">Ctrl + N</code></li>
+	<li>File (directory): <code class="java">⌘ ⇧ O</code> / <code class="java">Ctrl + Shift + N</code></li>
+	<li>Symbol: <code class="java">⌘ ⌥ O</code> / <code class="java">Ctrl + Shift + Alt + N</code></li>
+	<li>In the pop-up window, start typing the desired name. So, you can enter characters located anywhere inside the desired name. As you type, the suggestion list shrinks, displaying the matching names only.
+	<ul>
+		<li>Class:
+		<p style="text-align: center;"><img alt="" height="180" src="https://i.imgur.com/7AMegjW.png" width="526"></p>
+		<br>
+		You can also navigate directly to a specified anonymous class. It is enough to specify the class name and the anonymous class number, delimited with $ character:
+		<p style="text-align: center;"><img alt="" height="204" src="https://i.imgur.com/xfAP9IB.png" width="531"></p>
+		</li>
+		<li>File:
+		<p style="text-align: center;"><img alt="" height="211" src="https://i.imgur.com/qoXjkBk.png" width="535"></p>
+		</li>
+		<li>Directory: use the same shortcut as for file navigation, and type the name of the directory you are looking for, the pattern name ending with / or \:
+		<p style="text-align: center;"><img alt="" height="208" src="https://i.imgur.com/qVHszrC.png" width="533"></p>
+		</li>
+		<li>Symbol:
+		<p style="text-align: center;"><img alt="" height="171" src="https://i.imgur.com/WfXA2fF.png" width="521"></p>
+		</li>
+	</ul>
+	</li>
+	<li>Click the desired entry in the suggestion list, or select it using the arrow keys, and press Enter.</li>
+</ul>
+
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+
+<p>You can easily find and replace text strings as well as navigate through your code using these simple commands and hotkeys. Don’t forget this feature while using IntelliJ IDEA to boost your efficiency and save time.</p>

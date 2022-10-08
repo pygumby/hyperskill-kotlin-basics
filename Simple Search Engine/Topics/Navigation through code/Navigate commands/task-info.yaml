@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: any project documentation specified by name
+- text: the desired classes, files, or symbols specified by names
+- text: the desired classes, files, or folders specified by ids
+- text: any project file specified by name or numbers
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16520#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 13:13:24 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

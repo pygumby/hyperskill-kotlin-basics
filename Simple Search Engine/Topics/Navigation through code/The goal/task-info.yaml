@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Any button on the IDEA control panel
+- text: Any line of code in any file
+- text: Classes, files, or symbols specified by names
+- text: Public classes
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5825#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 13:12:24 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

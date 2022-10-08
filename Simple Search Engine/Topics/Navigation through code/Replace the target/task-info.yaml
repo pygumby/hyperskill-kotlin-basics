@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Ctrl+Alt
+- text: Ctrl+Alt+Shift+G
+- text: Ctrl+Alt+Shift
+- text: Ctrl+Alt+Shift+J
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17676#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 08 Oct 2022 13:11:34 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

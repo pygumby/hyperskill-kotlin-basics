@@ -1,0 +1,74 @@
+<h2>JVM components</h2>
+<h5 id="what-is-java-virtual-machine" style="text-align: center;">What is Java Virtual Machine?</h5>
+
+<p>The<strong> Java Virtual Machine (JVM)</strong> is a virtual simulation of a physical computer that executes compiled Java programs (bytecode). JVM runs as an application on top of an operating system and provides an environment for Java programs.</p>
+
+<p>Because they use virtual machines, Java programs are platform-independent and can be executed on different hardware and operating systems according to the <strong>WORA</strong> (<em>Write Once Run Anywhere</em>) principle.</p>
+
+<p>There are a lot of different JVM implementations. HotSpot is the primary reference Java VM implementation. It's used by Oracle Java and OpenJDK.</p>
+
+<p>Many JVMs (including HotSpot) are implemented according to the <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://docs.oracle.com/javase/specs/jvms/se9/html/index.html" rel="nofollow noopener noreferrer">Java Virtual Machine Specification</a>. You do not need to read it now, just remember that this specification exists.</p>
+
+<h5 id="the-jvm-internals-overview" style="text-align: center;">The JVM internals overview</h5>
+
+<p>After the compilation of a Java program, there is a file with the <strong>.class </strong>extension. It contains the Java bytecode. In order to execute the code, you need to load it into JVM. When JVM executes a program, it translates the bytecode into the platform native code.</p>
+
+<p>JVM mainly performs the following activities:</p>
+
+<ul>
+	<li>loads bytecode;</li>
+	<li>verifies bytecode;</li>
+	<li>executes bytecode;</li>
+	<li>provides the runtime environment.</li>
+</ul>
+
+<p>The following image illustrates the common JVM architecture:</p>
+
+<p style="text-align: center;"><img alt="" height="516" src="https://ucarecdn.com/1e15b25e-8cb4-42d4-9c3f-8a697c9458b4/" width="579"></p>
+
+<p style="text-align: center;"><strong>The common JVM architecture</strong></p>
+
+<p>Let's consider every subsystem in more details.</p>
+
+<h5 id="the-class-loader-subsystem" style="text-align: center;">The class loader subsystem</h5>
+
+<p>This subsystem loads the Java bytecode for execution, verifies it and then allocates memory for the bytecode. We cover the subsystem in another topic. To verify bytecode there is a module called <strong>bytecode verifier</strong>. It checks that the instructions don’t require any dangerous actions like accessing private fields and methods of classes and objects.</p>
+
+<h5 id="the-runtime-data-areas" style="text-align: center;">The runtime data areas</h5>
+
+<p>This<strong> subsystem</strong> represents <strong>JVM memory</strong>. The areas are used for different purposes during the program execution.</p>
+
+<ul>
+	<li><strong>PC register </strong>holds the address of the currently executing instruction;</li>
+	<li><strong>stack area</strong> is a memory place where methods' calls and local variables are stored;</li>
+	<li><strong>native method stack</strong> stores native method information;</li>
+	<li><strong>heap </strong>stores all created objects (instances of classes);</li>
+	<li><strong>method area </strong>stores all the class level information like class name, immediate parent class name, method information and all static variables.</li>
+</ul>
+
+<p>Every thread has its own <strong>PC register</strong>, <strong>stack</strong>, and <strong>native method stack</strong>, but all threads share the same <strong>heap</strong> and <strong>method area.</strong></p>
+
+<h5 id="execution-engine" style="text-align: center;">Execution engine</h5>
+
+<p>It is responsible for executing the program (bytecode). It interacts with various data areas of JVM when executing a bytecode.</p>
+
+<p>The execution engine has the following parts:</p>
+
+<ul>
+	<li><strong>bytecode interpreter</strong> interprets the bytecode line by line and executes it (rather slowly);</li>
+	<li><strong>just-in-time compiler</strong> (JIT compiler) translates bytecode into native machine language while executing the program (it executes the program faster than the interpreter);</li>
+	<li><strong>garbage collector</strong> cleans unused objects from the heap.</li>
+</ul>
+
+<p>Different JVM implementations can contain both a <strong>bytecode interpreter</strong> and a <strong>just-in-time compiler</strong>, or only one of them. Do not confuse them with the javac (source code to bytecode compiler); it's not included in JVM.</p>
+
+<h5 id="interfaces-and-libraries" style="text-align: center;">Interfaces and libraries</h5>
+
+<p>Other important parts of JVM for execution:</p>
+
+<ul>
+	<li><strong>native method interface</strong> provides an interface between Java code and the native method libraries;</li>
+	<li><strong>native method library</strong> consists of (C/C++) files that are required for the execution of native code.</li>
+</ul>
+
+<p>Thus, JVM has a lot of parts. We won't cover all of them because it's enough to understand the JVM in general. The class loader working principles and garbage collection algorithms will be discussed in separate topics.</p>

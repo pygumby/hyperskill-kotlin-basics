@@ -40,6 +40,11 @@
             <option value="$PROJECT_DIR$/Topics/Introduction to software architecture/Picking an architecture" />
             <option value="$PROJECT_DIR$/Topics/Introduction to software architecture/SA examples" />
             <option value="$PROJECT_DIR$/Topics/Introduction to software architecture/Theory" />
+            <option value="$PROJECT_DIR$/Topics/JVM components/A suitable part of JVM" />
+            <option value="$PROJECT_DIR$/Topics/JVM components/The parts of the execution engine" />
+            <option value="$PROJECT_DIR$/Topics/JVM components/Theory" />
+            <option value="$PROJECT_DIR$/Topics/JVM components/What does JVM include" />
+            <option value="$PROJECT_DIR$/Topics/JVM components/What does JVM include (1)" />
             <option value="$PROJECT_DIR$/Topics/Navigation through code/Find and replace" />
             <option value="$PROJECT_DIR$/Topics/Navigation through code/Navigate commands" />
             <option value="$PROJECT_DIR$/Topics/Navigation through code/Replace the target" />

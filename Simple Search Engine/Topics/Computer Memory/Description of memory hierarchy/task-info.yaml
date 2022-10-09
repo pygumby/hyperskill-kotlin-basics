@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: can be used to efficiently manage memory and decrease the overall cost of
+    memory in computers
+- text: is the hierarchical division of different types of computer memory based on
+    their speed or access latency
+- text: converts slow memory to fast memory
+- text: creates the illusion of fast memory by using a combination of both fast and
+    slow memory components
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18010#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 09 Oct 2022 14:08:05 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 3
+local_check: false

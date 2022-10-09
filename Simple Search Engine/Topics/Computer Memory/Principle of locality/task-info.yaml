@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: The tendency of data to be stored in the different memory locations
+- text: The tendency of a processor to access the same portion of the address space
+    at a particular instance of time
+- text: The tendency of a  processor to access different portions of the address space
+    at a particular instance of time
+- text: There is no such thing as principle of locality
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18007#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 09 Oct 2022 14:11:21 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

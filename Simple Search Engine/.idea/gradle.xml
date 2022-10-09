@@ -11,6 +11,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Computer Memory/Description of memory hierarchy" />
+            <option value="$PROJECT_DIR$/Topics/Computer Memory/Example of temporal locality" />
+            <option value="$PROJECT_DIR$/Topics/Computer Memory/Principle of locality" />
+            <option value="$PROJECT_DIR$/Topics/Computer Memory/Theory" />
             <option value="$PROJECT_DIR$/Topics/Fixing code/Attention to red" />
             <option value="$PROJECT_DIR$/Topics/Fixing code/Breakpoint" />
             <option value="$PROJECT_DIR$/Topics/Fixing code/Debug the counter" />

@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Hard disk
+- text: Solid State Drives
+- text: DVD
+- text: Cache
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18053#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 10 Oct 2022 19:39:19 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

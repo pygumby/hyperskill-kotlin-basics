@@ -1,0 +1,66 @@
+<h2>Components of computer memory</h2>
+<p>Based on the memory hierarchy we use multiple memory components in our computer systems. These memory components have different characteristics with their respective advantages and disadvantages. Efficiently managing data across them helps us create cheaper memory solutions without sacrificing speed and capacity. Based on their characteristics and the use case in the computer system memory is categorized into different groups, which we'll observe below.</p>
+
+<h5 id="volatile-and-non-volatile-memory">Volatile and non-volatile memory</h5>
+
+<p>Computer memory is primarily of two types based on its ability to store data either permanently or temporarily. Permanent memory solutions like disk drives that are used to store data even when the computer is turned off i.e when power isn't supplied to the storage device, are called <strong>non-volatile memory</strong>. Temporary memory solutions like the computer's RAM that can only store data as long as power is supplied are called <strong>volatile memory</strong>. </p>
+
+<p>Volatile memory and non-volatile memory are used for completely different purposes in the computer system and each works to fulfill a particular role.</p>
+
+<h5 id="registers">Registers</h5>
+
+<p><strong>Registers</strong> are a part of the computer CPU and are directly used to store data in the form of bits. For example, an instruction, a memory address, characters for input and output, etc. They are the fastest memory in a computer system however they are only able to store a very small amount of data. They typically range from 1 bit to 512 bits in size. Due to their nature and the need for efficiency, registers are of multiple types, each designated for a particular task and working in coordination with others.</p>
+
+<p>A few common types of registers are:</p>
+
+<ul>
+	<li><strong>Address Registers</strong>: holds addresses(a reference to a memory location) </li>
+	<li><strong>Data Registers</strong>: holds data in the form of bits for integers, characters, an array of bits, etc</li>
+	<li><strong>Condition Code Registers</strong>: holds truth value; a boolean</li>
+	<li><strong>Instruction Registers</strong>: holds the instructions that are being executed by the processor</li>
+</ul>
+
+<h5 id="ram">RAM</h5>
+
+<p><strong>Random Access Memory</strong> in a computer is a volatile memory that acts as a bridge between the computer storage or permanent memory and the processor. RAM is specifically termed as 'Random Access' because of its ability to access a particular memory address at any time in contrast to non-volatile memory like a hard disk where data is stored sequentially.</p>
+
+<p>There are two types of RAM; <strong>static</strong> and <strong>dynamic</strong>. Most Static RAM<strong> </strong>or S-RAM use six transistors whereas Dynamic RAM or D-RAM use one transistor and one capacitor to store a bit of data. The naming scheme for static and dynamic stems from the components they use. Transistors used in S-RAM require a constant and static current, but D-RAM uses capacitors to store data that require constant refreshing of power to keep data intact. This is because capacitors steadily discharge/lose the energy stored in them.</p>
+
+<p style="text-align: center;"><img alt="" height="262" name="1.svg" src="https://ucarecdn.com/58b8b527-43f8-47fd-bc69-56c3deeb756c/" width="594"></p>
+
+<p>Static RAM uses a large number of transistors to store a bit of data compared to Dynamic RAM. This means that Dynamic RAM is much denser(able to store more data in less space), can hold more data, and is cheaper to produce. The drawback is that D-RAM is slower and consumes more energy because it needs to refresh power frequently.</p>
+
+<h5 id="cache">Cache</h5>
+
+<p><strong>Cache memory</strong> is a bridge between the processor's registers and the computer's main memory which is used to store frequently used data in the computer's main memory. Compared to registers, the cache is larger and slower, however it is still a very fast memory component in the computer which is inserted between the CPU and the main memory. Cache memory is much quicker than the main memory, which is necessary to utilize the full potential of modern CPUs. Computer cache uses S-RAM which is faster but more expensive and less dense compared to D-RAM. Hence, it resides higher in the hierarchy. Frequently used data in the main memory is copied to the cache memory. This allows the CPU to access that data much faster and not decrease processing time significantly. Cache resides within the computer's CPU.</p>
+
+<p style="text-align: center;"><img alt="" height="418" name="3.svg" src="https://ucarecdn.com/f8679834-3ecb-46d6-a2f0-3709e44ce452/" width="435"></p>
+
+<p>Cache memory is divided into multiple levels. Most processors have <strong>L1</strong>, <strong>L2</strong>, and <strong>L3</strong>. These levels of cache memory are divided based on the idea of memory hierarchy where L1 is the smallest and fastest among the bunch and the other becomes slower and larger as they go higher. L1 cache is specifically owned by a single core. L2 cache is shared between two cores and L3 is shared between multiple cores at once. </p>
+
+<h5 id="main-memory">Main memory</h5>
+
+<p>Commonly referred to as <strong>primary memory</strong> or <strong>internal memory</strong>, it is where the currently used data is stored. If you are running a program; for example, a browser in the current moment, its data is stored in the computer's main memory right now.</p>
+
+<p><strong>Main memory</strong> is a limited resource like any other type of computer memory, so the operating system controls what should be in it at each moment, where it should be located, and when it should be removed. D-RAM is used for this memory which allows the main memory to be of larger capacity while being cost-effective compared to the cache memory.</p>
+
+<h5 id="secondary-memory">Secondary memory</h5>
+
+<p><strong>Secondary memory</strong> is a non-volatile memory that can store data permanently i.e when power isn't supplied. They are also referred to as <strong>secondary storage</strong>. The CPU however is not able to directly access memory from secondary storage and so necessary data must be copied to the main memory first. Computer programs and users have the ability to specifically manipulate data inside the computer's storage.</p>
+
+<p style="text-align: center;"><img alt="" height="503" name="2.svg" src="https://ucarecdn.com/04885599-0354-4307-b99a-b136f558396c/" width="710"></p>
+
+<p>Secondary memory uses various technologies; magnetic drives like hard disks, optical disks like CDs and DVDs, mechanical drives like analog phonograph records, electronic drives like Solid State Drives. Different technologies have different storage capabilities, speed, and cost per byte. These memory storage solutions are built in the computer itself or are portable allowing for easy transport and use across multiple devices. </p>
+
+<h5 id="conclusion">Conclusion</h5>
+
+<p>In this topic, we explored the various components of computer memory. In summary:</p>
+
+<ul>
+	<li>Volatile memory and non-volatile memory refer to memory components that can store data either temporarily or permanently respectively.</li>
+	<li>RAM is of two types; S-RAM and D-RAM.</li>
+	<li>Registers are the smallest and fastest types of memory placed inside the processor which stores bits of data.</li>
+	<li>Cache memory is a bridge between the processor's registers and the computer's main memory which is used to store frequently used data in the computer's main memory.</li>
+	<li>Data that is in use at a particular time is stored in the computer's main memory.</li>
+	<li>Secondary storage is a non-volatile memory solution that is used to store data permanently.</li>
+</ul>

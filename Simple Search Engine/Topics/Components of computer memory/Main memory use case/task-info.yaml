@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: It is used to store energy in the computer for future use.
+- text: It is used to store the data that is used specifically at that time.
+- text: It is used to store data from the secondary storage so that the CPU can access
+    it.
+- text: It is used to store data permanently for future use.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18056#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 10 Oct 2022 19:38:54 UTC
+record: -1
+selected_options:
+- 1
+- 2
+local_check: false

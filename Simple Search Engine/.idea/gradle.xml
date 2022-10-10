@@ -11,6 +11,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Components of computer memory/Bridge" />
+            <option value="$PROJECT_DIR$/Topics/Components of computer memory/D-RAM full-form" />
+            <option value="$PROJECT_DIR$/Topics/Components of computer memory/Data storage" />
+            <option value="$PROJECT_DIR$/Topics/Components of computer memory/Example of non-volatile memory" />
+            <option value="$PROJECT_DIR$/Topics/Components of computer memory/Main memory use case" />
+            <option value="$PROJECT_DIR$/Topics/Components of computer memory/Theory" />
             <option value="$PROJECT_DIR$/Topics/Computer Memory/Description of memory hierarchy" />
             <option value="$PROJECT_DIR$/Topics/Computer Memory/Example of temporal locality" />
             <option value="$PROJECT_DIR$/Topics/Computer Memory/Principle of locality" />

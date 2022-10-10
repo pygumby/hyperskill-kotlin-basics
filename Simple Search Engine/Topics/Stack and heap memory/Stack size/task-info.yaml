@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Cannot be determined because it is resizable
+- text: The language used to write the program
+- text: The architecture of the computer on which the program runs
+- text: The overall memory on the system
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21587#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 10 Oct 2022 20:08:26 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: When unused memory is not freed
+- text: When memory is accessed by external processes
+- text: When you run out of free space on the RAM
+- text: When memory is fragmented
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21582#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 10 Oct 2022 20:12:03 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

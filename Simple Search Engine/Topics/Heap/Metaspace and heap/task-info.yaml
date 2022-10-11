@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Metaspace has existed since Java 8
+- text: Metaspace is located outside the heap
+- text: Metaspace can change its size automatically
+- text: Metaspace is a part of the heap memory
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19215#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 11 Oct 2022 15:48:42 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

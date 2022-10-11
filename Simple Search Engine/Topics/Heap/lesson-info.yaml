@@ -1,0 +1,7 @@
+content:
+- Theory
+- Metaspace and heap
+- The maximum heap size
+- The maximum PermGen size
+- Permanent Generation and heap
+- The initial PermGen size

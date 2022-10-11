@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Runtime.getRuntime().freeMemory() - Runtime.getRuntime().totalMemory()
+- text: Runtime.getRuntime().totalMemory() / 1024
+- text: Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()
+- text: (Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) /
+    1024
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15169#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 11 Oct 2022 16:19:33 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

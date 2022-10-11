@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Forces the GC to be executed immediately
+- text: Forces the GC to be executed exactly one second later
+- text: Requests the GC to be executed, but it doesn't necessarily happen
+- text: It does not affect the behavior of the GC
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15168#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 11 Oct 2022 16:14:05 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

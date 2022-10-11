@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: System.gc()
+- text: GC.clean()
+- text: Runtime.getRuntime().gc()
+- text: System.out.println("need gc")
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15166#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 11 Oct 2022 16:21:23 UTC
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

@@ -27,6 +27,11 @@
             <option value="$PROJECT_DIR$/Topics/Fixing code/Fixing a bug" />
             <option value="$PROJECT_DIR$/Topics/Fixing code/On pause" />
             <option value="$PROJECT_DIR$/Topics/Fixing code/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Garbage Collector/Getting the used memory using Runtime" />
+            <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC" />
+            <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC using Runtime" />
+            <option value="$PROJECT_DIR$/Topics/Garbage Collector/Save resources" />
+            <option value="$PROJECT_DIR$/Topics/Garbage Collector/Theory" />
             <option value="$PROJECT_DIR$/Topics/Heap/Metaspace and heap" />
             <option value="$PROJECT_DIR$/Topics/Heap/Permanent Generation and heap" />
             <option value="$PROJECT_DIR$/Topics/Heap/Theory" />

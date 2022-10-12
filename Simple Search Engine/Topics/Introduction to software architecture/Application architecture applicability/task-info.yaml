@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: When you need to provide a roadmap to the development team
-- text: When you are setting up a company network
 - text: When you designing the application's user interface
+- text: When you are setting up a company network
+- text: When you need to provide a roadmap to the development team
 - text: When you need to describe interactions between app parts
 files:
 - name: src/Main.kt

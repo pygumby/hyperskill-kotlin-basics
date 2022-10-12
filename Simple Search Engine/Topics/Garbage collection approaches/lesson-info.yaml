@@ -1,0 +1,6 @@
+content:
+- Theory
+- Reference counting algorithms
+- Generational approach
+- Live objects
+- Finding dead objects

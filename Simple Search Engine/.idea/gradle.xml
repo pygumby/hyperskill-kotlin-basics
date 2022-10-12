@@ -32,6 +32,9 @@
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC using Runtime" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Save resources" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Garbage collection approaches/Generational approach" />
+            <option value="$PROJECT_DIR$/Topics/Garbage collection approaches/Reference counting algorithms" />
+            <option value="$PROJECT_DIR$/Topics/Garbage collection approaches/Theory" />
             <option value="$PROJECT_DIR$/Topics/Heap/Metaspace and heap" />
             <option value="$PROJECT_DIR$/Topics/Heap/Permanent Generation and heap" />
             <option value="$PROJECT_DIR$/Topics/Heap/Theory" />

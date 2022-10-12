@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Yes, all GCs must implement a generational approach
+- text: Yes, it is the best approach to organize memory management
+- text: No, it is not obligatory
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17276#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 12 Oct 2022 11:17:35 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

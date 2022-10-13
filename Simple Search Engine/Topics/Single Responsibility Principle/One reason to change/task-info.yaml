@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: They consist of one method
 - text: They have one method for changes
 - text: They are responsible only for one issue
 - text: 'They split to different objects after one change '
+- text: They consist of one method
 files:
 - name: src/Main.kt
   visible: true

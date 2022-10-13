@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Record
+- text: Download
+- text: Stop
+- text: Play
+- text: Time Update
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17667#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 13 Oct 2022 18:57:23 UTC
+record: -1
+selected_options:
+- 0
+- 2
+- 3
+local_check: false

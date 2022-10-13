@@ -1,0 +1,32 @@
+<h2>Single Responsibility Principle</h2>
+<html><body><p>Have you ever heard the phrase: "<em>do one thing at a time</em>"? Why follow this rule instead of juggling two, three, or ten different tasks? The reason is that we can concentrate better on important things instead of constantly switching our attention from one object to another. Programs are made by humans, so their design also inherits the patterns of how we think and what we do.</p>
+<p>If you've ever heard of <em>SOLID</em> programming principles, the first letter in the acronym stands for the <strong>Single Responsibility Principle </strong>(SRP). Let's find out what it is and how to apply it to our programs!</p>
+<h5 id="single-responsibility-principle">Single Responsibility Principle</h5>
+<p>We are using our smartphones to play music, send messages, and browse the internet, often all at the same time, but should our programs multitask? Does this idea contradict the "<em>one thing at a time</em>" rule?</p>
+<p></p><div class="alert alert-primary">Although it seems that a smartphone does many things simultaneously, it's just an illusion. They are just too fast for us to notice that they are also doing one thing at a time on each processor unit.</div><p></p>
+<p>To answer the first question about multitasking: <em>yes</em>. Your program should do what it has to, no matter how many parallel tasks there are. It seems reasonable because that's the way we create a complex application.</p>
+<p>The answer to the second question is <em>no</em>. Let's take any application of your choice as an example. You expect some action from each part of it and you don't want these parts to do more than they have to. How does it apply to the development process?</p>
+<p>The program consists of some programming units like modules, classes, and functions. The Single Responsibility Principle demands that your programming unit should have only one reason to change (i.e. a single responsibility). If you, as a developer, change the menu of a program, it should not affect the way other parts of the program work.</p>
+<p style="text-align: center;"><img alt="" height="246" src="https://ucarecdn.com/3ec81e9b-e260-444f-bda7-a9f502a8e286/" width="595"/></p>
+<p>We've chosen a simple example: a change in an element such as a menu should not affect what a program is doing. Then how can we set the boundaries of what different parts are responsible for in other cases?</p>
+<h5 id="god-object">God object</h5>
+<p>Imagine we're working on a new application for smartphones. It has such functions as an alarm clock, reminders, and stopwatch. Because they are all related to time, they can be united in one class.</p>
+<p>When we add the possibility to choose a ringtone for the alarm clock, can we use this for the stopwatch too? And if we add the possibility to save the top 5 results from the stopwatch, how can we use this function for the reminders? In trying to gather similar functions together we instead create a <strong>God object</strong>.</p>
+<p>A <strong>God object </strong>is an object that <em>knows too much</em> or <em>does too much</em>.</p>
+<p style="text-align: center;"><img alt="" height="391" src="https://ucarecdn.com/7679b2cc-0367-4bd7-babf-07aa06f2ba03/" width="345"/></p>
+<p>In our case, it's better to isolate these three functions from each other, so we can update them independently without polluting the code with unnecessary details. Each part will be responsible for a specific thing and won't know about what the others are doing. This design is more likely to keep the code clean and clear. Let's take a look at how we can organize it even better.</p>
+<h5 id="responsibility-boundaries">Responsibility boundaries</h5>
+<p>We decide to add an option to choose a ringtone for the alarm clock; we roll up the sleeves and start coding. We add methods <code class="java">LIST_TUNES</code>, <code class="java">SET_TUNE</code>, and <code class="java"><span style="color: #000000;">PLAY_TUNE</span></code> to the <code class="java">ALARM_CLOCK</code> class.</p>
+<p>It looks like we have a decent application. Users start downloading it, and in reviews they mention that it would be great to make a tune going louder when the alarm is set off. We add the method <code class="java">SET_ENHANCING_MODE</code>, but then notice that we mixed up methods for different responsibilities in the same class: setting tunes, setting volume. This time our class has at least three reasons to change:</p>
+<ul>
+<li>time methods</li>
+<li>volume methods</li>
+<li>tune methods</li>
+</ul>
+<p>Do we want the update of the volume methods to spoil the work of the time methods? Of course not. We should split the class into several parts and delegate responsibilities. You can ask, what will the <code class="java">ALARM_CLOCK</code> do then? The answer is simple: it will call other classes and orchestrate their work depending on a user request.</p>
+<p>Good news! We can also reuse <code class="java">TUNE</code> and <code class="java">VOLUME</code> classes for the <code class="java">REMINDER</code>.</p>
+<p style="text-align: center;"><img alt="" height="232" src="https://ucarecdn.com/81455a7a-532e-4e2f-8f38-375e6c3a1df8/" width="690"/></p>
+<p>To draw boundaries for responsibilities, ask yourself: are these the same responsibilities for a user or not? If they are the same, bind the methods together. If they are not, divide them to create classes that have only <em>one reason to change</em>.</p>
+<p></p><div class="alert alert-warning">The core of the principle is not about breaking the code into small isolated pieces. You gather what belongs to the same responsibility in one place, and then separate units with different responsibilities from each other.</div><p></p>
+<h5 id="conclusion">Conclusion</h5>
+<p>The Single Responsibility Principle (SRP) prevents us from making God objects and encourages us to create classes with only one reason to change. Instead of gathering all methods in one place, we can separate methods with different responsibilities and use them anywhere we need.</p></body></html>

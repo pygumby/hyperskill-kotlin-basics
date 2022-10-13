@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: there should be only the features you will use
+- text: 'parts of the code should not be duplicated '
+- text: the code should be as simple as possible
+- text: the code should be as short as possible
+- text: there should be all the features one can implement in the code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/17540#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 13 Oct 2022 18:41:09 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

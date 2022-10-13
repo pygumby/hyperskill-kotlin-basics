@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: To make the program work anyway
+- text: This is a mandatory requirement of programming languages
+- text: To make the code clean and more structured
+- text: 'To improve the program design '
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8958#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 13 Oct 2022 18:46:17 UTC
+record: -1
+selected_options:
+- 2
+- 3
+local_check: false

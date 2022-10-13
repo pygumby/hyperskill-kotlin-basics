@@ -1,0 +1,49 @@
+<h2>Design principles</h2>
+<html><body><p>Creating software is like engineering: if a crucial part breaks, everything fails. How can we prevent such a disaster? Of course, we can test our programs, but is it sufficient? A program that passes all the tests might still have other problems:</p>
+<ul>
+<li>It can have a bad design, so no one uses it</li>
+<li>We cannot extend any part of it and add new features, because it's hard to understand how it works</li>
+</ul>
+<p>In this topic, we will talk only about the inner design of programs and what helps us to improve and evolve it over time.</p>
+<h5 id="program-design">Program design</h5>
+<p>All programs manipulate data, and although all programs are different, let's think of them as pipelines with data: a program receives some input, processes it, and produces some output. A program can be like a maze:</p>
+<p style="text-align: center;"><img alt="" height="381" src="https://ucarecdn.com/191956f0-00bf-4f73-aa40-02f8efc392db/" width="365"/></p>
+<p>The data goes from one function to another, and so on, and in the end, we get the result. It seems like we can control the data, but if there is an obstacle in our way, we are facing a complex problem. Moving only by straight paths doesn't save us from the growing complexity.</p>
+<p>However, a program can have a different structure:</p>
+<p style="text-align: center;"><img alt="" height="342" src="https://ucarecdn.com/de87ce18-54c1-4f65-b43c-58980f0fa308/" width="611"/></p>
+<p>We keep the diversity of data paths but organize the code differently. We can say that we have another <strong>design</strong> for the program. The design of a program is the way to organize the code structure to achieve its primary goals.</p>
+<p>Making a good design from scratch is not that simple, and we often don't know all its requirements in the very beginning. What we surely can do is follow guidelines or principles to make the design more effective and clear.</p>
+<p> </p>
+<p>If you're working with a code base of about several hundred lines of code, you can start with any design you like. Poor design decisions would hardly be such a huge problem for you.</p>
+<p> </p>
+<h5 id="design-principles">Design principles</h5>
+<p>As we already know, applications have a design, but what can help us to make it better?</p>
+<p><strong>Design principles </strong>are rules that guide you to better decisions for the design of your program. You can refer to them when you want to add or update any part of the code.</p>
+<p>Some of them come almost from common sense:</p>
+<ul>
+<li>Don't Repeat Yourself (<strong>DRY</strong>)</li>
+<li>You Ain't Gonna Need It (<strong>YAGNI</strong>)</li>
+<li>Keep It Simple, Stupid (<strong>KISS</strong>)</li>
+</ul>
+<p>As you can guess, the <em>DRY</em> principle means, it's better to reuse code instead of copying it from one place to another. <em>YAGNI</em> is the principle of doing only the work that you need and not doing anything else. <em>KISS</em> stands for making the code simpler for better understanding.</p>
+<p style="text-align: center;"><img alt="" height="385" src="https://ucarecdn.com/e6fdd70b-60b0-4321-9148-48a55a05772f/" width="651"/></p>
+<p>Not all principles are easy to learn. Some of them, like <strong>GRASP</strong> (General Responsibility Assignment Software Patterns) is a whole ecosystem with many design patterns included and mostly adhere to object-oriented programming.</p>
+<p>The other principles do not involve any additional knowledge, but it takes time to understand their meaning and significance. Let's look at the five software design principles hiding in the acronym; <strong>SOLID.</strong></p>
+<h5 id="solid">SOLID</h5>
+<p>There is no one design principle to follow when designing your program. Why? Because as your program grows, it becomes more complex. You will need to familiarize yourself with different approaches to help manage your program through different kinds of complexities. To make the path to our goals smooth, we can rely on <em>SOLID </em>design principles.</p>
+<p>Each letter in SOLID refers to a distinct design principle:</p>
+<ul>
+<li><strong>S</strong>ingle Responsibility Principle (<em>SRP</em>)</li>
+<li><strong>O</strong>pen-Closed Principle (<em>OCP</em>)</li>
+<li><strong>L</strong>iskov Substitution Principle (<em>LSP</em>)</li>
+<li><strong>I</strong>nterface Segregation Principle (<em>ISP</em>)</li>
+<li><strong>D</strong>ependency Inversion Principle (<em>DIP</em>)</li>
+</ul>
+<p>That's the whole world behind this term! Each principle is independent of others, but applying them together works as a synergy for your design.</p>
+<p><em>SOLID</em> principles help you to organize your code in a way that any other developer familiar with these principles can use and extend it. Applying them, you make your code more structured and clean, so it doesn't look like a maze anymore.</p>
+<p> </p>
+<p>Discussing each principle in detail is out of the scope of this topic, all of them deserve a whole independent topic for themselves.</p>
+<p> </p>
+<h5 id="conclusion">Conclusion</h5>
+<p>To make a sustainable program that we can easily maintain for months or even years, we should think about its design first. Getting to work on it, we should apply our knowledge of design principles.</p>
+<p>We can use our common sense with <em>DRY</em>, <em>YAGNI</em>, or <em>KISS</em>. However, when working on a huge project, it's better to use a more complex approach based on the set of <em>SOLID</em> principles.</p></body></html>

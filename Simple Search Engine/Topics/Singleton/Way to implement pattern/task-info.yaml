@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: create method that will consist of clone() method for a simple object creation
+    through copying existing ones
+- text: create a simple factory method that will supply application with objects
+- text: create getInstance() method that contains a simple condition which checks
+    for presence of an object instance
+- text: create an interface for a step-by-step object creation
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16476#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 13 Oct 2022 19:15:31 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

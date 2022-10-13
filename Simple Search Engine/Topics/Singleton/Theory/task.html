@@ -1,0 +1,41 @@
+<h2>Singleton</h2>
+<html><body><p>Creational patterns consist of some solutions to common design problems. One of these problems is the need to maintain a single instance of some object. The most common solution to this problem is the singleton pattern.</p>
+<h5 id="what-is-a-singleton" style="text-align: center;">What is a singleton?</h5>
+<p><strong>Singleton</strong> is a creational design pattern that allows you to keep only one instance of an object and provide global access to it. What does it mean and why you might have to use it? Well, it solves two problems:</p>
+<ul>
+<li>Keeping only one instance of an object is useful when you want to control access to some shared resources. When you create one object of a class, if you use a singleton pattern, you will always have that same object. In case you'll try to create another one, the code will return the first initiated object each time.</li>
+<li>Providing a global access point to allow all clients to use the initiated instances. When you address this problem, you also should squeeze all the code regarding the first problem in one class, to avoid it being scattered all over your code.</li>
+</ul>
+<p style="text-align: center;"><img alt="" height="410" name="Singleton.svg" src="https://ucarecdn.com/fbe8dd71-892f-43c2-9471-d689d90cf806/" width="700"/></p>
+<p>Usually, to implement this pattern, we create a <code class="java">Singleton</code> class that is connected to other parts of our application. It consists of <code class="java">Object</code> constructor and <code class="java">getInstance()</code> method. Through our constructor, we create instances when an application first needs it. Then we check the presence of this instance with our method <code class="java">getInstance()</code> and pass it to our application. This helps us to avoid creating other instances.</p>
+<h5 id="singleton-implementation-example" style="text-align: center;">Singleton implementation example</h5>
+<p>Here's a simple implementation example of this pattern, depicted in pseudocode:</p>
+<pre><code class="language-no-highlight">global instance
+
+class Object is
+  constructor of Object...
+
+  method getInstance() is
+    if (instance == null) then
+      instance = new Object()
+    return instance</code></pre>
+<p>As you can see, we have global <code class="java">instance</code> and <code class="java">Object</code> class which consists of <code class="java">Object()</code> constructor that creates our object instance and method <code class="java">getInstance()</code>. This method is the most common way to apply singleton. We have a simple condition <code class="java">if</code> which checks the presence of an object instance. If there is no instance of an object, the method will create a new one. If there is an object instance, the method will simply stick to it.</p>
+<p>Let's try to use this class in our application:</p>
+<pre><code class="language-no-highlight">foo = Object.getInstance()
+bar = Object.getInstance()
+foo is bar //true</code></pre>
+<p>Here we have a class application, which, through the <code class="java">main()</code> method, tries to create objects <code class="java">foo</code> and <code class="java">bar</code>. The objects are checked through our <code class="java">getInstance()</code> method. When we initialize our instance for the first time with <code class="java">foo</code>, our code will stick to it even when we try to initialize it with our <code class="java">bar</code> object. So our <code class="java">bar</code> object will always be the same as the <code class="java">foo</code> object.</p>
+<p> </p>
+<p></p><div class="alert alert-primary"> Instead of trying to maintain one instance of a class, you can maintain a few instances. All it takes is a bit of change to the <code class="java">getInstance()</code> method and keeping more than one instance. But by doing this, you'll now work with a different design pattern called <strong>multiton</strong>. </div>
+<p> </p>
+<h5 id="usage-of-singleton" style="text-align: center;">Usage of singleton</h5>
+<p>Obviously, singleton should be used in situations when you need to keep only one instance of a class that is available to all clients. For example, the most common example is the <code class="java">LogManager</code> class that allows keeping logs of your application runtime. It doesn't need to have more than one instance and should be accessible to all application classes. Another time when this pattern should be implemented is when you need to isolate your instance and have only singleton class control over it.</p>
+<p>But singleton has a few problems that make you do some bad workarounds in your code. For example:</p>
+<ul>
+<li>Singleton violates SRP (S<em>ingle Responsibility Principle)</em> by solving two problems at once. This could have a negative impact on your code because the solution for one problem can interfere with the solution for another.</li>
+<li>Components of a program can have a bit too much information about each other.</li>
+<li>The use of the singleton pattern makes unit testing harder.</li>
+</ul>
+<p>Those are the most common problems that can occur when implementing singleton.</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Singleton is a great tool that allows us to simply maintain one instance of a class and provide a global access point to it. It is fairly clear how to implement a singleton in your code, but, like all design patterns, it can drive you to some strange workarounds and hurt your work. So it should be implemented only when it's absolutely necessary.</p></body></html>

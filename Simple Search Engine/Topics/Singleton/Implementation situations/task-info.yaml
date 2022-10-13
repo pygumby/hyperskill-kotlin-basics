@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: when other company provides your team with their objects through some interface
+- text: when you need to create an application that can be unit-tested with relative
+    ease
+- text: when you need to work with a LogManager class and maintain one instance of
+    it
+- text: when you are starting a new project and don't know the exact types of objects
+    you'll work with
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16475#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 13 Oct 2022 19:15:51 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

@@ -21,3 +21,4 @@ content:
 - Garbage collection approaches
 - Design principles
 - Single Responsibility Principle
+- Singleton

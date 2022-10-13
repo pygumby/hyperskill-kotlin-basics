@@ -83,6 +83,11 @@
             <option value="$PROJECT_DIR$/Topics/Single Responsibility Principle/All necessary methods" />
             <option value="$PROJECT_DIR$/Topics/Single Responsibility Principle/One reason to change" />
             <option value="$PROJECT_DIR$/Topics/Single Responsibility Principle/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Singleton/Implementation examples" />
+            <option value="$PROJECT_DIR$/Topics/Singleton/Implementation situations" />
+            <option value="$PROJECT_DIR$/Topics/Singleton/Singleton solutions" />
+            <option value="$PROJECT_DIR$/Topics/Singleton/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Singleton/Way to implement pattern" />
             <option value="$PROJECT_DIR$/Topics/Stack and heap memory/Advantages of stack" />
             <option value="$PROJECT_DIR$/Topics/Stack and heap memory/Contiguous memory" />
             <option value="$PROJECT_DIR$/Topics/Stack and heap memory/Memory leakage" />

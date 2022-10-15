@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: log message
+- text: user's phone number
+- text: time
+- text: date
+- text: developer's facebook status
+- text: log level
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12344#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 15 Oct 2022 15:37:03 UTC
+record: -1
+selected_options:
+- 0
+- 2
+- 3
+- 5
+local_check: false

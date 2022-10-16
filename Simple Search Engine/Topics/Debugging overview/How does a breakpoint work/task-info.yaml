@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: exactly to the end and all the values will be counted
+- text: exactly up to this line and count all values up to this line
+- text: exactly up to this line but the values will not be counted at all
+- text: ' exactly up to this line and count all values, including the values in this
+    line'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14371#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 16 Oct 2022 14:04:13 UTC
+record: -1
+selected_options:
+- 1
+custom_name: How does a breakpoint work?
+local_check: false

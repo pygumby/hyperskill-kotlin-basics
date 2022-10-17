@@ -1,0 +1,41 @@
+<h2>Advanced debugger features</h2>
+<html><body><p>Line breakpoints are useful, but there are several other places where it can be helpful to stop execution:</p>
+<ul>
+<li>When the primary constructor is invoked.</li>
+<li>When a particular method is invoked. Including one that's been overridden or one with incorrect or missing source code.</li>
+<li>When an exception of a specific type is thrown.</li>
+<li>The next line of the current method, when program execution has already been stopped.</li>
+<li>The first line of the method that's going to be invoked and added to the call stack next.</li>
+<li>The next line of the caller method after the currently executing method is popped from the call stack.</li>
+</ul>
+<p>The next line of the current method could be reached with another breakpoint, although there's a simpler way to do this. But the other places listed above cannot easily be reached with a line breakpoint. So, in this topic, you will learn about some additional tools that make this advanced kind of debugging possible.</p>
+<h5 id="constructor-and-method-breakpoints">Constructor and method breakpoints</h5>
+<p>A primary constructor might not contain any statements and may not even have any property declarations or parentheses.</p>
+<p>To set a <strong>constructor breakpoint</strong>, click in the gutter, like with ordinary line breakpoints. You will see a square instead of a circle, and the execution will stop right inside the constructor, which is called <code class="java">&lt;init&gt;</code> in the bytecode:</p>
+<p><img alt="" height="516" name="ctor breakpoint.png" src="https://ucarecdn.com/83f0f195-a320-423d-a8a5-8542764e7f71/" width="695"/></p>
+<p>Using this tool, you can trace constructor invocations, even when dealing with library classes that have implicit constructor declarations.</p>
+<p>You can set a breakpoint on a method in a similar way. When dealing with closed-source libraries, you can see decompiled classes, but line breakpoints won't work. Also, when debugging Android framework, the source code in the IDE might be a different version from the Android version running on the device. So, line breakpoints would refer to the wrong lines, but <strong>method breakpoints</strong> will still work.</p>
+<p>In the below example, a breakpoint has been set on the <code class="java">View.isEnabled()</code> method, which comes from Android framework. The "current" line is highlighted incorrectly, but stack and <code class="java">this</code> are still available and correct:</p>
+<p><img alt="" height="522" name="method breakpoint.png" src="https://ucarecdn.com/c0de0b94-ff6e-4107-aad3-cab8c0ea8864/" width="756"/></p>
+<h5 id="exception-breakpoints">Exception breakpoints</h5>
+<p>When an application crash occurs, you can see its stack trace, but that's not always enough. Walking through stack frames and observing application state just before the crash could be very helpful.</p>
+<p>Pressing <em>Run</em> → <em>View Breakpoints...</em> enables you to see all the current breakpoints and to set <strong>exception breakpoints</strong>:</p>
+<p><img alt="" height="508" name="breakpoints window.png" src="https://ucarecdn.com/691e30e7-a5d9-4e1e-b61e-b3242fe035fa/" width="807"/></p>
+<p>Kotlin uses the same exception machinery as Java, so click the <em>Java Exception Breakpoints</em> option. Having done this, you can choose any of the exception types available in the current project and configure whichever details you want. For example, you can opt to stop on caught exceptions, uncaught exceptions, or both. You can also add a condition or log a message if you wish:</p>
+<p><img alt="" height="522" name="exception breakpoint tuning.png" src="https://ucarecdn.com/15a0e56e-4939-413a-9fd7-d1da5a63f969/" width="532"/></p>
+<p>Done! Now, execution will stop when an exception that meets the specified conditions is thrown.</p>
+<h5 id="stepping">Stepping</h5>
+<p>So, you have a program stopped at a breakpoint. But what happens when the next line is executed? Or several lines later? Which method override will be invoked? What will happen after the current method returns?</p>
+<p><img alt="" height="400" name="stepping.png" src="https://ucarecdn.com/327c5278-bbfe-4118-9f97-edbd3bd5a329/" width="516"/></p>
+<p>As shown above, if you hover over a line number, the line will be highlighted. And if you click it, the program will resume until it reaches the clicked line and then be suspended again. This means that instead of adding a breakpoint and resuming, you can simply click the desired line.</p>
+<p>There are also three tools highlighted in the above screenshot:</p>
+<ul>
+<li><em>Step Over</em></li>
+<li><em>Step Into</em></li>
+<li><em>Step Out</em></li>
+</ul>
+<p><em>Step Over</em> will resume execution to the next line, without traveling into any of methods called from the current one. This can be useful when you want to determine which branch of an <code class="java">if</code> or <code class="java">when</code> is executed, for example.</p>
+<p><em>Step Into</em> will peek into the next method called by the current line, or just step over if there's none. There's also <em>Force Step Into (</em>which has the same icon as <em>Step Into</em> but with a red arrow instead of a blue one). This tool makes it easy to step into library code instead of staying at the level of your own code. <em>Force Step Into</em> will work even without source code, and for runtime-generated classes without bytecode available. In this case, you won't see the code being executed, but stack frames will still be visible, giving you an idea about what that method does.</p>
+<p><em>Step Out</em> will suspend execution after the current method ends and return you to the context of the caller method.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>You already knew about line breakpoints, and now you're familiar with constructor, method, and exception breakpoints as well. You've also learned how to continue execution until a particular line is reached, and determine which line will be executed next. In addition, you've seen how to peek into the depths of a method invocation chain and quickly return from it.</p></body></html>

@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Exception breakpoint
+- text: Method or constructor breakpoint
+- text: Step Over
+- text: Line breakpoint
+- text: Step Into
+- text: Step Out
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16030#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 17 Oct 2022 16:49:33 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

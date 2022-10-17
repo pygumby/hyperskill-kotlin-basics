@@ -11,6 +11,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Advanced debugger features/No source" />
+            <option value="$PROJECT_DIR$/Topics/Advanced debugger features/Theory" />
             <option value="$PROJECT_DIR$/Topics/Components of computer memory/Bridge" />
             <option value="$PROJECT_DIR$/Topics/Components of computer memory/D-RAM full-form" />
             <option value="$PROJECT_DIR$/Topics/Components of computer memory/Data storage" />

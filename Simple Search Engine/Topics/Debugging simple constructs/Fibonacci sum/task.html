@@ -1,0 +1,15 @@
+<h2>Fibonacci sum</h2>
+<p>Below, there is a code that calculates Fibonacci numbers and their sum in the infinite cycle. Using the debugger, find the <code class="language-kotlin">fibonacciSum</code> value when the variable <code class="language-kotlin">fibonacciCurrent</code> becomes greater than 1000 for the first time and is added to the sum.</p>
+
+<pre><code class="language-kotlin">fun main() {
+    var fibonacciPrevious = 1
+    var fibonacciCurrent = 1
+    var fibonacciSum = fibonacciPrevious + fibonacciCurrent
+
+    while(true) {
+        val tmp = fibonacciPrevious + fibonacciCurrent
+        fibonacciPrevious = fibonacciCurrent
+        fibonacciCurrent = tmp
+        fibonacciSum += fibonacciCurrent
+    }
+}</code></pre>

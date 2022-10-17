@@ -23,8 +23,10 @@
             <option value="$PROJECT_DIR$/Topics/Computer Memory/Theory" />
             <option value="$PROJECT_DIR$/Topics/Debugging overview/How can we use a debugger" />
             <option value="$PROJECT_DIR$/Topics/Debugging overview/How does a breakpoint work" />
+            <option value="$PROJECT_DIR$/Topics/Debugging overview/The calculation result" />
             <option value="$PROJECT_DIR$/Topics/Debugging overview/Theory" />
             <option value="$PROJECT_DIR$/Topics/Debugging overview/Which line should be stopped" />
+            <option value="$PROJECT_DIR$/Topics/Debugging simple constructs/Theory" />
             <option value="$PROJECT_DIR$/Topics/Debugging techniques/Assertion" />
             <option value="$PROJECT_DIR$/Topics/Debugging techniques/Development approach" />
             <option value="$PROJECT_DIR$/Topics/Debugging techniques/Proper tools" />

@@ -1,0 +1,15 @@
+<h2>Cycles and iterations</h2>
+<p>Look at the following code:</p>
+
+<pre><code class="language-kotlin">fun fibonacci() {
+    var prev = 0
+    var current = 1
+    for (i in 0..24) {
+        val swap = prev
+        prev = current
+        current += swap
+        println(current)
+    }
+}</code></pre>
+
+<p>What is the value of the <code class="language-kotlin">current</code> variable at the end of the 20th iteration (i == 19)?</p>

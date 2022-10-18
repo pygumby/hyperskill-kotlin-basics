@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: a -&gt; first_side, b-&gt; second_side, c -&gt; hypotenuse
+- text: a -&gt; one, b -&gt; two, c -&gt; three
+- text: a -&gt; k, b -&gt; l, c -&gt; m
+- text: a -&gt; first_triangle_side, b -&gt; second_triangle_side, c -&gt; hypotenuse
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12068#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 18 Oct 2022 17:45:37 UTC
+record: -1
+selected_options:
+- 0
+- 3
+local_check: false

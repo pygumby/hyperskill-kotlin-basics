@@ -102,6 +102,10 @@
             <option value="$PROJECT_DIR$/Topics/Object declarations/Library" />
             <option value="$PROJECT_DIR$/Topics/Object declarations/Properties" />
             <option value="$PROJECT_DIR$/Topics/Object declarations/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Self-documenting code/Definitions" />
+            <option value="$PROJECT_DIR$/Topics/Self-documenting code/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Self-documenting code/Ways of writing self-documenting code" />
+            <option value="$PROJECT_DIR$/Topics/Self-documenting code/Writing self-describing code" />
             <option value="$PROJECT_DIR$/Topics/Single Responsibility Principle/All necessary methods" />
             <option value="$PROJECT_DIR$/Topics/Single Responsibility Principle/One reason to change" />
             <option value="$PROJECT_DIR$/Topics/Single Responsibility Principle/Theory" />

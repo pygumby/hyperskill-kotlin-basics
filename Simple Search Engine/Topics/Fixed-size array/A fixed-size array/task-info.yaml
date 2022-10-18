@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: '... sequentially stores a fixed number of elements of arbitrary type.'
+- text: '... stores a fixed number of elements of the same type.'
+- text: '... sequentially stores a fixed number of elements of the same type.'
+- text: '... stores any number of elements of the same type.'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7256#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 18 Oct 2022 18:25:32 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

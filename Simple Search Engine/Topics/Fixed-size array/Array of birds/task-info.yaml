@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: List of birds provided by the supervisor
+- text: List of group names
+- text: List of students' names
+- text: List of bird names collected by the students
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20081#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 18 Oct 2022 18:24:20 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

@@ -11,7 +11,6 @@ content:
 - The concept of patterns
 - Introduction to software architecture
 - Introduction to creational patterns
-- List
 - JVM components
 - Computer Memory
 - Components of computer memory
@@ -28,4 +27,5 @@ content:
 - Debugging overview
 - Debugging simple constructs
 - Advanced debugger features
+- List
 - Self-documenting code

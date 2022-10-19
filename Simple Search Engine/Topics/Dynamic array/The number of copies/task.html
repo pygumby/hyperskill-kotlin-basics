@@ -1,0 +1,16 @@
+<h2>The number of copies</h2>
+<html><body><p>Assume that for a dynamic array of size <span class="math-tex">\(2\)</span> and capacity <span class="math-tex">\(4\)</span> we perform the following sequence of operations:</p>
+<pre><code class="language-no-highlight">add 5
+add 7
+add 9
+insert 3 1
+insert 6 2
+</code></pre>
+<p></p><div class="alert alert-PRIMARY">Here,<em> add <span class="math-tex">\(x\)</span> </em>means that we append an element to the array, <em>insert <span class="math-tex">\(x\)</span></em> <span class="math-tex">\(i\)</span> means that we insert <span class="math-tex">\(x\)</span> to the array at the <span class="math-tex">\(i\)</span>-th index (assuming zero-based indexing). </div><p></p>
+<p>How many copy operations of an individual array element will we perform when doing the required operations with the array?</p>
+<p>Note that elements are copied in the following cases:</p>
+<ul>
+<li>When the array capacity increases, all elements from the old array are copied.</li>
+<li>When we insert an element into the middle of the array. In this case, all elements from the right half of the array are copied after the inserted element, starting at the index of the inserted element.</li>
+</ul>
+<p>Write down the total number of times any individual element will be copied assuming that the scaling factor is <span class="math-tex">\(2\)</span>.</p></body></html>

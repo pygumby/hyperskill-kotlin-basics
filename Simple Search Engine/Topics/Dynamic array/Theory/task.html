@@ -1,0 +1,61 @@
+<h2>Dynamic array</h2>
+<h5 id="introduction" style="text-align: center;">Introduction</h5>
+
+<p>Many programs need to store and process sequences of elements of the same type like numbers, strings, or even more complex objects. An <strong>array</strong> is a widely used structure to represent such data sequences since an element can be accessed in constant time by index. However, regular arrays suffer from a significant drawback – they have a fixed size. This does not allow one to create an array if the number of elements is unknown in advance. In such cases, using a <strong>dynamic array</strong> is a possible solution.</p>
+
+<h5 id="essentials" style="text-align: center;">Essentials</h5>
+
+<p>A<strong> dynamic array</strong> is a linear data structure that is able to increase and, in some implementations, shrink when its size changes. As a rule, it has an internal regular array that actually stores data under the hood and provides some additional operations on top of it.</p>
+
+<p>A dynamic array has two important properties:</p>
+
+<ul>
+	<li><strong>size</strong> – the number of elements already stored in it;</li>
+	<li><strong>capacity</strong> – a possible number of elements to be stored that corresponds to the size of the internal regular array. <strong> </strong></li>
+</ul>
+
+<p>Usually, there are two paths: either to specify a <strong>capacity</strong> for a new dynamic array or to set a constant default value (e.g. 10). In contrast to basic arrays, dynamic arrays have operations for adding/removing elements to or from any position. This way, we can add and remove elements one by one after a dynamic array has been created.</p>
+
+<p>The picture below demonstrates a dynamic array to which we added four numbers. The actual size is 4 and the capacity is 10 (initial):</p>
+
+<p style="text-align: center;"><img alt="" height="311" src="https://ucarecdn.com/91dc0225-48f2-4abf-b5d7-5d835c1d33b2/" width="645"></p>
+
+<h5 id="scaling-factor" style="text-align: center;">Scaling factor</h5>
+
+<p>If the number of elements exceeds the <strong>capacity</strong>, all elements will be copied to a new internal array of a bigger size. There are a number of different scaling strategies for the size of it. The most common ones are the multiplication of the initial capacity by 1.5 (Java) or 2 (C++, the GCC STL implementation). There are also more unique cases like the Golang dynamic array ("slice"), which doubles the size until 1024 elements (after that the ratio is 5/4).</p>
+
+<p>It is a trade-off between time and space complexities. With a bigger growth factor, we have more insertions before we would have to extend an array, thus decreasing time complexity.</p>
+
+<p>But what is the best scaling factor? That is, what value will have both time and space complexities? It turns out, that the value must be equal to the golden ratio, <span class="math-tex">\(1.61803\)</span>. As you may notice, <span class="math-tex">\(1.5\)</span> is as close to it as it can get. If you're curious to know more, you can <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://stackoverflow.com/questions/1100311/what-is-the-ideal-growth-rate-for-a-dynamically-allocated-array" rel="noopener noreferrer nofollow">read it up there</a>.</p>
+
+<p>It may also be necessary to support the shrinking of the internal array when removing elements to reduce the required size.</p>
+
+<h5 id="common-operations" style="text-align: center;">Common operations</h5>
+
+<p><strong>Add an element to the end of the array.</strong> As discussed above, in the base case scenario where we just add an element to an array without specifying the index, we'll have these complexities:</p>
+
+<ul>
+	<li><span class="math-tex">\(O(1)\)</span> – in average cases, since we just insert an element to already allocated memory (less than capacity);</li>
+	<li><span class="math-tex">\(O(n)\)</span> – in the worst case, where we ran out of space and need to allocate a new array and copy every element into it.</li>
+</ul>
+
+<p>The average estimate for adding an element to the end of the array is called amortized. Since it is rather difficult to tell from the first glance that it is <span class="math-tex">\(O(1)\)</span>, we have to use a special analysis for that. If anyone is interested they can <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://en.wikipedia.org/wiki/Amortized_analysis" rel="noopener noreferrer nofollow">read about it here</a>.</p>
+
+<p><strong>Add an element at the specified index</strong>. This operation is used when we want to add an element between some already placed elements. Its complexities ( both average and worst) would be <span class="math-tex">\(O(n)\)</span> since on each insertion we must move an element at the index we want and then move every element one index to the right.</p>
+
+<p style="text-align: center;"><img alt="" height="236" src="https://ucarecdn.com/3eb17164-62f8-40a1-b3d2-68c6b9ddda62/" width="599"></p>
+
+<p><strong>Update value at the specified index</strong>. This operation replaces the element at the specified index with the element. All this is done in constant time since it is just like the assignment in the basic array, so the complexities are both <span class="math-tex">\(O(1)\)</span>.</p>
+
+<p><strong>Remove an element by value/index</strong>. These methods either remove the first occurrence of an element specified or an element at the index specified. Both are similar to adding an element at the specified index in the sense that we would have to move some (or all) of the remaining elements one index to the left; therefore their complexities would also be <span class="math-tex">\(O(n)\)</span>.</p>
+
+<p style="text-align: center;"><img alt="" height="258" src="https://ucarecdn.com/86d2f01c-0a9a-41b9-a122-1b6c12fd2442/" width="655"></p>
+
+<p><br>
+<strong>Clear</strong>. Here we just want to remove every element from the array. Since insertion is done via computation on the current array size, we can just reset the size to zero and override the old elements during the following inserts. That would leave the elements hanging out in memory (so the garbage collector won't be able to collect them) until they are overridden. The simplest form would have complexities of <span class="math-tex">\(O(1)\)</span>, but the right one would have <span class="math-tex">\(O(n)\)</span>.</p>
+
+<p><strong>Get element by index</strong>. Since a dynamic array is basically just a normal array, we can access elements by their index in constant time, so complexities are <span class="math-tex">\(O(1)\)</span>.</p>
+
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+
+<p>A dynamic array is just like a regular array, but the number of stored elements can be changed. If adding operations run out of space to store elements, a new bigger array is allocated, and every element of the old array is copied to the new one. The scaling factor is a trade-off between time (speed) and space. With a bigger factor we have fewer allocations and less copying, but higher chances of running out of memory. The most common factors are 1.5 and 2. In some implementations, a dynamic array can support shrinking to reduce the used memory after removing elements.</p>

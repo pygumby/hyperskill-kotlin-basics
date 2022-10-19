@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: '... a new array is allocated and all elements from the current array are
+    copied in the new array.'
+- text: '... all elements of the array are removed and new elements are added to the
+    beginning of the array.'
+- text: '... new elements are not added to the array anymore.'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6502#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 19 Oct 2022 15:22:39 UTC
+record: -1
+selected_options:
+- 0
+custom_name: Size and capacity
+local_check: false

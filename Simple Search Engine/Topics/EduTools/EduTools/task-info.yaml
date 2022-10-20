@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: write an article
+- text: plan your academical studies
+- text: learn and teach programming languages
+- text: edit textbooks
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5840#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 20 Oct 2022 16:10:09 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

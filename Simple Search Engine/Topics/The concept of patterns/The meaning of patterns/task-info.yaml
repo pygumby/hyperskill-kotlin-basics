@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: The debuggers that help to find bad design
-- text: The "rules" to organize your code in a logical and well-readable structure
 - text: The template code snippets that programmers add to their code
+- text: The "rules" to organize your code in a logical and well-readable structure
+- text: The debuggers that help to find bad design
 - text: The libraries with ready-made solutions
 files:
 - name: src/Main.kt

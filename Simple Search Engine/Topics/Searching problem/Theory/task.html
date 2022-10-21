@@ -1,0 +1,44 @@
+<h2>Searching problem</h2>
+<html><body><p>If you want something from a group of objects, you need to perform a search. It applies to all aspects of life. For example, if you want to get your algorithm book from a pile of books, you have to search. If you want to buy a pair of shoes that fits you, you have to search among different sizes. In programming, we always deal with data structures that are collections of data. Likewise, to get the desired data, we have to search for it. This searching problem is so common in programming that intelligent solutions are indispensable to make our program more efficient and reliable.</p>
+<h5 id="what-do-we-search-for">What do we search for?</h5>
+<p>In programming, we usually search for information about:</p>
+<ol>
+<li>
+<p><strong>Value:</strong> We want to know whether a list or an array of data contains our desired value, and we need to access it.</p>
+</li>
+<li>
+<p><strong>Location:</strong> We might need to find out the site that holds our data. It can be the index number of an array or the memory address of the storage that contains the data.</p>
+</li>
+</ol>
+<p>Let's have a look at an example. Here is an array of numbers:</p>
+<p style="text-align: center;"><img alt="" height="141" name="Test Task_ Searching Problem.png" src="https://ucarecdn.com/6cabf598-a81d-4fee-a87e-4dae220c98c6/-/crop/661x141/131,74/-/preview/" width="661"/></p>
+<p>Is there number 11 in the array? The answer is yes. We can say so since we have searched for the value 11 in the array. But frequently, we need to know the location of the searched value rather than the value itself. In our example, the number 11 is stored at index 2 of the array.</p>
+<h5 id="how-do-computers-search">How do computers search?</h5>
+<p>Computers have instant access to all of their memory addresses, i.e., if you tell a computer an index number, it will tell you the value contained there right away. But when it comes to searching, a question of efficiency arises. Searching is a tedious job for a computer since it cannot see an array like a human and jump directly to a particular value.</p>
+<p>Let's elaborate on the concept of searching using the previous example. Suppose we have given our computer an array of six numbers. To the computer, it looks like this:</p>
+<p style="text-align: center;"><img alt="" height="113" name="Test Task_ Searching Problem (1).png" src="https://ucarecdn.com/fcfb0eed-1452-4e72-8692-6718f0a5a269/-/crop/665x113/127,86/-/preview/" width="665"/></p>
+<p>Now, to find the value 11, the computer starts exploring the indexes one by one. First, it checks the index 0:</p>
+<p style="text-align: center;"><img alt="" height="114" name="Test Task_ Searching Problem (2).png" src="https://ucarecdn.com/ac8c0739-270f-4092-a52a-2e553243bb28/-/crop/627x114/148,84/-/preview/" width="627"/></p>
+<p>It contains the value 9, not 11. Next, it checks the index 1:</p>
+<p style="text-align: center;"><img alt="" height="119" name="Test Task_ Searching Problem (3).png" src="https://ucarecdn.com/09ec88de-a512-4537-8d60-07d8853a6aae/-/crop/630x119/151,82/-/preview/" width="630"/></p>
+<p>Still, the computer is out of luck as index 1 contains the value 2, whereas it needs 11. Then it moves to the following index:</p>
+<p style="text-align: center;"><img alt="" height="117" name="Test Task_ Searching Problem (4).png" src="https://ucarecdn.com/780dc312-af29-46ff-ae16-e607f5f9e7a9/-/crop/621x117/151,84/-/preview/" width="621"/></p>
+<p>Hurray! It has found the value 11. In this case, it stops here and won't explore the following indexes.</p>
+<p>In this particular example, the computer has performed three steps in total to find the value 11. The worst-case scenario could have happened if only the last index contained the value 11. Then, the computer would've had to perform six operations to find the desired value.</p>
+<p>Now, imagine our array contained thousands of numbers. Then the computer would have to perform thousands of operations to find a certain value. At this point, you may have guessed why intelligent searching algorithms are necessary to help computers find the desired number with the fewest possible operations.</p>
+<p>There are several searching algorithms available. We can classify all of them into two categories, namely sequential search and interval search. Now let's learn about them briefly.</p>
+<h5 id="sequential-search">Sequential search</h5>
+<p>The steps that our computer followed in the previous example in order to find the number 11 is sequential search, also known as linear search. Here, the computer is clueless about its next move, so it starts exploring indexes sequentially from the very beginning until it gets the desired value. We need this method when we don't know any pattern in our data; that is, our data is a collection of some random, unsorted values. In that case, we have no other option than to analyze them from the beginning one by one.</p>
+<p>For example, we have to find an algorithm book in a pile of random books. We have to start looking for the book sequentially. If we are lucky enough, we might find the book very soon. But what if our algorithm book is the last one? Now you see that sequential search is luck-dependent: there is no elegance here.</p>
+<h5 id="interval-search">Interval search</h5>
+<p>In interval search, we try to be innovative and guess our next move based on the data. This cleverness is only possible when we discover a pattern in our data or our data is sorted.</p>
+<p>Let's think about the problem of finding a pair of shoes that fits you. Shoes are already categorized based on size, style, purpose, etc. Drawing on these choices, we can quickly narrow down our area of search. Do you want a pair of shoes for hiking? You can move forward and search only where hiking shoes are displayed.</p>
+<p>Now, suppose you have found a pair of shoes of your choice. But when you put them on, they feel tight. After this, you will only look for a bigger size than the one you chose first. You won't have to search for a smaller size.</p>
+<p>Interval search algorithms work quite the same way. They narrow down the searching area based on some criteria or a pattern. For this reason, interval search is always faster and more efficient than sequential search.</p>
+<p>Now let's illustrate the searching algorithm by playing a game. You may be familiar with the guessing game where one person guesses a number and the other person says whether the number they've thought of is lower or higher than the guessed one. Suppose the correct number is 63, but you don't know that. We ask you to guess a number between 1 and 100. You will probably say that the number is 50. Now we tell you that the actual number is higher. At this point, you can immediately forget about the first 50 numbers and guess a number between 51 and 100. This time, suppose you say the number is 75. We tell you that the actual number is lower, and you discard numbers from 75 to 100. After that, luckily, you guess the correct number and say the number is 63. </p>
+<p> </p>
+<p style="text-align: center;"><img alt="" height="625" name="Guessing-01.png" src="https://ucarecdn.com/1c4144f7-d12c-44fe-b41a-2d7f1b83727b/" width="492"/></p>
+<p> </p>
+<p>After guessing just 3 numbers you have figured out the correct answer. This is a lot faster than guessing numbers sequentially from 1 to 63.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>The searching problem is a fundamental problem that you face frequently in programming. There are many searching algorithms available to solve the problem efficiently. We can either use sequential search or interval search based on the properties of our data. Our goal is to steer the computer in the right direction, in order to find the desired value in the minimum amount of time. Choosing the best-suited searching algorithm for your program will increase its performance. Hence, learning these algorithms is vital to developing a neat program.</p></body></html>

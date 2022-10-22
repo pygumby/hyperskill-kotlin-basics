@@ -8,7 +8,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="java version &quot;17.0.3+7&quot;" />
+        <option name="gradleJvm" value="#JAVA_INTERNAL" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -105,6 +105,10 @@
             <option value="$PROJECT_DIR$/Topics/JVM components/Theory" />
             <option value="$PROJECT_DIR$/Topics/JVM components/What does JVM include" />
             <option value="$PROJECT_DIR$/Topics/JVM components/What does JVM include (1)" />
+            <option value="$PROJECT_DIR$/Topics/Linear search (1)/Searching for an array in an array" />
+            <option value="$PROJECT_DIR$/Topics/Linear search (1)/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Linear search/Searching for an array in an array" />
+            <option value="$PROJECT_DIR$/Topics/Linear search/Theory" />
             <option value="$PROJECT_DIR$/Topics/Navigation through code/Find and replace" />
             <option value="$PROJECT_DIR$/Topics/Navigation through code/Navigate commands" />
             <option value="$PROJECT_DIR$/Topics/Navigation through code/Replace the target" />

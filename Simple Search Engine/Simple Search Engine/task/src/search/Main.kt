@@ -1,9 +1,28 @@
 package search
 
 fun main() {
-    val words = readln().split(" ")
-    val searchTerm = readln()
+    println("Enter the number of people:")
+    val nOfEntries = readln().toInt()
 
-    val searchTermIndex = words.indexOf(searchTerm)
-    println(if (searchTermIndex == -1) "Not found" else searchTermIndex + 1)
+    println("Enter all people:")
+    val persons = mutableListOf<String>()
+    repeat (nOfEntries) {
+        persons.add(readln())
+    }
+
+    println("\nEnter the number of search queries:")
+    val nOfQueries = readln().toInt()
+
+    repeat(nOfQueries) {
+        println("\nEnter data to search people:")
+        val query = readln().lowercase()
+        val results = persons.filter { it.lowercase().contains(query) }
+
+        if (results.isEmpty()) {
+            println("No matching people found.")
+        } else {
+            println("\nPeople found:")
+            println(results.joinToString("\n"))
+        }
+    }
 }

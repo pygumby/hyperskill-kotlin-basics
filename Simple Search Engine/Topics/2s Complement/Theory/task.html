@@ -1,0 +1,113 @@
+<h2>2s Complement</h2>
+<html><body><p>All modern computers store numbers in memory in binary format. For representing negative integers, they use either more simple and less common <strong>one's complement notation</strong> obtained by inverting all digits in a number, or more common <strong>two's complement notation</strong>, which makes arithmetic operations easier.</p>
+<p>In this topic, we will consider the two's complement notation and why it is preferable to use in practice.</p>
+<h5 id="getting-the-twos-complement" style="text-align: center;">Getting the two's complement</h5>
+<p>In two's complement notation, a non-negative number is represented by its ordinary binary representation. The two's complement form of a negative number can be easily got from one's complement. Simply find N-bit's one's complement of a number and add 1 to it.</p>
+<p> </p>
+<p>Two's complement is one's complement plus one.</p>
+<p> </p>
+<p>To get the two's complement from a negative decimal number, we should perform the following simple algorithm:</p>
+<ol>
+<li>Find the binary form for the given decimal number.</li>
+<li>Find the one's complement by inverting all bits of the binary form (replace 0 → 1, 1 → 0);</li>
+<li>Add 1 to the one's complement to get the two's complement.</li>
+</ol>
+<p>Suppose, we would like to get the two's complement of the decimal number <code class="java">-5</code>.</p>
+<ol>
+<li>The binary form of 5 is <code class="java">00000101</code> (using the 1 byte = 8 bits);</li>
+<li>The one's complement form is <code class="java">11111010</code>;</li>
+<li>So, the two's complement is <code class="java">11111011</code>;</li>
+</ol>
+<p>The result is a signed binary number representing the decimal value <code class="java">−5</code> in the two's-complement form. The first bit equal to 1 means that the presented value is negative.</p>
+<p> </p>
+<p>One's complement can be converted from two's complement by subtracting 1.</p>
+<p> </p>
+<h5 id="examples-of-some-numbers" style="text-align: center;">Examples of some numbers</h5>
+<p>Here is a table containing examples of some first numbers in one's and two's complement forms using only 4 bits (to save space and simplify perception).</p>
+<table border="1" cellpadding="1" cellspacing="1" style="height: 134px; width: 716px;">
+<tbody>
+<tr style="text-align: center;">
+<td><strong>Decimal</strong></td>
+<td><strong>Unsigned binary</strong></td>
+<td><strong>One's complement</strong></td>
+<td><strong>Two's complement</strong></td>
+</tr>
+<tr style="text-align: center;">
+<td>-5</td>
+<td>0101</td>
+<td>1010</td>
+<td>1011</td>
+</tr>
+<tr style="text-align: center;">
+<td>-4</td>
+<td>0100</td>
+<td>1011</td>
+<td>1100</td>
+</tr>
+<tr style="text-align: center;">
+<td>-3</td>
+<td>0011</td>
+<td>1100</td>
+<td>1101</td>
+</tr>
+<tr style="text-align: center;">
+<td>-2</td>
+<td>0010</td>
+<td>1101</td>
+<td>1110</td>
+</tr>
+<tr style="text-align: center;">
+<td>-1</td>
+<td>0001</td>
+<td>1110</td>
+<td>1111</td>
+</tr>
+<tr style="text-align: center;">
+<td>0</td>
+<td>0000</td>
+<td>0000</td>
+<td>0000</td>
+</tr>
+<tr style="text-align: center;">
+<td>1</td>
+<td>0001</td>
+<td>0001</td>
+<td>0001</td>
+</tr>
+<tr style="text-align: center;">
+<td>2</td>
+<td>0010</td>
+<td>0010</td>
+<td>0010</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>0011</td>
+<td>0011</td>
+<td>0011</td>
+</tr>
+<tr style="text-align: center;">
+<td>4</td>
+<td>0100</td>
+<td>0100</td>
+<td>0100</td>
+</tr>
+<tr style="text-align: center;">
+<td>5</td>
+<td>0101</td>
+<td>0101</td>
+<td>0101</td>
+</tr>
+</tbody>
+</table>
+<p>It is not necessary to remember this table. Just make sure that you understand why this is true.</p>
+<h5 id="dealing-with-signed-zero" style="text-align: center;">Dealing with signed zero</h5>
+<p>Why using two's complement is simpler and easier in practice?</p>
+<p>Well, in one's complement notation, zero can be both positive (<code class="java">00...00</code>) and negative (<code class="java">11...11</code>) which are both inversions of each other. It brings additional problems to the computer because the computer must check for<strong> a negative zero.</strong> But since two's complement of zero is also zero, two's complement notation has no such problems!</p>
+<h5 id="binary-arithmetics" style="text-align: center;">Binary arithmetics</h5>
+<p>Another advantage of two's complement notation is that compared with one's complement notation, arithmetic operations for positive and negative numbers proceed exactly the same, so we don't need to memorize additional rules for adding and subtracting negative numbers. Try it yourself and see that it does work! Let's add <code class="java">19</code> (<code class="java">00010011</code> in binary) and <code class="java">-16</code> (<code class="java">11110000</code> in binary).</p>
+<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/d5cd3217-b2d7-41d0-b374-f9ec1a00a473/"/></p>
+<p>Since we take into account only the first N bits in N-bit two's complement notation, a carry to the 9th bit, which we don't have, simply vanishes away. Let's try subtraction – subtract <code class="java">-3</code> (<code class="java">11111101</code> in binary) from <code class="java">100</code> (<code class="java">1100100</code> in binary):</p>
+<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/79ef2eb8-b119-4405-ad7c-3e27abc9f76b/"/></p>
+<p>Again, a borrow from the non-existent 9th digit vanishes away. That's the difference – in one's complement binary arithmetics, the carry or borrow was wrapped around to the rightmost digit (so we were adding or subtracting 1), in two's complement it's simply ignored. Which actually makes sense: remember that two's complement of a number is its one's complement plus one? Well, here is that 1!</p>
+<p>As you can see, binary arithmetics in two's complement notation are much easier not only for computers but also for human beings.</p></body></html>

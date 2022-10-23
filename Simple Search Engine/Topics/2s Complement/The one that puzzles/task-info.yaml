@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Ignore that 1
+- text: Add another, (N+1)th bit
+- text: Wrap it around to the rightmost digit
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5757#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 23 Oct 2022 13:38:07 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

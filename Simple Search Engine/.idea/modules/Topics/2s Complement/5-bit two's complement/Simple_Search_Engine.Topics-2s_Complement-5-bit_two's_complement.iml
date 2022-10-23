@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-2s_Complement-5-bit_two's_complement" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/2s Complement/5-bit two's complement" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Simple Search Engine" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/5-bit two's complement">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/5-bit two's complement/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/5-bit two's complement/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/5-bit two's complement/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

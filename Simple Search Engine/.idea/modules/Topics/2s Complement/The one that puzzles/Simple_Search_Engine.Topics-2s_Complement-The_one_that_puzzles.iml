@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-2s_Complement-The_one_that_puzzles" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/2s Complement/The one that puzzles" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Simple Search Engine" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/The one that puzzles">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/The one that puzzles/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/The one that puzzles/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/2s Complement/The one that puzzles/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

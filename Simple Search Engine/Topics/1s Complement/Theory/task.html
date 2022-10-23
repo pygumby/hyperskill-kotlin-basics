@@ -1,0 +1,80 @@
+<h2>1s Complement</h2>
+<html><body><p>At this moment, you understand how to represent integer numbers in the binary format. In practice, we also use negative numbers to represent some facts about the real world such as a negative temperature. In this topic, you will learn how to represent such numbers in the binary format.</p>
+<h5 id="ones-complement-notation" style="text-align: center;">One's complement notation</h5>
+<p>There are several notations to represent integer negative numbers in the binary format. Let's consider the notation known as <strong>one's complement</strong>.</p>
+<p>In this notation, a non-negative number is represented by its ordinary binary representation. The one's complement for a negative number is obtained by inverting all the digits in a binary number (0 → 1, 1 → 0). It's like a mirror image of a binary number.</p>
+<p>Suppose we would like to get the one's complement of the decimal number <code class="java">-3</code>.</p>
+<p>The unsigned binary representation of this number is <code class="java">0011</code>. So, the one's complement form is <code class="java">1100</code>.</p>
+<p>An <strong>N-bit one's complement</strong> of a number is this number inverted in such a way that it contains strictly N digits. For instance, 1-bit one's complement of <code class="java">1</code> is <code class="java">0</code>, 2-bit is <code class="java">10</code>, 8-bit is <code class="java">11111110</code>, and so on.</p>
+<p> </p>
+<p>Computing one's complement of a value is the same as subtracting this value from 0.</p>
+<p> </p>
+<h5 id="examples" style="text-align: center;">Examples</h5>
+<p>One's complement notation is an important concept used for representing <strong>negative binary numbers</strong> in computer memory. Any negative binary number can be represented as one's complement of its corresponding positive number.</p>
+<p>Here is a table containing examples of some numbers in the one's complement form using only 4 bits.</p>
+<table border="1" cellpadding="1" cellspacing="1" style="height: 134px; width: 716px;">
+<tbody>
+<tr style="text-align: center;">
+<td><strong>Decimal</strong></td>
+<td><strong>Unsigned binary</strong></td>
+<td><strong>One's complement</strong></td>
+</tr>
+<tr style="text-align: center;">
+<td>-3</td>
+<td>0011</td>
+<td>1100</td>
+</tr>
+<tr style="text-align: center;">
+<td>-2</td>
+<td>0010</td>
+<td>1101</td>
+</tr>
+<tr style="text-align: center;">
+<td>-1</td>
+<td>0001</td>
+<td>1110</td>
+</tr>
+<tr style="text-align: center;">
+<td>0</td>
+<td>0000</td>
+<td>0000 (or 1111)</td>
+</tr>
+<tr style="text-align: center;">
+<td>1</td>
+<td>0001</td>
+<td>0001</td>
+</tr>
+<tr style="text-align: center;">
+<td>2</td>
+<td>0010</td>
+<td>0010</td>
+</tr>
+<tr style="text-align: center;">
+<td>3</td>
+<td>0011</td>
+<td>0011</td>
+</tr>
+</tbody>
+</table>
+<p>It is not necessary to memorize this table: just make sure that you understand why this is true. Pay attention to different ways of representing zero.</p>
+<h5 id="binary-arithmetics-negatives" style="text-align: center;">Binary arithmetics: negatives</h5>
+<p>We talked about binary arithmetics before, but negative binary arithmetics is a bit trickier.</p>
+<p>First, let's see how to subtract larger numbers from smaller numbers. Let's try subtracting <code class="java">111100</code> from <code class="java">100010</code> (<code class="java">60</code> from <code class="java">34</code> in decimal):</p>
+<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/e6f1b190-66b6-4655-9490-4d023ce3c7ef/"/></p>
+<p>Just like with subtracting positives, if we need to subtract 1 from 0, we <strong>borrow</strong> from the next left digit. When there's nothing left to borrow from, the borrow is<strong> wrapped around</strong>. This means that we subtract the borrowed 1 from the rightmost end of our result. Essentially, we have carried our borrow all the way to the right and then moved it to another end, where we finally subtracted.</p>
+<p>The result is <code class="java">1100101</code>. This number inverted (remember that the answer is negative) is 11010, which is 26 in binary, so our answer is -26. Correct!</p>
+<p>So, negative binary addition and subtraction work the same as with positives, except for three things:</p>
+<ol>
+<li>When our expected answer is negative, it's written in one's complement notation.</li>
+<li>If we borrow from a smaller number, the borrow is wrapped around to the rightmost end.</li>
+<li>If we carry while adding a negative number, the carry is also wrapped around to the rightmost end.</li>
+</ol>
+<h5 id="dealing-with-zeroes" style="text-align: center;">Dealing with zeroes</h5>
+<p>Because zero is neither positive nor negative, in one's complement notation it can be represented as both <code class="java">00000000</code> and <code class="java">11111111</code>.<strong> </strong>The first is called <strong>positive zero</strong>, the second is <strong>negative zero</strong>. Both values behave as zero when added or subtracted, so signed zero shouldn't be a problem when computing manually.</p>
+<p>Try it yourself:</p>
+<p style="text-align: center;"><img alt="" height="241" src="https://ucarecdn.com/9f94f677-bfe4-4248-9b74-8da1ee6bc7b1/" width="640"/></p>
+<p>We add negative zero since our zero is negative; the carried 1 (marked in bold) is wrapped around to the rightmost end.</p>
+<p style="text-align: center;"><img alt="" height="263" src="https://ucarecdn.com/80535c66-0b64-4705-9ae3-cd935658777a/" width="652"/></p>
+<p>We subtracted negative zero.</p>
+<h5 id="usage" style="text-align: center;">Usage</h5>
+<p>Although modern computers almost never use one's complement notation to represent negative integers (preferring another, more complex notation called <strong>two's complement</strong>), most of the early computers used it.</p></body></html>

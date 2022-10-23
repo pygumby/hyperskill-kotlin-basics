@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":Simple_Search_Engine-task:test" external.linked.project.path="$MODULE_DIR$/../../../../Simple Search Engine/task" external.root.project.path="$MODULE_DIR$/../../../.." external.system.id="GRADLE" external.system.module.group="Simple Search Engine" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":Topics-Linear_search-Theory:test" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Linear search/Theory" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Simple Search Engine" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="5" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false">
@@ -32,18 +32,18 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/3.17.2/b13a7ea14b0e2f2f75ed64e2ce310e65a55694df/assertj-core-3.17.2.jar</arg>
               </args>
             </stringArg>
-            <stringArg name="destination" arg="$MODULE_DIR$/../../../../Simple Search Engine/task/build/classes/kotlin/test" />
+            <stringArg name="destination" arg="$MODULE_DIR$/../../../../../Topics/Linear search/Theory/build/classes/kotlin/test" />
             <stringArg name="jvmTarget" arg="1.8" />
-            <stringArg name="moduleName" arg="Simple_Search_Engine-task" />
+            <stringArg name="moduleName" arg="Topics-Linear_search-Theory" />
             <stringArg name="apiVersion" arg="1.6" />
             <stringArg name="languageVersion" arg="1.6" />
           </stringArguments>
           <arrayArguments>
             <arrayArg name="friendPaths">
               <args>
-                <arg>$MODULE_DIR$/../../../../Simple Search Engine/task/build/classes/java/main</arg>
-                <arg>$MODULE_DIR$/../../../../Simple Search Engine/task/build/classes/kotlin/main</arg>
-                <arg>$MODULE_DIR$/../../../../Simple Search Engine/task/build/libs/Simple_Search_Engine-task.jar</arg>
+                <arg>$MODULE_DIR$/../../../../../Topics/Linear search/Theory/build/classes/java/main</arg>
+                <arg>$MODULE_DIR$/../../../../../Topics/Linear search/Theory/build/classes/kotlin/main</arg>
+                <arg>$MODULE_DIR$/../../../../../Topics/Linear search/Theory/build/libs/Topics-Linear_search-Theory.jar</arg>
               </args>
             </arrayArg>
             <arrayArg name="pluginClasspaths">
@@ -63,15 +63,13 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output-test url="file://$MODULE_DIR$/../../../../Simple Search Engine/task/out/test/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../../../Topics/Linear search/Theory/out/test/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../../Simple Search Engine/task/src/test" />
-    <content url="file://$MODULE_DIR$/../../../../Simple Search Engine/task/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../../../Simple Search Engine/task/test" isTestSource="true" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Linear search/Theory/src/test" />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Linear search/Theory/test" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Simple_Search_Engine.Simple_Search_Engine-task.main" />
+    <orderEntry type="module" module-name="Simple_Search_Engine.Topics-Linear_search-Theory.main" />
     <orderEntry type="module" module-name="Simple_Search_Engine.util.main" />
     <orderEntry type="module" module-name="Simple_Search_Engine.util.test" production-on-test="" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10" level="project" />
@@ -93,5 +91,5 @@
     <orderEntry type="library" name="Gradle: org.assertj:assertj-core:3.17.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.easytesting:fest-util:1.2.5" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="Simple_Search_Engine.Simple_Search_Engine-task.main" />
+  <component name="TestModuleProperties" production-module="Simple_Search_Engine.Topics-Linear_search-Theory.main" />
 </module>

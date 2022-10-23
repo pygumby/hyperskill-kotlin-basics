@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: T-division and F-division always give the same results; the results of E-division
+    can differ
+- text: E-division and T-division always give the same results; the results of F-division
+    can differ
+- text: All of them give the same results on positive integers
+- text: E-division and F-division always give the same results; the results of T-division
+    can differ
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13542#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 23 Oct 2022 14:04:08 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

@@ -40,3 +40,4 @@ content:
 - 2s Complement
 - Bitwise and bit-shift operations
 - Modulo division
+- Modulo division with negative numbers

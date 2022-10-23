@@ -1,0 +1,321 @@
+<h2>Modulo division with negative numbers</h2>
+<p><p>We know how to use modulo division with positive integers, but what about the negative ones? What number do we consider as the remainder if we divide −42 by 10 or 42 by −10? Is the concept the same across all programming languages? That's not an idle question because a lot of practical algorithms (for example, those used in data encryption) contain modulo division. So, a lack of knowledge may lead to dangerous mistakes in development.</p>
+
+<h5 id="recap">Recap</h5>
+
+<p>Suppose we want to divide 29 by 8. From what we already know about modulo division with positive integers, we can work out the remainder of this division:</p>
+
+<p><span class="math-tex">\[29 \ / \ 8 = 3.625\]</span></p>
+
+<p>After rounding down the result, we obtain our integer quotient: 3. Then, the remainder is:</p>
+
+<p><span class="math-tex">\[\begin{aligned} \text{dividend} = (\text{divisor} \cdot \text{quotient}) + \text{remainder} \quad \Rightarrow \quad \text{remainder} &amp; = \text{dividend} - (\text{divisor} \cdot \text{quotient}) \\ &amp; = 29 - (8 \cdot 3) \\ &amp; = 29 - 24 \\ &amp; = 5 \end{aligned}\]</span></p>
+
+<p>A more visual way to look at it is to place all positive multiples of 8 (that is 8, 16, 24, 32, 40...) on the number line like so:</p>
+
+<p style="text-align: center;"><img alt="" height="176" src="https://ucarecdn.com/76a348d8-6d45-461b-b717-9903dca44b7f/" width="882"></p>
+
+<p>We see that 29 lies between 24 and 32. We can see that the integer part of the result is equal to 24, as <span class="math-tex">\(24 = 8 \cdot 3\)</span>. The remainder corresponds to the distance between our dividend and this number: <span class="math-tex">\(29 - 24 = 5\)</span>.</p>
+
+<p>Can we generalize this to negative numbers? Yes, but this will result in different definitions of modulo division! Let's take a look at each of them and try to answer our first question of dividing−42 by 10 (and 42 by −10, while we're at it).</p>
+
+<h5 id="euclidean-division">Euclidean division</h5>
+
+<p>We'll begin with our number line but now we'll write multiples of 10. Also, this time we will consider all multiples, not just the positive ones. Let's take a look:</p>
+
+<p style="text-align: center;"><img alt="" height="168" src="https://ucarecdn.com/34d57f65-3916-40af-940d-dd7f999b498a/" width="933"></p>
+
+<p>We can see that −42 lies between -50 and −40. Since  <span class="math-tex">\(-50 = (-5) \cdot 10\)</span>, the integer quotient here is -5.</p>
+
+<p>We can also see that 42 lies between 40 and 50. Since  <span class="math-tex">\(40 = (-4) \cdot (-10)\)</span>, the integer quotient here is -4.</p>
+
+<p>This approach is called the <strong>Euclidean division</strong>, or <strong>E-division</strong> for short. We can describe the algorithm for dividing <span class="math-tex">\(a\)</span> by <span class="math-tex">\(b\)</span> as follows:</p>
+
+<ol>
+	<li>
+	<p>Find the greatest multiple of <span class="math-tex">\(b\)</span> which does not exceed <span class="math-tex">\(a\)</span> .</p>
+	</li>
+	<li>
+	<p>Suppose that multiple is <span class="math-tex">\(q \cdot b\)</span>. Then <span class="math-tex">\(q\)</span> is the quotient.</p>
+	</li>
+	<li>
+	<p>The remainder <span class="math-tex">\(r\)</span> will be equal to <span class="math-tex">\(a - q \cdot b\)</span>. </p>
+	</li>
+</ol>
+
+<p>In this way, the dividend can be presented as</p>
+
+<p><span class="math-tex">\[a = q \cdot b + r \quad ; \quad r \geq 0\]</span></p>
+
+<p><div class="alert alert-primary"></p>
+
+<p>Note that the remainder will always be non-negative when using E-division </p>
+
+<p></div></p>
+
+<p>Thus, we have</p>
+
+<p><span class="math-tex">\[\text{a.} \quad (-42) / 10 \ \Rightarrow \quad -42 = (-5) \cdot (10) + r \ \Rightarrow \ r = 50 - 42 = 8 \\ \ \\ \text{b.} \quad 42 / (-10) \ \Rightarrow \quad 42 = (-4) \cdot (-10) + r \ \Rightarrow \ r = 42 - 40 = 2\]</span></p>
+
+<p>Usually, when mathematicians talk about modulo division, they mean Euclidean division. It has some nice properties: for example, if you take any two numbers whose difference is a multiple of <span class="math-tex">\(b\)</span>, they'll have the same remainder when you divide each of them by <span class="math-tex">\(b\)</span>.</p>
+
+<h5 id="floored-and-truncated">Floored and Truncated</h5>
+
+<p>E-division is also interesting because it does not use real numbers as if there were only integers in our world. However, what if we worked backwards from the floating-point division?</p>
+
+<p>We know that</p>
+
+<p><span class="math-tex">\[(-42) \ / \ 10 = 42 \ / \ (-10) = -4.2\]</span></p>
+
+<p>So now, in order to determine the remainder, we first need to define the integer quotient from this result. We can do that in different ways, but let's explore the two most common:</p>
+
+<p>- <strong>Truncated division</strong>, or <strong>T-division</strong>:  as its name suggests, the quotient is obtained by truncating the result. Here, we take only the integer part of the result, essentially "erasing" all digits after the decimal point without performing any rounding operation. In our example, if we take the integer part only, we can see that the quotient is −4 for both cases.</p>
+
+<p>- <strong>Floored division</strong>, or <strong>F-division</strong>: here, the "floor" corresponds to the closest integer less than or equal to the result. Thus, the integer quotient is obtained by rounding the result to its corresponding floor. In our example, the closest integer less than -4.2 is -5, so in both cases, the quotient is -5.</p>
+
+<p>Different types of division give us different results. However, note how now we get the same integer quotient for both <span class="math-tex">\((-42) \ / \ 10\)</span>  and <span class="math-tex">\(42 \ / \ (-10)\)</span>, in contrast to Euclidean division.</p>
+
+<p>So, what about the remainders? Following the dividend formula from before, we know that</p>
+
+<p><span class="math-tex">\[a = q \cdot b + r \quad \Rightarrow \qquad r = a - q \cdot b\]</span></p>
+
+<p>Then, for the truncated division we have</p>
+
+<p><span class="math-tex">\[\begin{aligned} &amp; \text{a.} \quad (-42) / 10 \ \Rightarrow \quad -42 = (-4) \cdot (10) + r \ \Rightarrow \ r = 40 - 42 = -2 \\ \\ &amp; \text{b.} \quad 42 / (-10) \ \Rightarrow \quad 42 = (-4) \cdot (-10) + r \ \Rightarrow \ r = 42 - 40 = 2 \end{aligned}\]</span></p>
+
+<p>And, for the floored division we have</p>
+
+<p><span class="math-tex">\[\begin{aligned} &amp; \text{a.} \quad (-42) / 10 \ \Rightarrow \quad -42 = (-5) \cdot (10) + r \ \Rightarrow \ r = 50 - 42 = 8 \\ \\ &amp; \text{b.} \quad 42 / (-10) \ \Rightarrow \quad 42 = (-5) \cdot (-10) + r \ \Rightarrow \ r = 42 - 50 = -8 \end{aligned}\]</span></p>
+
+<h5 id="they-are-so-different">They are so different...</h5>
+
+<p>You have probably already noticed how both the integer quotient and the remainder values depend on how we define the division operation. We can compare the three types with more examples:</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<caption>
+	<p style="text-align: left;"><span class="math-tex">\(\text{a.} \quad 11 \ / \ (-4)\)</span></p>
+	</caption>
+	<thead>
+		<tr>
+			<th>Division</th>
+			<th>Quotient (Integer division)</th>
+			<th>Remainder (mod, %)</th>
+			<th>Complete expression a = q · b + r</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th style="text-align: left;">Euclidean</th>
+			<td style="text-align: center;">-2</td>
+			<td style="text-align: center;">3</td>
+			<td style="text-align: center;"><span class="math-tex">\(11 = (-2) \cdot (-4) + 3\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Truncated</th>
+			<td style="text-align: center;">-2</td>
+			<td style="text-align: center;">3</td>
+			<td style="text-align: center;"><span class="math-tex">\(11 = (-2) \cdot (-4) + 3\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Floored</th>
+			<td style="text-align: center;">-3</td>
+			<td style="text-align: center;">-1</td>
+			<td style="text-align: center;"><span class="math-tex">\(11 = (-3) \cdot (-4) - 1\)</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<caption>
+	<p style="text-align: left;"><span class="math-tex">\(\text{b.} \quad (-11) \ / \ 4\)</span></p>
+	</caption>
+	<thead>
+		<tr>
+			<th>Division</th>
+			<th>Quotient (Integer division)</th>
+			<th>Remainder (mod, %)</th>
+			<th>Complete expression a = q · b + r</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th style="text-align: left;">Euclidean</th>
+			<td style="text-align: center;">-3</td>
+			<td style="text-align: center;">1</td>
+			<td style="text-align: center;"><span class="math-tex">\(-11 = (-3) \cdot (4) + 1\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Truncated</th>
+			<td style="text-align: center;">-2</td>
+			<td style="text-align: center;">-3</td>
+			<td style="text-align: center;"><span class="math-tex">\(-11 = (-2) \cdot (4) - 3\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Floored</th>
+			<td style="text-align: center;">-3</td>
+			<td style="text-align: center;">1</td>
+			<td style="text-align: center;"><span class="math-tex">\(-11 = (-3) \cdot (4) + 1\)</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<caption>
+	<p style="text-align: left;"><span class="math-tex">\(\text{c.} \quad (-11) \ / \ (-4)\)</span></p>
+	</caption>
+	<thead>
+		<tr>
+			<th>Division</th>
+			<th>Quotient (Integer division)</th>
+			<th>Remainder (mod, %)</th>
+			<th>Complete expression a = q · b + r</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th style="text-align: left;">Euclidean</th>
+			<td style="text-align: center;">3</td>
+			<td style="text-align: center;">1</td>
+			<td style="text-align: center;"><span class="math-tex">\(-11 = (3) \cdot (-4) + 1\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Truncated</th>
+			<td style="text-align: center;">2</td>
+			<td style="text-align: center;">-3</td>
+			<td style="text-align: center;"><span class="math-tex">\(-11 = (2) \cdot (-4) - 3\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Floored</th>
+			<td style="text-align: center;">2</td>
+			<td style="text-align: center;">-3</td>
+			<td style="text-align: center;"><span class="math-tex">\(-11 = (2) \cdot (-4) - 3\)</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p> </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+	<caption>
+	<p style="text-align: left;"><span class="math-tex">\(\text{d.} \quad 11 \ / \ 4\)</span></p>
+	</caption>
+	<thead>
+		<tr>
+			<th>Division</th>
+			<th>Quotient (Integer division)</th>
+			<th>Remainder (mod, %)</th>
+			<th>Complete expression a = q · b + r</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th style="text-align: left;">Euclidean</th>
+			<td style="text-align: center;">2</td>
+			<td style="text-align: center;">3</td>
+			<td style="text-align: center;"><span class="math-tex">\(11 = (2) \cdot (4) + 3\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Truncated</th>
+			<td style="text-align: center;">2</td>
+			<td style="text-align: center;">3</td>
+			<td style="text-align: center;"><span class="math-tex">\(11 = (2) \cdot (4) + 3\)</span></td>
+		</tr>
+		<tr>
+			<th style="text-align: left;">Floored</th>
+			<td style="text-align: center;">2</td>
+			<td style="text-align: center;">3</td>
+			<td style="text-align: center;"><span class="math-tex">\(11 = (2) \cdot (4) + 3\)</span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><div class="alert alert-primary"></p>
+
+<p>The results are the same for all three types of division when both the dividend and the divisor are positive.</p>
+
+<p></div></p>
+
+<p> </p>
+
+<p>Different programming languages use different definitions for modulo division. It is essential to know this if you are switching between them from time to time. Here are some of the most popular ones with their corresponding division type: </p>
+
+<table cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>Language</strong></p>
+			</td>
+			<td>
+			<p><strong>Division</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Python</p>
+			</td>
+			<td>
+			<p>Floored</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Ruby</p>
+			</td>
+			<td>
+			<p>Floored</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Java</p>
+			</td>
+			<td>
+			<p>Truncated</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Kotlin</p>
+			</td>
+			<td>
+			<p>Truncated</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>C++</p>
+			</td>
+			<td>
+			<p>Truncated</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Why don't we see it for ourselves?</p>
+
+<p>Run the following code in Python:</p>
+
+<pre><code class="language-python">print(431 % -6)</code></pre>
+
+<p>you will see that −1 will be printed to the console, which is the result of Floored division. Python uses the F-division definition in its implementation of the modulo operator.</p>
+
+<p>Now, let's run the following code in Java:</p>
+
+<pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        System.out.println(431 % -6);
+    }
+}</code></pre>
+
+<p>here 5 will be printed instead. This is because Java uses the Truncated division definition for its implementation of the modulo operator.</p>
+
+<p>For a comprehensive list of the definition used by all programming languages, take a look <a target="_blank" target="_blank" target="_blank" target="_blank" href="https://en.wikipedia.org/wiki/Modulo_operation#In_programming_languages" rel="noopener noreferrer nofollow">here</a>.</p>
+
+<h5 id="conclusion">Conclusion</h5>
+
+<p>We have seen how the modulo division might give us different results depending on how we define the division operation when we are working with negative numbers. We saw three main types of division: Euclidean division, Truncated division, and Floored division. We have also seen how the same operation might give us different results in different programming languages, as each might not use the same definition of modulo division for the modulo operator implementation.</p>

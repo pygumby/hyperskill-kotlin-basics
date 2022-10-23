@@ -1,0 +1,47 @@
+<h2>Converting from binary to decimal</h2>
+<html><body><p>There are 10 types of people: those who know how to convert from binary to decimal and those who don't. Let's become the ones that do!</p>
+<h5 id="binary-post-office" style="text-align: center;">Binary post office</h5>
+<p>Imagine we are at a post office to send some apples. There we can find an infinite amount of boxes. The first box can contain only one apple, the second fits two apples, the third fits four apples, the fourth holds eight and so on… We don't want to spend a lot of money on paper and air, so each box can be either completely full or completely empty. We ask the mail carrier to fill the boxes.</p>
+<p>The mail carrier shows the check where we can see how many boxes of each capacity are filled, starting from the biggest one: 10011000. How can we find out the initial number of apples?</p>
+<p>Let's write down our "check" and the powers of 2 under it: 128, 64, 32, 16, 8, 4, 2, and 1.</p>
+<table border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr style="text-align: center;">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr style="text-align: center;">
+<td>128</td>
+<td>64</td>
+<td>32</td>
+<td>16</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>The biggest box is the one that can contain <span class="math-tex">\(2^7\)</span> = 128 apples. The next box can contain 64 apples, but it is left empty, as well as the one for 32. The next (16 apples) is full, and so is the next box, which can contain 8 apples. The rest are left empty.</p>
+<p>We are interested only in those boxes that are full, so we pay attention to the powers of 2 that correspond to them:</p>
+<p style="text-align: center;"><img alt="" height="56" name="Theory_ Binary.png" src="https://ucarecdn.com/09af3b51-5345-4a1a-8579-f705e3fa909e/" width="557"/></p>
+<p style="text-align: center;"> </p>
+<p>Now we know that we need to pay for the boxes of these volumes: 128, 16, and 8 apples.</p>
+<p>Only one easy step is left: add<strong> </strong>up all the apples that are in the boxes. The sum is 152, we did it!  </p>
+<h5 id="the-formal-method" style="text-align: center;">The formal method</h5>
+<p>Let's put it more formally. To choose the correct powers of two, we can multiply the binary digits to the corresponding powers:</p>
+<p> 1 <span class="math-tex">\(\cdot\)</span> 128 + 0 <span class="math-tex">\(\cdot\)</span> 64 + 0 <span class="math-tex">\(\cdot\)</span> 32 + 1 <span class="math-tex">\(\cdot\)</span> 16 + 1 <span class="math-tex">\(\cdot\)</span> 8 + 0 <span class="math-tex">\(\cdot\)</span> 4 + 0 <span class="math-tex">\(\cdot\)</span> 2 + 0 <span class="math-tex">\(\cdot\)</span> 1 = 152.</p>
+<p>The steps are as follows:</p>
+<ul>
+<li>write down the binary number</li>
+<li>list the powers of 2 from right to left</li>
+<li>highlight the powers that correspond to the "1" in the initial binary number;</li>
+<li>add the highlighted values.</li>
+</ul>
+<p>This is how we convert from binary to decimal!</p></body></html>

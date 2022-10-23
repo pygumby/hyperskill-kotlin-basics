@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: List the powers of 10 from left to right
+- text: List the powers of 2 from right to left
+- text: Highlight the powers that correspond to the "1" in the initial binary number
+- text: Divide the initial number by 2
+- text: Sum the highlighted values
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5623#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 23 Oct 2022 13:19:18 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 4
+local_check: false

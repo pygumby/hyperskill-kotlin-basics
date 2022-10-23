@@ -1,0 +1,123 @@
+<h2>Converting from decimal to binary</h2>
+<p>You already know the difference between binary and decimal number systems. It may come in handy to know how to convert from a decimal number that is convenient for you to a binary number easily understood by a computer.</p>
+
+<p>There are two ways of doing this: <strong>division</strong> and <strong>subtraction</strong>.</p>
+
+<h5 id="division" style="text-align: center;">Division</h5>
+
+<p>The division method might look like some kind of magic at first sight. You can just learn how to use it without any deep understanding. The only thing that you need to be able to do is divide by 2 with a <strong>remainder</strong>.  If you have 9 pieces of cake that you want to divide between two of your friends, you'll get 4 pieces of cake for each and one extra piece. This piece is the remainder (so yes, you can eat it by yourself with no remorse).</p>
+
+<p>Imagine that you have a number 42. Take a sheet of paper and split it into two columns, one for the quotients (division results) and the second one for the remainders. Write 42 in the first one. Now you need to ask yourself a question: can I divide this number by 2 without any remainder? Well yes, this is possible! Now write the remainder, which is 0, to the second column and the quotient, which is 21, to the first column under the initial number.</p>
+
+<p>Well done! Now we will do the same trick with the result of the division. The same question arises: can this number be divided without a remainder? Here, the answer is no, but it is not a problem: just write the remainder, which equals 1, in the second column and put the quotient in the first. </p>
+
+<p>Let's take a look at the table that we'll eventually get:</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr style="text-align: center;">
+			<td style="color: blue;"><strong>Quotient</strong></td>
+			<td style="color: blue;"><strong>Remainder</strong></td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>42</td>
+			<td>0</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>21</td>
+			<td>1<strong> </strong></td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>10 </td>
+			<td>0</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>5</td>
+			<td>1</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>2</td>
+			<td>0</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>1</td>
+			<td>1</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Now there's only one step left: you need to look at the second column from the bottom to the top and then you'll get the number you've been looking for. In our case, it is 101010. Pay attention: the number is reversed, so read it from the bottom!</p>
+
+<p>In short, the steps are as follows:</p>
+
+<ul>
+	<li>divide the number by 2,</li>
+	<li>get the quotient for the next iteration,</li>
+	<li>remember the remainder for the binary digit,</li>
+	<li>repeat the steps until the quotient is equal to 0,</li>
+	<li>write the remainders in the reverse order.</li>
+</ul>
+
+<h5 id="subtraction" style="text-align: center;">Subtraction</h5>
+
+<p>If you have met some enthusiastic programmers, you probably noticed that many of them know the powers of 2 by heart. You can become one of them by practicing the subtraction method.</p>
+
+<p>Let's take the number 42 again. First, we need to find <strong>the biggest power of 2</strong> that is still smaller than the initial number. In our case it is 32. Now let's list all the powers of 2 that are smaller in one table: </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr style="text-align: center;">
+			<td>32</td>
+			<td>16</td>
+			<td>8</td>
+			<td>4</td>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>1</td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+		</tr>
+	</tbody>
+</table>
+
+<p>We've put the number 1 in the first column because only one 32 can fit in 42. The difference of 42 and 32 is 10. Now let's look at the second column and decide how many 16s can fit in the result of subtraction (that is, 10). You are right, the answer is 0, so we write it down and proceed. The next number, which is 8, is more promising: 10 is greater than 8. Now we can fill all the table using this simple principle: </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr style="text-align: center;">
+			<td>32</td>
+			<td>16</td>
+			<td>8</td>
+			<td>4</td>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>1</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+			<td>1</td>
+			<td>0</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>As you can see, the number 42 consists of 32, 8 and 2. In other words, in the binary numerical system, it is 101010, which matches the previous result!</p>
+
+<p>Here is the algorithm step-by-step :</p>
+
+<ul>
+	<li>make the list of all the powers of 2 that are smaller or equal to the number</li>
+	<li>subtract the biggest power from the number if it is possible</li>
+	<li>get the result for the next iteration</li>
+	<li>remember the 1 if you did the subtraction. If not, remember the 0</li>
+	<li>repeat the steps until the end of the list.</li>
+</ul>
+
+<p>You can always use an online calculator to convert one set of digits to another. But there is no fun in it, right? So let's do some practice instead.</p>

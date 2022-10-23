@@ -1,22 +1,41 @@
 package search
 
-fun main() {
-    println("Enter the number of people:")
-    val nOfEntries = readln().toInt()
+class SearchEngine {
+    private val data = mutableListOf<String>()
 
-    println("Enter all people:")
-    val persons = mutableListOf<String>()
-    repeat (nOfEntries) {
-        persons.add(readln())
+    fun promptInitialData() {
+        println("Enter the number of people:")
+        val nOfEntries = readln().toInt()
+
+        println("Enter all people:")
+        repeat (nOfEntries) {
+            this.data.add(readln())
+        }
     }
 
-    println("\nEnter the number of search queries:")
-    val nOfQueries = readln().toInt()
+    fun displayUserMenu() {
+        println()
+        println("""
+            === Menu ===
+            1. Find a person
+            2. Print all people
+            0. Exit
+        """.trimIndent())
 
-    repeat(nOfQueries) {
-        println("\nEnter data to search people:")
+        when (readln().toInt()) {
+            1 -> this.query()
+            2 -> println("\n=== List of people ===\n${this.data.joinToString("\n")}")
+            0 -> return println("\nBye!")
+            else -> println("\nIncorrect option! Try again.")
+        }
+
+        this.displayUserMenu()
+    }
+
+    private fun query() {
+        println("\nEnter a name or email to search all suitable people:")
         val query = readln().lowercase()
-        val results = persons.filter { it.lowercase().contains(query) }
+        val results = this.data.filter { it.lowercase().contains(query) }
 
         if (results.isEmpty()) {
             println("No matching people found.")
@@ -25,4 +44,10 @@ fun main() {
             println(results.joinToString("\n"))
         }
     }
+}
+
+fun main() {
+    val searchEngine = SearchEngine()
+    searchEngine.promptInitialData()
+    searchEngine.displayUserMenu()
 }

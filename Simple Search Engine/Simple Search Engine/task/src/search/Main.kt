@@ -1,5 +1,7 @@
 package search
 
+import java.io.File
+
 class SearchEngine {
     private val data = mutableListOf<String>()
 
@@ -11,6 +13,10 @@ class SearchEngine {
         repeat (nOfEntries) {
             this.data.add(readln())
         }
+    }
+
+    fun readInitialData(path: String) {
+        this.data.addAll(File(path).useLines { it.toList() })
     }
 
     fun displayUserMenu() {
@@ -46,8 +52,14 @@ class SearchEngine {
     }
 }
 
-fun main() {
+fun main(args: Array<String>) {
     val searchEngine = SearchEngine()
-    searchEngine.promptInitialData()
+
+    if (args.isNotEmpty() && args[0] == "--data") {
+        searchEngine.readInitialData(args[1])
+    } else {
+        searchEngine.promptInitialData()
+    }
+
     searchEngine.displayUserMenu()
 }

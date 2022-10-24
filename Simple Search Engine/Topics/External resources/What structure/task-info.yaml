@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: array
+- text: tree
+- text: table
+- text: stack
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16870#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 24 Oct 2022 19:09:51 UTC
+record: -1
+selected_options:
+- 3
+custom_name: What structure?
+local_check: false

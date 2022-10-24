@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: The largest question-and-answer site for programmers.
+- text: A very powerful Python programming environment developed by Google.
+- text: A portal devoted to Java programming language.
+- text: A portal devoted to algorithms and computer science.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6219#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 24 Oct 2022 19:12:05 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

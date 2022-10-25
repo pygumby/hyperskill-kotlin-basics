@@ -1,0 +1,53 @@
+<h2>How to work with documentation</h2>
+<html><body><p>In this topic, we will guide you through the website where you can find Kotlin documentation and other useful materials essential for mastering the language. We will explain the website structure and show you how to use it to become more confident in this modern and multiplatform programming language. </p>
+<h5 id="the-website-structure">The website structure</h5>
+<p>Official documentation plays an important role in learning a programming language. In the case of Kotlin, it can be found at <a href="https://kotlinlang.org/docs/home.html" rel="noopener noreferrer nofollow" target="_blank">kotlinlang.org</a>, which is actually more than a mere language documentation site: it provides numerous resources to improve your knowledge. Here are some of the sections you can explore if you visit the website:</p>
+<ul>
+<li>
+<p><a href="https://kotlinlang.org/docs/multiplatform.html" rel="noopener noreferrer nofollow" target="_blank">Kotlin overview</a> – The language has a wide range of application, and here you can learn about its use in different fields. Read about the frameworks it works with, explore sample projects and take tutorials, learn about the <a href="https://kotlinlang.org/docs/coroutines-guide.html" rel="noopener noreferrer nofollow" target="_blank">official libraries</a>, etc.</p>
+</li>
+<li>
+<p><a href="https://blog.jetbrains.com/kotlin/" rel="noopener noreferrer nofollow" target="_blank">Kotlin news</a> – The Kotlin blog provides information about the development of the language and its usage. Here you can find articles about new releases, webinars with experts, various practical guides on how to use Kotlin with different frameworks, libraries, tools, and much more. If you're a fan of social networks, you might want to follow <a href="https://twitter.com/antonarhipov" rel="noopener noreferrer nofollow" target="_blank">Anton Arhipov</a> and <a href="https://twitter.com/hhariri" rel="noopener noreferrer nofollow" target="_blank">Hadi Hariri</a> on Twitter. Both of them represent JetBrains and regularly tweet on Kotlin-related topics.</p>
+</li>
+<li>
+<p><a href="https://kotlinlang.org/community/" rel="noopener noreferrer nofollow" target="_blank">Kotlin community</a> – If you're an active user and wish to be involved in the community, you have several options. There are <a href="https://kotlinlang.org/user-groups/user-group-list.html" rel="noopener noreferrer nofollow" target="_blank">Kotlin User Groups</a> operating all over the world in different cities. If there is one in your city, you can join their meetups; otherwise, you can follow the <a href="https://www.meetup.com/Virtual-Kotlin-User-Group/" rel="noopener noreferrer nofollow" target="_blank">Virtual Kotlin User Group</a>. Other online platforms include the <a href="https://kotlinlang.slack.com" rel="noopener noreferrer nofollow" target="_blank">Slack channel</a>, <a href="https://www.linkedin.com/groups/7417237/" rel="noopener noreferrer nofollow" target="_blank">Linkedin group</a>, and <a href="https://discuss.kotlinlang.org" rel="noopener noreferrer nofollow" target="_blank">Kotlin forum</a>, where you can meet and have discussions with Kotlin developers from around the world. <br/>
+	Those interested in contributing to the development of the language are also welcome. On the <a href="https://kotlinlang.org/docs/contribute.html" rel="noopener noreferrer nofollow" target="_blank">Contribution page</a>, you will find what opportunities you have and choose the option best suitable for your interests. If you are a novice specialist and aren't ready to contribute to the language itself due to a lack of experience, you can still <a href="https://kotlinlang.org/docs/contribute.html#contribute-to-the-documentation" rel="noopener noreferrer nofollow" target="_blank">contribute to the documentation</a>. Finally, if you've found some error, you can open a ticket in the <a href="https://youtrack.jetbrains.com/issues/KT" rel="noopener noreferrer nofollow" target="_blank">issue tracker</a> and follow its solution.</p>
+</li>
+<li>
+<p>Practice – Learning programming is very difficult, and practice plays an important role in the process. The site allows you to learn Kotlin by example. In <a href="https://play.kotlinlang.org/byExample/overview" rel="noopener noreferrer nofollow" target="_blank">this section</a>, you will find examples illustrating various language features. Moreover, you can go further and solve <a href="https://play.kotlinlang.org/koans/overview" rel="noopener noreferrer nofollow" target="_blank">Kotlin koans</a> – a series of exercises aimed to let you practice with Kotlin syntax.</p>
+</li>
+</ul>
+<p>This isn't by far all the information provided on the website. Don't limit yourself to the above points only – take the time to fully explore the content of the website. You will definitely discover lots of useful stuff.</p>
+<h5 id="kotlin-standard-library">Kotlin Standard Library</h5>
+<p>Kotlin implements many extensions for JDK classes as well as utilities that enhance our work with strings, collections, threads, etc. Provided in the <strong>Kotlin Standard Library (stdlib)</strong>, they are available <a href="https://kotlinlang.org/api/latest/jvm/stdlib/" rel="noopener noreferrer nofollow" target="_blank">at this link</a>. Therefore, it's vital to learn how to deal with the website and use the documentation. The website is quite minimalistic and easy to navigate, you just need to realize how to use the two features at the very top of the page.</p>
+<p style="text-align: center;"><img alt="" height="92" name="navbar.jpg" src="https://ucarecdn.com/412eb797-1b05-495d-b92f-2944166a1364/" width="642"/></p>
+<p>In the left block, there are buttons that allow you to select packages available for the selected platforms. In the example above, all available platforms are selected: <strong>Common </strong>(multiplatform), <strong>JVM</strong>, <strong>JS</strong>, and <strong>Native</strong>. On the right is a drop-down list with language versions. In our case, it is version <strong>1.6</strong>, and we can see the packages available for this version. If, for example, you need to select only the packages for the <strong>JVM</strong> and <strong>JS</strong> platforms available in the <strong>1.3</strong> language version, you need to activate only the <strong>JVM</strong> and <strong>JS</strong> buttons and select version <strong>1.3</strong> from the drop-down list. The result will look like this:</p>
+<p style="text-align: center;"><img alt="" height="90" name="1.3.png" src="https://ucarecdn.com/3fece07c-c45a-4801-9c26-80fcb7317d4c/" width="674"/></p>
+<p>The same structure can be found inside each package. When you open a package, you will find all classes available for all platforms in the latest language version, from which you can select what you need.<br/>
+The functionality is quite straightforward; we will have tasks in the practical part of the topic to help you master it. </p>
+<h5 id="exploring-packages">Exploring packages</h5>
+<p>We have figured out the structure of the Kotlin Standard Library, which contains various packages that provide the main APIs of the language. Now, let's open some package, for instance – <strong>kotlin</strong>. We will choose a class and write a small piece of code to use one of the functions and see what information the documentation can provide about it. </p>
+<pre><code class="language-java">fun main() {
+    val a: Int = 10
+    println(a.inc())
+}</code></pre>
+<p>Let's go to the <code class="language-java">Int</code> class <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/inc.html" rel="noopener noreferrer nofollow" target="_blank">documentation</a> and see what it can tell us about the <code class="language-java">inc()</code> function. At the very top is a block where we can see that as of the <strong>1.6</strong> version of the language, the function is available for all the above-mentioned platforms. </p>
+<p style="text-align: center;"><img alt="" height="80" name="1.6.png" src="https://ucarecdn.com/b63ca9cf-2c81-485c-ae06-1fc35da94012/" width="663"/></p>
+<p>And what about version 1.0? If we choose that version, we will see that our function was only available for development on the <strong>JVM</strong> platform. The other platforms were added gradually: one in each new version.</p>
+<p style="text-align: center;"><img alt="" height="79" name="1.0.png" src="https://ucarecdn.com/c78ac1bc-4b41-4504-bfab-decd237bdd5f/" width="636"/></p>
+<p>Now, let's move on to the next part of the web page. Here we will find the function description and a code example, which will give us an answer to an important question: why do we need that function if it is possible to write <code class="language-java">++a</code> or <code class="language-java">a++</code>? In fact, the function does work differently compared to the code with the <code class="language-java">++</code> operator. If you read this code carefully, you will realize the difference:</p>
+<pre><code class="language-kotlin">val a = 3
+val b = a.inc()
+println(a) // 3
+println(b) // 4
+
+var x = 3
+val y = x++
+println(x) // 4
+println(y) // 3
+
+val z = ++x
+println(x) // 5
+println(z) // 5</code></pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>This topic offers a brief introduction to the Kotlin documentation website. It has a comprehensive and constantly updated knowledge base, which allows you to learn and get better in Kotlin. We highly recommend visiting the website and keeping track of the news on a regular basis.</p></body></html>

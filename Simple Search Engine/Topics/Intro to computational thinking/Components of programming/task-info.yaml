@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: the syntax of a chosen programming language
+- text: biographies of famous programmers
+- text: how to write algorithms
+- text: computational thinking
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16125#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 25 Oct 2022 15:45:59 UTC
+record: -1
+selected_options:
+- 0
+- 2
+- 3
+local_check: false

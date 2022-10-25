@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: contact the store and request delivery of the products
+- text: change the list of products in stock
+- text: everything is correct
+- text: reboot the system and wait for the products to appear
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16127#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 25 Oct 2022 15:47:18 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

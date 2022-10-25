@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: The solution is complete, covering all aspects of the problem.
+- text: The solution is effective.
+- text: The solution is easy to understand.
+- text: None of these.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14943#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 25 Oct 2022 15:55:03 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

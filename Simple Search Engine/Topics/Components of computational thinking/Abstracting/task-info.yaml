@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Confuse people
+- text: Get rid of all the unimportant details
+- text: Break the problem into small sub-problems
+- text: Transform a work of art into a message
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8746#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 25 Oct 2022 15:53:11 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

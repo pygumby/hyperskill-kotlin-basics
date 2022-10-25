@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: No, it won't work. The case when X = 1 is not defined
+- text: Yes, it is correct, but it will be more efficient if we remove the "If X is
+    1" condition
+- text: No, it won't work. We need to change "factorial(X –1) * X" to "factorial(X
+    – 1) + X"
+- text: Yes, it is correct
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5988#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 25 Oct 2022 15:33:32 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

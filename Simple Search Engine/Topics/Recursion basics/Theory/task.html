@@ -1,0 +1,46 @@
+<h2>Recursion basics</h2>
+<html><body><p>In short, <strong>recursion</strong> in programming<strong> </strong>is when<strong> a function calls itself</strong>. It has a case where it terminates and a set of rules to reduce other cases to the first case. A function that can do it is called a <strong>recursive function</strong>. Sounds a little abstract? Let's try to get the main idea on the example.</p>
+<h5 id="recursive-matryoshka" style="text-align: center;">Recursive matryoshka</h5>
+<p>Think of it like a Russian doll, matryoshka. It's a doll, or, more accurately, a set of dolls placed one inside another. You open the first doll, and there's the second, open this one and get the third, and so on until you get to this last doll, which won't open.</p>
+<p style="text-align: center;"><img alt="" height="340" src="https://ucarecdn.com/da852abb-df10-4a02-9392-b8db6da2ecf5/" width="684"/></p>
+<p>If we want to find the smallest doll, we take our big matryoshka and try opening it: if it gives in, we go on and on opening our dolls, until we finally find that tiny one. Recursion works in pretty much the same way, so let's use it as a metaphor to understand more complicated principles.</p>
+<p>Imagine that you got a set of dolls like this as a present, and you want not only to find the smallest one but also to count them all. How many dolls do you have? No clue. Let's say we have <span class="math-tex">\(x\)</span> dolls. As a true recursion enthusiast, you decide to count them recursively. Each time you are optimistic, so you ask yourself a question: "Is this doll the smallest one?" You manage to open the doll <span class="math-tex">\(x\)</span>, but you are not losing hope. "Oh well, maybe the doll <span class="math-tex">\(x-1\)</span> won't open". Finally, you get to the tiniest doll and exclaim: "Here is an unopenable doll! This doll is the first!" Now you understand that the doll that you opened the last was actually the second doll, then the third... And then you can continue till you find <span class="math-tex">\(x\)</span>. </p>
+<p>Once again: first, you open them one after another, and only when you get to the smallest one you can count them, retracing your steps. If you were a recursive function designed to count the matryoshkas, you would work exactly as described.</p>
+<h5 id="designing-a-function" style="text-align: center;">Designing a function</h5>
+<p>Most (if not all) programming languages have recursion (in other words, they allow a function to call itself). It is very convenient to know how to create recursive functions, so let's now create an algorithm to count the dolls. Each recursive function consists of the following steps:</p>
+<ul>
+<li>
+<p>A <strong>trivial base case</strong> stops the recursion. This is the case we know the result for. For example, if we find a doll we can't open, we take it and proudly state: "it's our smallest doll!"</p>
+</li>
+<li>
+<p>A <strong>reduction step</strong> (one or more, imagine that our doll contains two dolls inside it!) gets us from the current problem to a simpler one. For example, if our doll can be opened, we open it and look at what is inside.</p>
+</li>
+</ul>
+<p>If we are talking about the trivial base of our <span class="math-tex">\(count()\)</span> function, it is just one doll. In other words, if <span class="math-tex">\(x\)</span> equals <span class="math-tex">\(1\)</span>, then we can stop thinking and just be happy.</p>
+<p>We are now imagining the matryoshkas from the real world, so let's just say the following: if <span class="math-tex">\(x\)</span> is not equal to <span class="math-tex">\(1\)</span>, then it is bigger. In this case, we need to try our <span class="math-tex">\(count()\)</span> function on <span class="math-tex">\(x-1\)</span><em>. </em>Just bear in mind that we will need to add this one doll that we opened to the result later.</p>
+<pre><code class="java">How to count X dolls:
+    If X is 1, the result is 1.
+    If X is not 1, see: "How to count X-1 dolls" + 1.</code></pre>
+<ul>
+</ul>
+<p>But wait, who counts like this? Good question! And here is when we get to our next point: is recursion a good alternative?</p>
+<h5 id="advantages-and-disadvantages" style="text-align: center;">Advantages and disadvantages</h5>
+<p>Many recursive functions can be written another way: we could simply go through all numbers from <span class="math-tex">\(1\)</span> to <span class="math-tex">\(n\)</span> and compute the function for each number. For example, we can open the largest doll, say "One", throw the doll away, and repeat these steps until we found the last one. This way of computing is called <strong>the loop</strong>. But which way is more efficient?</p>
+<p>It depends on the programming language. As a rule, in Python and Java, loops are more efficient in terms of <strong>time</strong> and <strong>memory</strong>. Recursion is slower and "heavier" because each call of a function takes additional memory, and recursive functions usually get called many times.</p>
+<p>In that case, why recursion? Well, it has one certain advantage over loops: in some cases, it is intuitive<strong>.</strong> If you are certain that some function uses itself, it is much faster to write 3-4 lines of recursive code than to think how exactly a loop should behave. If you are short on time but don't have to worry about memory consumption, recursion is your choice. </p>
+<p>So, recursion is usually<strong> </strong>slower and less memory-efficient<strong>, </strong>but it saves the developers' time.</p>
+<p>Let's look at one classic (and more practical, to be perfectly honest) problem that recursion can effectively deal with.</p>
+<h5 id="the-factorial-example" style="text-align: center;">The factorial example</h5>
+<p>A classic example of recursion is a math function called <strong>the factorial</strong>.</p>
+<p>The <strong>factorial</strong> of a non-negative integer <span class="math-tex">\(n\)</span> is equal to the <strong>product of all positive integers from </strong><span class="math-tex">\(1\)</span><strong> to </strong><span class="math-tex">\(n\)</span><strong> inclusively.</strong> Also, by definition, <strong>the factorial of <span class="math-tex">\(0\)</span> is </strong><span class="math-tex">\(1\)</span>. Let's take a normal number though: for example, the factorial of <span class="math-tex">\(5\)</span> (written as <span class="math-tex">\(5!\)</span>) is <span class="math-tex">\(1 * 2 * 3 * 4 * 5 = 120\)</span>.</p>
+<p>So, we know the factorial of <strong><span class="math-tex">\(0\)</span></strong> and the factorial of <span class="math-tex">\(1\)</span>. Also, we could say that <strong>the factorial of any number <span class="math-tex">\(n &gt; 1\)</span> is equal to </strong><span class="math-tex">\(n\)</span><strong> multiplied by the factorial of <span class="math-tex">\(n-1\)</span></strong>. For example:</p>
+<p style="text-align: center;"><span class="math-tex">\(4!= 4 * 3! = 4 * 3 * 2! = ... = 4 * 3 * 2 * 1 = 24\)</span></p>
+<p>Do you see what's happening? When writing a function to compute the factorial, we could do it recursively! There is no need to think a lot because the recursive function can be created just using the definition of <strong>factorial</strong>. We have a trivial case (for <strong><span class="math-tex">\(0\)</span></strong> or <span class="math-tex">\(1\)</span>, our function returns <span class="math-tex">\(1\)</span>), and the reduction step (if our number <strong><span class="math-tex">\(n &gt; 1\)</span></strong>, the function returns <span class="math-tex">\(n*(n-1)!\)</span> ). And now try to imagine the factorial function with loops. It isn't that obvious, is it?</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Let's summarize what recursion is and when you can use it.</p>
+<ul>
+<li>Once again, recursion is a call of a function for itself.</li>
+<li>Every recursive function consists of two elements: reduction step and trivial base case.</li>
+<li>Use recursion when you're sure your function uses itself and program memory usage and run-time are not your priority.</li>
+</ul>
+<p>As you can see, recursion is a pretty simple idea. Enjoy!</p></body></html>

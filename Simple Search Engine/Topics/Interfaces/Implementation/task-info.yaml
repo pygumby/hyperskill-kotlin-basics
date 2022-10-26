@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Have a special name like READER or READABLE
+- text: Have methods with the same names
+- text: Implement any methods from it
+- text: Implement all methods from it
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9642#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 26 Oct 2022 21:19:10 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

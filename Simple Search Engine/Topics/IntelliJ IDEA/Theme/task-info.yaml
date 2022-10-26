@@ -1,12 +1,12 @@
 type: choice
 is_multiple_choice: false
 options:
+- text: Help
+- text: File | Project Structure
+- text: Tools
+- text: View | Tool Windows
 - text: File | Settings for Windows and Linux, or IntelliJ IDEA | Preferences for
     macOS
-- text: Help
-- text: View | Tool Windows
-- text: Tools
-- text: File | Project Structure
 files:
 - name: src/Main.kt
   visible: true

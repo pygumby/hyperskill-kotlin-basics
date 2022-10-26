@@ -2,8 +2,8 @@ type: choice
 is_multiple_choice: false
 options:
 - text: access of data or memory locations based on mathematical functions
-- text: linear access of arrays
 - text: reference variables of a loop in each iteration
+- text: linear access of arrays
 files:
 - name: src/Main.kt
   visible: true

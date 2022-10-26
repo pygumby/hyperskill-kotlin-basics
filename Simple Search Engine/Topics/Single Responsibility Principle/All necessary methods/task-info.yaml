@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: Record
-- text: Download
-- text: Stop
 - text: Play
+- text: Record
 - text: Time Update
+- text: Stop
+- text: Download
 files:
 - name: src/Main.kt
   visible: true

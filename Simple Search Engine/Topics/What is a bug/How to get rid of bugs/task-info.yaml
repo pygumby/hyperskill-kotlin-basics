@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: create a set of input values and run the program manually
 - text: look through the program and guess if it is correct
 - text: write automated tests
 - text: hope everything is just fine
+- text: create a set of input values and run the program manually
 files:
 - name: src/Main.kt
   visible: true

@@ -2,9 +2,9 @@ type: choice
 is_multiple_choice: true
 options:
 - text: To make the program work anyway
+- text: 'To improve the program design '
 - text: This is a mandatory requirement of programming languages
 - text: To make the code clean and more structured
-- text: 'To improve the program design '
 files:
 - name: src/Main.kt
   visible: true

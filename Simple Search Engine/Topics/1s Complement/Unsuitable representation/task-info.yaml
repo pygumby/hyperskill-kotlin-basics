@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: 00000000
 - text: 0
 - text: 10
 - text: 11111111
+- text: 00000000
 files:
 - name: src/Main.kt
   visible: true

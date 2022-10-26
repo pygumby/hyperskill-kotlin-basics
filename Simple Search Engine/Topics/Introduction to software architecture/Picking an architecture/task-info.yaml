@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: Network architecture
 - text: Information architecture
 - text: Database architecture
+- text: Network architecture
 - text: Application architecture
 files:
 - name: src/Main.kt

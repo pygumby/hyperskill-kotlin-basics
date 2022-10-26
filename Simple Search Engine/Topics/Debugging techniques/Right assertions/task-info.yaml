@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: require()
 - text: check()
-- text: assert()
+- text: require()
 - text: correct()
+- text: assert()
 files:
 - name: src/Main.kt
   visible: true

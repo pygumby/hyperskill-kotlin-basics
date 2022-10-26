@@ -2,11 +2,11 @@ type: choice
 is_multiple_choice: true
 options:
 - text: Singleton
-- text: Builder
 - text: Decorator
+- text: Builder
+- text: Bridge
 - text: Factory method
 - text: Iterator
-- text: Bridge
 files:
 - name: src/Main.kt
   visible: true

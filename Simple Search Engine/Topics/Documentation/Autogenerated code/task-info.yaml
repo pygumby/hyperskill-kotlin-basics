@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Does it automatically generate documentation?
+- text: Does it convert formatted comments into a more structured and readable form?
+- text: Does it use common formats like HTML and PDF for the output?
+- text: Does it write all the documentation for you?
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12076#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 13:08:00 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

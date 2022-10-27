@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Price list
+- text: Comments
+- text: License
+- text: Acknowledgment
+- text: Contributing
+- text: Contact information
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12074#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 13:08:23 UTC
+record: -1
+selected_options:
+- 2
+- 3
+- 4
+- 5
+local_check: false

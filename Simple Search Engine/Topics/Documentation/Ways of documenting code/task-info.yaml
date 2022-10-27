@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: write comments
+- text: create a wiki
+- text: print code
+- text: get a license
+- text: write README
+- text: provide a PDF file with instructions
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/12070#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 13:06:12 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 4
+- 5
+local_check: false

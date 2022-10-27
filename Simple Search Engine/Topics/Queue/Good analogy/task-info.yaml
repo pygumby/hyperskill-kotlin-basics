@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: A menu in a restaurant
+- text: A stack of books
+- text: Patients waiting outside the clinic
+- text: Bags on a baggage carousel
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20717#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 15:59:05 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

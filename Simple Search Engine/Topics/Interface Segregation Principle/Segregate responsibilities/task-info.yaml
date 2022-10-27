@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Some objects may need only a part of an interface
+- text: Dividing interfaces, we make fewer errors in our code
+- text: To move unrelated methods to different interfaces
+- text: To ask a colleague to implement a part of an interface for our objects
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10091#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 14:06:24 UTC
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

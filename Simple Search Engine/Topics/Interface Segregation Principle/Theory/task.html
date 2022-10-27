@@ -1,0 +1,25 @@
+<h2>Interface Segregation Principle</h2>
+<html><body><p>When starting a new application, the first idea that comes to mind is to define functions, classes, and interfaces we would use throughout the project. Working further with the code, we may miss the point when our interfaces start taking on more than they can handle, making it hard to work with them. If we keep the Interface Segregation Principle in mind, we can avoid it, which we definitely should do!</p>
+<h5 id="interface-segregation-principle">Interface Segregation Principle</h5>
+<p>The <strong>Interface Segregation Principle (ISP)</strong> is based on two key points:</p>
+<ul>
+<li>objects should not be forced to implement parts of the interfaces they don't use;</li>
+<li>many specific interfaces are better than one general-purpose interface.</li>
+</ul>
+<p>In other words, to make our interfaces accurate, we should make them specific, so we won't have to implement needless methods in the future.</p>
+<p></p><div class="alert alert-primary">There is no <em>right</em> size for an interface. It's kind of a form of art to choose an exact set of methods. All you can do is restrict the interface to a role you need, and do not add anything else to it.</div><p></p>
+<p>To illustrate this principle, let's take a look at the decomposition of the interface for making meals in a fictional robot cafe.</p>
+<h5 id="segregating-responsibilities">Segregating responsibilities</h5>
+<p>The main feature of the <em>"La Cuisine Avec Des Robots" </em>cafe is that all the waiters and cooks are robots. This interface shows what they can do with a meal:</p>
+<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/ac8a96d4-7d93-4374-be92-8fe64cd71fb8/"/></p>
+<p>The problem is that making a new meal requires programming a lot of actions. Even if we don't know whether we'll serve the dish in the cafe or only develop a new one in the kitchen, we should implement all the methods for cooks and waiters. It seems that we're tying together two different responsibilities in one interface, so we need to divide it. The solution is rather obvious:</p>
+<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/c95bca16-8295-4df0-b5e7-099e3b462164/"/></p>
+<p>Now we can implement the interface <code class="java">SERVEABLE</code> only for the dishes that we want to add to the menu and experiment with <code class="java">PREPAREABLE</code> meals independently.</p>
+<h5 id="segregating-specializations">Segregating specializations</h5>
+<p>We have good interfaces now, so let's try to implement all the methods for making the "<em>Le velouté" </em>soup<em>.</em></p>
+<p>We can boil ingredients of a soup and then serve the dish with a spoon, so another challenge comes up right away: what should we do with the <code class="java">FRY</code> and <code class="java">SERVE_WITH_FORK</code> methods? As you know, to implement an interface, we should define all the methods in it. Should we define methods with an empty body? Or maybe we need to return an error? Raise an exception? The best solution is not to have all these methods in the first place! First, we match our interfaces with the responsibilities of cooks and waiters, and then we  specialize them for different kinds of meals:</p>
+<p><img alt="" src="https://ucarecdn.com/b6637fa6-940a-4556-aac6-24352ebd34d1/"/></p>
+<p>All right, there's no need to make other needless methods for dishes.</p>
+<p>Though this decomposition works fine for this specific task, defining interfaces with just one method is not going to magically solve all the other cases. Try to find those methods that are integral to your interfaces, and keep your eye on degenerate methods in the implementations.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, we've got acquainted with the Interfaces Segregation Principle. We also learned how to divide the interfaces due to their responsibilities and specializations.</p></body></html>

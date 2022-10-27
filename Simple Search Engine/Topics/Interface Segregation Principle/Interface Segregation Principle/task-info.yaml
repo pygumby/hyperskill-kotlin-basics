@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: interfaces should always be decomposed to having only one method
+- text: many specific interfaces are better than one general-purpose interface
+- text: objects should not be forced to implement parts of interfaces they don't use
+- text: one general-purpose interface is better than many specific interfaces
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10090#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 14:07:42 UTC
+record: -1
+selected_options:
+- 1
+- 2
+local_check: false

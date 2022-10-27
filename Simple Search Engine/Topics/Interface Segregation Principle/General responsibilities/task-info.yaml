@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: CUSTOMIZE_SITE_SEARCH
+- text: USING_A_COMPUTER
+- text: WRITE_TO_TECHNICAL_SUPPORT
+- text: INTERNET_INFORMATION_SEARCHING
+- text: CODE_DEBUGGING
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16523#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 14:12:14 UTC
+record: -1
+selected_options:
+- 1
+- 3
+local_check: false

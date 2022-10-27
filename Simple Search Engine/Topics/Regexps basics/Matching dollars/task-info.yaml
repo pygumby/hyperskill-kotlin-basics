@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: '"22 $"'
+- text: '"22 dollars"'
+- text: '"2 dollars"'
+- text: '"dollars"'
+- text: '"22dollars"'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3725#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 27 Oct 2022 15:39:20 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

@@ -1,0 +1,53 @@
+<h2>Regexps basics</h2>
+<html><body><p>Manipulating text data is quite a popular task in programming as well as in real life. For example, we often may need to analyze a text, find all specific strings in a file, and so on. Processing text data can be quite a challenging problem. That's why there is a special tool called regular expressions that makes it easier and faster.</p>
+<h5 id="why-regular-expressions" style="text-align: center;">Why regular expressions?</h5>
+<p>A <strong>regular expression</strong> (<strong>regex</strong> or <strong>regexp</strong> for short) is a sequence of characters that describes a common <strong>pattern</strong> for a set of strings. Such patterns can be used to search, edit, and manipulate texts. They can either check if a whole string or its substring matches the given pattern or replace the substring with another one.</p>
+<p>When do we need such patterns? Say we want to obtain all the files with the same extension (like *.pdf), or extract all the entries of a particular name in different forms (for example, Edgar Poe, Edgar Allan Poe, E. A. Poe, etc.), all email addresses, or even find all numeric structures denoting dates (02/03/2020). With regexps, such tasks can be done in one line.    </p>
+<p>How do such patterns look? Well, at first, they may seem confusing, look, for example, at <code class="language-java">\d+(\.\d)?</code>  or <code class="language-java">[a-zA-Z]</code>. And they're often substantially longer. We'll start with the basics, though. </p>
+<p>Regexps may be regarded as a kind of sublanguage that most programming languages support, but there are some differences in syntax called <strong>"flavors"</strong>. In this topic, we will consider <strong>regexps</strong> in isolation from programming languages to understand the general idea.</p>
+<p>While learning this topic, you can visit the <a href="https://regex101.com/" rel="noopener noreferrer nofollow" target="_blank">regexp site</a> to play around with regular expressions from our examples. Choose <strong>PCRE </strong>as the flavor. It means <strong>P</strong>erl <strong>C</strong>ompatible <strong>R</strong>egular <strong>E</strong>xpressions which are the most common standard in practice.</p>
+<h5 id="matching-on-examples-more-parks" style="text-align: center;">Matching on examples: more PARKs</h5>
+<p>Let's start by exploring how matching works formally. Although a regex pattern can be quite a complicated expression containing characters with special meaning, the simplest regex is just a string of simple characters. Suppose, there is a set of words: <em>PARK, SPARK, PARKING, MARK, QUARKS</em>. You need to check which of them contain the word <em>PARK</em>. This is what happens, for example, when you perform a Ctrl+F search on a web page.</p>
+<p>We can easily solve this problem using the <em>PARK</em> pattern. The pattern means that symbols <em>P, A, R, K</em> in a word must follow each other from the left end to the right in a word. We suppose that the whole word matches the pattern if any part (substring) of the word matches it.</p>
+<p style="text-align: center;"><img alt="" height="299" src="https://ucarecdn.com/7020fc68-6ddd-497f-a330-3797afb955d2/" width="330"/></p>
+<p>Here are some explanations:</p>
+<ul>
+<li>the word <em><span style="color: #66cc66;">PARK</span></em> exactly matches our pattern;</li>
+<li>the word <em>S<span style="color: #66cc66;">PARK</span></em> matches our pattern because it has a suitable substring;</li>
+<li>the word <em><span style="color: #66cc66;">PARK</span>ING</em> matches our pattern due to the same reason;</li>
+<li>the word <em><span style="color: #ff4363;">M</span><span style="color: #66cc66;">ARK</span></em> doesn't match our pattern because of the letter <em><span style="color: #ff4363;">M</span></em>;</li>
+<li>the word <em>Q<span style="color: #ff4363;">U</span><span style="color: #66cc66;">ARK</span>S</em> doesn't match our pattern since it does not have a suitable part.</li>
+</ul>
+<p>To sum up, only three words match the <code class="language-java">PARK</code> pattern.</p>
+<p> </p>
+<p></p><div class="alert alert-warning">In regular expressions, the case of characters is relevant: <em>park</em> is not the same as <em>PARK</em>, i.e., they do not match.</div>
+<p> </p>
+<p>In addition, let's consider another sequence of characters <em><span style="color: #66cc66;">PA</span><span style="color: #ff4363;">KR</span></em>. It does not match our pattern since the two characters are in the wrong (reverse) order. </p>
+<h5 id="the-power-of-regular-expressions" style="text-align: center;">The power of regular expressions</h5>
+<p>Finding substrings is not very impressive, though. The real power of regular expressions comes when you start using special metacharacters called <strong>wildcards</strong>. They allow you to define a pattern, so you can match strings that do not necessarily contain an identical sequence of characters. You can skip some characters in a string or match different characters in the same positions, or even repeat a character several times.</p>
+<p>Let's introduce the two simplest wildcards: dot and question mark.</p>
+<h5 id="the-dot-character" style="text-align: center;">The dot character</h5>
+<p>The <strong>dot </strong>character <code class="language-java">.</code> matches any single character including letters, digits, and so on, except for the newline character, unless it is specified. </p>
+<p>Let's look at our previous example again with several additional words.</p>
+<p>As you remember, in the previous example, two words did not match the pattern because of one unsuitable character. Let's consider them and also add two additional words. Here is our new pattern <code class="language-java">.ARK</code> with the dot character. It says: "there is any character followed by <em>ARK</em>".</p>
+<p style="text-align: center;"><img alt="" height="244" src="https://ucarecdn.com/4b680cb0-5ab1-4079-8a71-7eabecefc647/" width="248"/></p>
+<p>Hooray, both words <em><span style="color: #66cc66;">MARK</span></em> and <em><span style="color: #66cc66;">QUARKS</span></em> match the new pattern! But the <em><span style="color: #66cc66;">WAR</span><span style="color: #ff4363;">M</span></em> word does not. Think for a minute, how can this be fixed?</p>
+<p><button class="btn-sm btn-outline-secondary" onclick="getElementById('hint-6062').style.display='inline'">
+        Hint
+      </button>
+</p><div id="hint-6062" style="display:none;">The answer is to use the <code class="language-java">.AR.</code> pattern, which is matched by <em><span style="color: #66cc66;">WARM</span></em>, <em>C<span style="color: #66cc66;">LARA</span></em>, <em><span style="color: #66cc66;">PART</span></em>, and so on.</div>
+<p>The word <em>ARK</em> also does not match our pattern, since it does not have a character in the <code class="language-java">.</code> position in the pattern, while it is required.</p>
+<h5 id="the-question-mark" style="text-align: center;">The question mark</h5>
+<p>The <strong>question mark</strong> <code class="language-java">?</code> is a special character that means “the preceding character or nothing". The question mark <code class="language-java">?</code> signals that the character before it can occur once or zero times in a string to match the pattern. When can we use it?</p>
+<p>Maybe with this example, you will finally begin to feel the magic of regexps. Consider the difference between British and American spelling. Imagine, we are trying to find all the studies mentioning color blindness in some publications' archives. However, it contains different sources and their spelling may vary. What word should we look for? The answer is both!</p>
+<p>The pattern <code class="language-java">colou?r</code> will match the strings <em><span style="color: #66cc66;">colour</span> </em>and <em><span style="color: #66cc66;">color</span></em>, but not the string <em><span style="color: #66cc66;">colo</span><span style="color: #ff4363;">o</span><span style="color: #66cc66;">r</span></em>. It is also possible to include the possibility of different letter cases to match the uppercase "Color" as well. We will learn how it is done in later topics.</p>
+<p>Let's return to our previous example. The word <em>ARK</em> does not match the <code class="language-java">.ARK</code> pattern. But if we add <code class="language-java">?</code> right after the dot character <code class="language-java">.?ARK</code>, the word <em>ARK</em> will match the new pattern since the first character is optional now.</p>
+<p>Note how we combine the powers of the different wildcards in the combination <code class="language-java">.?</code>. It is an underlying idea of regexps as well. </p>
+<h5 id="conclusion">Conclusion</h5>
+<p>Regexps allow you to find matching strings by a certain pattern. They use special characters with special meanings along with simple characters in their literal interpretation:</p>
+<ul>
+<li>the dot <code class="language-java">.</code> character matches any single character except for \n;</li>
+<li>the question mark <code class="language-java">?</code> character means "the previous character can be absent from the string";</li>
+<li>regular expressions are case-sensitive.</li>
+</ul>
+<p>We hope that you now see that regexps provide a powerful tool for processing strings and texts. With this, we conclude our introductory topic about them. Remember that there are many more applications of regular expressions that we have not yet discussed.</p></body></html>

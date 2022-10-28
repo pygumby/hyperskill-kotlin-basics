@@ -1,11 +1,11 @@
 <h2>Stack and heap memory</h2>
-<html><body><p>Random Access Memory (RAM) is one the most integral parts of a computer. This memory is used to store data that needs to be accessed quickly and temporarily by the CPU. The RAM is managed by the operating system. The operating system also makes sure that each process has enough memory and accesses only what they are allowed to access. When programs are executed, data is stored across different parts of the memory, namely the stack and the heap memory.</p>
+<p>Random Access Memory (RAM) is one of the most integral parts of a computer. This memory is used to store data that needs to be accessed quickly and temporarily by the CPU. The RAM is managed by the operating system. The operating system also makes sure that each process has enough memory and accesses only what they are allowed to access. When programs are executed, data is stored across different parts of the memory, namely the stack and the heap memory.</p>
 <h5 id="stack-memory">Stack memory</h5>
 <p>Memory allocation takes place in the function call stack, which we refer to as stack memory allocation. The memory space is allocated in <strong>contiguous blocks</strong>. The compiler is aware of the size of memory that needs to be allocated. Whenever a function is called, memory is allocated for its variables on the stack. The memory for the variables is also released once the function call is finished.</p>
 <p><img alt="" height="513" name="Blank_diagram.svg" src="https://ucarecdn.com/a6fd33cf-235d-472e-8908-6511af65136a/" width="392"/></p>
 <p>Several factors determine a call stack's size. Typically, it is specified at the beginning of a program. The architecture of the computer on which the program runs, the language used to write the program, and the overall amount of memory available in the system can all affect how big the program is. When a program demands an excessive amount of memory than what is already allocated, it will lead to <strong>stack overflow</strong>. The program or computer might crash in this situation.</p>
 <h5 id="heap-memory">Heap memory</h5>
-<p>Heap memory allocation occurs during program execution. Unlike stack, heap memory is <strong>dynamically allocated</strong>. Allocation and deallocation are handed by the programmer or the <strong>garbage collector</strong>. Garbage collectors automatically free up memory that is no longer referenced or used by the program. Not freeing unused variables in the memory might lead to <strong>memory leakage</strong>. Memory leaks reduce the performance of the program by holding space that would otherwise be free for other parts of the program.</p>
+<p>Heap memory allocation occurs during program execution. Unlike stack, heap memory is <strong>dynamically allocated</strong>. Allocation and deallocation are handled by the programmer or the <strong>garbage collector</strong>. Garbage collectors automatically free up memory that is no longer referenced or used by the program. Not freeing unused variables in the memory might lead to <strong>memory leakage</strong>. Memory leaks reduce the performance of the program by holding space that would otherwise be free for other parts of the program.</p>
 <p>Heap memory is global. It can be accessed and modified within the program by its reference. Unlike stack, it is not limited to the function where it is allocated. This makes heap memory allocation <strong>flexible</strong> but <strong>not thread-safe</strong> as anyone with the reference can read and write to the data.</p>
 <p>Heap memory allocation is significantly slower when compared to stack memory and causes <strong>memory fragmentation</strong> since the allocation is not contiguous. But it provides dynamic memory allocation which is very helpful in many programs because it allows resizing after program execution.</p>
 <h5 id="stack-vs-heap">Stack vs heap</h5>
@@ -14,8 +14,8 @@
 <h5 id="conclusion">Conclusion</h5>
 <p>In this topic, we looked at the different types of memory allocation. Specifically stack and heap memory.</p>
 <ul>
-<li>Stack is faster, thread-safe, and has fixed size.</li>
+<li>Stack is faster, thread-safe, and has a fixed size.</li>
 <li>Stackoverflow occurs when the program tries to use more memory than is available in the stack.</li>
 <li>Heap memory is flexible and requires manual memory management or a garbage collector.</li>
 <li>Memory leakage occurs when an unused variable holds space leading to reduced performance.</li>
-</ul></body></html>
+</ul>

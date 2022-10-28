@@ -151,6 +151,10 @@
             <option value="$PROJECT_DIR$/Topics/JVM components/Theory" />
             <option value="$PROJECT_DIR$/Topics/JVM components/What does JVM include" />
             <option value="$PROJECT_DIR$/Topics/JVM components/What does JVM include (1)" />
+            <option value="$PROJECT_DIR$/Topics/Kotlin evolution principles/Choose incremental release versions" />
+            <option value="$PROJECT_DIR$/Topics/Kotlin evolution principles/Find incremental release details" />
+            <option value="$PROJECT_DIR$/Topics/Kotlin evolution principles/The process name" />
+            <option value="$PROJECT_DIR$/Topics/Kotlin evolution principles/Theory" />
             <option value="$PROJECT_DIR$/Topics/Linear search/Element is in the array" />
             <option value="$PROJECT_DIR$/Topics/Linear search/How many repetitions" />
             <option value="$PROJECT_DIR$/Topics/Linear search/Searching for an array in an array" />

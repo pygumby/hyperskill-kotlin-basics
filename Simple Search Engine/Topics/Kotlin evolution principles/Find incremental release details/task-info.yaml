@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Support for Apple Silicon targets
+- text: 'Gradle: Java toolchain support and improved daemon configuration'
+- text: Improved opt-in requirement mechanism and type inference
+- text: Improved support for Lombok and support for JSpecify
+- text: Instantiation of annotation classes on the JVM
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21090#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 28 Oct 2022 18:20:38 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+- 4
+local_check: false

@@ -1,0 +1,46 @@
+<h2>Kotlin evolution principles</h2>
+<html><body><p> </p>
+<p>In this topic, we will tell you about how the Kotlin language develops. You will learn the principles of its evolution and how you can be involved in that process. You'll also find out how to understand the essence of the changes according to the update version and what levels of stability the language has. </p>
+<h5 id="kotlin-evolution">Kotlin evolution</h5>
+<p>Kotlin is an open-source programming language first introduced in 2010. Since then, the language has been developing and acquiring new features that meet modern development trends. It is maintained by JetBrains and many open-source contributors. <br/>
+</p><div class="alert alert-primary">For ten years, Kotlin's lead designer was <a href="https://twitter.com/abreslav" rel="noopener noreferrer nofollow" target="_blank">Andrey Breslav</a>, but in November 2020, he stepped down and <a href="https://twitter.com/relizarov" rel="noopener noreferrer nofollow" target="_blank">Roman Elizarov</a> took the role of the lead designer.</div><br/>
+Anyone who wants to contribute to the language development process has the following options:<p></p>
+<ul>
+<li><strong>Kotlin Evolution and Enhancement Process (KEEP). </strong>This is the process to make proposals on adding new features in the scope of KEEP. This process is described in detail in the corresponding GitHub <a href="https://github.com/Kotlin/KEEP" rel="noopener noreferrer nofollow" target="_blank">repository</a>.</li>
+<li><strong>Contribution</strong>. As an open-source contributor, you have several options to choose from. You can participate in the <a href="https://kotlinlang.org/docs/eap.html" rel="noopener noreferrer nofollow" target="_blank">Early Access Preview</a> (EAP) and contribute to the development of various libraries, the compiler, and Kotlin IDE plugin. Another way of contributing to the language may be the development of educational materials: improving the documentation or making tutorials and videos. Here is the <a href="https://kotlinlang.org/docs/contribute.html" rel="noopener noreferrer nofollow" target="_blank">link to the Contribution page</a> if you think this option is exactly what you want to do.</li>
+<li><strong>Fixing bugs</strong>. Found a bug and want it to be fixed? The Kotlin <a href="https://youtrack.jetbrains.com/issues/KT" rel="noopener noreferrer nofollow" target="_blank">issue tracker</a> is public. Additionally, you are free to suggest incompatible changes (removing or changing existing features) to the language. Follow the procedures described in the <a href="https://kotlinfoundation.org/submitting-incompatible-changes/" rel="noopener noreferrer nofollow" target="_blank">Kotlin Foundation</a> website to submit your proposal.</li>
+</ul>
+<p>If you're interested in finding other contributors and being involved in the community discussions, get an invitation to join the <a href="https://surveys.jetbrains.com/s3/kotlin-slack-sign-up" rel="noopener noreferrer nofollow" target="_blank">Slack community</a> and join the #<strong>kontributors</strong> channel.</p>
+<h5 id="principles-of-pragmatic-evolution">Principles of pragmatic evolution</h5>
+<p>Kotlin tends to be a pragmatic programming language following these three principles:</p>
+<ul>
+<li>
+<p><strong>Keep the language modern over the years</strong>. Programs accumulate legacies over time. Technologies are getting old, so the language must evolve to meet current needs. For this purpose, it is important not only to add new features but also to phase out some old ones.</p>
+</li>
+<li>
+<p><strong>Stay in the constant feedback loop with the users</strong>. Adding new features to the language is a serious step. You need to test the new functionality in action to avoid deprecations in the future. In this respect, users who test updates and give feedback can make a significant contribution. Pre-release versions serve this purpose. Trying them out, users make a huge contribution to the improvement of the language.</p>
+</li>
+<li>
+<p><strong>Make updating to new versions comfortable for the users</strong>. Incompatible changes in the language, such as removing features from it or reshaping them, can become a headache for users. Therefore, they should be prepared for the upcoming changes with the help of compile-time warnings, the deprecation mechanism, and automated migration tools.</p>
+</li>
+</ul>
+<p>At JetBrains, changes in Kotlin are regulated by the community and the <a href="https://kotlinfoundation.org" rel="noopener noreferrer nofollow" target="_blank">Kotlin Foundation</a>. The language evolution is overseen by the lead designer, who has the final say in this matter, but incompatible changes should be approved by the <a href="https://kotlinfoundation.org/structure/" rel="noopener noreferrer nofollow" target="_blank">Language Committee</a> of the Kotlin Foundation. </p>
+<h5 id="kotlin-releases">Kotlin releases</h5>
+<p>Updates in Kotlin are divided into two types:</p>
+<ul>
+<li><strong>Feature (major) releases </strong>(<strong>1.x.0 </strong>or<strong> 1.x</strong>)<strong>. </strong>Also known as stable releases, these are major changes to the language, generally adding new features and removing or changing deprecated features. Such updates happen about once every six months, sometimes a little longer. Before publishing such versions, one or more <strong>EAP </strong>(<a href="https://kotlinlang.org/docs/eap.html" rel="noopener noreferrer nofollow" target="_blank">Early Access Preview</a>) builds may be released to gather feedback from the community.</li>
+<li><strong>Incremental (minor) releases </strong>(<strong>1.x.y</strong>)<strong>. </strong>Those are updates between feature releases, and they bring Standard library API improvements, performance improvements, bug fixes, tool updates, the preview of new language features, etc. </li>
+</ul>
+<p>For instance, <strong>1.4.0 </strong>(also known as<strong> 1.4</strong>) is a feature release version, and <strong>1.4.20</strong> is an incremental release version. Of course, feature releases can also bring incremental updates. If you are curious about a detailed overview of different Kotlin version updates, you can explore <a href="https://blog.jetbrains.com/kotlin/category/releases/" rel="noopener noreferrer nofollow" target="_blank">The Kotlin Blog</a> content.</p>
+<h5 id="stability-of-components">Stability of components</h5>
+<p>Earlier we mentioned the principles of Kotlin language development based on feedback received from users. For this purpose, before the release of a stable version, several pre-stable versions are released to let users test updates and express their opinion. These version stages are defined by the level of their readiness and the risk users take when working with them. The levels of stability are:</p>
+<ul>
+<li><strong>Experimental</strong>. Such a stability level means there is an idea that should be tried out. The target is to let some users play with it and give feedback. If it doesn't work out, we may drop it any minute. These releases are recommended to try only in toy projects.</li>
+<li><strong>Alpha</strong>. This level means there has been a decision to productize this idea, but it hasn't reached the final shape yet. You should use these releases at your own risk, expecting migration issues.</li>
+<li><strong>Beta</strong>. It's a sign that things are almost done but changes are possible. Watch out for deprecation warnings. If you wish, you can use these versions – everything possible will be done to minimize migration issues.</li>
+<li><strong>Stable</strong>. This level shows that the feature is ready to be used and it will evolve following the backward-compatibility rules.</li>
+</ul>
+<p>Stability levels can be seen in GitHub repositories as badges. For example, by July 2022 <code class="java">kotlinx-datetime</code> is in the <strong>alpha</strong> stage.</p>
+<p><img alt="" height="142" name="datetime.png" src="https://ucarecdn.com/3afff477-eebd-4f40-ba68-181dcaa86a7d/" width="1112"/></p>
+<h5 id="conclusion">Conclusion</h5>
+<p>Here, we have revealed to you the cornerstones of the Kotlin programming language development. You have learned according to what principles the language changes and what the numbers of the language versions mean. In addition, now you know how to distinguish between language updates by the level of stability so that you can make the right decision when using new features.</p></body></html>

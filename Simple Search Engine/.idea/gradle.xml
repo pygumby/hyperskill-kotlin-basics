@@ -89,6 +89,11 @@
             <option value="$PROJECT_DIR$/Topics/Fixing code/Fixing a bug" />
             <option value="$PROJECT_DIR$/Topics/Fixing code/On pause" />
             <option value="$PROJECT_DIR$/Topics/Fixing code/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Area of a circle" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Difference between two doubles" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Evaluate an expression" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Find X" />
+            <option value="$PROJECT_DIR$/Topics/Floating-point types/Theory" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Getting the used memory using Runtime" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC using Runtime" />

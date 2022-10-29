@@ -57,3 +57,4 @@ content:
 - String formatting
 - Floating-point types
 - Euclidean division
+- Mutable Map

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Mutable_Set-To_clear_or_not_to_clear" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Mutable Set/To clear or not to clear" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Simple Search Engine" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Mutable Set/To clear or not to clear">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Mutable Set/To clear or not to clear/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Mutable Set/To clear or not to clear/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Mutable Set/To clear or not to clear/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

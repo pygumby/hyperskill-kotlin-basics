@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: previous()
+- text: removeAtIndex()
+- text: next()
+- text: sort()
+- text: previousIndex()
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20797#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 30 Oct 2022 10:26:20 UTC
+record: -1
+selected_options:
+- 0
+- 2
+- 4
+local_check: false

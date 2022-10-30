@@ -1,0 +1,21 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    fun countSum(sweets: Map<String, Int>): Int {
+        // write your code
+    }
+
+    fun main() {
+        var cart = mutableMapOf<String, Int>()
+        // write your code
+        println(countSum(cart)) // do not change this line
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20800#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 30 Oct 2022 10:25:37 UTC
+record: -1

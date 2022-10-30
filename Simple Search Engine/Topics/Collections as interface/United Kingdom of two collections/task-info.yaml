@@ -1,0 +1,25 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    fun main() {
+        val oldList = readln().split(" ").toMutableList()
+        val oldSet = oldList.toMutableSet()
+        val addedList = readln().split(" ").toList()
+
+        addListToCollection(oldList, addedList)
+        addListToCollection(oldSet, addedList)
+
+        println(oldList.joinToString(" "))
+        println(oldSet.joinToString(" "))
+    }
+
+    // Write here function addListToCollection()
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19758#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 30 Oct 2022 11:05:56 UTC
+record: -1

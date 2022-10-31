@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: One index
+- text: The number of indices is equal to the dimension of the main array minus 1
+- text: It depends on the type of array
+- text: 'The number of indices is equal to the dimension of the main array '
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10953#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 31 Oct 2022 11:19:49 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

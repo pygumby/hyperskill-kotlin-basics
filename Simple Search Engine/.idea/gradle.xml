@@ -103,6 +103,11 @@
             <option value="$PROJECT_DIR$/Topics/Floating-point types/Evaluate an expression" />
             <option value="$PROJECT_DIR$/Topics/Floating-point types/Find X" />
             <option value="$PROJECT_DIR$/Topics/Floating-point types/Theory" />
+            <option value="$PROJECT_DIR$/Topics/For loop and arrays/Cyclically shifting elements" />
+            <option value="$PROJECT_DIR$/Topics/For loop and arrays/Iteration" />
+            <option value="$PROJECT_DIR$/Topics/For loop and arrays/Just checking" />
+            <option value="$PROJECT_DIR$/Topics/For loop and arrays/Theory" />
+            <option value="$PROJECT_DIR$/Topics/For loop and arrays/Triples" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Getting the used memory using Runtime" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC using Runtime" />

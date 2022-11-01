@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: We can apply different orders with the same method using parameters
+- text: Concise syntax to perform a task
+- text: Simplicity and readability
+- text: Working in the same way in all collections
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22635#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 01 Nov 2022 11:47:33 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

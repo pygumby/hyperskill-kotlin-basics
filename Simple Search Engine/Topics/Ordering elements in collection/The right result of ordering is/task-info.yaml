@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: '[ABRACADABRA, AbracadaBRA, Abracadabra, abracadabra, abracadabra]'
+- text: '[abracadabra, aBracadabra, Abracadabra, AbracadaBRA, ABRACADABRA]'
+- text: '[abracadabra, aBracadabra, AbracadaBRA, Abracadabra, ABRACADABRA]'
+- text: '[ABRACADABRA, AbracadaBRA, Abracadabra, aBracadabra, abracadabra]'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22632#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 01 Nov 2022 11:42:37 UTC
+record: -1
+selected_options:
+- 1
+local_check: false

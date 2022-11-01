@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Concise syntax to perform a task
+- text: Simplicity and readability
+- text: Checking if only one element satisfies a condition
+- text: Working in the same way in all collections
+- text: Checking if everything is true using a when expression
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22084#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 01 Nov 2022 11:16:34 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 3
+local_check: false

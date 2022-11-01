@@ -1,0 +1,7 @@
+custom_name: 'Test predicates: checking elements in collection'
+content:
+- Theory
+- Advantages of Predicate Test
+- Which operations return true
+- A secret should always be a secret
+- Is it a palindrome list

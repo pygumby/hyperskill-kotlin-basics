@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: false
 options:
+- text: No, it is not obligatory
 - text: Yes, all GCs must implement a generational approach
 - text: Yes, it is the best approach to organize memory management
-- text: No, it is not obligatory
 files:
 - name: src/Main.kt
   visible: true

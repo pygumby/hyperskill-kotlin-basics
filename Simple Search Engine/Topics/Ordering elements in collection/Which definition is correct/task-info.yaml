@@ -3,12 +3,12 @@ is_multiple_choice: false
 options:
 - text: Returns a reference to the original collection in reverse order based on the
     CompareTo method
-- text: Returns a copy of the original collection in reverse order based on the index
 - text: Returns the original collection ordered by a predicate
-- text: '  Returns a reference to the original collection in reverse order based on
-    the index'
 - text: Returns a copy of the original collection in reverse order based on the Comparable
     Interface
+- text: Returns a copy of the original collection in reverse order based on the index
+- text: '  Returns a reference to the original collection in reverse order based on
+    the index'
 files:
 - name: src/Main.kt
   visible: true

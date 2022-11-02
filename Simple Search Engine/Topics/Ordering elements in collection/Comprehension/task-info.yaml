@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: We can apply different orders with the same method using parameters
 - text: Concise syntax to perform a task
 - text: Simplicity and readability
 - text: Working in the same way in all collections
+- text: We can apply different orders with the same method using parameters
 files:
 - name: src/Main.kt
   visible: true

@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: When unused memory is not freed
-- text: When memory is accessed by external processes
 - text: When you run out of free space on the RAM
 - text: When memory is fragmented
+- text: When memory is accessed by external processes
+- text: When unused memory is not freed
 files:
 - name: src/Main.kt
   visible: true

@@ -1,0 +1,35 @@
+type: code
+custom_name: A long time ago in a galaxy far, far away....
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    open class Character(val name: String)
+    class Jedi(name: String, val age: Int) : Character(name)
+    class Sith(name: String, val hasMask: Boolean) : Character(name)
+
+    fun characterBuilder(input: String): Character {
+        val (name, type, other) = input.split("-")
+        return when (type) {
+            "jedi" -> Jedi(name, other.toInt())
+            "sith" -> Sith(name, other.toBoolean())
+            else -> throw IllegalArgumentException("Unknown character type: $type")
+        }
+    }
+
+    fun main() {
+       val list = readln().split(" ")
+       val characters = list.map { characterBuilder(it) }
+
+        // write your code here
+
+
+        println("jedis: ${jedis.size}, siths: ${siths.size}")
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22377#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 02 Nov 2022 12:05:53 UTC
+record: -1

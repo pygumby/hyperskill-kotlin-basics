@@ -68,3 +68,4 @@ content:
 - Ordering elements in collection
 - Filtering elements in collection
 - Grouping collections
+- Fold and reduce on collections

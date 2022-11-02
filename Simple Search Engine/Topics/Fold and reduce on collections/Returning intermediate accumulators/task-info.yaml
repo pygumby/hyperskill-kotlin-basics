@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: runningFoldIndexed()
+- text: runningReduce()
+- text: reduceAccList()
+- text: runningFoldOrNull()
+- text: reduceOrNull()
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23337#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 02 Nov 2022 14:54:40 UTC
+record: -1
+selected_options:
+- 0
+- 1
+local_check: false

@@ -1,5 +1,5 @@
 <h2>Recursion basics</h2>
-<html><body><p>In short, <strong>recursion</strong> in programming<strong> </strong>is when<strong> a function calls itself</strong>. It has a case where it terminates and a set of rules to reduce other cases to the first case. A function that can do it is called a <strong>recursive function</strong>. Sounds a little abstract? Let's try to get the main idea on the example.</p>
+<p>In short, <strong>recursion</strong> in programming<strong> </strong>is when<strong> a function calls itself</strong>. It has a case where it terminates and a set of rules to reduce other cases to the first case. A function that can do it is called a <strong>recursive function</strong>. Sounds a little abstract? Let's try to get the main idea on the example.</p>
 <h5 id="recursive-matryoshka" style="text-align: center;">Recursive matryoshka</h5>
 <p>Think of it like a Russian doll, matryoshka. It's a doll, or, more accurately, a set of dolls placed one inside another. You open the first doll, and there's the second, open this one and get the third, and so on until you get to this last doll, which won't open.</p>
 <p style="text-align: center;"><img alt="" height="340" src="https://ucarecdn.com/da852abb-df10-4a02-9392-b8db6da2ecf5/" width="684"/></p>
@@ -28,7 +28,7 @@
 <p>Many recursive functions can be written another way: we could simply go through all numbers from <span class="math-tex">\(1\)</span> to <span class="math-tex">\(n\)</span> and compute the function for each number. For example, we can open the largest doll, say "One", throw the doll away, and repeat these steps until we found the last one. This way of computing is called <strong>the loop</strong>. But which way is more efficient?</p>
 <p>It depends on the programming language. As a rule, in Python and Java, loops are more efficient in terms of <strong>time</strong> and <strong>memory</strong>. Recursion is slower and "heavier" because each call of a function takes additional memory, and recursive functions usually get called many times.</p>
 <p>In that case, why recursion? Well, it has one certain advantage over loops: in some cases, it is intuitive<strong>.</strong> If you are certain that some function uses itself, it is much faster to write 3-4 lines of recursive code than to think how exactly a loop should behave. If you are short on time but don't have to worry about memory consumption, recursion is your choice. </p>
-<p>So, recursion is usually<strong> </strong>slower and less memory-efficient<strong>, </strong>but it saves the developers' time.</p>
+<p>So, recursion is usually<strong> </strong>slower and less memory-efficient,<strong> </strong>but it saves the developers' time.</p>
 <p>Let's look at one classic (and more practical, to be perfectly honest) problem that recursion can effectively deal with.</p>
 <h5 id="the-factorial-example" style="text-align: center;">The factorial example</h5>
 <p>A classic example of recursion is a math function called <strong>the factorial</strong>.</p>
@@ -43,4 +43,4 @@
 <li>Every recursive function consists of two elements: reduction step and trivial base case.</li>
 <li>Use recursion when you're sure your function uses itself and program memory usage and run-time are not your priority.</li>
 </ul>
-<p>As you can see, recursion is a pretty simple idea. Enjoy!</p></body></html>
+<p>As you can see, recursion is a pretty simple idea. Enjoy!</p>

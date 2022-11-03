@@ -1,0 +1,67 @@
+<h2>Custom sort order for collection</h2>
+<html><body><p>In previous lessons, we have learned to order collections based on the methods defined in the <code class="language-kotlin">Comparator</code> interface and the <code class="language-kotlin">compareTo()</code> method following the intrinsic natural order of elements.</p>
+<p>In this topic, we will see how to customize the order of a collection based on our needs or tasks with the help of special methods defined in Kotlin.</p>
+<h5 id="custom-order">Custom order</h5>
+<p>To perform<strong> custom sorting </strong>of the elements in a collection and order the elements of any type in a way you like, Kotlin offers the following functions: <code class="language-kotlin">sortedBy()</code> and <code class="language-kotlin">sortedByDescending()</code>. </p>
+<p>How do they work? They take a <strong>lambda </strong>as the<strong> selector function</strong>, which maps the element or some properties of the element into comparable attributes. As a result, it returns an ordered collection following the identified natural order. <code class="language-kotlin">sortedBy()</code> returns a collection where the elements are sorted in ascending order, and <code class="language-kotlin">sortedByDescending()</code> returns a collection in descending order. </p>
+<pre><code class="language-kotlin">fun main() {
+    val words = listOf("peter", "anne", "michael", "caroline")
+
+    // sorted by word length
+    println(words.sortedBy { it.length }) // [anne, peter, michael, caroline]
+    println(words.sortedByDescending { it.length }) // [caroline, michael, peter, anne]
+
+    // sorted by first letter
+    println(words.sortedBy { it.first() }) // [anne, caroline, michael, peter]
+    println(words.sortedByDescending { it.first() }) // [peter, michael, caroline, anne]
+
+    // sorted by the last letter
+    println(words.sortedBy { it.last() }) // [anne, caroline, michael, peter]
+    println(words.sortedByDescending { it.last() }) // [peter, michael, anne, caroline]
+}</code></pre>
+<h5 id="define-new-order">Define new order</h5>
+<p>Sometimes, natural order is not enough, and you need to implement a more specific order to work with the elements of a collection; for example, you can implement a custom order for non-comparable elements or properties. </p>
+<p>We can define custom sorting using the <code class="language-kotlin">Comparator</code> interface. The <code class="language-kotlin">Comparator</code> interfaces helps us to define the <code class="language-kotlin">compare()</code> method, which returns the integer result of the comparison between two values: a zero if the arguments are equal, a negative number if the first argument is less than the second, or a positive number if the first argument is greater than the second. In this way, you can set the order that you need in a collection. We can define the <code class="language-kotlin">compare()</code> function using a lambda, for example, to return a positive number if the first element must precede the second, if a date must precede another date, if a string must precede another string according to the string length, and so on.</p>
+<p>Now we can use the <code class="language-kotlin">sortedWith()</code> function to return a list of all elements sorted according to the specified <strong>comparator</strong>.</p>
+<pre><code class="language-kotlin">fun main() {
+    val words = listOf("peter", "anne", "michael", "caroline")
+
+    // define a comparator for the list of words
+    val wordsLengthComparator = Comparator { str1: String, str2: String -&gt; str1.length - str2.length }
+    // Ordered list according to the comparator
+    println(words.sortedWith(wordsLengthComparator)) // [anne, peter, michael, caroline]
+    
+    // another comparator using the middle letter
+    val middleLetterComparator =
+        Comparator { str1: String, str2: String -&gt; str1[str1.length / 2] - str2[str2.length / 2] }
+    
+    // Ordered list according to the comparator
+    println(words.sortedWith(middleLetterComparator)) // [michael, caroline, anne, peter]
+}</code></pre>
+<h5 id="improving-your-custom-order">Improving your custom order</h5>
+<p>Another alternative way to accomplish this task is to use the <code class="language-kotlin">compare()</code> function, which allows us to define on the fly the comparator that we need using a <strong>lambda function </strong>to customize the sorting of the elements in a collection with <code class="language-kotlin">sortedWith()</code>.</p>
+<pre><code class="language-kotlin">fun main() {
+    val words = listOf("peter", "anne", "michael", "caroline")
+
+    // ordering by length
+    println(words.sortedWith(compareBy { it.length })) // [anne, peter, michael, caroline]
+    
+    // ordering by middle letter
+    println(words.sortedWith(compareBy { it[it.length / 2] })) // [michael, caroline, anne, peter]
+
+}</code></pre>
+<p>Finally, you can combine your custom ordering method with the <code class="language-kotlin">reversed()</code> function to obtain the inverse form of the defined order.</p>
+<pre><code class="language-kotlin">fun main() {
+    val words = listOf("peter", "anne", "michael", "caroline")
+
+    // ordering by length reversed
+    println(words.sortedWith(compareBy { it.length }).reversed()) // [caroline, michael, peter, anne]
+    
+    // ordering by middle letter reversed
+    println(words.sortedWith(compareBy { it[it.length / 2] }).reversed()) // [peter, anne, caroline, michael]
+
+
+}</code></pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>Throughout this topic, we have shown different techniques to customize the ordering of elements in a collection. Now you will be able to adapt ordering to the requirements of your problem based on a specific natural order or setting your own comparison criteria.</p>
+<p>It is time to solve some problems to check what you have learned about custom sorting. Let's go!</p></body></html>

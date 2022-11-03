@@ -1,0 +1,14 @@
+type: code
+custom_name: The secret is inside the spell?
+files:
+- name: src/Main.kt
+  visible: true
+  text: "/* Do not change code below */\nfun main() {\n    val list = readln().split(\"\
+    \ \")\n    // write your code here\n    val res = \n\n\n    println(res)\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22714#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 03 Nov 2022 19:04:20 UTC
+record: -1

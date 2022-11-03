@@ -70,3 +70,4 @@ content:
 - Grouping collections
 - Fold and reduce on collections
 - Aggregate operations on collections
+- Custom sort order for collection

@@ -1,7 +1,7 @@
 <h2>Introduction to logging</h2>
-<html><body><h5 id="introduction" style="text-align: center;">Introduction</h5>
+<h5 id="introduction" style="text-align: center;">Introduction</h5>
 <p>Imagine you are investigating a robbery and are trying to figure out what happened. You have witnesses whose testimonies are very vague, but there is no evidence. It will be very difficult to unravel such a mess. If only there were recordings from surveillance cameras to restore the chronology of the events...</p>
-<p>So now, let's say you are investigating a bug, but what 'surveillance cameras' do you have in that case? Obviously, we need records of everything that happened with the program before the incident. Also, it would be nice to know during which operation it happened. All such records are usually kept in the log. So what is a log?</p>
+<p>So now, let's say you are investigating a bug, but what 'surveillance cameras' do you have in that case? Obviously, we need records of everything that happened with the program before the incident. Also, it would be nice to know during which operation it happened. All such records are usually kept in a log. So what is a log?</p>
 <h5 id="log" style="text-align: center;">Log</h5>
 <p>Logging refers to the act of recording during the execution of an application. <strong>Logs</strong> are records that give us information about the events in a software application. This record could be a message that is enough to understand the event that happened, it may include a timestamp, a description, and a severity level. These events could be user-generated or system-generated.  We use either a log file or, sometimes, the standard output to make these records.</p>
 <p>We need logging for several reasons. Firstly, it will save a lot of time when we are <strong>troubleshooting</strong> our application at a late stage. If the program, for example, broke or something went wrong in it, then we can find the exact moment at which the error occurred in the log. This makes the debugging process a lot easier. Secondly, it is also possible to trace who used the program with the log. If it is, say, a site, one can find out who sent the requests. Also, logs help to monitor the operation of a particular system, which makes verification and reporting a whole lot easier. This way, we are always aware of how our programs work and how well they perform.</p>
@@ -33,8 +33,10 @@
 <p>And if some user named 'alex98' cannot log in because of some technical issues, we will receive an <strong>Error</strong> message:</p>
 <pre><code class="language-no-highlight">[2021-02-02 01:00:10] [ERROR] User 'alex98' cannot log in because the database is temporarily unavailable</code></pre>
 <p>Thus, we will know that user 'alex98' failed to log in due to our database being temporarily unavailable. We have localized the problem and know exactly what we need to do: check the database and fix it.</p>
-<p></p><div class="alert alert-primary"> There is also a more complex version of this format called <a href="https://en.wikipedia.org/wiki/Common_Log_Format" rel="noopener noreferrer nofollow" target="_blank"><strong>The Common Log Format</strong></a>. </div><p></p>
+<p> </p>
+<p></p><div class="alert alert-primary"> There is also a more complex version of this format called <a href="https://en.wikipedia.org/wiki/Common_Log_Format" rel="noopener noreferrer nofollow" target="_blank"><strong>The Common Log Format</strong></a>. </div>
+<p> </p>
 <ul>
 </ul>
 <h5 id="conclusion" style="text-align: center;">Conclusion</h5>
-<p>So, we've figured out what logs are and what they are for. We've also learned what types of logs there are and how we can issue a log message. Now you can start using logs to monitor the operation of your system at any given time.</p></body></html>
+<p>So, we've figured out what logs are and what they are for. We've also learned what types of logs there are and how we can issue a log message. Now you can start using logs to monitor the operation of your system at any given time.</p>

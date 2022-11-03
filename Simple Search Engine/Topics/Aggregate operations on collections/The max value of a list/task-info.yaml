@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: maxOfOrNull()
+- text: 'maxByOrNull() '
+- text: maxOrNull()
+- text: maxWithOrNull()
+- text: maxOfWithOrNull()
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23325#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 03 Nov 2022 18:32:14 UTC
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

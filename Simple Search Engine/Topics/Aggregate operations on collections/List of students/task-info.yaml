@@ -1,0 +1,13 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: "fun main() {\n    val list = readln().split(\" \")\n    // write your code\
+    \ here\n    val res = \n\n\n    println(res)\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23329#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 03 Nov 2022 18:13:05 UTC
+record: -1

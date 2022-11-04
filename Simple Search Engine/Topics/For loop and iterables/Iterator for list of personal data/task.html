@@ -1,0 +1,25 @@
+<h2>Iterator for list of personal data</h2>
+<html><body><p>Look at the code below.<br/>
+The <code class="language-kotlin">StoredNode</code> class stores personal data.</p>
+<pre><code class="language-kotlin">class StoredNode(private val name: String, private val age: Int, var next : StoredNode? = null){
+
+    fun toNodeString(): String {
+        return "Name $name age $age"
+    }
+}</code></pre>
+<p>The <code class="language-kotlin">ListStorage</code> class implements the <code class="language-kotlin">Iterable&lt;StoredNode&gt;</code> interface on the <code class="language-kotlin">StoredNode</code> object.</p>
+<pre><code class="language-kotlin">class ListStorage (var head: StoredNode, var tail: StoredNode = head) : Iterable&lt;StoredNode&gt; {
+
+    fun add(newNode: StoredNode) {
+        tail.next = newNode
+        tail = newNode
+    }
+
+    override fun iterator(): Iterator&lt;StoredNode&gt; {
+        return ListStorageIterator(this)
+    }
+}</code></pre>
+<p>In the <code class="language-kotlin">ListStorageIterator</code> class, which implements the <code class="language-kotlin">Iterator&lt;StoredNode&gt;</code> interface, implement the <code class="language-kotlin">hasNext()</code> and <code class="language-kotlin">next()</code> methods.</p></body></html><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">Nik 30<br>Sofi 25<br>Mike 45</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">Name Nik age 30<br>Name Sofi age 25<br>Name Mike age 45</code></pre><br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>
+<b>Caution</b><br><br>
+You may see errors in your code or execution results due to missing context. Don’t worry about it, just write the solution and press Check.
+<br><br>

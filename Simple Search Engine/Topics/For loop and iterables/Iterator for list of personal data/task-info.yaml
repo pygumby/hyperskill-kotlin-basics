@@ -1,0 +1,36 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    class ListStorageIterator(private val workTeam: ListStorage) : Iterator<StoredNode> {
+
+        lateinit var current: StoredNode
+        private var isAccessed: Boolean = false
+
+        override fun hasNext(): Boolean {
+            // put your code here
+        }
+
+        override fun next(): StoredNode {
+            // put your code here
+        }
+    }
+
+    fun main() {
+        // don't change this code
+        val listStorage = ListStorage(StoredNode("Nik", 30))
+        listStorage.add(StoredNode("Sofi", 25))
+        listStorage.add(StoredNode("Mike", 45))
+        val iterStorage = listStorage.iterator()
+        while (iterStorage.hasNext()){
+            println(iterStorage.next().toNodeString())
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22738#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 04 Nov 2022 11:13:05 UTC
+record: -1

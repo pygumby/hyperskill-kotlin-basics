@@ -71,3 +71,4 @@ content:
 - Fold and reduce on collections
 - Aggregate operations on collections
 - Custom sort order for collection
+- For loop and iterables

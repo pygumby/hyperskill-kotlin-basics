@@ -1,0 +1,114 @@
+<h2>For loop and iterables</h2>
+<html><body><p>As you know from previous topics, the  <code class="language-kotlin">for</code> loop is used in Kotlin for iterating through ranges, arrays, and different types of collections. Also, we learned that collections in Kotlin have a special construction called <code class="language-kotlin">iterator</code>, which provides methods to iterate through collections and process them. It can be used not only in standard collections but also in your own classes. In this topic, we will see how to do it.</p>
+<h5 id="iterator-as-interface">Iterator as interface</h5>
+<p>Iterator is a useful construction in programming languages like Java and Kotlin, which comes in handy when you want to process a sequence of elements one by one: for example, print each value or even remove some element. In order to be able to use this construction, the class that presents a collection of elements should implement the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/" rel="noopener noreferrer nofollow" target="_blank"><code class="language-kotlin">Iterable</code></a> interface, which declares the <code class="language-kotlin">iterator()</code> function. This function creates and returns an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterator/" rel="noopener noreferrer nofollow" target="_blank"><code class="language-kotlin">Iterator</code></a> object, which sequentially accesses collection elements. </p>
+<p><code class="language-kotlin">Iterator</code> has two basic functions – <code class="language-kotlin">next()</code> and <code class="language-kotlin">hasNext()</code>. <code class="language-kotlin">hasNext()</code> is used to check if there are any following elements in iteration. When you call <code class="language-kotlin">next()</code>, it returns the current element and moves the pointer of the iterator to the next element if it exists in iteration. Here is an example: </p>
+<pre><code class="language-kotlin">val alphabet = listOf('a', 'b', 'c', 'd','e')
+val alphabetIterator = alphabet.iterator()
+while (alphabetIterator.hasNext()) {
+    print(alphabetIterator.next() + " ") // a b c d e
+}</code></pre>
+<p> If you want to be able to modify elements during iteration over a sequence, you need to use <code class="language-kotlin">MutableIterator</code> – a version of iterator that supports removing elements during iteration. Adding and modifying elements is supported only by <code class="language-kotlin">MutableListIterator</code>, which works with <code class="language-kotlin">MutableList</code>.</p>
+<pre><code class="language-kotlin">val colors = mutableListOf("red", "green", "blue", "white") 
+val mutableIterator = colors.listIterator()
+
+mutableIterator.next()
+mutableIterator.remove()    
+println("After : $colors") // After: [green, blue, white]
+mutableIterator.add("black")
+println("After : $colors") // After: [black, green, blue, white]
+</code></pre>
+<h5 id="collection-as-interface">Collection as interface</h5>
+<p>In Kotlin, there are two universal interfaces for working with a sequence of elements – <code class="language-kotlin">Iterable</code> and <code class="language-kotlin">MutableIterable</code>. <code class="language-kotlin">Collection</code> is an interface that represents a generic collection of elements, and it inherits from <code class="language-kotlin">Iterable</code>. <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/" rel="noopener noreferrer nofollow" target="_blank"><code class="language-kotlin">Collection</code></a> differs from <code class="language-kotlin">Iterable</code> in providing methods like <code class="language-kotlin">get()</code>, <code class="language-kotlin">find()</code>, <code class="language-kotlin">filter()</code>, <code class="language-kotlin">count()</code>, etc. As you can see from the scheme below, <code class="language-kotlin">List</code> and <code class="language-kotlin">Set</code> are inheritors of <code class="language-kotlin">Collection</code>:</p>
+<p><img alt="" height="393" name="image.png" src="https://ucarecdn.com/cb37aa43-2c3b-44f5-b6b5-ea6e909cdf04/" width="514"/></p>
+<p> As you may remember from previous topics, <code class="language-kotlin">Iterable</code> does not support changes to collection: for example, you cannot remove an element from a collection that inherits from <code class="language-kotlin">Collection</code> or add a new element to it. If you want to be able to add or remove elements, the collection you operate on should implement  the interface <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/" rel="noopener noreferrer nofollow" target="_blank"><code class="language-kotlin">MutableCollection</code></a>. <code class="language-kotlin">MutableCollection</code> provides such methods as <code class="language-kotlin">add()</code>, <code class="language-kotlin">addAll()</code>, <code class="language-kotlin">remove()</code>, <code class="language-kotlin">removeAll()</code>, <code class="language-kotlin">drop()</code>, etc. This interface is implemented by the mutable analogues of <code class="language-kotlin">List</code> and <code class="language-kotlin">Set</code> – <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/" rel="noopener noreferrer nofollow" target="_blank"><code class="language-kotlin">MutableList</code></a> and <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/" rel="noopener noreferrer nofollow" target="_blank"><code class="language-kotlin">MutableSet</code></a> respectively.</p>
+<p>As you can see, standard collections like <code class="language-kotlin">List</code> and <code class="language-kotlin">Set</code> inherit from <code class="language-kotlin">Iterable</code>, that is why you can create an object of iterator for processing these collections. Let's see next how to make our own implementation of <code class="language-kotlin">Iterable</code> and create an iterator for it.</p>
+<h5 id="creating-your-own-iterator">Creating your own iterator</h5>
+<p>Let’s imagine we have a simple class <code class="language-kotlin">Message</code>, which represents a message with a short text and a pointer to the next message:</p>
+<pre><code class="language-kotlin">class Message(var text: String, var next: Message? = null) { }</code></pre>
+<p>We can have a lot of messages and we want to store them, for example, in <code class="language-kotlin">MessageBox</code>. Also, it would be nice to read messages one by one, so we need to be able to iterate over them.</p>
+<p>Let's create the <code class="language-kotlin">MessageBox</code> class, it will be our custom realization of the sequence of messages. It has its <code class="language-kotlin">head</code>, which refers to the first message in <code class="language-kotlin">MessageBox</code>, and <code class="language-kotlin">tail</code> – it refers to the last one. If we want to iterate through <code class="language-kotlin">MessageBox</code>, we should inherit it from <code class="language-kotlin">Iterable&lt;Message&gt;</code> and override its function <code class="language-kotlin">iterator()</code>. This function returns an object of <code class="language-kotlin">MessageBoxIterator</code>, which we will create later.</p>
+<pre><code class="language-kotlin">class MessageBox(var head: Message, var tail: Message = head) : Iterable&lt;Message&gt; {
+
+    fun add(newMessage: Message) {
+        tail.next = newMessage
+        tail = newMessage
+    }
+
+    override fun iterator(): Iterator&lt;Message&gt; {
+        return MessageBoxIterator(this)
+    }
+
+}</code></pre>
+<p>Also, we've declared a function <code class="language-kotlin">add()</code> for adding new messages to <code class="language-kotlin">MessageBox</code>.</p>
+<p>As <code class="language-kotlin">MessageBoxIterator</code> implements <code class="language-kotlin">Iterator&lt;Message&gt;</code>, we should override <code class="language-kotlin">hasNext()</code> and <code class="language-kotlin">next()</code>, which will enable us to get the next element. We've also declared a variable <code class="language-kotlin">current</code> – the current object of the sequence, to which <code class="language-kotlin">MessageBoxIterator</code> points. </p>
+<pre><code class="language-kotlin">class MessageBoxIterator(val messageBox: MessageBox) : Iterator&lt;Message&gt; {
+
+    lateinit var current: Message
+
+    private var isAccessed: Boolean = false
+
+    override fun hasNext(): Boolean {
+        if (!isAccessed) current = messageBox.head
+        return current.next != null
+    }
+
+    override fun next(): Message {
+        if (!isAccessed) {
+            current = messageBox.head
+            isAccessed = true
+        } else {
+            if (current.next == null) throw NoSuchElementException()
+            current = current.next!!
+        }
+        return current
+    }
+
+}</code></pre>
+<p>As you can see, here we use Kotlin keywords <code class="language-kotlin">private</code> and <code class="language-kotlin">lateinit</code>. The former one is a <a href="https://kotlinlang.org/docs/visibility-modifiers.html#packages" rel="noopener noreferrer nofollow" target="_blank">visibility modifier</a>. This modifier prohibits changing the value of the boolean variable <code class="language-kotlin">isAccessed</code> outside the class. As you can remember from the <a href="https://hyperskill.org/learn/step/20794" rel="noopener noreferrer nofollow" target="_blank">topic about Iterator</a>, when an object of the iterator is created, it points to the position <strong>before</strong> the first element of the collection. <code class="language-kotlin">isAccessed</code> has a <code class="language-kotlin">true</code> value if we've already called the <code class="language-kotlin">next()</code> function and the iterator points to some element; the value is <code class="language-kotlin">false</code> if we haven't accessed the collection yet. In order to declare non-null types that will be initialized later, we use the keyword <code class="language-kotlin">lateinit</code> in the variable's declaration. You can read more about it in <a href="https://kotlinlang.org/docs/properties.html#compile-time-constants" rel="noopener noreferrer nofollow" target="_blank">Kotlin's documentation</a>.</p>
+<p>Let's try to use what we've done:</p>
+<pre><code class="language-kotlin">fun main() {
+    var messageBox = MessageBox(Message("hello!"))
+    messageBox.add(Message("I am from hyperskill"))
+    messageBox.add(Message("which programming language do you study?"))
+
+    val messageIterator = messageBox.iterator()
+    while (messageIterator.hasNext()) {
+        println(messageIterator.next().text)
+    }
+
+}
+
+</code></pre>
+<p>Here's the result:</p>
+<pre><code class="language-kotlin">hello!
+I am from hyperskill
+which programming language do you study?
+</code></pre>
+<p>If we try to invoke the <code class="language-kotlin">next()</code> function after iterating through all the elements of <code class="language-kotlin">MessageBox</code>, <code class="language-kotlin">NoSuchElementException</code> will be thrown. It means that after iterating over the whole sequence, the iterator can't be used anymore and you should create a new <code class="language-kotlin">Iterator</code> object.</p>
+<h5 id="for-loop-and-iterator">For loop and iterator</h5>
+<p>Every class that implements the <code class="language-kotlin">Iterable</code> interface can be used in an enhanced <code class="language-kotlin">for</code> loop. If we create our custom class, we need to implement the <code class="language-kotlin">Iterable</code> interface and provide an iterator.</p>
+<p>For example, the interface <code class="language-kotlin">List</code> extends <code class="language-kotlin">Collection</code>, which in its turn extends <code class="language-kotlin">Iterable</code>, and that's why we can get access to each element of <code class="language-kotlin">List</code> inside a <code class="language-kotlin">for</code> loop. Let's look at the example below: </p>
+<pre><code class="language-kotlin">val languages = listOf("java", "kotlin", "python")
+for (lang in languages) {
+  println(lang) 
+}
+/*
+ java
+ kotlin
+ python
+*/</code></pre>
+<p>But if we try to use the class <code class="language-kotlin">File</code>, for example, for reading lines from the file inside an enhanced <code class="language-kotlin">for</code> loop, we will get an error because <code class="language-kotlin">File</code> doesn't implement the <code class="language-kotlin">Iterable</code> interface:</p>
+<pre><code class="language-kotlin">var file = File("kotlin.txt")
+for(line in File){ // compile error
+   ...
+}</code></pre>
+<p>The <code class="language-kotlin">for</code> loop can be used with <code class="language-kotlin">Iterator</code> in the following way:</p>
+<pre><code class="language-kotlin">val letters = listOf("k", "o", "t", "l", "i", "n")
+val iterator = letters.iterator()
+for (letter in iterator) {
+  print(letter) // kotlin
+}</code></pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, you have learned about <code class="language-kotlin">Iterator</code> and <code class="language-kotlin">Collection</code> as interfaces. We've discovered the difference between <code class="language-kotlin">Iterable</code> and <code class="language-kotlin">MutableIterable</code> and discussed how to work with mutable and immutable sequences of elements. </p>
+<p>Also, we have implemented <code class="language-kotlin">Iterable</code> and <code class="language-kotlin">Iterator</code> by creating our classes and tried working with them. Remember that if you want to create a class that represents a sequence of elements and iterate over it, your class should inherit from <code class="language-kotlin">Iterable</code> and override its method <code class="language-kotlin">iterator()</code>. If you need to create your own iterator, you can do it by implementing <code class="language-kotlin">Iterator</code>.</p></body></html>

@@ -1,0 +1,16 @@
+<h2>In the cinema</h2>
+<html><body><p>You decided to binge-watch some films this weekend, but you are very specific about the kind of films: it should contain the word "love" in its title. You wrote the following code to make a list of such films:</p>
+<pre><code class="java">fun findCertainMovies(films: List&lt;String&gt;) = films.filter { it.contains("love") }
+
+fun main() {
+    val films = listOf("love and doves", "love and other drugs", "terminator", "p.s. i love you")
+
+
+    var filmIterator = findCertainMovies(films).iterator()
+    filmIterator.next()
+
+    while (filmIterator.hasNext()) {
+        print("${filmIterator.next()} ")
+    }
+}</code></pre>
+<p>What will be the output?</p></body></html>

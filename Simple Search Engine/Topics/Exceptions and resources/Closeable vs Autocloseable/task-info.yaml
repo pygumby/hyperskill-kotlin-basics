@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: The invocation of the use() function is possible only for a Closeable interface
+- text: AutoCloseable can throw only an IOException
+- text: AutoCloseable automatically releases resources
+- text: Closeable can throw only an IOException and its inheritors
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21753#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 05 Nov 2022 18:44:57 UTC
+record: -1
+selected_options:
+- 3
+local_check: false

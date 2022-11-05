@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Database connections
+- text: Files
+- text: External connections
+- text: Exceptions
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21754#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 05 Nov 2022 18:44:02 UTC
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+custom_name: Guess the resource!
+local_check: false

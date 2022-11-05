@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Exceptions_and_resources-Create,_use,_and_then_release_it" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Exceptions and resources/Create, use, and then release it" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Simple Search Engine" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Exceptions and resources/Create, use, and then release it">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Exceptions and resources/Create, use, and then release it/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Exceptions and resources/Create, use, and then release it/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Exceptions and resources/Create, use, and then release it/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

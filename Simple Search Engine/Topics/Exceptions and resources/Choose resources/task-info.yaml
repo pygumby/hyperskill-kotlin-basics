@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: files
+- text: database connections
+- text: any outer sources
+- text: socket connections
+- text: none of them
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20423#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 05 Nov 2022 18:45:25 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

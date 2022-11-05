@@ -92,6 +92,12 @@
             <option value="$PROJECT_DIR$/Topics/Euclidean division/Theory" />
             <option value="$PROJECT_DIR$/Topics/Euclidean division/Two digits" />
             <option value="$PROJECT_DIR$/Topics/Euclidean division/Using parentheses in your code" />
+            <option value="$PROJECT_DIR$/Topics/Exceptions and resources/Choose resources" />
+            <option value="$PROJECT_DIR$/Topics/Exceptions and resources/Closeable vs Autocloseable" />
+            <option value="$PROJECT_DIR$/Topics/Exceptions and resources/Create, use, and then release it" />
+            <option value="$PROJECT_DIR$/Topics/Exceptions and resources/Guess the resource" />
+            <option value="$PROJECT_DIR$/Topics/Exceptions and resources/May I use it" />
+            <option value="$PROJECT_DIR$/Topics/Exceptions and resources/Theory" />
             <option value="$PROJECT_DIR$/Topics/External resources/GeeksForWho" />
             <option value="$PROJECT_DIR$/Topics/External resources/Theory" />
             <option value="$PROJECT_DIR$/Topics/External resources/What does the algorithm do" />

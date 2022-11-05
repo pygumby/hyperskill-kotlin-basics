@@ -60,6 +60,12 @@
             <option value="$PROJECT_DIR$/Topics/Converting from binary to decimal/Conversion algorithm" />
             <option value="$PROJECT_DIR$/Topics/Converting from binary to decimal/Theory" />
             <option value="$PROJECT_DIR$/Topics/Converting from decimal to binary/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Creating custom exceptions/Create custom exception" />
+            <option value="$PROJECT_DIR$/Topics/Creating custom exceptions/Creating an exception" />
+            <option value="$PROJECT_DIR$/Topics/Creating custom exceptions/Custom exception" />
+            <option value="$PROJECT_DIR$/Topics/Creating custom exceptions/Keyword super" />
+            <option value="$PROJECT_DIR$/Topics/Creating custom exceptions/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Creating custom exceptions/Throwing NullPointerException" />
             <option value="$PROJECT_DIR$/Topics/Custom sort order for collection/List of students" />
             <option value="$PROJECT_DIR$/Topics/Custom sort order for collection/Order your scores" />
             <option value="$PROJECT_DIR$/Topics/Custom sort order for collection/The secret is inside the spell" />

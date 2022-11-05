@@ -75,3 +75,4 @@ content:
 - The try-catch statement
 - The try-catch-finally statement
 - Exceptions and resources
+- Creating custom exceptions

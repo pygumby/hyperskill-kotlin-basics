@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Creates a custom exception
+- text: Enables the super feature.
+- text: Calls the constructor of the base type in order to initialize its properties.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15015#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 05 Nov 2022 19:10:21 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

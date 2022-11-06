@@ -312,6 +312,16 @@ files:
     }
 
   learner_created: false
+- name: src/search/data.txt
+  visible: true
+  text: |-
+    Dwight Joseph djo@gmail.com
+    Rene Webb webb@gmail.com
+    Katie Jacobs
+    Erick Harrington harrington@gmail.com
+    Myrtle Medina
+    Erick Burgess
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7821#comment
 status: Unchecked
 record: -1

@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: String::uppercase
+- text: String::uppercase()
+- text: String.uppercase
+- text: s::uppercase()
+- text: s.uppercase
+- text: s::uppercase
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15431#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 06 Nov 2022 10:47:49 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

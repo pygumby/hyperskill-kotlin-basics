@@ -143,6 +143,10 @@
             <option value="$PROJECT_DIR$/Topics/For loop and iterables/Iterator for list of personal data" />
             <option value="$PROJECT_DIR$/Topics/For loop and iterables/Theory" />
             <option value="$PROJECT_DIR$/Topics/For loop and iterables/Words starting with the same letter" />
+            <option value="$PROJECT_DIR$/Topics/Function references/Ascending and descending sorting" />
+            <option value="$PROJECT_DIR$/Topics/Function references/Kinds of function references" />
+            <option value="$PROJECT_DIR$/Topics/Function references/Replace the lambda expression with a function reference" />
+            <option value="$PROJECT_DIR$/Topics/Function references/Theory" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Getting the used memory using Runtime" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC" />
             <option value="$PROJECT_DIR$/Topics/Garbage Collector/Invoking GC using Runtime" />

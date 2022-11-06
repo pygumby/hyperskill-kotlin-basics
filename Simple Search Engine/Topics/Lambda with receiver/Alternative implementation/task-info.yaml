@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: 'val multiply: (Int, Int) -&gt; Int = { b -&gt; it.times(b) }'
+- text: 'val multiply: Int.(Int) -&gt; Int = { b -&gt; it.times(b) }'
+- text: 'val multiply: Int.(Int) -&gt; Int = { b -&gt; times(b) }'
+- text: 'fun multiply(f: (Int) -&gt; Int): Int = return this.{f()}'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20958#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 06 Nov 2022 11:39:27 UTC
+record: -1
+selected_options:
+- 2
+local_check: false

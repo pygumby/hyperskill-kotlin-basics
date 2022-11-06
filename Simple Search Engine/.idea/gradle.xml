@@ -222,6 +222,11 @@
             <option value="$PROJECT_DIR$/Topics/Kotlin evolution principles/Find incremental release details" />
             <option value="$PROJECT_DIR$/Topics/Kotlin evolution principles/The process name" />
             <option value="$PROJECT_DIR$/Topics/Kotlin evolution principles/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Lambda with receiver/Advantages of lambdas with receivers" />
+            <option value="$PROJECT_DIR$/Topics/Lambda with receiver/Alternative implementation" />
+            <option value="$PROJECT_DIR$/Topics/Lambda with receiver/The Magic function" />
+            <option value="$PROJECT_DIR$/Topics/Lambda with receiver/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Lambda with receiver/Which operations are correct" />
             <option value="$PROJECT_DIR$/Topics/Linear search/Element is in the array" />
             <option value="$PROJECT_DIR$/Topics/Linear search/How many repetitions" />
             <option value="$PROJECT_DIR$/Topics/Linear search/Searching for an array in an array" />

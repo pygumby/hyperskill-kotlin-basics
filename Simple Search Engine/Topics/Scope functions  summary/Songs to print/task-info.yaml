@@ -1,0 +1,17 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    fun main() {
+        val title = readln()
+
+        // Write your scope function here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23488#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 09 Nov 2022 18:39:10 UTC
+record: -1

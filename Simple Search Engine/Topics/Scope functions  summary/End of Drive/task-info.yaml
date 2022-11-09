@@ -1,0 +1,14 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: "fun main() {\n    // Define variable message and give it a value from standard\
+    \ input\n    val message = \n\n    // Write here scope functions that adds needed\
+    \ phrase\n    println(message). \n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23484#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 09 Nov 2022 18:27:22 UTC
+record: -1

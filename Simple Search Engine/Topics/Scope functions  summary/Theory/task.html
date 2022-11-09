@@ -1,0 +1,139 @@
+<h2>Scope functions: summary</h2>
+<p>We have already figured out how scope functions <code class="language-kotlin">apply</code>, <code class="language-kotlin">also</code>, <code class="language-kotlin">with</code>, <code class="language-kotlin">let</code>, and <code class="language-kotlin">run</code> work. However, we have also encountered a few complicated issues: some of the functions can be used interchangeably, and there is also some confusion with choosing <code class="language-kotlin">it</code> or <code class="language-kotlin">this</code> when accessing the context object. Now it's time to cut this famous Kotlian knot! We will learn how to chose the right function and why we need these two similar keywords: <code class="language-kotlin">it</code> and <code class="language-kotlin">this</code>. Let's get started!</p>
+<h5 id="what-is-the-difference-result-of-functions">What is the difference: result of functions</h5>
+<p>There is an important difference between the scope functions, which greatly influences our choice of the most appropriate one.</p>
+<p>1. <code class="language-kotlin">apply</code> and <code class="language-kotlin">also</code> return context objects.</p>
+<p>2. <code class="language-kotlin">let</code>, <code class="language-kotlin">run</code>, and <code class="language-kotlin">with</code> return a lambda result.</p>
+<p>With <code class="language-kotlin">apply</code> and <code class="language-kotlin">also</code>, we change the original context object and can make a long chain of functions around it. It's called side steps.</p>
+<pre><code class="language-kotlin">fun main() {
+    val numbers = mutableListOf&lt;Int&gt;()
+    numbers.also { println("Let's add some elements in this list") }
+        .apply {
+            add(2)
+            add(3)
+            add(1)
+        }
+        .also { println("And now let's sort these elements in the list") }
+        .sort() // also() and sort() get as a parameter our changed context object - numbers
+    println(numbers)
+}</code></pre>
+<p>We performed all these operations on the same object, our <code class="language-kotlin">mutableList()</code>. An alternative way is using <code class="language-kotlin">apply</code> and <code class="language-kotlin">also</code> with return. In this case, we can decide what we want to return.</p>
+<p>Unlike the case in the first example, <code class="language-kotlin">let</code>, <code class="language-kotlin">run</code>, and <code class="language-kotlin">with</code> return some result, and as a result Kotlin takes the last expression in the function's body. Therefore, we can assign the result of these functions to a variable or make a long chain and transform different data.</p>
+<pre><code class="language-kotlin">fun main() {
+    val numbers = mutableListOf&lt;Int&gt;(2, 6, 8, 9, 74)
+    val bigNumbers = numbers.run {
+        add(15) // Remember that run uses this
+        add(5)
+        count { it &gt; 10 }
+    } // If you put here another method or function, it will receive as a parameter the result of the last expression, the number of elements greater than ten
+    println("There are $bigNumbers numbers greater than ten")
+}</code></pre>
+<p>Another way to use these functions is making a temporary scope for a variable, performing some actions, getting the results, and forgetting about it like a little guppy fish forgets that it already had lunch.</p>
+<pre><code class="language-kotlin">fun main() {
+    val numbers = mutableListOf&lt;Int&gt;(2, 6, 8, 9, 74)
+    with(numbers) {
+        val firstNum = first() // Remember that with uses this
+        val lastNum = last()
+        println("First element is $firstNum, last element is $lastNum")
+    }
+}</code></pre>
+<h5 id="what-is-the-difference-context-object">What is the difference: context object</h5>
+<p>In terms of scope functions, there are four practical differences between <code class="language-kotlin">this</code> and <code class="language-kotlin">it</code>. </p>
+<ol>
+<li><code class="language-kotlin">this</code> refers directly to the context object, while <code class="language-kotlin">it</code> can refer to separate members of the object on which we invoke a scope function.</li>
+<li>In both cases, we refer to some object with which we will work, but with <code class="language-kotlin">it</code> we can pass several parameters, while with <code class="language-kotlin">this</code> we're dealing with one function parameter. </li>
+<li>We can omit <code class="language-kotlin">this</code> in a function and access the arguments or object methods directly, but in the case of <code class="language-kotlin">it</code>, we have to call arguments and parameters with the <code class="language-kotlin">it</code> keyword.</li>
+<li>With <code class="language-kotlin">it</code> we can rename our parameters and use a more appropriate name inside the function.</li>
+<li>If you have only one function in the body and <code class="language-kotlin">it</code> as a parameter, you can replace that with the <code class="language-kotlin">::</code> reference to the function.</li>
+</ol>
+<p><code class="language-kotlin">run</code>, <code class="language-kotlin">with</code>, and <code class="language-kotlin">apply</code> work with <code class="language-kotlin">this</code>, while <code class="language-kotlin">let</code> and <code class="language-kotlin">also</code> work with <code class="language-kotlin">it</code>. Let's see some simple examples.</p>
+<pre><code class="language-kotlin">data class Musician(var name: String, var instrument: String = "Guitar", var band: String = "Radiohead")
+
+fun main() {
+    Musician("Jonny Greenwood").apply {
+      instrument = "harmonica" // here we can use this.instrument
+      band = "Pavement"
+     
+    }
+
+    Musician("Jonny Greenwood").also {
+      it.instrument = "harmonica"
+    }
+
+    Musician("Dave Glowl", "Drums", "Nirvana").let { (musicianName, instr, newBand) -&gt;
+        musicianName.length + instr.length + newBand.count { it == 'a' }
+    }
+    // With it, we can pass several parameters and use them as separate parameter members. We can also rename these parameters
+}</code></pre>
+<p></p><div class="alert alert-warning">Don't get scared: the use of <code class="language-kotlin">it</code> and <code class="language-kotlin">this</code> is almost the same, we only show their technical differences. In practice, they can play similar roles and you can choose the most suitable way.</div>
+<p>Now, look at <a href="https://kotlinlang.org/docs/scope-functions.html#function-selection" rel="noopener noreferrer nofollow" target="_blank">the table</a>, which summarizes the differences between scope functions.</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 700px;">
+<thead>
+<tr>
+<th>Function</th>
+<th>Object reference</th>
+<th>Return value</th>
+<th>Is extension function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-kotlin">let</code></td>
+<td><code class="language-kotlin">it</code></td>
+<td>Lambda result</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code class="language-kotlin">run</code></td>
+<td><code class="language-kotlin">this</code></td>
+<td>Lambda result</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code class="language-kotlin">run</code></td>
+<td>-</td>
+<td>Lambda result</td>
+<td>No: called without the context object</td>
+</tr>
+<tr>
+<td><code class="language-kotlin">with</code></td>
+<td><code class="language-kotlin">this</code></td>
+<td>Lambda result</td>
+<td>No: takes the context object as an argument</td>
+</tr>
+<tr>
+<td><code class="language-kotlin">apply</code></td>
+<td><code class="language-kotlin">this</code></td>
+<td>Context object</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code class="language-kotlin">also</code></td>
+<td><code class="language-kotlin">it</code></td>
+<td>Context object</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="function-selection">Function selection</h5>
+<p>Once again, like in the previous topic, you might think: "Hey, I can receive the same result if I, for example, replace <code class="language-kotlin">run</code> with <code class="language-kotlin">let</code> and add the word <code class="language-kotlin">it</code> to a parameter inside the function body. And I can replace <code class="language-kotlin">run</code> with <code class="language-kotlin">with</code>." Indeed, in many cases you can do so.</p>
+<p></p><div class="alert alert-warning">And here is a cool thing: you can define your own rules for scope function usage in your team.</div>
+<p>Why is it cool? Because you will know: ok, if I see <code class="language-kotlin">run</code>, I understand that we use it for certain purposes. You see it and you immediately understand: yes, this piece of code does the job! And that is the beauty and purpose of scope functions: they can help you make code more readable and clear. We can say that scope functions are primarily semantic elements.</p>
+<p>However, Kotlin language creators give us the following recommendations (they refer to them in <a href="https://kotlinlang.org/docs/coding-conventions.html#scope-functions-apply-with-run-also-let" rel="noopener noreferrer nofollow" target="_blank">Kotlin coding conventions</a>):</p>
+<ul>
+<li>Executing a lambda on non-null objects: <code class="language-kotlin">let</code></li>
+<li>Introducing an expression as a variable in local scope: <code class="language-kotlin">let</code></li>
+<li>Object configuration: <code class="language-kotlin">apply</code></li>
+<li>Object configuration and computing the result: <code class="language-kotlin">run</code></li>
+<li>Running statements where an expression is required: non-extension <code class="language-kotlin">run</code></li>
+<li>Additional effects: <code class="language-kotlin">also</code></li>
+<li>Grouping function calls on an object: <code class="language-kotlin">with</code></li>
+</ul>
+<p>In our two previous topics about scope functions, we already used these official recommendations in our examples.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>We have considered an important and complicated topic – how to use scope functions. Why is it so important? Because you will certainly encounter these functions in real practice no matter what you work on: Android apps, Kotlin backend, or something else. So, here's what we've learned:</p>
+<ul>
+<li>You can define use cases for different scope functions in your team.</li>
+<li>You can skip the keyword <code class="language-kotlin">this</code> but must use <code class="language-kotlin">it</code> as a reference to your context object in scope functions.</li>
+<li>Knowing that different scope functions return different results, you can make function chains. However, be careful with chains: scope functions must make code more readable, while long chains make it more confusing.</li>
+</ul>

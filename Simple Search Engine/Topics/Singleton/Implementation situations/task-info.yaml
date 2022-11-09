@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: when other company provides your team with their objects through some interface
 - text: when you need to create an application that can be unit-tested with relative
     ease
 - text: when you need to work with a LogManager class and maintain one instance of
     it
+- text: when other company provides your team with their objects through some interface
 - text: when you are starting a new project and don't know the exact types of objects
     you'll work with
 files:

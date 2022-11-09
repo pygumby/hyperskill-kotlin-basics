@@ -1,12 +1,12 @@
 type: choice
 is_multiple_choice: false
 options:
+- text: Explaining how to assemble objects and classes into larger structures
 - text: Realization of a concept of copying existing class for the creation of a new
     one
+- text: Forming the connection between different objects in the system
 - text: Dealing with object creation methods and separating it from other parts of
     the system
-- text: Explaining how to assemble objects and classes into larger structures
-- text: Forming the connection between different objects in the system
 files:
 - name: src/Main.kt
   visible: true

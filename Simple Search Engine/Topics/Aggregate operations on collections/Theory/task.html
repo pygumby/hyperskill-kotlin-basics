@@ -69,7 +69,6 @@
     println(emptyWordsList.minOf { it.length })  // NoSuchElementException
     println(emptyWordsList.maxBy { it.length })  // NoSuchElementException
     println(emptyWordsList.minBy { it.length })  // NoSuchElementException
-}
 }</code></pre>
 <p>It is important to note the difference between <code class="language-kotlin">maxOfOrNull</code>/<code class="language-kotlin">minOfOrNull</code> and <code class="language-kotlin">maxByOrNull</code>/<code class="language-kotlin">minByOrNull</code>. <code class="language-kotlin">maxOfOrNull</code>/<code class="language-kotlin">minOfOfNull</code> return the <strong>largest/smallest </strong>value among <strong>all </strong>values produced by the selector function applied to each element in the collection or null if the collection is empty. In the example, the selector is based on the word length. They return 8 (max length) and 4 (min length). Thus, they return the maximum or minimum of the word lengths.</p>
 <p>Meanwhile, <code class="language-kotlin">maxByOrNull</code>/<code class="language-kotlin">minByOrNull</code> return the <strong>first </strong>element yielding the <strong>largest/smallest </strong>value of the given function or null if there are no elements. Thus, they will return the first word that has the maximum or minimum length. They return "caroline" (the first word with the max length 8) and "anne" (the first word with the min length 4). Also, we can use a lambda predicate like <code class="language-kotlin">it.length &gt; 5</code> to obtain the first max or min word based on its length because it is the first element that produces the largest (michael) /smallest (anne) value of the given function (<code class="language-kotlin">it.length &gt; 5</code>).</p>
@@ -106,8 +105,6 @@
     
     // ordering by middle letter reversed
     println(words.sortedWith(compareBy { it[it.length / 2] }).reversed()) // [peter, anne, caroline, michael]
-
-
 }</code></pre>
 <h5 id="conclusion">Conclusion</h5>
 <p>In this topic, we have discussed different techniques to obtain the values of a collection using aggregate methods: to find the max, min, or average value, or find the object that has the max value of a certain property.</p>

@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: true
 options:
+- text: just run the code again
 - text: analyze the code
 - text: start the debugger
-- text: just run the code again
 - text: print the current program state
 - text: rewrite the whole code
 files:

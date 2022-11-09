@@ -1,51 +1,33 @@
 <h2>IntelliJ Run Configurations</h2>
-<p>IntelliJ IDEA uses run/debug configurations to run, debug, and test applications. A run/debug configuration represents a set of startup properties, such as VM options or JRE, that are used to run the program. It also contains information about command-line arguments you pass to the program on startup.</p>
-
+<p>IntelliJ IDEA uses run/debug configurations to run, debug, and test applications. A run/debug configuration represents a set of startup properties, such as VM or JRE options, that are used to run the program. It also contains information about command-line arguments you pass to the program on startup.</p>
 <h5 id="rundebug-configurations-dialog" style="text-align: center;">Run/Debug configurations dialog</h5>
-
 <p>The application run/debug configuration enables you to run or debug applications via the main method. To set up a configuration open the <em>Edit Configurations</em> dialog.</p>
-
-<p style="text-align: center;"><img alt="" height="328" src="https://ucarecdn.com/ecb4aebb-e84d-4c02-b3b0-ae03b746fbac/" width="641"></p>
-
+<p style="text-align: center;"><img alt="" height="328" src="https://ucarecdn.com/ecb4aebb-e84d-4c02-b3b0-ae03b746fbac/" width="641"/></p>
 <p>The command-line arguments to pass at the startup of the program are configured at the Build and run section in the <em>Program arguments</em> field.</p>
-
-<p style="text-align: center;"><img alt="" height="391" src="https://ucarecdn.com/21b215b5-4c0e-4633-8ba5-d5b7e8ca165e/" width="641"></p>
-
+<p style="text-align: center;"><img alt="" height="391" src="https://ucarecdn.com/21b215b5-4c0e-4633-8ba5-d5b7e8ca165e/" width="641"/></p>
 <p>The arguments are passed as a sequence of strings separated by whitespaces. While running a program, the strings would be the command-line arguments passed to its entry points. The delimiters between command-line elements are whitespace characters and the end-of-line delimiter is the newline character. </p>
-
 <h5 id="passing-arguments-in-configuration" style="text-align: center;">Passing arguments in configuration</h5>
-
 <p>To pass arguments to a program you should type a list of them in the format you would use on the command line. The whitespaces will be parsed as delimiters, separating one argument from another. These arguments will be passed to the entry point of the program as an array.</p>
-
 <p>It is important to remember, that all of the command-line arguments are passed as strings, so if they are supposed to be treated as, for example, integers, you should convert them explicitly inside the program.</p>
-
 <p>To pass the arguments correctly you should use a list of rules in the following paragraph. </p>
-
 <h5 id="rules-for-passing-arguments" style="text-align: center;">Rules for passing arguments</h5>
-
 <p>When specifying arguments, follow these rules:</p>
-
 <ul>
-	<li>
-	<p>Use spaces to separate individual arguments, for example, <code class="java">--data text.txt</code>.</p>
-	</li>
-	<li>
-	<p>If an argument includes spaces, enclose the spaces or the argument that contains spaces in double quotes, for example, <code class="java">some" "arg</code> or <code class="java">"some arg"</code>.</p>
-	</li>
-	<li>
-	<p>If an argument includes double quotes (as part of the argument), escape the double quotes using backslashes, for example, <code class="java">\"quoted_value\"</code>.</p>
-	</li>
+<li>
+<p>Use spaces to separate individual arguments, for example, <code class="java">--data text.txt</code>.</p>
+</li>
+<li>
+<p>If an argument includes spaces, enclose the spaces or the argument that contains spaces in double quotes, for example, <code class="java">some" "arg</code> or <code class="java">"some arg"</code>.</p>
+</li>
+<li>
+<p>If an argument includes double quotes (as part of the argument), escape the double quotes using backslashes, for example, <code class="java">\"quoted_value\"</code>.</p>
+</li>
 </ul>
-
 <p>For example, if you want to pass two arguments, <code class="java">--data</code> and <code class="java">text.txt</code>, you should insert them as in the following example using the rules above:</p>
-
-<p style="text-align: center;"><img alt="" height="246" src="https://ucarecdn.com/4a33164c-bd1c-41eb-b3e0-10325ff56fbc/" width="641"></p>
-
+<p style="text-align: center;"><img alt="" height="246" src="https://ucarecdn.com/4a33164c-bd1c-41eb-b3e0-10325ff56fbc/" width="641"/></p>
 <h5 id="conclusion" style="text-align: center;">Conclusion</h5>
-
 <p>Let's remind ourselves what we have learned in this topic:</p>
-
 <ul>
-	<li>To pass command-line arguments for your application in IDEA, go to <em>Run/Debug configurations </em>dialog and set the <em>Program arguments</em> field.</li>
-	<li>For a correct specification of command-line arguments, follow the rules from the third paragraph.</li>
+<li>To pass command-line arguments for your application in IDEA, go to <em>Run/Debug configurations </em>dialog and set the <em>Program arguments</em> field.</li>
+<li>For a correct specification of command-line arguments, follow the rules from the third paragraph.</li>
 </ul>

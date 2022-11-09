@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
+- text: '... new elements are not added to the array anymore.'
 - text: '... a new array is allocated and all elements from the current array are
     copied in the new array.'
 - text: '... all elements of the array are removed and new elements are added to the
     beginning of the array.'
-- text: '... new elements are not added to the array anymore.'
 files:
 - name: src/Main.kt
   visible: true

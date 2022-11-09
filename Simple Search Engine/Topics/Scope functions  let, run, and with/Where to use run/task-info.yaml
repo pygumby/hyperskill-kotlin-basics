@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: For different calculations
+- text: For entering local variables with a limited scope
+- text: For using a function without extension and executing a block of several operators
+- text: For object setting
+- text: For initializing a new object and passing to it the result of a lambda
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22878#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 09 Nov 2022 17:32:59 UTC
+record: -1
+selected_options:
+- 2
+- 4
+local_check: false

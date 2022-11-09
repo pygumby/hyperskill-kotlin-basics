@@ -1,0 +1,19 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    fun main() {
+        var poet: String? = readln()
+
+        val coolScope = // Write your code here
+
+        println(coolScope)
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22881#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 09 Nov 2022 17:29:22 UTC
+record: -1

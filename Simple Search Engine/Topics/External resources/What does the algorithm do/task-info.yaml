@@ -1,14 +1,14 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: shorten a path from a single source vertex to all other vertices in the given
-    graph
 - text: find the longest path from a single source vertex to another one in the given
     graph
-- text: delete the shortest path from a single source vertex to the next one in the
-    given graph
+- text: shorten a path from a single source vertex to all other vertices in the given
+    graph
 - text: find the shortest path from a single source vertex to all other vertices in
     the given graph
+- text: delete the shortest path from a single source vertex to the next one in the
+    given graph
 files:
 - name: src/Main.kt
   visible: true

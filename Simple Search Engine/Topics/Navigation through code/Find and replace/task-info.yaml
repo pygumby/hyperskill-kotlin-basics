@@ -2,9 +2,9 @@ type: choice
 is_multiple_choice: false
 options:
 - text: Anything, but you cannot replace it in the active editor
-- text: Commented lines
 - text: Reserved language literals
 - text: Text strings
+- text: Commented lines
 files:
 - name: src/Main.kt
   visible: true

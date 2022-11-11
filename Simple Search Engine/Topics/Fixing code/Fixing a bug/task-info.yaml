@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: int p1 = (a + b + c) / 2;
 - text: import java.lang.Integer;
-- text: double s = Math.sqrt(p1 * ((p1 - a * p1 - b) * (p1 - c)));
+- text: int p1 = (a + b + c) / 2;
 - text: System.out.println(s);
+- text: double s = Math.sqrt(p1 * ((p1 - a * p1 - b) * (p1 - c)));
 files:
 - name: src/Main.kt
   visible: true

@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
+- text: (Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) /
+    1024
 - text: Runtime.getRuntime().freeMemory() - Runtime.getRuntime().totalMemory()
 - text: Runtime.getRuntime().totalMemory() / 1024
 - text: Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()
-- text: (Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) /
-    1024
 files:
 - name: src/Main.kt
   visible: true

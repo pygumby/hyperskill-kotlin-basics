@@ -18,8 +18,8 @@ files:
 feedback_link: https://hyperskill.org/learn/step/6220#comment
 status: Solved
 feedback:
-  message: '<html>Googling the command cat (for example, here: https://www.opennet.ru/man.shtml?topic=cat&category=1)
-    will reveal that all this command does is printing the content of its arguments.
-    So, the file must contain only a line we are expecting to see in the output.</html>'
-  time: Mon, 24 Oct 2022 19:07:24 UTC
+  message: "<html>Googling the command cat (for example, here: https://www.opennet.ru/man.shtml?topic=cat&category=1)\
+    \ will reveal that all this command does is printing the content of its arguments.\
+    \ So, the file must contain only a line we are expecting to see in the output.</html>"
+  time: "Mon, 24 Oct 2022 19:07:24 UTC"
 record: -1

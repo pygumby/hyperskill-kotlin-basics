@@ -5,8 +5,8 @@ options:
     exception on empty collections
 - text: Returns the smallest element according to the comparator
 - text: Returns the smallest selector return value according to the comparator
-- text: With a selector function, returns the smallest return value of the selector
-    itself
+- text: "With a selector function, returns the smallest return value of the selector\
+    \ itself"
 files:
 - name: src/Main.kt
   visible: true
@@ -21,7 +21,7 @@ feedback_link: https://hyperskill.org/learn/step/23326#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Thu, 03 Nov 2022 18:14:54 UTC
+  time: "Thu, 03 Nov 2022 18:14:54 UTC"
 record: -1
 selected_options:
 - 0

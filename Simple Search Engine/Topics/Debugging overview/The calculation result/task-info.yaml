@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: A = 5, B = 7, C = 9
-- text: A = 10, B = 16, C = 12
-- text: A = 10, B = 16, C = 9
-- text: A = 10, B = 16, C = 14
+- text: "A = 5, B = 7, C = 9"
+- text: "A = 10, B = 16, C = 12"
+- text: "A = 10, B = 16, C = 9"
+- text: "A = 10, B = 16, C = 14"
 files:
 - name: src/Main.kt
   visible: true
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/14374#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Sun, 16 Oct 2022 14:07:22 UTC
+  time: "Sun, 16 Oct 2022 14:07:22 UTC"
 record: -1
 selected_options:
 - 2

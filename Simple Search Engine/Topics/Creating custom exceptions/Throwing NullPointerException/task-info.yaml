@@ -2,7 +2,7 @@ type: choice
 is_multiple_choice: true
 options:
 - text: throw NullPointerException()
-- text: throw NullPointerException("My exception message", otherException)
+- text: "throw NullPointerException(\"My exception message\", otherException)"
 - text: throw NullPointerException(otherException)
 - text: throw NullPointerException("My exception message")
 files:
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/15013#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Sat, 05 Nov 2022 19:08:27 UTC
+  time: "Sat, 05 Nov 2022 19:08:27 UTC"
 record: -1
 selected_options:
 - 0

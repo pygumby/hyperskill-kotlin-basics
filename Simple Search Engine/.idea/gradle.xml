@@ -8,18 +8,11 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#JAVA_INTERNAL" />
+        <option name="gradleJvm" value="java version &quot;17.0.4+7&quot;" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Simple Search Engine/task" />
-            <option value="$PROJECT_DIR$/Simple Search Engine/task/build/classes/java" />
-            <option value="$PROJECT_DIR$/Simple Search Engine/task/build/classes/kotlin" />
-            <option value="$PROJECT_DIR$/Simple Search Engine/task/build/generated/sources/annotationProcessor/java" />
-            <option value="$PROJECT_DIR$/Simple Search Engine/task/build/generated/sources/headers/java" />
-            <option value="$PROJECT_DIR$/Simple Search Engine/task/build/reports/tests" />
-            <option value="$PROJECT_DIR$/Simple Search Engine/task/build/test-results" />
-            <option value="$PROJECT_DIR$/Simple Search Engine/task/build/tmp" />
             <option value="$PROJECT_DIR$/Topics/1s Complement/Theory" />
             <option value="$PROJECT_DIR$/Topics/1s Complement/Unsuitable representation" />
             <option value="$PROJECT_DIR$/Topics/2s Complement/5-bit two's complement" />
@@ -274,6 +267,11 @@
             <option value="$PROJECT_DIR$/Topics/Queue/Remaining elements" />
             <option value="$PROJECT_DIR$/Topics/Queue/Theatre and friends" />
             <option value="$PROJECT_DIR$/Topics/Queue/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Random/Pseudorandomness" />
+            <option value="$PROJECT_DIR$/Topics/Random/Random generator seed" />
+            <option value="$PROJECT_DIR$/Topics/Random/SumIterator" />
+            <option value="$PROJECT_DIR$/Topics/Random/The Rock-Paper-Scissors game" />
+            <option value="$PROJECT_DIR$/Topics/Random/Theory" />
             <option value="$PROJECT_DIR$/Topics/Recursion basics/Do you need recursion" />
             <option value="$PROJECT_DIR$/Topics/Recursion basics/The factorial" />
             <option value="$PROJECT_DIR$/Topics/Recursion basics/Theory" />
@@ -297,6 +295,7 @@
             <option value="$PROJECT_DIR$/Topics/Scope functions  summary/End of Drive" />
             <option value="$PROJECT_DIR$/Topics/Scope functions  summary/Songs to print" />
             <option value="$PROJECT_DIR$/Topics/Scope functions  summary/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Scope functions  summary/Work without context object" />
             <option value="$PROJECT_DIR$/Topics/Searching problem/Theory" />
             <option value="$PROJECT_DIR$/Topics/Self-documenting code/Definitions" />
             <option value="$PROJECT_DIR$/Topics/Self-documenting code/Theory" />
@@ -331,6 +330,13 @@
             <option value="$PROJECT_DIR$/Topics/Test predicates  checking elements in collection/Is it a palindrome list" />
             <option value="$PROJECT_DIR$/Topics/Test predicates  checking elements in collection/Theory" />
             <option value="$PROJECT_DIR$/Topics/Test predicates  checking elements in collection/Which operations return true" />
+            <option value="$PROJECT_DIR$/Topics/The Math library/Compare the results" />
+            <option value="$PROJECT_DIR$/Topics/The Math library/Existing functions" />
+            <option value="$PROJECT_DIR$/Topics/The Math library/Fourth root" />
+            <option value="$PROJECT_DIR$/Topics/The Math library/Fractional part" />
+            <option value="$PROJECT_DIR$/Topics/The Math library/Heron's formula" />
+            <option value="$PROJECT_DIR$/Topics/The Math library/Sine and cosine" />
+            <option value="$PROJECT_DIR$/Topics/The Math library/Theory" />
             <option value="$PROJECT_DIR$/Topics/The concept of patterns/Design your code" />
             <option value="$PROJECT_DIR$/Topics/The concept of patterns/The meaning of patterns" />
             <option value="$PROJECT_DIR$/Topics/The concept of patterns/Theory" />

@@ -1,8 +1,8 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: Run your program on at least three different computers and combine their outputs
-    to receive bytecode ("write once, run anywhere" concept)
+- text: "Run your program on at least three different computers and combine their\
+    \ outputs to receive bytecode (\"write once, run anywhere\" concept)"
 - text: Implement a program in Java and use JVM to generate bytecode
 - text: Write code in a JVM language and use its compiler to generate bytecode
 files:
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/10049#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Fri, 07 Oct 2022 15:16:00 UTC
+  time: "Fri, 07 Oct 2022 15:16:00 UTC"
 record: -1
 selected_options:
 - 2

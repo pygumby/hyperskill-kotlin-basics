@@ -1,7 +1,7 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: To run a compiled Java program, a JVM must be installed on the computer.
+- text: "To run a compiled Java program, a JVM must be installed on the computer."
 - text: The JVM provides <b>platform independence</b> for Java programs.
 - text: The JVM understands bytecode.
 - text: A computer understands source code.
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/3767#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Fri, 07 Oct 2022 15:14:55 UTC
+  time: "Fri, 07 Oct 2022 15:14:55 UTC"
 record: -1
 selected_options:
 - 0

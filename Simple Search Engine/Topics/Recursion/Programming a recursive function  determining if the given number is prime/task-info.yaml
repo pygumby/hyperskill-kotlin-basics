@@ -1,6 +1,6 @@
 type: code
-custom_name: 'Programming a recursive function: determining if the given number is
-  prime.'
+custom_name: "Programming a recursive function: determining if the given number is\
+  \ prime."
 files:
 - name: src/Main.kt
   visible: true
@@ -19,5 +19,5 @@ feedback_link: https://hyperskill.org/learn/step/13610#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Tue, 25 Oct 2022 16:45:00 UTC
+  time: "Tue, 25 Oct 2022 16:45:00 UTC"
 record: -1

@@ -2,7 +2,7 @@ type: choice
 is_multiple_choice: false
 options:
 - text: Every time you need to write a program because it is the only efficient way
-- text: You do not need recursion, it is time consuming and hard to implement
+- text: "You do not need recursion, it is time consuming and hard to implement"
 - text: 'When you need to find a quick and easy solution and also save your time '
 - text: Only when you work with a big data
 files:
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/17670#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Tue, 25 Oct 2022 15:34:35 UTC
+  time: "Tue, 25 Oct 2022 15:34:35 UTC"
 record: -1
 selected_options:
 - 0

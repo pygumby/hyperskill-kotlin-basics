@@ -1,5 +1,5 @@
 type: code
-custom_name: 'Programming a recursive function: calculate the sum of all the digit'
+custom_name: "Programming a recursive function: calculate the sum of all the digit"
 files:
 - name: src/Main.kt
   visible: true
@@ -8,5 +8,5 @@ feedback_link: https://hyperskill.org/learn/step/19681#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Tue, 25 Oct 2022 16:35:15 UTC
+  time: "Tue, 25 Oct 2022 16:35:15 UTC"
 record: -1

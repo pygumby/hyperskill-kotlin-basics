@@ -19,10 +19,10 @@ files:
 feedback_link: https://hyperskill.org/learn/step/3804#comment
 status: Solved
 feedback:
-  message: <html>Modern IDEs are usually "heavy", so if you are temporarily limited
-    by your machine capabilities, choose Notepad++! Minor changes to your code can
-    be done in a text editor as well</html>
-  time: Fri, 07 Oct 2022 17:56:22 UTC
+  message: "<html>Modern IDEs are usually \"heavy\", so if you are temporarily limited\
+    \ by your machine capabilities, choose Notepad++! Minor changes to your code can\
+    \ be done in a text editor as well</html>"
+  time: "Fri, 07 Oct 2022 17:56:22 UTC"
 record: -1
 selected_options:
 - 0

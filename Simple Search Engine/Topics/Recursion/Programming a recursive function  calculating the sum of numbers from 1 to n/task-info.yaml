@@ -1,6 +1,6 @@
 type: code
-custom_name: 'Programming a recursive function: calculating the sum of numbers from
-  1 to n.'
+custom_name: "Programming a recursive function: calculating the sum of numbers from\
+  \ 1 to n."
 files:
 - name: src/Main.kt
   visible: true
@@ -19,5 +19,5 @@ feedback_link: https://hyperskill.org/learn/step/13609#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Tue, 25 Oct 2022 16:48:35 UTC
+  time: "Tue, 25 Oct 2022 16:48:35 UTC"
 record: -1

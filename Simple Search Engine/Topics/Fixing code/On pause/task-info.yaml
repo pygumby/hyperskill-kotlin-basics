@@ -2,7 +2,7 @@ type: choice
 is_multiple_choice: false
 options:
 - text: Return several steps back in program evaluation
-- text: Do nothing, the IDE freezes completely
+- text: "Do nothing, the IDE freezes completely"
 - text: Fix the bug in place and continue running program
 - text: Experiment with different code expressions
 files:
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/5837#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Sat, 08 Oct 2022 14:45:10 UTC
+  time: "Sat, 08 Oct 2022 14:45:10 UTC"
 record: -1
 selected_options:
 - 3

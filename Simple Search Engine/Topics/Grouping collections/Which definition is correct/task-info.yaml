@@ -1,15 +1,15 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: Returns a Map where the keys produced by the keySelector function are mapped
-    with values and each value is the result of applying the transformation function,
-    valueTransform, to each element of the group.
-- text: Each key is the value to group by, the value field has the number of the elements
-    of the collection that correspond to that grouping.
+- text: "Returns a Map where the keys produced by the keySelector function are mapped\
+    \ with values and each value\_is the result of applying the transformation function,\
+    \ valueTransform, to each element of the group."
+- text: "Each key is the value to group by, the value field\_has the number of the\
+    \ elements of the collection that correspond to that grouping."
 - text: Returns a Map grouped by the key; the value field has all the corresponding
     elements of the collection.
-- text: Each key is the index to group by, the value field has the first element of
-    the collection that corresponds to that grouping.
+- text: "Each key is the index to group by, the value field\_has the first element\
+    \ of the collection that corresponds to that grouping."
 files:
 - name: src/Main.kt
   visible: true
@@ -24,7 +24,7 @@ feedback_link: https://hyperskill.org/learn/step/23350#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Wed, 02 Nov 2022 13:35:57 UTC
+  time: "Wed, 02 Nov 2022 13:35:57 UTC"
 record: -1
 selected_options:
 - 0

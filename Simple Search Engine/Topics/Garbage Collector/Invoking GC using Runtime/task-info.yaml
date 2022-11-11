@@ -3,7 +3,7 @@ is_multiple_choice: false
 options:
 - text: Forces the GC to be executed exactly one second later
 - text: It does not affect the behavior of the GC
-- text: Requests the GC to be executed, but it doesn't necessarily happen
+- text: "Requests the GC to be executed, but it doesn't necessarily happen"
 - text: Forces the GC to be executed immediately
 files:
 - name: src/Main.kt
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/15168#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Tue, 11 Oct 2022 16:14:05 UTC
+  time: "Tue, 11 Oct 2022 16:14:05 UTC"
 record: -1
 selected_options:
 - 2

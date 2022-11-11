@@ -1,5 +1,5 @@
 type: code
-custom_name: A long time ago in a galaxy far, far away....
+custom_name: "A long time ago in a galaxy far, far away...."
 files:
 - name: src/Main.kt
   visible: true
@@ -31,5 +31,5 @@ feedback_link: https://hyperskill.org/learn/step/22377#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Wed, 02 Nov 2022 12:05:53 UTC
+  time: "Wed, 02 Nov 2022 12:05:53 UTC"
 record: -1

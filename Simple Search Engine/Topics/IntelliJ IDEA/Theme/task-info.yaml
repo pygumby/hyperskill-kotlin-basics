@@ -5,8 +5,8 @@ options:
 - text: File | Project Structure
 - text: Tools
 - text: View | Tool Windows
-- text: File | Settings for Windows and Linux, or IntelliJ IDEA | Preferences for
-    macOS
+- text: "File | Settings for Windows and Linux, or IntelliJ IDEA | Preferences for\
+    \ macOS"
 files:
 - name: src/Main.kt
   visible: true
@@ -21,7 +21,7 @@ feedback_link: https://hyperskill.org/learn/step/3810#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Fri, 07 Oct 2022 21:43:17 UTC
+  time: "Fri, 07 Oct 2022 21:43:17 UTC"
 record: -1
 selected_options:
 - 0

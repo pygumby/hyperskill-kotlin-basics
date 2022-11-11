@@ -1,8 +1,8 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: 0
 - text: 10
+- text: 0
 - text: 11111111
 - text: 00000000
 files:
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/5747#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Sun, 23 Oct 2022 13:30:10 UTC
+  time: "Sun, 23 Oct 2022 13:30:10 UTC"
 record: -1
 selected_options:
 - 2

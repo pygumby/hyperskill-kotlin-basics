@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: '[The Sound and the Fury, The Wild Palms, Light in August, As I Lay Dying]'
-- text: '[Light in August, As I Lay Dying, The Sound and the Fury, The Wild Palms]'
+- text: "[The Sound and the Fury, The Wild Palms, Light in August, As I Lay Dying]"
+- text: "[Light in August, As I Lay Dying, The Sound and the Fury, The Wild Palms]"
 - text: "true"
 - text: "false"
-- text: '[The Sound and the Fury, The Wild Palms]'
+- text: "[The Sound and the Fury, The Wild Palms]"
 files:
 - name: src/Main.kt
   visible: true
@@ -21,7 +21,7 @@ status: Solved
 feedback:
   message: <html>Great! Functions that add to or remove elements from mutable collections
     return Boolean.</html>
-  time: Sun, 30 Oct 2022 11:14:00 UTC
+  time: "Sun, 30 Oct 2022 11:14:00 UTC"
 record: -1
 selected_options:
 - 2

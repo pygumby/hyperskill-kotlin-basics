@@ -1,12 +1,12 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: abs, pow, log, sqrt
-- text: min, max
-- text: ceil, floor, round
-- text: average, median, mode
-- text: sin, cos, tan
-- text: integrate, differentiate
+- text: "abs, pow, log, sqrt"
+- text: "min, max"
+- text: "ceil, floor, round"
+- text: "average, median, mode"
+- text: "sin, cos, tan"
+- text: "integrate, differentiate"
 files:
 - name: src/Main.kt
   visible: true
@@ -21,7 +21,7 @@ feedback_link: https://hyperskill.org/learn/step/4559#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Fri, 11 Nov 2022 19:51:37 UTC
+  time: "Fri, 11 Nov 2022 19:51:37 UTC"
 record: -1
 selected_options:
 - 0

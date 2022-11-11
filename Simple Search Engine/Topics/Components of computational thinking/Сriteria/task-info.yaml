@@ -1,7 +1,7 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: The solution is complete, covering all aspects of the problem.
+- text: "The solution is complete, covering all aspects of the problem."
 - text: The solution is effective.
 - text: The solution is easy to understand.
 - text: None of these.
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/14943#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Tue, 25 Oct 2022 15:55:03 UTC
+  time: "Tue, 25 Oct 2022 15:55:03 UTC"
 record: -1
 selected_options:
 - 0

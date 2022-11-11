@@ -1,8 +1,8 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: No, JVM is based only on tracing algorithms
-- text: No, but developers can enable this feature
+- text: "No, JVM is based only on tracing algorithms"
+- text: "No, but developers can enable this feature"
 - text: "Yes"
 files:
 - name: src/Main.kt
@@ -18,7 +18,7 @@ feedback_link: https://hyperskill.org/learn/step/17274#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Wed, 12 Oct 2022 11:16:29 UTC
+  time: "Wed, 12 Oct 2022 11:16:29 UTC"
 record: -1
 selected_options:
 - 0

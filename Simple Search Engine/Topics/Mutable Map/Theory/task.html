@@ -1,9 +1,9 @@
 <h2>Mutable Map</h2>
-<html><body><br/>
+<br/>
 In previous topics, you got familiar with <code class="language-kotlin">Map</code>. Now, we will take a look at <code class="language-kotlin">MutableMap</code>: when and how it is used and how exactly it differs from <code class="language-kotlin">Map</code>.
 
 <h5 id="introduction" style="text-align: center;">Introduction </h5>
-<p><code class="language-kotlin">MutableMap</code> is a collection that holds pairs of objects (keys and values) and supports efficient retrieval of the value corresponding to each key. Unlike <code class="language-kotlin">Map</code>, which is an <strong>immutable</strong> collection, <code class="language-kotlin">MutableMap</code> is <strong>mutable</strong> or modifiable: you can freely add and remove pairs of objects.</p>
+<p><code class="language-kotlin">MutableMap</code> is a collection that holds pairs of objects (keys and values) and supports efficient retrieval of the value corresponding to each key. Unlike <code class="language-kotlin">Map</code>, which is an <strong>immutable</strong> collection, <code class="language-kotlin">MutableMap</code> is <strong>mutable</strong>, or modifiable: you can freely add and remove pairs of objects.</p>
 <p>Let's imagine that you have a list of staff members with the information about their salaries: </p>
 <pre><code class="language-kotlin">val staff = mapOf(
    "John" to 500,
@@ -107,4 +107,4 @@ println(cars)  // output: {Ford=100.5}</code></pre>
 <h5 id="conclusion" style="text-align: center;">Conclusion </h5>
 <ul>
 </ul>
-<p>Now you know the difference between <code class="language-kotlin">Map</code> and <code class="language-kotlin">MutableMap</code>. <code class="language-kotlin">Map</code> is an immutable collection, so it makes sense to use it when you don't want the contents to change. If you do, then <code class="language-kotlin">MutableMap</code> is a better choice, and now you know how to initialize it, add and remove elements, and iterate through them.</p></body></html>
+<p>Now you know the difference between <code class="language-kotlin">Map</code> and <code class="language-kotlin">MutableMap</code>. <code class="language-kotlin">Map</code> is an immutable collection, so it makes sense to use it when you don't want the contents to change. If you do, then <code class="language-kotlin">MutableMap</code> is a better choice, and now you know how to initialize it, add and remove elements, and iterate through them.</p>

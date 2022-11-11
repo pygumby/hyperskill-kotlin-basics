@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: close
-- text: finish
 - text: delete
 - text: clean
 - text: destroy
+- text: finish
+- text: close
 files:
 - name: src/Main.kt
   visible: true
@@ -20,7 +20,7 @@ feedback_link: https://hyperskill.org/learn/step/20425#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Sat, 05 Nov 2022 18:47:32 UTC
+  time: "Sat, 05 Nov 2022 18:47:32 UTC"
 record: -1
 selected_options:
 - 0

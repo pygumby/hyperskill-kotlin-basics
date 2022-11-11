@@ -1,5 +1,5 @@
 content:
-- Write, compile, and run
+- "Write, compile, and run"
 - IDE
 - Nested and inner classes
 - What is a bug
@@ -79,7 +79,7 @@ content:
 - Function references
 - Lambda with receiver
 - Scope functions  apply and also
-- Scope functions  let, run, and with
+- "Scope functions  let, run, and with"
 - Scope functions  summary
 - Random
 - The Math library

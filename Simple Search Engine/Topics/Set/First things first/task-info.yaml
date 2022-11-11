@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: '[0]'
+- text: "[0]"
 - text: get(0)
 - text: first()
-- text: '{0}'
+- text: "{0}"
 files:
 - name: src/Main.kt
   visible: true
@@ -19,7 +19,7 @@ feedback_link: https://hyperskill.org/learn/step/11294#comment
 status: Solved
 feedback:
   message: <html>Correct solution</html>
-  time: Sat, 29 Oct 2022 17:13:57 UTC
+  time: "Sat, 29 Oct 2022 17:13:57 UTC"
 record: -1
 selected_options:
 - 2

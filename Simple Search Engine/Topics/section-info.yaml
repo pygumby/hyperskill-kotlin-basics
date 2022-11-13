@@ -87,3 +87,4 @@ content:
 - BigDecimal
 - Regexps
 - "Sets, ranges, and alternations"
+- Quantifiers

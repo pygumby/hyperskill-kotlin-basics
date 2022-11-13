@@ -1,0 +1,66 @@
+<h2>Sets, ranges, and alternations</h2>
+<html><body><p>The dot character allows us to write common patterns for matching. The dot, however, matches almost every possible character, and sometimes we want to be more specific in our regex. That's when sets come to our rescue.</p>
+<h5 id="sets-of-characters" style="text-align: center;">Sets of characters</h5>
+<p>Each <strong>set</strong> consists of multiple characters but corresponds to a single character in the string. Sets are enclosed in square brackets <code class="language-kotlin">[]</code>. For example, the set <code class="language-kotlin">"[abc]"</code> means that a single character <code class="language-kotlin">"a"</code>, <code class="language-kotlin">"b"</code>, or <code class="language-kotlin">"c"</code> can match it. Take a look at the example below:</p>
+<pre><code class="language-kotlin">val regex = Regex("[bcr]at") // it matches strings "bat", "cat", "rat", but not "fat"
+
+regex.matches("rat") // true
+regex.matches("fat") // false
+</code></pre>
+<p>You can use as many sets as you want and combine them with regular characters. There are two sets in the following example:</p>
+<pre><code class="language-kotlin">val pattern = "[ab]x[12]" // can match a or b followed by x followed by either 1 or 2</code></pre>
+<p>This pattern can be successfully matched by the following strings:</p>
+<pre><code class="language-java">"ax1", "ax2", "bx1", "bx2"</code></pre>
+<p>Meanwhile, the following strings do not match the pattern:</p>
+<pre><code class="language-java">"xa1", "aax1", "bx"</code></pre>
+<p>As you can see, the order of sets in regular expressions is important. On the other hand, the order of characters within the set does not matter. </p>
+<h5 id="ranges-of-characters" style="text-align: center;">Ranges of characters</h5>
+<p>Sometimes we want to make our character sets quite large. In this case, we don't have to write them all down: we can specify a <strong>range </strong>designated by the hyphen symbol <code class="language-kotlin">-</code> instead. The character that precedes the hyphen denotes the starting point of the range; the character after the hyphen is the last character that falls into the range. We can put characters into a set as a range if they immediately follow each other in the <a href="https://hyperskill.org/learn/step/7899" rel="noopener noreferrer nofollow" target="_blank">ASCII/Unicode encoding</a> table. This includes both alphabetically ordered letters and numeric values. For example, we can write a set that matches every digit:</p>
+<pre><code class="language-kotlin">val anyDigitPattern = "[0-9]" // matches any digit from 0 to 9
+</code></pre>
+<p>The same works for letter ranges, such as <code class="language-kotlin">"[a-z]"</code> or <code class="language-kotlin">"[A-Z]"</code>. These ranges match all Latin lowercase and uppercase letters respectively. These patterns are case-sensitive; for a case-insensitive match, we can write the following regex:</p>
+<pre><code class="language-kotlin">val anyLetterPattern = "[a-zA-Z]" // matches any letter "a", "b", ..., "A", "B", ...</code></pre>
+<p></p><div class="alert alert-primary">Note that although the range <code class="language-kotlin">[A-z]</code> is technically valid, it includes additional symbols that are placed between uppercase and lowercase letters in the <a href="http://www.asciitable.com/" rel="noopener noreferrer nofollow" target="_blank">ASCII table</a>. </div><p></p>
+<p>As you can see, you can easily put several ranges in one set and mix them with separate characters in any order:</p>
+<pre><code class="language-kotlin">val anyLetterPattern = "[a-z!?.A-Z]" // matches any letter as well as "!", "?", and "."</code></pre>
+<h5 id="excluding-characters" style="text-align: center;">Excluding characters</h5>
+<p>In some cases, it is easy to define which characters are not wanted. Then, we can write a set that will match everything <em>except</em> the characters mentioned in it. To do that, we write the hat character <code class="language-kotlin">^</code> as the first one in the set.</p>
+<pre><code class="language-kotlin">val regex = "[^abc]".toRegex() // matches everything except "a", "b", and "c"
+
+regex.matches("a") // false
+regex.matches("b") // false
+regex.matches("c") // false
+regex.matches("d") // true
+</code></pre>
+<p>The same works for ranges:</p>
+<pre><code class="language-kotlin">val regex = "[^1-6]".toRegex()
+
+regex.matches("1") // false
+regex.matches("2") // false
+regex.matches("0") // true
+regex.matches("9") // true</code></pre>
+<h5 id="avoiding-characters-in-sets" style="text-align: center;">Avoiding characters in sets</h5>
+<p>The general rule is that you do not need to avoid special characters within sets if they are used in their literal meaning. For example, the set <code class="language-kotlin">[.?!]</code> will match a single period, a question mark, an exclamation mark, and nothing else. However, the characters used to define a set or a range should be avoided or put in a neutral position – in case we look for their literal symbols:</p>
+<ul>
+<li>to match the hyphen character, we should put it in the first or in the last position in the set: <code class="language-kotlin">"[-a-z]"</code> matches lowercase letters and the hyphen, and <code class="language-kotlin">"[A-Z-]"</code> matches uppercase letters and the hyphen;</li>
+<li>hat <code class="language-kotlin">^</code> does not need to be avoided if placed anywhere but the beginning. This way, the set <code class="language-kotlin">"[^a-z^]"</code> matches everything except for lowercase letters and the hat character;</li>
+<li>square brackets should always be escaped:</li>
+</ul>
+<pre><code class="language-kotlin">val regex = Regex("[\\[\\]]") // matches "[" and "]"</code></pre>
+<h5 id="alternations" style="text-align: center;">Alternations</h5>
+<p>So far, we've been talking about single characters. However, there's also a way to match longer sequences. The vertical bar <code class="language-kotlin">|</code> is used to match character sequences either before or after the symbol:</p>
+<pre><code class="language-kotlin">val regex = "yes|no|maybe".toRegex() // matches "yes", "no", or "maybe", but not "y" or "e"
+
+regex.matches("no") // true</code></pre>
+<p>This is useful in situations when we want to look for one of several particular words, for example, "bear", "bat", or "bird" to complete the sentence <code class="language-kotlin">The giant ___ scared me</code> and when it's easier to indicate whole words. The vertical bar can be used together with parentheses, which designate the boundaries of alternating substrings: everything within the parentheses is an optional substring that can match the alternation block:</p>
+<pre><code class="language-kotlin">val scaryAnimal = "(b|r|go)at".toRegex()  // matches "bat", "rat", or "goat"
+val answer = "The answer is definitely (yes|no|maybe)".toRegex() </code></pre>
+<p>In general, alternations are quite similar to sets: they describe multiple alternatives that a particular part of the pattern can match. However, while sets can match only a single character in the string, alternations are used to define multi-character alternatives. </p>
+<h5 id="conclusions" style="text-align: center;">Conclusions</h5>
+<p>Here's a brief recap:</p>
+<ul>
+<li>Square brackets designate a set and are used to describe a group of characters that can match a pattern, like <code class="language-kotlin">[123]</code>.</li>
+<li>Inside sets, we can use ranges of characters marked by the hyphen: <code class="language-kotlin">[1-3]</code>.</li>
+<li>There are sets that exclude specific characters. These are the sets with the hat character in the initial position: <code class="language-kotlin">[^123]</code>.</li>
+<li>The vertical bar defines multi-character alternating substrings: <code class="language-kotlin">1|2|3</code>.</li>
+</ul></body></html>

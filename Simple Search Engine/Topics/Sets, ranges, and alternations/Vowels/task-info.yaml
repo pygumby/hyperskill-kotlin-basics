@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: "[A,E,I,O,U,Y]"
+- text: "[A,E,I,O,U,Y,a,e,i,o,u,y]"
+- text: "[a,e,i,o,u,y,A,E,I,O,U,Y]"
+- text: "[AEIOUYaeiouy]"
+- text: "[aeiouyAEIOUY]"
+- text: "[aeiouy]"
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14521#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 13 Nov 2022 13:14:51 UTC"
+record: -1
+selected_options:
+- 3
+- 4
+local_check: false

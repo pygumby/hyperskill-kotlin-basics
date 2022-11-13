@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: "\"[reg]egex\""
+- text: '"regex"'
+- text: "\"[a-z]ege[a-z]\""
+- text: "\"re[G]ex\""
+- text: "\"[^reg]egex\""
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14525#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 13 Nov 2022 13:15:20 UTC"
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

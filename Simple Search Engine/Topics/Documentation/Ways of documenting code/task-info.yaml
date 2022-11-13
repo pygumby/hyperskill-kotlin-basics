@@ -2,11 +2,11 @@ type: choice
 is_multiple_choice: true
 options:
 - text: write comments
-- text: create a wiki
-- text: print code
-- text: get a license
 - text: write README
+- text: print code
+- text: create a wiki
 - text: provide a PDF file with instructions
+- text: get a license
 files:
 - name: src/Main.kt
   visible: true

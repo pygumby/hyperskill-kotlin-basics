@@ -1,0 +1,54 @@
+<h2>Shorthands</h2>
+<html><body><p>There are some sets that are used more often than others: sets for digits, alphanumeric characters, and whitespace characters (there are actually quite a lot of whitespace characters). To make the usage of such sets easier and faster, there are special shorthands, which we will discuss in this topic.   </p>
+<h5 id="the-list-of-shorthands" style="text-align: center;">The list of shorthands</h5>
+<p>There are several pre-defined shorthands for the commonly used character sets:</p>
+<ul>
+<li><code class="language-kotlin">\d</code> is any digit, short for <code class="language-kotlin">[0-9]</code>;</li>
+<li><code class="language-kotlin">\s</code> is a whitespace character (including tab and newline), short for <code class="language-kotlin">[ \t\n\x0B\f\r]</code>;</li>
+<li><code class="language-kotlin">\w</code> is an alphanumeric character (letter or numeral), short for <code class="language-kotlin">[a-zA-Z_0-9]</code>;</li>
+<li><code class="language-kotlin">\b</code> is a word boundary. This one is a bit trickier: it doesn't match any specific character but rather matches the boundary between an alphanumeric character and a non-alphanumeric character (for example, a whitespace character) or a boundary of a string (its end or start). This way, <code class="language-kotlin">"\ba"</code> matches all words (sequences of alphanumeric characters) starting with "a", <code class="language-kotlin">"a\b"</code> matches all words ending with "a", and <code class="language-kotlin">"\ba\b"</code> matches all separate "a" characters preceded and followed by non-alphanumeric characters.</li>
+</ul>
+<p>There are also negative counterparts of these shorthands that are equivalent to the restrictive sets and match everything except for the characters mentioned above:</p>
+<ul>
+<li><code class="language-kotlin">\D</code> is a non-digit, short for <code class="language-kotlin">[^0-9]</code>;</li>
+<li><code class="language-kotlin">\S</code> is a non-whitespace character, short for <code class="language-kotlin">[^ \t\n\x0B\f\r]</code>;</li>
+<li><code class="language-kotlin">\W</code> is a non-alphanumeric character, short for <code class="language-kotlin">[^a-zA-Z_0-9]</code>.</li>
+<li><code class="language-kotlin">\B</code> is a non-word boundary. It matches the case opposite to that of the <code class="language-kotlin">\b</code> shorthand: it finds its match every time whenever there is no "gap" between alphanumeric characters. For example, <code class="language-kotlin">"a\B"</code> matches all words that start with "a".  </li>
+</ul>
+<p>These shorthands make writing common patterns much easier.</p>
+<p></p><div class="alert alert-primary">Each shorthand has the same first letter as its representation (<strong>d</strong>igit, <strong>s</strong>pace, <strong>w</strong>ord, <strong>b</strong>oundary). The uppercase characters are used to designate the shorthands for negative character classes.</div><p></p>
+<h5 id="example" style="text-align: center;">Example</h5>
+<p>Let's consider an example with the listed shorthands. Remember that in Kotlin we use an additional backslash <code class="language-kotlin">\</code> character for escaping.</p>
+<pre><code class="language-kotlin">val regex = "\\s\\w\\d\\s".toRegex()
+
+regex.matches(" A5 ")   // true
+regex.matches(" 33 ")   // true
+regex.matches("\tA4\t") // true because tabs are whitespace as well
+
+regex.matches("q18q") // false, 'q' is not a space
+regex.matches(" AB ") // false, 'B' is not a digit
+regex.matches(" -1 ") // false, '-' is not an alphanumeric character, but '1' is OK.</code></pre>
+<p>Another way to write shorthand is to use <a href="https://hyperskill.org/learn/step/12553#raw-string" rel="noopener noreferrer nofollow" target="_blank">raw strings</a>. You don't need to escape <code class="language-kotlin">\</code> in this case:</p>
+<pre><code class="language-kotlin">val regex = """\W\S\D\S\W""".toRegex()
+regex.matches(" 9o9 ")  // true
+regex.matches("\nA 1 ")   // true
+regex.matches("\tAl4\t") // true
+
+regex.matches(" \taa ") // false, '\t' is a space
+regex.matches("_BBB ") // false, '_' is an alphanumeric character
+</code></pre>
+<p>Here's how boundary shorthands will work in Kotlin code:</p>
+<pre><code class="language-kotlin">val startRegex = "\\bcat".toRegex() // matches the part of the word that starts with "cat"
+val endRegex = "cat\\b".toRegex() // matches the part of the word that ends with "cat"
+val wholeRegex = "\\bcat\\b".toRegex() // matches the whole word "cat"</code></pre>
+<p>For now, we are not applying them in practice because we only deal with the <code class="language-kotlin">matches</code> method, which requires a full string to match the regexp.</p>
+<p>If you do not want to use shorthands, you can write the same regex as below:</p>
+<pre><code class="language-kotlin">val regex = "[ \\t\\n\\x0B\\f\\r][a-zA-Z_0-9][0-9][ \\t\\n\\x0B\\f\\r]".toRegex()</code></pre>
+<p>This regex, however, is long and not nearly as readable as the previous ones. It also has a lot of character repetitions. You can use the predefined shorthands instead of commonly used sets and ranges to simplify your regexes and make them more readable.</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>In this lesson, we've learned that:</p>
+<ul>
+<li>in the regex language, there are shorthands that are equal to some of the most commonly used sets;</li>
+<li>there are shorthands equivalent to non-restrictive sets. Such shorthands are designated by a double backslash and a lowercase letter;</li>
+<li>there are also shorthands with the opposite meaning: they ban the characters that their counterparts match. Such shorthands have an uppercase letter instead of a lowercase one. </li>
+</ul></body></html>

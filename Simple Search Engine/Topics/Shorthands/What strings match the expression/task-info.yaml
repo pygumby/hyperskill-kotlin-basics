@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: '"A8A"'
+- text: '"A88"'
+- text: '"A8*"'
+- text: '"A-4Q"'
+- text: '"A9e"'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14549#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 14 Nov 2022 19:19:57 UTC"
+record: -1
+selected_options:
+- 0
+- 1
+- 4
+local_check: false

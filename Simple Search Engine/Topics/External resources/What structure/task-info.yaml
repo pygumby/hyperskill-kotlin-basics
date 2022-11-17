@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: array
-- text: tree
-- text: table
 - text: stack
+- text: tree
+- text: array
+- text: table
 files:
 - name: src/Main.kt
   visible: true

@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: using properties
+- text: using the infix function to
+- text: with the copy function
+- text: using the componentN method
+- text: with a Triple constructor
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19954#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 18 Nov 2022 18:23:06 UTC"
+record: -1
+selected_options:
+- 2
+- 4
+local_check: false

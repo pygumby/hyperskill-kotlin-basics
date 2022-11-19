@@ -242,6 +242,10 @@
             <option value="$PROJECT_DIR$/Topics/Lambda with receiver/The Magic function" />
             <option value="$PROJECT_DIR$/Topics/Lambda with receiver/Theory" />
             <option value="$PROJECT_DIR$/Topics/Lambda with receiver/Which operations are correct" />
+            <option value="$PROJECT_DIR$/Topics/Lazy initialization/Initialized" />
+            <option value="$PROJECT_DIR$/Topics/Lazy initialization/Proper laziness" />
+            <option value="$PROJECT_DIR$/Topics/Lazy initialization/The meaning of lazy initialization" />
+            <option value="$PROJECT_DIR$/Topics/Lazy initialization/Theory" />
             <option value="$PROJECT_DIR$/Topics/Linear search/Element is in the array" />
             <option value="$PROJECT_DIR$/Topics/Linear search/How many repetitions" />
             <option value="$PROJECT_DIR$/Topics/Linear search/Searching for an array in an array" />

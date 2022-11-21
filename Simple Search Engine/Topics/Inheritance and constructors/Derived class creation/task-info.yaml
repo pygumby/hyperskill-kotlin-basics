@@ -1,0 +1,17 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    open class Employee(val name: String, val age: Int, var yearsOfWork: Int = 0)
+
+    class Programmer : Employee {
+        // Write your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15622#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 21 Nov 2022 16:10:33 UTC"
+record: -1

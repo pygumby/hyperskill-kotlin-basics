@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Primary constructor
+- text: Init blocks
+- text: Secondary constructors
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15617#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 21 Nov 2022 16:11:51 UTC"
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

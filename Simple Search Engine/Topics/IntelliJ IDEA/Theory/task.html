@@ -1,73 +1,80 @@
 <h2>IntelliJ IDEA</h2>
-<h5 id="intellij-idea" style="text-align: center;">IntelliJ IDEA</h5>
-<p>IntelliJ IDEA is an intelligent, context-aware IDE for working with Java and other JVM languages like Kotlin, Scala, and Groovy on all sorts of applications. It has an ergonomic user interface, supports a lot of plugins, and provides a very powerful automatic code completion feature. IntelliJ IDEA has three editions: community, enterprise, and educational. All editions support multiple programming languages, including Java, Kotlin, Scala, and some others. The educational edition has a convenient functionality for downloading programming problems from the Hyperskill platform and checking your solutions directly from the IDEA. However, the community edition is enough to complete any project.</p>
-<p style="text-align: center;"><img alt="" height="184px" src="https://ucarecdn.com/d9d6aa88-7736-4c68-8e12-96dd3d013e37/" width="184px"/></p>
-<p style="text-align: center;"><strong>The logo of IntelliJ IDEA</strong></p>
-<p>If you want to know more about this IDE, please, visit <a href="https://www.jetbrains.com/idea/" rel="nofollow noopener noreferrer" target="_blank" title="Link: https://www.jetbrains.com/idea/">the official website</a>. You can also learn about its more powerful <a href="https://blog.jetbrains.com/idea/2016/03/enjoying-java-and-being-more-productive-with-intellij-idea/" rel="nofollow noopener noreferrer" target="_blank" title="Link: https://blog.jetbrains.com/idea/2016/03/enjoying-java-and-being-more-productive-with-intellij-idea/">features</a>.</p>
-<h5 id="creating-the-first-project-in-intellij-idea" style="text-align: center;">Creating the first project in IntelliJ IDEA</h5>
-<p>Let's write some text using IntelliJ IDEA. Here we assume that you have the community edition already installed on your computer. The other editions have minor differences in the interface.</p>
-<p>1. If no project is currently open in IntelliJ IDEA, click <strong>Create New Project </strong>on the Welcome screen. Otherwise, select <strong>File | New | Project</strong>. As a result, the <strong>New Project</strong> wizard opens.</p>
-<p style="text-align: center;"><img alt="" height="383" src="https://ucarecdn.com/7889afb5-924c-4a49-821c-45dca8bb232e/" width="646"/></p>
-<p>The color scheme of your window may be different. Later, in the <strong>IDEA Settings </strong>paragraph, is a description of how to change it.</p>
-<p>2. In the panel on the left, select your language (for example, Java or Kotlin). There is also an option to create an empty project without any language support:</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/1ac15a4c-1832-4f5e-af9d-73a4af3ee83f/"/></p>
-<p>You may see additional options, like the JDK (Java Development Kit), that you may want to modify for your project. Just leave them unchanged for now.</p>
-<p>3. The next pages may propose different templates. Code templates are prewritten snippets of code provided by the IDE. Now we are going to study the very basics of IntelliJ IDEA, and do everything from scratch, so we aren't selecting any of the options. Just leave the default.</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/841e12fc-4013-4250-953c-4ec0e6e4d902/"/></p>
-<p>4. On the final page, specify the project name (e.g. <code class="java">HelloWorld</code>). If necessary, you can change the project location on disk, but you can also use one suggested by IntelliJ IDEA.</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/cbaae9c0-e696-4033-89de-3e9eb069ee0b/"/></p>
-<p>5. Click <strong>Finish</strong>.</p>
-<p>Wait while IntelliJ IDEA creates the project. When this process is complete, the structure of your new project is shown in the <strong>Project</strong> tool window.</p>
-<p>Let's take a look at the project structure on the left side of the window.</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/e9f47471-674c-401c-8e07-92c99a7dde70/"/></p>
-<p>There are two top-level nodes:</p>
+<p>IntelliJ IDEA is the leading Java and Kotlin IDE by JetBrains.</p>
+<p>In the industry, it stands out with:</p>
 <ul>
-<li><strong>HelloWorld</strong>. This node represents your project module. The <code class="java">.idea</code> folder and the file <code class="java">HelloWorld.iml</code> are used to store configuration data for your project and module respectively. The folder <code class="java">src</code> is for your source code.</li>
-<li><strong>External Libraries</strong>. This is a category that represents all the "external" resources necessary for your development work. The standard files of your project language are placed there. Also, you can add other resources manually.</li>
+<li><strong>The most advanced context-aware edito</strong>r that gives you code completion hints as you type, provides fixes for errors and warnings, and lets you find anything from classes to tool windows.</li>
+<li><strong>In-depth code understanding</strong> guarantees that the IDE can instantly detect errors and provide relevant suggestions in every context.</li>
+<li><strong>Out-of-the-box experience</strong>, which means that you can start coding right from the first launch. Mission-critical tools and a wide variety of supported languages are at your fingertips – no plugin hassle involved.</li>
+<li><strong>Tools for collaborative and remote development</strong>. </li>
 </ul>
-<h5 id="writing" style="text-align: center;">Writing</h5>
-<p>Now we are going to write a text for the Hello World project.</p>
-<p>1. In the Project tool window, select the <code class="java">src</code> folder and select <strong>File | New</strong>, or right-click the folder <code class="java">src</code> and select <strong>New</strong> from the context menu.</p>
-<p>2. In the New menu, select <strong>File</strong>.</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/cce89d59-a49d-432f-b3df-b6566d01f276/"/></p>
-<p>3. In the <strong>New File</strong> dialog that opens, type <code class="java">text.txt</code> in the text field. Press<strong> Enter</strong> to create the file.</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/c1cc0feb-55cf-46ba-8658-e59a369a951b/"/></p>
-<p>Now, you can see this file in the <code class="java">src</code> folder. At the same time, the file opens in the editor. So, we've just created a text file and in the future, you can use the same way to create source code files for your language.</p>
-<p>We are to create something like this:</p>
-<pre><code class="language-no-highlight">This is my test text file in IDEA.
-
-Or is there a mistacke?
-</code></pre>
-<p>But do not rush! Let's do it gradually, step by step.</p>
-<p>As you see, there is a typo. And our IDE warns us about it:</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/158c0fa3-791f-4bac-bc1a-d76e0f999d2f/"/></p>
-<p>IntelliJ IDEA has many features. Now we want to introduce you to one called "Context actions". Place the cursor at the wrong word, press <strong>Alt+Enter</strong>, select <strong>Typo: Change to...</strong> with arrows and press <strong>Enter</strong>, and finally select the correct word from the list and press <strong>Enter</strong> again. The typo disappears :)</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/770a8448-ed00-4d12-9ee4-e004e43bebb4/"/></p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/93b2152e-1126-448e-b95a-a3920e31c539/"/></p>
-<p>IDEA supports other context actions for code, give it a try.</p>
-<p>Congratulations! You have written your probably first text in IntelliJ IDEA and understood that there is a hidden power. You can always refer to the more complete <a href="https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html#create_project" rel="nofollow noopener noreferrer" target="_blank">official tutorial</a>. We especially recommend reading about <a href="https://www.jetbrains.com/help/idea/using-file-and-code-templates.html" rel="noopener noreferrer nofollow" target="_blank">templates</a> and <a href="https://www.jetbrains.com/help/idea/auto-completing-code.html" rel="noopener noreferrer nofollow" target="_blank">code completion</a>.</p>
-<h5 id="intellij-idea-settings" style="text-align: center;">IntelliJ IDEA Settings</h5>
-<p>IntelliJ IDEA has a lot of settings that can be configured as you wish. Go to <strong>IntelliJ IDEA | Preferences</strong> on macOS or <strong>File | Settings</strong> on Windows and Linux from the main menu. There are many sections in the open <strong>Settings</strong> tab.</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/40d5aa54-17a8-4732-814f-3f0bfff6046e/"/></p>
-<p>As an example, please go to <strong>Appearance &amp; Behavior | Appearance</strong> and choose different themes. In this lesson, we use <strong>Darcula</strong>.</p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/b3400f88-fcfa-4bb9-834f-ba424f108161/"/></p>
-<p> </p>
-<p></p><div class="alert alert-primary"><strong>Note:</strong> If you would like to find something in the settings, use the search box as shown below.</div>
-<p> </p>
-<p style="text-align: center;"><img alt="" src="https://ucarecdn.com/a9b21fc5-be9f-4dbd-894a-7a3d2a74a73d/"/></p>
-<h5 id="how-to-start-my-program" style="text-align: center;">How to start my program?</h5>
-<p>Of course, you can create and run your programs in IDEA. Just create a new language-specific file, write content, find the green triangle "run" button ( <img alt="" src="https://ucarecdn.com/fd073dc5-ef21-4698-9d4a-6be5f748cf5b/"/> ), and click it.</p>
-<p>Sometimes, your program cannot be started from IDEA for various reasons.</p>
-<ol>
-<li>
-<p>Make sure your program contains the <code class="java">main</code> method. If not, then add it.</p>
-</li>
-<li>
-<p>The source code should be placed inside the <code class="java">src</code> directory, not next to it.</p>
-</li>
-<li>Sometimes no JDK is selected. To fix this, go to <strong>File | Project Structure | Project settings | Project </strong>and then set your JDK in the <strong>Project SDK</strong> section.</li>
-</ol>
-<p style="text-align: center;"><img alt="" height="151" src="https://ucarecdn.com/ebffd8a3-d2a2-4a65-a349-85c78d63eb4b/" width="685"/></p>
-<p>If you have another problem, please write it in the comments or Google it.</p>
-<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
-<p>IntelliJ IDEA is one of the best IDEs for Java and JVM languages. It allows programmers to easily work and code while having convenient access to all of its functions. Features like automatic code completion and ergonomic UI make the working experience quite pleasant.</p>
+<p>IntelliJ IDEA comes in two editions:</p>
+<ul>
+<li><strong>IntelliJ IDEA Community Edition</strong> is a free version containing more than enough features to cover the essential needs of most Java and Kotlin development.</li>
+<li><strong>IntelliJ IDEA Ultimate</strong> is a full-featured commercial version that supports various frameworks and technologies for backend and frontend development. It offers an advanced toolset to streamline your workflow. There are profiling, database tools, and an HTTP client right out of the box.</li>
+</ul>
+<p style="text-align: center;"><img alt="" height="184px" src="https://ucarecdn.com/d9d6aa88-7736-4c68-8e12-96dd3d013e37/" width="184px"/></p>
+<p style="text-align: center;"><strong>IntelliJ IDEA logo</strong></p>
+<p>To learn more about this IDE, visit <a href="https://www.jetbrains.com/idea/features/" rel="nofollow noopener noreferrer" target="_blank" title="Link: https://www.jetbrains.com/idea/">the official website</a>. </p>
+<h5 id="create-your-first-project">Create your first project</h5>
+<p>Let's take a closer look at how the IDE works. To start with, follow the steps below to create your first app in IntelliJ IDEA.</p>
+<p>1. Install IntelliJ IDEA Community Edition on your computer and launch it.</p>
+<p>2. If no project is currently open in IntelliJ IDEA, click on <em>New Project</em> in the <em>Projects</em> section on the <em>Welcome screen</em>. Otherwise, select <em>File</em> | <em>New</em> | <em>Project</em>.</p>
+<p style="text-align: center;"><img alt="" height="357" name="1.png" src="https://ucarecdn.com/219583ad-389f-42ee-840d-7d13b9d0a946/" width="624"/></p>
+<p>3. In the <em>New Project</em> wizard, select <em>New Project</em> from the list on the left. There is also an option to create an empty project without language support.</p>
+<p>4. Name the project (for example, <em>Demo</em>) and change the default location if necessary.</p>
+<p>5. We're not going to work with version control systems in this tutorial, so leave the <em>Create Git repository</em> option disabled.</p>
+<p>6. Select <em>Java</em> in <em>Language</em>, and <em>IntelliJ</em> in <em>Build system</em>.</p>
+<p style="text-align: center;"><img alt="" height="253" name="2.png" src="https://ucarecdn.com/5bb7b43e-abe2-466a-9a61-b0f5473e6755/" width="624"/></p>
+<p>7. To develop Java applications in IntelliJ IDEA, you need the Java SDK (JDK). Your IDE will fill in the JDK field automatically. But you can change it, add the necessary JDK from your computer, or download one.</p>
+<p>8. IntelliJ IDEA creates the project. When this process is complete, the structure of your new project is shown in the <em>Project</em> tool window. There are two top-level nodes:</p>
+<ul>
+<li><em>Demo</em>. This node represents your project module. The <em>.idea </em>directory and the file <em>Demo.iml</em> are used to store configuration data for your project and module, respectively. The <em>src</em> directory is for your source code.</li>
+<li><em>External Libraries</em>. This category represents all the "external" resources necessary for your development work. The standard files of your project language are placed there. You can also add other resources manually.</li>
+</ul>
+<h5 id="write-your-first-code">Write your first code</h5>
+<p>Now we will write a simple piece of Java code for the Demo project.</p>
+<p>First, let's create a class and a package.</p>
+<p>1. In the <em>Project</em> tool window, right-click on the <em>src</em> directory, select <em>New</em> (or press <code class="java">⌘N</code>), and then choose Class Java.</p>
+<p style="text-align: center;"><img alt="" height="198" name="3.png" src="https://ucarecdn.com/f2e8684d-ccea-4c32-993c-edcfb67e0484/" width="624"/></p>
+<p>2. In the <em>Name</em> field, type <em>com.example.demo.Demo</em> and click on "OK". This is how you create a package. Packages are used for grouping together classes that belong to the same category or provide similar functionality.</p>
+<p style="text-align: center;"><img alt="" height="229" name="4.png" src="https://ucarecdn.com/351d713a-6baa-4ae0-8626-e55fd4e6aa72/" width="624"/></p>
+<p>Together with the file, IntelliJ IDEA has generated some content for your class. In this case, the IDE has inserted the package statement and the class declaration.</p>
+<p>Second, let's write the <em>Main</em> method and call the <em>println()</em> method. You can start typing the symbols, and the IDE will prompt you about possible code variants. This feature is called <em>code completion</em>. With its help, IntelliJ IDEA analyzes the context and suggests the choices that are reachable from the current caret position.</p>
+<p>But in this tutorial, let's try another way. We will add the methods with <a href="https://www.jetbrains.com/help/idea/using-live-templates.html#write-code" rel="noopener noreferrer nofollow" target="_blank">Live Templates</a> – code snippets that you can insert into your code.</p>
+<p>1. Place the caret at the class declaration string after the opening bracket <code class="java">{</code> and press <code class="java">⇧ ⏎</code> to start a new line.</p>
+<p>2. Type <em>main</em> and select the template that inserts the<em> </em><code class="java">main()</code> method declaration.</p>
+<p style="text-align: center;"><img alt="" height="133" name="5.png" src="https://ucarecdn.com/b209d704-7ffc-4428-85cc-e6509ccb7e4b/" width="624"/></p>
+<p style="text-align: center;"><img alt="" height="136" name="6.png" src="https://ucarecdn.com/8a9bdd5a-cbf3-4785-aff4-49dba92495be/" width="624"/></p>
+<p>As you type, IntelliJ IDEA suggests various constructs that you can use in the current context. You can see the list of available live templates using <code class="java">⌘J</code> (macOS) or <code class="java">Tab</code> (Windows, Linux).</p>
+<p>3. To call the <code class="java">println()</code> method, type sout and press <em>Enter</em>. Inside the parentheses, type: <code class="java">"Hello, World!"</code>.</p>
+<p style="text-align: center;"><img alt="" height="214" name="7.png" src="https://ucarecdn.com/f8d67cf8-d654-46bf-9b86-27867b81a991/" width="624"/></p>
+<p style="text-align: center;"><img alt="" height="162" name="8.png" src="https://ucarecdn.com/6f4a19ad-96ae-42b9-a323-23d424854313/" width="624"/></p>
+<p>Congratulations! You have written your first Java app in IntelliJ IDEA. For more information, you can always refer to the complete <a href="https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html#create_project" rel="noopener noreferrer nofollow" target="_blank">official tutorial</a>.</p>
+<h5 id="run-and-debug-your-application">Run and debug your application</h5>
+<p>When you have a ready-to-go program, you can run it. Then, it's possible to check it for possible problems with the help of the debugger. Let's see how these tools work.</p>
+<p><strong>Run</strong>:</p>
+<p>1. Click on the green triangle <em>Run</em> button (<img alt="" height="24" name="run_button.png" src="https://ucarecdn.com/2d4c8016-10db-44ca-9cff-492bb040e84e/" width="17"/>) in the gutter and select <em>Run 'HelloWorld.main()'</em> in the popup. The IDE will start to compile your code.</p>
+<p style="text-align: center;"><img alt="" height="194" name="9.png" src="https://ucarecdn.com/fa6ef062-ad39-46b5-8213-a8d5f359c5d8/" width="624"/></p>
+<p>2. You will see the result in the Run window that appears.</p>
+<p><strong>Debug:</strong></p>
+<p>1.To test your program with the debugger, you must first set a breakpoint. Click on the gutter at the executable line of code where you want to set the breakpoint. Alternatively, place the caret at the line and press <code class="java">⌘F8</code> (macOS) or <code class="java">Ctrl+F8</code> (Windows, Linux).</p>
+<p>2. To run the debugger, click on the <em>Bug</em> button next to the <em>Run</em> one. The Debugger window will then appear with the result.</p>
+<p style="text-align: center;"><img alt="" height="384" name="10.png" src="https://ucarecdn.com/b80c4ac0-8958-4f4d-9591-9697f93e5b45/" width="624"/></p>
+<h5 id="customize-intellij-idea">Customize IntelliJ IDEA</h5>
+<p>There are many settings that you can configure based on what you want or need.</p>
+<p>1. To configure your IDE, select<em> IntelliJ IDEA</em> | <em>Preferences</em> (macOS) or <em>File</em> | <em>Settings</em> (Windows and Linux). For example, go to <em>Appearance &amp; Behavior</em> | <em>Appearance</em> and choose different themes. In this topic, we use <em>Darcula</em>.</p>
+<p>2. If you want to find something specific in the settings, use the search box as shown below.</p>
+<p style="text-align: center;"><img alt="" height="190" name="11.png" src="https://ucarecdn.com/e145ea25-26a1-4138-ba4b-8fc446c22dc9/" width="624"/></p>
+<h5 id="study-more-features-in-intellij-idea">Study more features in IntelliJ IDEA</h5>
+<p>You can continue exploring the IDE with helpful interactive courses right inside IntelliJ IDEA.</p>
+<p>1. Select the Learn section on the <em>Welcome</em> screen and click on <em>Start learning</em>. The IDE will open a demo project with step-by-step instructions to guide you through all the most prominent features and tools that IntelliJ IDEA offers.</p>
+<p style="text-align: center;"><img alt="" height="200" name="12.png" src="https://ucarecdn.com/d06a9e37-6457-4c28-8523-ec1bf5f97ea1/" width="624"/></p>
+<h5 id="conclusion">Conclusion</h5>
+<p>To summarize this general introduction to IntelliJ IDEA, we can say that this IDE suits you perfectly if you:</p>
+<ul>
+<li>Want to start coding just several minutes after installation and access all the crucial features right away.</li>
+<li>Enjoy working in a powerful, ergonomic editor that can predict what code you need to write in a specific context and offers fixes to possible problems on the go.</li>
+<li>Like to customize the IDE to your needs and taste.</li>
+<li>Appreciate fast navigation and instant search.</li>
+</ul>
+<p>We hope you try out IntelliJ IDEA to discover more of its features. For more detailed information, you can refer to <a href="https://www.jetbrains.com/help/idea/getting-started.html" rel="noopener noreferrer nofollow" target="_blank">IntelliJ IDEA Help</a>.</p>

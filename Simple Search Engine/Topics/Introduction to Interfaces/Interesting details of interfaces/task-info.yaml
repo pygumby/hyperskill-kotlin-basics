@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: "A class must implement all members and methods of the interface, unless the\
+    \ default implementation is provided."
+- text: Interfaces require default implementation of all members.
+- text: "A class implementing the interface, must implement all abstract members of\
+    \ the latter."
+- text: The keyword "overwrite" is used to implement a member of an interface.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/18224#comment
+status: Unchecked
+record: -1
+custom_name: Interesting details of interfaces.
+local_check: false

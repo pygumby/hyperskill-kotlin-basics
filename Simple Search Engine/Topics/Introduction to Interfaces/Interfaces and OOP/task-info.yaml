@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Polymorphism
+- text: Inheritance
+- text: Abstraction
+- text: Encapsulation
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21751#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 22 Nov 2022 22:36:28 UTC"
+record: -1
+selected_options:
+- 2
+- 3
+local_check: false

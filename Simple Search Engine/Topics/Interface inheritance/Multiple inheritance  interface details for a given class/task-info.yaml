@@ -1,0 +1,17 @@
+type: code
+custom_name: "Multiple inheritance: interface details for a given class"
+files:
+- name: src/Main.kt
+  visible: true
+  text: "// Do not change the code below.  \n\ninterface Listed {\n    val index:\
+    \ String\n}\n\ndata class Element(\n        override val column: Int,\n      \
+    \  override val row: Int,\n        var value: Int\n) : Tabulated\n\n// Do not\
+    \ change the code above.  \n\ninterface Tabulated : Listed {\n    // Your Code\
+    \ Here  \n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/20225#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 24 Nov 2022 12:18:22 UTC"
+record: -1

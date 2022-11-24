@@ -210,6 +210,11 @@
             <option value="$PROJECT_DIR$/Topics/Interface Segregation Principle/Segregate responsibilities" />
             <option value="$PROJECT_DIR$/Topics/Interface Segregation Principle/Segregate specializations" />
             <option value="$PROJECT_DIR$/Topics/Interface Segregation Principle/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Interface inheritance/Choosing interfaces for a given class" />
+            <option value="$PROJECT_DIR$/Topics/Interface inheritance/Multiple inheritance  interface details for a given class" />
+            <option value="$PROJECT_DIR$/Topics/Interface inheritance/Seeking the truth" />
+            <option value="$PROJECT_DIR$/Topics/Interface inheritance/So you want to build a dog... out of interfaces" />
+            <option value="$PROJECT_DIR$/Topics/Interface inheritance/Theory" />
             <option value="$PROJECT_DIR$/Topics/Interfaces/Implementation" />
             <option value="$PROJECT_DIR$/Topics/Interfaces/Interface" />
             <option value="$PROJECT_DIR$/Topics/Interfaces/Interface name" />

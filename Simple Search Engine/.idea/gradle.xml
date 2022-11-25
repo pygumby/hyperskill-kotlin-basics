@@ -210,6 +210,11 @@
             <option value="$PROJECT_DIR$/Topics/Interface Segregation Principle/Segregate responsibilities" />
             <option value="$PROJECT_DIR$/Topics/Interface Segregation Principle/Segregate specializations" />
             <option value="$PROJECT_DIR$/Topics/Interface Segregation Principle/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Interface composition/Application" />
+            <option value="$PROJECT_DIR$/Topics/Interface composition/Application (1)" />
+            <option value="$PROJECT_DIR$/Topics/Interface composition/Comprehension" />
+            <option value="$PROJECT_DIR$/Topics/Interface composition/Comprehension (1)" />
+            <option value="$PROJECT_DIR$/Topics/Interface composition/Theory" />
             <option value="$PROJECT_DIR$/Topics/Interface inheritance/Choosing interfaces for a given class" />
             <option value="$PROJECT_DIR$/Topics/Interface inheritance/Multiple inheritance  interface details for a given class" />
             <option value="$PROJECT_DIR$/Topics/Interface inheritance/Seeking the truth" />

@@ -1,0 +1,111 @@
+<h2>Interface composition</h2>
+<html><body><p>The more code of yours can be reused, the better – it's a universal truth of programming. Therefore, oftentimes you'll be implementing several interfaces when you need your object to have several properties or to behave like several other entities: like a <code class="language-kotlin">Bird</code> has a set of properties both of an <code class="language-kotlin">Animal</code> and of a <code class="language-kotlin">Flying</code> entity. In general, it's not so different from simply implementing interfaces, but there are a few catches.  </p>
+<h5 id="lets-begin-with-resolving-conflicts">Let's begin with resolving conflicts</h5>
+<p>When it comes to multiple inheritance, there are a few pitfalls that are to be avoided. For example:</p>
+<pre><code class="language-kotlin">interface FirstInterface {  
+    fun f() { print("First") }  
+    fun g()  
+}  
+  
+interface SecondInterface {  
+    fun f() { print("Second") }  
+    fun g() { print("g") }  
+}  
+  
+class FirstClass : FirstInterface {  
+    override fun g() { print("g") }  
+}  
+  
+class SecondClass : FirstInterface, SecondInterface {  
+    override fun f() { print("Class")}  
+}</code></pre>
+<p>Here we have two interfaces that happen to declare functions named the same way. Although they perform different sets of actions, they share the same name; therefore, any class that simultaneously implements both of these interfaces would run into a problem: which of the two functions to implement?</p>
+<p>There is no such problem in the case of <code class="language-kotlin">FirstClass</code>:  it only implements one interface.</p>
+<p><code class="language-kotlin">SecondClass</code>, however, implements both interfaces; therefore, the compiler can't choose between the two provided function signatures. Alright, let's fix it:</p>
+<pre><code class="language-kotlin">class SecondClass : FirstInterface, SecondInterface {  
+    override fun f() { print("Class")}  
+    override fun g() {  
+        super.g()  
+    }  
+}</code></pre>
+<p>This will work because only one interface actually provides the default implementation – it's <code class="language-kotlin">SecondInterface</code>. But what if our interfaces look as follows?</p>
+<pre><code class="language-kotlin">interface FirstInterface {  
+    fun f() { print("First") }  
+    fun g() { print("not g") }  
+}  
+  
+interface SecondInterface {  
+    fun f() { print("Second") }  
+    fun g() { print("g") }  
+}</code></pre>
+<p>Then we'll get an error, as the compiler does not know which function to use – the one in the first or the second interface. This can be solved by the following syntax:</p>
+<pre><code class="language-kotlin">class ThirdClass : FirstInterface, SecondInterface {  
+    override fun f() {  
+        super&lt;FirstInterface&gt;.f()  
+        super&lt;SecondInterface&gt;.f()  
+    }  
+  
+    override fun g() {  
+        super&lt;SecondInterface&gt;.g()  
+    }  
+}</code></pre>
+<p>Here, using angle brackets, we show from which of the interfaces we call the function. And, as you can see, we can call <strong>both</strong> of them if we need!</p>
+<h5 id="idea-of-composition">Idea of composition</h5>
+<p>As you can see, inheritance as a design pattern has its own flaws. There's an alternative to it, which features same code reuse, and it's called <strong>composition</strong>. Suppose we'd like to create a game. For example, the characters in our game have 3 parameters:</p>
+<ul>
+<li><code class="language-kotlin">Level</code>: how powerful they are</li>
+<li><code class="language-kotlin">Enemy</code>: whether the character is an enemy or an ally</li>
+<li><code class="language-kotlin">Class</code>: what the character can do, i.e., fight with a sword or cast spells</li>
+</ul>
+<p>Following inheritance principles, we might implement it as follows:</p>
+<pre><code class="language-kotlin">interface Level {  
+    fun getLevel(): Int  
+}  
+  
+interface Enemy {  
+    fun isEnemy(): Boolean  
+}  
+  
+interface Class {  
+    fun getClass(): String  
+}</code></pre>
+<p>And for each character we would need to write quite a lot of code:</p>
+<pre><code class="language-kotlin">class DangerousEnemyWarrior : Level, Enemy, Class  
+{  
+    override fun getLevel(): Int { return 10 }  
+  
+    override fun isEnemy(): Boolean { return true }  
+  
+    override fun getClass(): String { return "Warrior" }  
+}</code></pre>
+<p>Note: we've created a character of the 10th<strong> </strong>level, who is an Enemy to the player and belongs to the class Warrior.</p>
+<p>For each new character, we'd need to manually set all these parameters. How about we try to reuse the same parameters to optimize the process?</p>
+<h5 id="composition-in-code">Composition in code</h5>
+<p>The paradigm to implement it in a more efficient fashion is known as composition.</p>
+<p>Instead of implementing a lot of interfaces and having to override all of their methods and fields, we can create their implementations in advance and store them as separate entities (objects in the example below). Then we can simply compose a needed object out of these "building blocks".</p>
+<p>And that's where <strong>delegation</strong> comes into play, since it's a very convenient way in Kotlin to reference an existing implementation instead of providing it where it's needed. Take a look at the example below:</p>
+<pre><code class="language-kotlin">// We only need to create all these objects once
+
+object Dangerous : Level { override fun getLevel(): Int { return 10 } }  
+  
+object NotDangerous : Level { override fun getLevel(): Int { return 1 } }  
+  
+object Foe : Enemy { override fun isEnemy(): Boolean { return true } }  
+  
+object Friend : Enemy { override fun isEnemy(): Boolean { return false } }  
+  
+object Warrior : Class { override fun getClass(): String { return "Warrior"}}  
+  
+object Wizard : Class { override fun getClass(): String { return "Wizard"}}
+
+// And then we're free to use them as many times as we'd like!
+
+class DangerousKotlinEnemyWarrior : Level by Dangerous, Enemy by Foe, Class by Warrior  
+  
+class NotDangerousFriendlyWizard : Level by NotDangerous, Enemy by Friend, Class by Wizard
+</code></pre>
+<p>Creating classes in this fashion is way easier and more compact.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>When using interface inheritance or, more generally, any inheritance while working with complex relationships between classes, don't forget to check for possible conflicts even though Kotlin allows you to manually implement conflicting methods.</p>
+<p>However, we might apply a different, more efficient paradigm: composition. Instead of creating a class derived from multiple interfaces, create two objects implementing these interfaces and use their instances in the class you need!</p>
+<p>Although this approach may have it's own disadvantages, there are a lot of cases when it works flawlessly. Let's do some practice now.</p></body></html>

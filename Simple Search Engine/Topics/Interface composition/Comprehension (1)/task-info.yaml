@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Creating classes without a single use of inheritance principles.
+- text: Increasing the performance of a program which uses several classes.
+- text: Simplifying the creation of entities by using right combinations of instances.
+- text: Achieving the same code reusability as with inheritance but with a different
+    structural approach.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22093#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Nov 2022 21:59:18 UTC"
+record: -1
+selected_options:
+- 2
+- 3
+custom_name: Comprehension
+local_check: false

@@ -1,0 +1,34 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    interface Weight {
+        fun getWeight(): Int
+        fun affectedByGravity(): Boolean
+    }
+
+    interface Form {
+        fun getVolume(): Int
+    }
+
+    class HeavyBrick : Weight, Form {
+        override fun getWeight(): Int = 50
+        override fun affectedByGravity(): Boolean = true
+        override fun getVolume(): Int = 20
+    }
+
+    class HeavyBrickComposition : Weight by Heavy, Form by Brick
+
+    // Do not change the code above.
+
+    object // ?
+
+    object // ?
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22101#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 25 Nov 2022 21:55:50 UTC"
+record: -1

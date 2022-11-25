@@ -1,0 +1,79 @@
+<h2>Comprehension</h2>
+<html><body><p>Which of these examples utilize interface inheritance incorrectly, causing compilation errors?</p>
+<h5 id="1">#1</h5>
+<pre><code class="language-kotlin">interface MyInterface {
+    val myProperty: Int
+    fun myMethod(): Int = 10
+    fun mySecondMethod() { print("Hola!") }
+}
+
+interface MyInterface2 {
+    val myProperty: Int
+    fun myThirdMethod() = print("Hola amigos!")
+}
+
+class MyClass : MyInterface, MyInterface2 {
+    override val myProperty: Int = 10
+
+    override fun myMethod(): Int { return 127312 }
+
+    override fun mySecondMethod() { print("Hello.") }
+}</code></pre>
+<h5 id="2">#2</h5>
+<pre><code class="language-kotlin">interface MyInterface {
+    val myProperty: Int
+        get() = 10
+
+    fun myMethod(): Int = 10
+    fun mySecondMethod() { print("Hola!") }
+}
+
+interface MyInterface2 {
+    val myProperty: Int
+        get() = 15
+
+    fun myThirdMethod() = print("Hola amigos!")
+}
+
+class MyClass : MyInterface, MyInterface2 {}</code></pre>
+<h5 id="3">#3</h5>
+<pre><code class="language-kotlin">interface MyInterface {
+    val myProperty: Int
+        get() = 10
+
+    fun myMethod(): Int = 10
+    fun mySecondMethod() { print("Hola!") }
+}
+
+interface MyInterface2 {
+    val myProperty: Int
+        get() = 15
+
+    fun myThirdMethod() = print("Hola amigos!")
+}
+
+class MyClass : MyInterface, MyInterface2 {
+    override val myProperty: Int = 10
+}</code></pre>
+<h5 id="4"> #4</h5>
+<pre><code class="language-kotlin">interface MyInterface {
+    val myProperty: Int
+        get() = 10
+
+    fun myMethod(): Int = 10
+    fun mySecondMethod() { print("Hola!") }
+}
+
+interface MyInterface2 {
+    val myProperty: Int
+        get() = 15
+
+    fun myThirdMethod() = print("Hola amigos!")
+}
+
+class MyClass : MyInterface, MyInterface2 {
+    override val myProperty: Int = 10
+    override fun myMethod(): Int { return myProperty }
+    override fun mySecondMethod() { print("Hello") }
+    override fun myThirdMethod() { print("Hello people!") }
+}</code></pre></body></html>

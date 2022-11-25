@@ -90,6 +90,11 @@
             <option value="$PROJECT_DIR$/Topics/Debugging techniques/Proper tools" />
             <option value="$PROJECT_DIR$/Topics/Debugging techniques/Right assertions" />
             <option value="$PROJECT_DIR$/Topics/Debugging techniques/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Delegate/A different formatter" />
+            <option value="$PROJECT_DIR$/Topics/Delegate/And... what is the delegate used to do" />
+            <option value="$PROJECT_DIR$/Topics/Delegate/Attaching a counting delegate on one, two... go" />
+            <option value="$PROJECT_DIR$/Topics/Delegate/Choosing the right delegate, with a bit of arithmetics mixed in" />
+            <option value="$PROJECT_DIR$/Topics/Delegate/Theory" />
             <option value="$PROJECT_DIR$/Topics/Design principles/Design principles" />
             <option value="$PROJECT_DIR$/Topics/Design principles/Theory" />
             <option value="$PROJECT_DIR$/Topics/Design principles/Your ideal code design" />

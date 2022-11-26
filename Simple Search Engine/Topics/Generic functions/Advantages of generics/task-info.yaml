@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Generic methods help us write reusable code and give us functionality for
+    constructing abstractions for it
+- text: Generics give us the opportunity to avoid the duplication of code
+- text: They are useful when we don't want to depend on the type of arguments that
+    we pass to a function
+- text: The use of generics decreases the complexity of your application
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21735#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 26 Nov 2022 14:59:37 UTC"
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

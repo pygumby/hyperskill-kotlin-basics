@@ -178,6 +178,11 @@
             <option value="$PROJECT_DIR$/Topics/Garbage collection approaches/Generational approach" />
             <option value="$PROJECT_DIR$/Topics/Garbage collection approaches/Reference counting algorithms" />
             <option value="$PROJECT_DIR$/Topics/Garbage collection approaches/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Generic functions/Advantages of generics" />
+            <option value="$PROJECT_DIR$/Topics/Generic functions/Extracting info" />
+            <option value="$PROJECT_DIR$/Topics/Generic functions/More Kotlin" />
+            <option value="$PROJECT_DIR$/Topics/Generic functions/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Generic functions/Understanding generics" />
             <option value="$PROJECT_DIR$/Topics/Grouping collections/Harry and the Spell Power" />
             <option value="$PROJECT_DIR$/Topics/Grouping collections/List of students" />
             <option value="$PROJECT_DIR$/Topics/Grouping collections/The Empire strikes back" />

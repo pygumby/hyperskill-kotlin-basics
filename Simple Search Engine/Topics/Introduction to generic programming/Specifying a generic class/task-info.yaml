@@ -1,0 +1,31 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: IntArray
+- text: Int
+- text: your own class
+- text: some class from Standard Kotlin Library
+- text: String
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14700#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 26 Nov 2022 13:58:36 UTC"
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+- 3
+- 4
+local_check: false

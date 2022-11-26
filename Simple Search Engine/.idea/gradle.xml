@@ -244,6 +244,10 @@
             <option value="$PROJECT_DIR$/Topics/Introduction to creational patterns/Find wrong pattern" />
             <option value="$PROJECT_DIR$/Topics/Introduction to creational patterns/Situation for factory method" />
             <option value="$PROJECT_DIR$/Topics/Introduction to creational patterns/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Get and set" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Random generic class" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Specifying a generic class" />
+            <option value="$PROJECT_DIR$/Topics/Introduction to generic programming/Theory" />
             <option value="$PROJECT_DIR$/Topics/Introduction to logging/Connecting to a database server" />
             <option value="$PROJECT_DIR$/Topics/Introduction to logging/Log format" />
             <option value="$PROJECT_DIR$/Topics/Introduction to logging/Not a good practice" />

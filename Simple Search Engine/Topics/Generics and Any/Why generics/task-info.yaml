@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 'Generics can work with multiple classes without explicit type-casting '
+- text: Generics speed up your code
+- text: Generics enhance type safety by shifting more type checking responsibilities
+    to the compiler
+- text: Generics help to detect your bugs at run-time
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15351#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 27 Nov 2022 15:25:36 UTC"
+record: -1
+selected_options:
+- 0
+- 2
+custom_name: Why generics?
+local_check: false

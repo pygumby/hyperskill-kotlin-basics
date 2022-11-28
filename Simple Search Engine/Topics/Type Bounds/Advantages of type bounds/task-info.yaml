@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: We can restrict type parameters using type bounds
+- text: They provide multiple inheritance
+- text: They make code reusable
+- text: The amount of code can be reduced thanks to type bounds
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21744#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 28 Nov 2022 16:28:29 UTC"
+record: -1
+selected_options:
+- 0
+- 3
+local_check: false

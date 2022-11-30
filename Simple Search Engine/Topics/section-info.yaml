@@ -105,3 +105,4 @@ content:
 - Generic functions
 - Generics and Any
 - Type Bounds
+- Type aliases

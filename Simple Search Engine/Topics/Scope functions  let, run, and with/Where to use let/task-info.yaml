@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: For initializing a new object and passing to it the result of a lambda
 - text: For doing something with the safety call operator ?
-- text: For entering local variables with a limited scope
-- text: For object setting
+- text: For initializing a new object and passing to it the result of a lambda
 - text: For long chains of operations with an object
+- text: For object setting
+- text: For entering local variables with a limited scope
 files:
 - name: src/Main.kt
   visible: true

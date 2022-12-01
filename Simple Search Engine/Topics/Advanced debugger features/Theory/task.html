@@ -1,5 +1,5 @@
 <h2>Advanced debugger features</h2>
-<html><body><p>Line breakpoints are useful, but there are several other places where it can be helpful to stop execution:</p>
+<p>Line breakpoints are useful, but there are several other places where it can be helpful to stop execution:</p>
 <ul>
 <li>When the primary constructor is invoked.</li>
 <li>When a particular method is invoked. Including one that's been overridden or one with incorrect or missing source code.</li>
@@ -38,4 +38,4 @@
 <p><em>Step Into</em> will peek into the next method called by the current line, or just step over if there's none. There's also <em>Force Step Into (</em>which has the same icon as <em>Step Into</em> but with a red arrow instead of a blue one). This tool makes it easy to step into library code instead of staying at the level of your own code. <em>Force Step Into</em> will work even without source code, and for runtime-generated classes without bytecode available. In this case, you won't see the code being executed, but stack frames will still be visible, giving you an idea about what that method does.</p>
 <p><em>Step Out</em> will suspend execution after the current method ends and return you to the context of the caller method.</p>
 <h5 id="conclusion">Conclusion</h5>
-<p>You already knew about line breakpoints, and now you're familiar with constructor, method, and exception breakpoints as well. You've also learned how to continue execution until a particular line is reached, and determine which line will be executed next. In addition, you've seen how to peek into the depths of a method invocation chain and quickly return from it.</p></body></html>
+<p>You already knew about line breakpoints, and now you're familiar with constructor, method, and exception breakpoints as well. You've also learned how to continue execution until a particular line is reached, and determine which line will be executed next. In addition, you've seen how to peek into the depths of a method invocation chain and quickly return from it.</p>

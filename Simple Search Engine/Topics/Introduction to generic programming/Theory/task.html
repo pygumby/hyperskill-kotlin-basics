@@ -1,5 +1,5 @@
 <h2>Introduction to generic programming</h2>
-<html><body><p>Sometimes methods and classes that we use do not depend on the data on which they operate. For example, arrays can store values of different types: <code class="language-kotlin">String</code>, <code class="language-kotlin">Int</code>, <code class="language-kotlin">Char</code>, etc. However, the algorithm of finding an element in an array doesn't depend on the type of values the array stores.</p>
+<p>Sometimes methods and classes that we use do not depend on the data on which they operate. For example, arrays can store values of different types: <code class="language-kotlin">String</code>, <code class="language-kotlin">Int</code>, <code class="language-kotlin">Char</code>, etc. However, the algorithm of finding an element in an array doesn't depend on the type of values the array stores.</p>
 <p>For these cases, Kotlin supports <strong>generic programming</strong>. Generics represent parameterized types. Generic methods and classes can handle different types in the same general way. The type should be determined when you create an instance of the class or invoke a method. Generic programming allows writing more abstract and reusable code. Let's take a closer look at Generics!</p>
 <h5 id="generic-classes">Generic classes</h5>
 <p>A generic class represents a class that is parameterized over types. To declare such a class, we should specify the type parameter in angle brackets after the class name. Let's take a look at the example below.</p>
@@ -131,4 +131,4 @@ fun main() {
 }</code></pre>
 <p>The output will be <code class="language-kotlin">kotlin.Int</code>.</p>
 <h5 id="conclusion">Conclusion</h5>
-<p>A generic class can declare one or more type parameters and then use them inside the class body as types of fields, method and constructor arguments, and return values. The class doesn't depend on the type which it operates; the type matters only when we create an instance of such a class. Generic programming is good for versatility and allows us to write reusable code. </p></body></html>
+<p>A generic class can declare one or more type parameters and then use them inside the class body as types of fields, method and constructor arguments, and return values. The class doesn't depend on the type which it operates; the type matters only when we create an instance of such a class. Generic programming is good for versatility and allows us to write reusable code. </p>

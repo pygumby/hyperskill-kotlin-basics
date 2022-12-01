@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: "If we have multiple bounds, at least one upper bound will be specified"
-- text: "By default, all type parameters are constrained by the type Any"
 - text: "When you use multiple bounds, the first type should be a class or an interface"
+- text: "By default, all type parameters are constrained by the type Any?"
+- text: "If we have multiple bounds, at least one upper bound will be specified"
 - text: We can use type bounds only with classes
 files:
 - name: src/Main.kt

@@ -3,8 +3,8 @@ is_multiple_choice: true
 options:
 - text: It may cause bugs
 - text: We can create multiple variables
-- text: It creates only three variables
 - text: Code becomes more readable
+- text: It creates only three variables
 files:
 - name: src/Main.kt
   visible: true

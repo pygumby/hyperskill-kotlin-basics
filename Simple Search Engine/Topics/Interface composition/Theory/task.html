@@ -1,5 +1,5 @@
 <h2>Interface composition</h2>
-<html><body><p>The more code of yours can be reused, the better – it's a universal truth of programming. Therefore, oftentimes you'll be implementing several interfaces when you need your object to have several properties or to behave like several other entities: like a <code class="language-kotlin">Bird</code> has a set of properties both of an <code class="language-kotlin">Animal</code> and of a <code class="language-kotlin">Flying</code> entity. In general, it's not so different from simply implementing interfaces, but there are a few catches.  </p>
+<p>The more code of yours can be reused, the better – it's a universal truth of programming. Therefore, oftentimes you'll be implementing several interfaces when you need your object to have several properties or to behave like several other entities: like a <code class="language-kotlin">Bird</code> has a set of properties both of an <code class="language-kotlin">Animal</code> and of a <code class="language-kotlin">Flying</code> entity. In general, it's not so different from simply implementing interfaces, but there are a few catches.  </p>
 <h5 id="lets-begin-with-resolving-conflicts">Let's begin with resolving conflicts</h5>
 <p>When it comes to multiple inheritance, there are a few pitfalls that are to be avoided. For example:</p>
 <pre><code class="language-kotlin">interface FirstInterface {  
@@ -108,4 +108,4 @@ class NotDangerousFriendlyWizard : Level by NotDangerous, Enemy by Friend, Class
 <h5 id="conclusion">Conclusion</h5>
 <p>When using interface inheritance or, more generally, any inheritance while working with complex relationships between classes, don't forget to check for possible conflicts even though Kotlin allows you to manually implement conflicting methods.</p>
 <p>However, we might apply a different, more efficient paradigm: composition. Instead of creating a class derived from multiple interfaces, create two objects implementing these interfaces and use their instances in the class you need!</p>
-<p>Although this approach may have it's own disadvantages, there are a lot of cases when it works flawlessly. Let's do some practice now.</p></body></html>
+<p>Although this approach may have it's own disadvantages, there are a lot of cases when it works flawlessly. Let's do some practice now.</p>

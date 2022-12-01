@@ -1,0 +1,97 @@
+<h2>Collection tranformations</h2>
+<p>In the previous topics, you have seen different ways of working with collections: filtering, grouping, mapping, and ordering.</p>
+<p>It is time to go one step further in transformation operations and talk about more complex operations, which will give us more power when dealing with collections and their elements.</p>
+<h5 id="zip">Zip</h5>
+<p>Zipping is an operation that allows us to obtain a pair based on two elements that occupy the same position in two different collections. This way, you can get a collection of pairs after applying <code class="language-kotlin">zip()</code>.</p>
+<p>If the original collections do not have the same size, the result will be a list of pairs limited to the size of the smallest collection, ignoring the remaining elements of the larger one.</p>
+<p>You can also call <code class="language-kotlin">zip()</code> with a transformation function. The resulting <code class="language-kotlin">List</code> will contain the return values of the transformation function called on pairs of the receiver and the argument elements with the same positions.</p>
+<p>Unzipping helps us to perform the reverse transformation. Given a collection of pairs, you can transform it into two collections with <code class="language-kotlin">unzip()</code>. The first one will have the first elements of the pair, the second one – the second elements.</p>
+<pre><code class="language-kotlin">fun main() {
+    val listNumbers = listOf(1, 2, 3, 4, 5)
+    val listStrings = listOf("one", "two", "three", "four", "five")
+
+    // Zipping
+    val zipped = listNumbers.zip(listStrings)
+    println(zipped) // [(1, one), (2, two), (3, three), (4, four), (5, five)]
+
+    // Unzipping
+    val unzipped = zipped.unzip()
+    println(unzipped) // ([1, 2, 3, 4, 5], [one, two, three, four, five])
+
+    // Zipping with different length
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    // other way to call zip function
+    val zippedWithDifferentLength = numbers zip listStrings
+    // ignore the rest of numbers
+    println(zippedWithDifferentLength) // [(1, one), (2, two), (3, three), (4, four), (5, five)]
+
+    // Zipping with transform
+    val zippedWithTransform = numbers.zip(listStrings) { number, string -&gt;
+        "$number - $string"
+    }
+    println(zippedWithTransform) // [1 - one, 2 - two, 3 - three, 4 - four, 5 - five]
+}</code></pre>
+<h5 id="associate">Associate</h5>
+<p>Association allows us to create maps from collections of elements and the values associated with them. These elements can be keys or values in the resulting map. </p>
+<p>The <code class="language-kotlin">associateWith()</code> method allows us to obtain a map where the elements are the keys. The map values are obtained with the help of a transformation function. If two items are the same, only one of them will be on the <code class="language-kotlin">Map</code>.</p>
+<p>The <code class="language-kotlin">associateBy()</code> method offers us a way to create a map where the elements of a collection are the values. The key is obtained with the help of a transformation function. If two items have the same key, only one of them will be on the <code class="language-kotlin">Map</code>.</p>
+<p>You can also obtain maps where the key or value is obtained from the elements of a collection thanks to the <code class="language-kotlin">associate()</code> function. This function takes a lambda that returns a <code class="language-kotlin">Pair</code> that corresponds to the map entry. It should be used with care – when performance is not critical and when you cannot make use of the other options.</p>
+<pre><code class="language-kotlin">fun main() {
+
+    val listStrings = listOf("one", "two", "three", "four", "five")
+
+    // Associate With
+    val associatedWith = listStrings.associateWith { it.length }
+    println(associatedWith) // {one=3, two=3, three=5, four=4, five=4}
+
+    // Associate By
+    val associatedBy = listStrings.associateBy { it.first().uppercase() }
+    println(associatedBy) // {O=one, T=two, F=four, F=five}
+
+    // Associate with a lambda
+    val associatedWithLambda = listStrings.associate {
+        it.first().uppercase() to it.length
+    }
+    println(associatedWithLambda) // {O=3, T=3, F=4, F=4}
+}</code></pre>
+<h5 id="string-representation">String representation</h5>
+<p>One of the problems you face when working with collections is that they can't be easily read. Thanks to these methods, you can represent collections in a readable format.</p>
+<p>The <code class="language-kotlin">joinToString()</code> method builds the string representation when you call <code class="language-kotlin">toString()</code> based on the elements of a collection using the following arguments:</p>
+<ul>
+<li>separator: the separator between the elements, for example, ";".</li>
+<li>prefix: represents the beginning of the collection, for example, "{".</li>
+<li>postfix: represents the ending of the collection, for example, "}".</li>
+<li>limit: the number of elements to be included in the string representation, for example, 3.</li>
+<li>truncated: when you use a limit, the rest of elements will be represented with this value, for example, "..."</li>
+</ul>
+<p>These parameters are not required. If they are not passed, they will have the default value.</p>
+<p>The <code class="language-kotlin">joinTo()</code> methods performs the same task – appends the result to the given <code class="language-kotlin"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-appendable/" rel="noopener noreferrer nofollow" target="_blank">Appendable</a></code> object (an object to which char sequences and values can be appended, for example, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/" rel="noopener noreferrer nofollow" target="_blank"><code class="language-kotlin">StringBuilder</code></a>).</p>
+<pre><code class="language-kotlin">fun main() {
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+    // joinToString
+    val joinToString = numbers.joinToString(
+        separator = " ; ",
+        prefix = "{ ",
+        postfix = " }",
+        limit = 3,
+        truncated = "..."
+    )
+    println(joinToString) // { 1 ; 2 ; 3... }
+    
+    // joinTo appendable
+    val joinTo = numbers.joinTo(
+        StringBuilder(),
+        separator = " ; ",
+        prefix = "{ ",
+        postfix = " }",
+        limit = 3,
+        truncated = "..."
+    )
+    println(joinTo) // {1 ; 2 ; 3...}
+
+}</code>
+</pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, you have discovered more methods to perform transformations on our collections – either by creating a list of pairs based on two collections or creating maps where the keys and values are the elements of a collection. You've also learned how to improve the textual representation of a collection.</p>
+<p>It's time to check everything you've learned about collection transformations and do some tasks. Are you ready?</p>

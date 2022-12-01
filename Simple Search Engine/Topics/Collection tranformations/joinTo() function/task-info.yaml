@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: to represent toString() only for Maps
+- text: to represent toString() of Appendable objects
+- text: to represent toString() only for Lists
+- text: to represent toString() of all Collections
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24001#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 01 Dec 2022 17:08:27 UTC"
+record: -1
+selected_options:
+- 1
+local_check: false

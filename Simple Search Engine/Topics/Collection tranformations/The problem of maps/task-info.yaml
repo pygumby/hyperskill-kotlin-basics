@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: associateByKey()
+- text: associateByOrNull()
+- text: associate()
+- text: associateWith()
+- text: associateBy()
+- text: associateByValues()
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23999#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 01 Dec 2022 17:23:09 UTC"
+record: -1
+selected_options:
+- 2
+- 4
+local_check: false

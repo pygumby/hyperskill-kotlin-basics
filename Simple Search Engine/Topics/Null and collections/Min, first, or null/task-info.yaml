@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: "list.maxWithOrNull(compareBy { it.length })"
+- text: "list.maxByOrNull { it.length }"
+- text: "list.minOfOrNull { it.length }"
+- text: "list.firstOrNull { it == \"to\" }"
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23977#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 02 Dec 2022 16:38:34 UTC"
+record: -1
+selected_options:
+- 2
+local_check: false

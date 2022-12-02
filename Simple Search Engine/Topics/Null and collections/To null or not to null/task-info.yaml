@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: 0
+- text: "null"
+- text: 1
+- text: "[0, 2, 0, 4, 7]"
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23976#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 02 Dec 2022 16:35:32 UTC"
+record: -1
+selected_options:
+- 0
+local_check: false

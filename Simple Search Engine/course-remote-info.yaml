@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/271583/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Fri, 02 Dec 2022 10:45:49 UTC"
+update_date: "Thu, 29 Dec 2022 17:19:11 UTC"
 stages:
 - id: 494
   step: 7817
@@ -57,6 +57,8 @@ topics:
     theory_id: 3611
   - title: Computer programming
     theory_id: 8739
+  - title: Paradigms
+    theory_id: 15860
   - title: Introduction to Kotlin
     theory_id: 4350
   - title: Basic literals
@@ -187,12 +189,6 @@ topics:
     theory_id: 18049
   - title: Stack and heap memory
     theory_id: 21577
-  - title: Design principles
-    theory_id: 8956
-  - title: Single Responsibility Principle
-    theory_id: 8963
-  - title: Object declarations
-    theory_id: 10698
   - title: Introduction to logging
     theory_id: 5538
   - title: Debugging techniques
@@ -201,6 +197,12 @@ topics:
     theory_id: 14368
   - title: Debugging simple constructs
     theory_id: 15503
+  - title: Design principles
+    theory_id: 8956
+  - title: Single Responsibility Principle
+    theory_id: 8963
+  - title: Object declarations
+    theory_id: 10698
   - title: Advanced debugger features
     theory_id: 16028
   - title: Self-documenting code

@@ -1,5 +1,5 @@
 <h2>Test predicates: checking elements in collection</h2>
-<html><body><p>When working with collections, programmers often need to check if collection elements meet some <strong>condition</strong>. Filtering a collection by certain criteria or checking if the collection contains an element with certain properties are among most common tasks, and it is important to do that in the most efficient way.<br/>
+<p>When working with collections, programmers often need to check if collection elements meet some <strong>condition</strong>. Filtering a collection by certain criteria or checking if the collection contains an element with certain properties are among most common tasks, and it is important to do that in the most efficient way.<br/>
 <br/>
 Fortunately we don't have to apply iterative programming mechanisms – conditionals or loops – to find the solution. We can use functional APIs implemented in Kotlin.<br/>
 <br/>
@@ -36,7 +36,7 @@ fun main() {
 
     // any number is even?
     println(numbers.any { x -&gt; x % 2 == 0 }) // true
-    // any number is grater than 100
+    // any number is greater than 100
     println(numbers.any { x -&gt; x &gt; 100 }) // false
 
     val palindromes = listOf("racecar", "mom", "dad", "dog")
@@ -50,7 +50,7 @@ fun main() {
 
     // none of the numbers is even?
     println(numbers.none { x -&gt; x % 2 == 0 }) // false
-    // none of the numbers is grater than 100
+    // none of the numbers is greater than 100
     println(numbers.none { x -&gt; x &gt; 100 }) // true
 
     val palindromes = listOf("racecar", "mom", "dad", "dog")
@@ -96,4 +96,4 @@ fun main() {
 <h5 id="conclusion">Conclusion</h5>
 <p>In this topic, we have seen efficient ways to check if the elements of a collection satisfy a condition. Such conditions are defined based on predicates.</p>
 <p>We have introduced special functions to test predicates, like <code class="language-kotlin">any()</code>, <code class="language-kotlin">none()</code>, and <code class="language-kotlin">all()</code>. They offer us an elegant and efficient way of checking predicates on the elements of a collection.</p>
-<p>Now is the time to check what you have learned. Let's go for it!</p></body></html>
+<p>Now is the time to check what you have learned. Let's go for it!</p>

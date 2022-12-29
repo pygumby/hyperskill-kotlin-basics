@@ -72,10 +72,10 @@ println(-11 % -4)  // prints -3</code></pre>
 <p>As you know, languages like Python use another type of division, <strong>F-division</strong>. In Kotlin, you can work with this division approach using the <span style="color: #ff4363;"><code class="language-kotlin">floorDiv()</code></span> and <code class="language-kotlin">mod()</code> functions. Let's see how it works:</p>
 <pre><code class="language-kotlin">println((-12).floorDiv(5)) // -3
 println((-12).mod(5))      // 3</code></pre>
-<p>When you divide -12 by 5, the result is -2.4, which is rounded to -3, since it is the nearest whole number smaller then -2.4.</p>
+<p>When you divide -12 by 5, the result is -2.4, which is rounded to -3, since it is the nearest whole number smaller than -2.4.</p>
 <p>You can calculate the remainder by the familiar formula: <strong>remainder = dividend - divisor * quotient</strong>. In our case: </p>
 <p>-12 - 5 * (-3) = -12 + 15 = 3</p>
-<p>If the <code class="language-kotlin">mod()</code> function operated similarly in all cases, we would face issues when performing Euclidean division. When both numbers have the same sign, this function performs similar to the <code class="language-kotlin">%</code> operator:</p>
+<p>If the <code class="language-kotlin">mod()</code> function operated similarly in all cases, we would face issues when performing Euclidean division. When both numbers have the same sign, this function performs similarly to the <code class="language-kotlin">%</code> operator:</p>
 <table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 600px;">
 <tbody>
 <tr>

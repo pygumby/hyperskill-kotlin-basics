@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: using properties only
-- text: with a Pair constructor
-- text: using the componentN method
-- text: using the infinx function to
 - text: with the copy() method
+- text: with a Pair constructor
+- text: using properties only
+- text: using the infix function to
+- text: using the componentN method
 files:
 - name: src/Main.kt
   visible: true

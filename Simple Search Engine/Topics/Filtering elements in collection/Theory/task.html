@@ -1,5 +1,5 @@
 <h2>Filtering elements in collection</h2>
-<html><body><p>When we are working with collections, <strong>filtering</strong> a collection by certain criteria or checking if the collection contains elements with certain properties or <strong>predicates</strong> is a daily task in software development. To solve this task, we can use functional APIs implemented in Kotlin.</p>
+<p>When we are working with collections, <strong>filtering</strong> a collection by certain criteria or checking if the collection contains elements with certain properties or <strong>predicates</strong> is a daily task in software development. To solve this task, we can use functional APIs implemented in Kotlin.</p>
 <p>In this topic, we will present techniques to filter a collection using predicates and obtain a new collection with the elements that satisfy the given predicate . </p>
 <h5 id="filtering">Filtering</h5>
 <p>Kotlin offers an API that makes use of extension functions and allows you to filter the elements of a collection based on predicates. The <code class="language-kotlin">filter()</code> function takes a predicate and returns a new collection with the elements that satisfy the predicate (or condition). Also, we can use <code class="language-kotlin">filterIndexed()</code>, which takes the index of an element and the element itself and returns a collection that matches the predicate evaluated on the element. Yet another function, <code class="language-kotlin">filterNot()</code>, obtains a collection with the elements that do not match the predicate. These methods are available in all basic Kotlin collections (lists, sets, and maps).</p>
@@ -70,4 +70,4 @@ fun main() {
 <h5 id="conclusion">Conclusion</h5>
 <p>In this topic, we have seen different ways to filter the elements of a collection based on a condition, which is called the predicate.</p>
 <p>We have introduced several special functions to filter by predicates, like <code class="language-kotlin">filter()</code>, <code class="language-kotlin">filterIndex()</code>, <code class="language-kotlin">filterNot()</code>, <code class="language-kotlin">filterIsInstance()</code>, <code class="language-kotlin">filterNotNull()</code>, and <code class="language-kotlin">partition()</code>. They offer us an elegant and efficient way of filtering collection elements.</p>
-<p>Now is the time to check what you have learned about filtering. Let's go for it!</p></body></html>
+<p>Now is the time to check what you have learned about filtering. Let's go for it!</p>

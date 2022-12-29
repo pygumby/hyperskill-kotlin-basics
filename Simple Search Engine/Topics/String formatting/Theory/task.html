@@ -16,6 +16,19 @@ println(string)
 println(string)
 //HELLO WORLD</code></pre>
 <p>In case the syntax of a format string is incorrect, an <code class="language-kotlin">IllegalFormatException</code> is thrown.</p>
+<p>You can change the order using parameters for it: <code class="language-kotlin">%n\$s </code>, where <code class="language-kotlin">n</code> represents the number of the parameter that we want to insert into the result String and <code class="language-kotlin">s</code> is the parameter of the type String (you can insert other types as you will see in the following sections).  For Kotlin we must escape $ used for interpolation, thus we write <code class="language-kotlin">%n\$s</code>. As example, we use <code class="language-kotlin">%1$s</code> to represent the first argument of type String but for Kotlin we must escape $, so  the result to make this possible is: <code class="language-kotlin">%1\$s.</code></p>
+<pre><code class="language-kotlin">val str1 = "Kotlin"
+val str2 = "the best language"
+    
+// %s is used to represent the String value,
+// %1 is used to represent first argument
+// %2 is used to represent second argument
+var str = String.format("%1\$s is %2\$s", str1, str2)
+println(str) // // Kotlin is the best language
+    
+// you can change the order of arguments
+str = String.format("%2\$s is %1\$s", str1, str2)
+println(str) // the best language is Kotlin</code></pre>
 <h5 id="special-format-specifiers">Special format specifiers</h5>
 <p>Besides format specifiers, a format string can contain any text. Also, apart from the specifiers for various argument types, there are some special specifiers. Thus, <code class="language-kotlin">%%</code> inserts the <code class="language-kotlin">%</code> sign, while <code class="language-kotlin">%n</code> inserts a newline. For example, look at the following code:</p>
 <pre><code class="language-kotlin">println(String.format("The percentage of%nthis amount is 30%%.\nIt is easy to remember."))</code></pre>

@@ -342,6 +342,20 @@ files:
         }
     }
   learner_created: false
+- name: src/search/data.txt
+  visible: true
+  text: |-
+    Dwight Joseph djo@gmail.com
+    Rene Webb webb@gmail.com
+    Katie Jacobs
+    Erick Harrington harrington@gmail.com
+    Myrtle Medina
+    Erick Burgess
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7822#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: "Fri, 30 Dec 2022 19:46:34 UTC"
 record: -1

@@ -4,8 +4,13 @@ import java.io.File
 
 data class Ref(val lineIndex: Int, val wordIndex: Int)
 
+enum class Strategy {
+    ALL, ANY, NONE
+}
+
 class SearchEngine {
     private val invertedIndex = mutableMapOf<String, Set<Ref>>()
+    private var numberOfLines = 0
 
     fun initLinesFromStdIn() {
         println("Enter the number of people:")
@@ -21,11 +26,23 @@ class SearchEngine {
         this.initInvertedIndex(lines)
     }
 
-    private fun initInvertedIndex(lines: List<String>) = lines.forEachIndexed { lineIndex, line ->
-        line.split(" ").forEachIndexed { wordIndex, word ->
-            this.invertedIndex[word] = this.invertedIndex.getOrDefault(word, setOf()) + Ref(lineIndex, wordIndex)
+    private fun initInvertedIndex(lines: List<String>) {
+        this.numberOfLines = lines.size
+        lines.forEachIndexed { lineIndex, line ->
+            line.split(" ").forEachIndexed { wordIndex, word ->
+                this.invertedIndex[word] = this.invertedIndex.getOrDefault(word, setOf()) + Ref(lineIndex, wordIndex)
+            }
         }
     }
+
+    private fun getAllLineIndices() =
+        (0 until this.numberOfLines).toList()
+
+    private fun getLineIndicesForWord(word: String) = this.invertedIndex
+        .filter { (otherWord, _) -> otherWord.lowercase() == word.lowercase() }
+        .map { (_, setOfRefs) -> setOfRefs.map { it.lineIndex } }
+        .flatten()
+        .toSet()
 
     private fun getLineByIndex(lineIndex: Int): String {
         val line = mutableListOf<Pair<Int, String>>()
@@ -42,27 +59,36 @@ class SearchEngine {
     }
 
     private fun query() {
-        println("\nEnter a name or email to search all suitable people:")
-        val queriedWord = readln()
-
-        val lineIndices = this.invertedIndex
-            .filter { (word, _) -> word.lowercase() == queriedWord.lowercase() }
-            .map { (_, setOfRefs) -> setOfRefs.map { it.lineIndex } }
-            .flatten()
-
-        if (lineIndices.isEmpty()) {
-            println("No matching people found.")
-        } else {
-            println("\nPeople found:")
-            lineIndices.forEach { println(this.getLineByIndex(it)) }
+        println("\nSelect a matching strategy: ALL, ANY, NONE")
+        val strategy = when (readln()) {
+            "ALL" -> Strategy.ALL
+            "ANY" -> Strategy.ANY
+            "NONE" -> Strategy.NONE
+            else -> return this.query()
         }
-    }
 
-    private fun getAllLines() = this.invertedIndex
-        .map { (_, setOfRefs) -> setOfRefs.map { it.lineIndex } }
-        .flatten()
-        .toSet()
-        .map { getLineByIndex(it) }
+        println("\nEnter a name or email to search all suitable people:")
+        val words = readln().split(" ")
+
+        val lineIndicesPerWord = words.map { this.getLineIndicesForWord(it) }
+
+        if (lineIndicesPerWord.isEmpty()) {
+            return if (strategy == Strategy.NONE) {
+                this.getAllLineIndices().map { this.getLineByIndex(it) }.forEach { println(it) }
+            } else {
+                println("No matching people found.")
+            }
+        }
+
+        val lineIndices = when (strategy) {
+            Strategy.ALL -> lineIndicesPerWord.reduce { acc, next -> acc.intersect(next) }
+            Strategy.ANY -> lineIndicesPerWord.flatten().toSet()
+            else -> this.getAllLineIndices().toSet().minus(lineIndicesPerWord.flatten().toSet())
+        }
+
+        println("\nPeople found:")
+        lineIndices.forEach { println(this.getLineByIndex(it)) }
+    }
 
     fun displayUserMenu() {
         println()
@@ -75,7 +101,7 @@ class SearchEngine {
 
         when (readln().toInt()) {
             1 -> this.query()
-            2 -> println("\n=== List of people ===\n${this.getAllLines().joinToString("\n")}")
+            2 -> println("\n=== List of people ===\n${this.getAllLineIndices().joinToString("\n") { this.getLineByIndex(it) }}")
             0 -> return println("\nBye!")
             else -> println("\nIncorrect option! Try again.")
         }

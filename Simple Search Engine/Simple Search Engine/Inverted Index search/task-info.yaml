@@ -323,5 +323,8 @@ files:
     Erick Burgess
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7821#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 30 Dec 2022 18:12:01 UTC"
 record: -1

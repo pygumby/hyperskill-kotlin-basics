@@ -2,22 +2,67 @@ package search
 
 import java.io.File
 
-class SearchEngine {
-    private val data = mutableListOf<String>()
+data class Ref(val lineIndex: Int, val wordIndex: Int)
 
-    fun promptInitialData() {
+class SearchEngine {
+    private val invertedIndex = mutableMapOf<String, Set<Ref>>()
+
+    fun initLinesFromStdIn() {
         println("Enter the number of people:")
-        val nOfEntries = readln().toInt()
+        val numberOfLines = readln().toInt()
 
         println("Enter all people:")
-        repeat (nOfEntries) {
-            this.data.add(readln())
+        val lines = List(numberOfLines) { readln() }
+        this.initInvertedIndex(lines)
+    }
+
+    fun initLinesFromFile(path: String) {
+        val lines = File(path).useLines { it.toList() }
+        this.initInvertedIndex(lines)
+    }
+
+    private fun initInvertedIndex(lines: List<String>) = lines.forEachIndexed { lineIndex, line ->
+        line.split(" ").forEachIndexed { wordIndex, word ->
+            this.invertedIndex[word] = this.invertedIndex.getOrDefault(word, setOf()) + Ref(lineIndex, wordIndex)
         }
     }
 
-    fun readInitialData(path: String) {
-        this.data.addAll(File(path).useLines { it.toList() })
+    private fun getLineByIndex(lineIndex: Int): String {
+        val line = mutableListOf<Pair<Int, String>>()
+
+        this.invertedIndex.forEach { (word, setOfRefs) ->
+            setOfRefs.forEach { ref ->
+                if (ref.lineIndex == lineIndex) line.add(ref.wordIndex to word)
+            }
+        }
+
+        return line
+            .sortedBy { it.first }
+            .joinToString(" ") { it.second }
     }
+
+    private fun query() {
+        println("\nEnter a name or email to search all suitable people:")
+        val queriedWord = readln()
+
+        val lineIndices = this.invertedIndex
+            .filter { (word, _) -> word.lowercase() == queriedWord.lowercase() }
+            .map { (_, setOfRefs) -> setOfRefs.map { it.lineIndex } }
+            .flatten()
+
+        if (lineIndices.isEmpty()) {
+            println("No matching people found.")
+        } else {
+            println("\nPeople found:")
+            lineIndices.forEach { println(this.getLineByIndex(it)) }
+        }
+    }
+
+    private fun getAllLines() = this.invertedIndex
+        .map { (_, setOfRefs) -> setOfRefs.map { it.lineIndex } }
+        .flatten()
+        .toSet()
+        .map { getLineByIndex(it) }
 
     fun displayUserMenu() {
         println()
@@ -30,25 +75,12 @@ class SearchEngine {
 
         when (readln().toInt()) {
             1 -> this.query()
-            2 -> println("\n=== List of people ===\n${this.data.joinToString("\n")}")
+            2 -> println("\n=== List of people ===\n${this.getAllLines().joinToString("\n")}")
             0 -> return println("\nBye!")
             else -> println("\nIncorrect option! Try again.")
         }
 
         this.displayUserMenu()
-    }
-
-    private fun query() {
-        println("\nEnter a name or email to search all suitable people:")
-        val query = readln().lowercase()
-        val results = this.data.filter { it.lowercase().contains(query) }
-
-        if (results.isEmpty()) {
-            println("No matching people found.")
-        } else {
-            println("\nPeople found:")
-            println(results.joinToString("\n"))
-        }
     }
 }
 
@@ -56,9 +88,9 @@ fun main(args: Array<String>) {
     val searchEngine = SearchEngine()
 
     if (args.isNotEmpty() && args[0] == "--data") {
-        searchEngine.readInitialData(args[1])
+        searchEngine.initLinesFromFile(args[1])
     } else {
-        searchEngine.promptInitialData()
+        searchEngine.initLinesFromStdIn()
     }
 
     searchEngine.displayUserMenu()

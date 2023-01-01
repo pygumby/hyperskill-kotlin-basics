@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: User guide
-- text: Сustomer specification
 - text: UML diagram
+- text: User guide
 - text: Code review
 - text: Architecture decision record(ADR)
+- text: Сustomer specification
 files:
 - name: src/Main.kt
   visible: true

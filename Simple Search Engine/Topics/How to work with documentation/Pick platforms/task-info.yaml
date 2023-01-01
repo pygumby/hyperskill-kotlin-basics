@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: Native
-- text: Common
-- text: JVM
 - text: JS
+- text: Common
+- text: Native
+- text: JVM
 files:
 - name: src/Main.kt
   visible: true

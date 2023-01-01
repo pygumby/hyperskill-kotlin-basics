@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
+- text: The length of the array is immutable
+- text: We can easily read and modify any elements
 - text: The process of adding or removing elements is efficient
 - text: All the elements must be of the same type
-- text: We can easily read and modify any elements
-- text: The length of the array is immutable
 files:
 - name: src/Main.kt
   visible: true

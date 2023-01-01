@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: 2
+- text: The program works correctly.
+- text: 1
+- text: 4
+- text: 3
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24522#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 01 Jan 2023 12:04:33 UTC"
+record: -1
+selected_options:
+- 1
+custom_name: Where is the exception?
+local_check: false

@@ -444,6 +444,10 @@
             <option value="$PROJECT_DIR$/Topics/Stack and heap memory/Memory leakage" />
             <option value="$PROJECT_DIR$/Topics/Stack and heap memory/Stack size" />
             <option value="$PROJECT_DIR$/Topics/Stack and heap memory/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Stack trace/Data structure in the stack trace" />
+            <option value="$PROJECT_DIR$/Topics/Stack trace/Stack frame line" />
+            <option value="$PROJECT_DIR$/Topics/Stack trace/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Stack trace/Where is the exception" />
             <option value="$PROJECT_DIR$/Topics/String formatting/Correct printout" />
             <option value="$PROJECT_DIR$/Topics/String formatting/Floating point numbers format string" />
             <option value="$PROJECT_DIR$/Topics/String formatting/Format a table" />

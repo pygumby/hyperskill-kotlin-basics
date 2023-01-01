@@ -1,0 +1,106 @@
+<h2>Stack trace</h2>
+<p>In this topic, you will get acquainted with an important feature that will help you with debugging your applications. It is called <strong>Stack Trace</strong>. It shows the call stack in an application up to the point where the stack trace message was generated. It appears as a message in your IDE when the application throws an error. We will analyze an example of such a situation and learn what a stack trace message can tell us and how to interpret it. You will also learn how to get a stack trace at any point of the program runtime when you need it.</p>
+<p> </p>
+<p></p><div class="alert alert-primary"> As you may already know, the call stack is a LIFO data structure providing information about the execution order of methods. It is composed of <strong>stack frames</strong>. Each stack frame represents a single method.</div>
+<h5 id="stack-trace-in-detail">Stack trace in detail</h5>
+<p>When you were learning about different types of exceptions, we also discussed different ways of throwing exceptions. Now, it is time to explore the messages behind them. Let's look at the following example: </p>
+<pre><code class="language-kotlin">import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val input: String = scanner.nextLine()
+    val number = input.toInt() // an exception is possible here!
+    println(number + 1)
+}</code></pre>
+<p>If we enter a word instead of a number (for instance, "Kotlin"), the application throws an error and shows the following stack trace message:</p>
+<pre><code class="language-kotlin">Exception in thread "main" java.lang.NumberFormatException: For input string: "Kotlin"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at MainKt.main(Main.kt:6)
+	at MainKt.main(Main.kt)</code></pre>
+<p>First, we need to read the top line, where we have three important hints:</p>
+<ol>
+<li>The thread in which the exception was thrown. If you remember, when the application starts, it creates a main thread.</li>
+<li>The class responsible for the type of error. In our case, it is the <code class="language-kotlin">NumberFormatException</code> class from the <code class="language-kotlin">java.lang</code> package.</li>
+<li>A message indicating why the exception was thrown (here, entering the string "Kotlin"). Further on, you will see how this message was generated.</li>
+</ol>
+<p>Now, let's move on and explore the remaining four lines. The second line from the bottom points at line 6, which is found in the <code class="language-kotlin">main</code> method. This is the line of the program whose execution led to the exception. The next invoked method was <code class="language-kotlin">toInt()</code>.</p>
+<pre><code class="language-kotlin">public actual inline fun String.toInt(): Int = java.lang.Integer.parseInt(this)</code></pre>
+<p>Inside this method, another overloaded method <code class="language-kotlin">parseInt(s: String, radix: Int)</code> from the <code class="language-kotlin">Integer</code> class was invoked on line 784. </p>
+<pre><code class="language-kotlin">public static int parseInt(String s) throws NumberFormatException {
+   return parseInt(s,10);
+}</code></pre>
+<p></p><div class="alert alert-primary">In this topic, we are using Java 18, but the line numbers of base Java classes can vary depending on the Java version.</div><br/>
+Inside the second <code class="language-kotlin">parseInt(String s, int radix)</code> method, on line 784, the application throws an exception invoking the <code class="language-kotlin">NumberFormatException.forInputString(String s, int radix)</code> method.
+
+<pre><code class="language-kotlin">if (digit &lt; 0 || result &lt; multmin) {
+    throw NumberFormatException.forInputString(s, radix);
+}</code></pre>
+<p>Finally, in the fourth line from the bottom, we can see the invocation of the <code class="language-kotlin">forInputString(s, radix)</code> static method from the <code class="language-kotlin">NumberFormatException</code> class. Below, on line 64, you can see the message from the stack trace example above. That is how the message from the very first line was generated.</p>
+<pre><code class="language-kotlin">static NumberFormatException forInputString(String s, int radix) {
+    return new NumberFormatException("For input string: \"" + s + "\"" +
+                                     (radix == 10 ?
+                                      "" :
+                                      " under radix " + radix));
+}</code></pre>
+<p>Now, let's make some changes in our application. We are going to move part of the code to the method so that it will also be called when executing the application. </p>
+<pre><code class="language-kotlin">import java.util.*
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val input = scanner.nextLine()
+    demo(input)
+}
+
+fun demo(input: String) {
+    val number = input.toInt() // an exception is possible here!
+    println(number + 1)
+}</code></pre>
+<p>This time, we have one more line in our stack trace – it represents the execution of the <code class="language-kotlin">demo(input: String)</code> method.</p>
+<pre><code class="language-kotlin">Exception in thread "main" java.lang.NumberFormatException: For input string: "Kotlin"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at MainKt.demo(Main.kt:10)
+	at MainKt.main(Main.kt:6)
+	at MainKt.main(Main.kt)</code></pre>
+<p>If you know what a call stack is, you might have already guessed that in this example, you have seen some call stack methods. Basically, this stack trace message shows the call stack from the main method up to the place where the exception was thrown.</p>
+<p>The following diagram represents the call stack of the example above. Since the call stack is a LIFO data structure, the <code class="language-kotlin">main()</code> method that was called when the application was launched is at the bottom, and it will be the last printed element of the stack trace.</p>
+
+<h5 id="getting-a-stack-trace-on-demand">Getting a stack trace on demand</h5>
+<p>We have discussed an example of getting a stack trace after your application throws an error. What if you need to get a stack trace at some specific point? It can be obtained without throwing an error by calling the <code class="language-kotlin">Thread.currentThread().stackTrace</code> method. This way, it returns a <code class="language-kotlin">StackTraceElement</code> array, and you can print the stack trace using a loop.</p>
+<pre><code class="language-kotlin">for (element in Thread.currentThread().stackTrace) {
+    println(element)
+}</code></pre>
+<p>There are also other ways of getting a stack trace, such as calling the <code class="language-kotlin">Throwable().stackTrace</code> or <code class="language-kotlin">Throwable().printStackTrace()</code> methods. You can find them in the <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/" rel="noopener noreferrer nofollow" target="_blank">documentation</a> and explore them on your own.</p>
+<h5 id="stacktraceelement-class-an-overview">StackTraceElement class: an overview</h5>
+<p>As you may have noticed, the <code class="language-kotlin">for</code> loop example above prints an element of the <code class="language-kotlin">StackTraceElement</code> type. According to the official <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StackTraceElement.html" rel="noopener noreferrer nofollow" target="_blank">Java Documentation</a>, the <code class="language-kotlin">StackTraceElement</code> class is described as an element in a stack trace representing a single stack frame. That is, each element returned by <code class="language-kotlin">Thread.currentThread().getStackTrace()</code> is a stack frame, where the element printed at the top represents the execution point where the stack trace was generated.<br/>
+Now, let's launch the application and print a stack trace using the <code class="language-kotlin">for</code> loop we mentioned before.</p>
+<pre><code class="language-kotlin">import java.util.Scanner;
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val input = scanner.nextLine()
+    demo(input)
+}
+
+fun demo(input: String) {
+    for (element in Thread.currentThread().stackTrace) {
+        println(element)
+    }
+    val number = input.toInt() // an exception is possible here!
+    println(number + 1)
+}</code></pre>
+<p>If we input a number and the application does not throw an exception, the stack trace message will print the following three lines. </p>
+<pre><code class="language-java">java.base/java.lang.Thread.getStackTrace(Thread.java:1610)
+MainKt.demo(Main.kt:10)
+MainKt.main(Main.kt:6)</code></pre>
+<p>The most useful feature of the <code class="language-kotlin">StackTraceElement</code> class is that it provides methods to simplify these lines and get only the necessary information. If you print <code class="language-kotlin">println(element.className)</code> inside the mentioned loop, you will get a stack trace message in the following form:</p>
+<pre><code class="language-kotlin">java.lang.Thread
+MainKt
+MainKt
+MainKt</code></pre>
+<p>Other methods of the class, such as <code class="language-kotlin">getMethodName()</code> or <code class="language-kotlin">getLineNumber()</code>, work in a similar way. We will not discuss them in detail here, but we recommend that you study all the methods on your own.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, you've learned about stack trace, a Kotlin language feature that helps you understand the steps of program execution and, if necessary, quickly analyze why the application threw an error. At first glance, a stack trace message may seem complex and confusing, but once you get a solid grasp of it, it turns into a useful tool for debugging applications.</p>

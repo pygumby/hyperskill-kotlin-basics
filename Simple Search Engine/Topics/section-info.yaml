@@ -100,13 +100,4 @@ content:
 - Introduction to Interfaces
 - Interface inheritance
 - Interface composition
-- Delegate
-- Introduction to generic programming
-- Generic functions
-- Generics and Any
-- Type Bounds
-- Type aliases
-- Collection tranformations
-- Null and collections
-- Mapping transformation
-- Paradigms
+- Stack trace

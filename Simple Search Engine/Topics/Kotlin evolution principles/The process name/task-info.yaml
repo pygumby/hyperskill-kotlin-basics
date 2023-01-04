@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: Kotlin Evolution Process
 - text: Kotlin Evolution and Improvement Process
-- text: Kotlin Enhancement Process
 - text: Kotlin Evolution and Enhancement Process
+- text: Kotlin Enhancement Process
+- text: Kotlin Evolution Process
 files:
 - name: src/Main.kt
   visible: true

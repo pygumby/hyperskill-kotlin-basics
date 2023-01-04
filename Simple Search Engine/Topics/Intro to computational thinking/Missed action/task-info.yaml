@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
+- text: reboot the system and wait for the products to appear
 - text: contact the store and request delivery of the products
 - text: change the list of products in stock
 - text: everything is correct
-- text: reboot the system and wait for the products to appear
 files:
 - name: src/Main.kt
   visible: true

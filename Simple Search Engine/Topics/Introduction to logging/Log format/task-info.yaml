@@ -1,12 +1,12 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: log message
-- text: user's phone number
 - text: time
-- text: date
+- text: log message
 - text: developer's facebook status
+- text: user's phone number
 - text: log level
+- text: date
 files:
 - name: src/Main.kt
   visible: true

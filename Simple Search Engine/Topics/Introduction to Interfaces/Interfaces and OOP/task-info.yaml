@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: Polymorphism
-- text: Inheritance
-- text: Abstraction
 - text: Encapsulation
+- text: Polymorphism
+- text: Abstraction
+- text: Inheritance
 files:
 - name: src/Main.kt
   visible: true

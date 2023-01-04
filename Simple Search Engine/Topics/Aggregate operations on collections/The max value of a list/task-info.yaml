@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: maxOfOrNull()
-- text: 'maxByOrNull() '
-- text: maxOrNull()
 - text: maxWithOrNull()
+- text: maxOrNull()
+- text: maxOfOrNull()
 - text: maxOfWithOrNull()
+- text: 'maxByOrNull() '
 files:
 - name: src/Main.kt
   visible: true

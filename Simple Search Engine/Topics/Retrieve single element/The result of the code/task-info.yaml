@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Exception
+- text: "false"
+- text: "true"
+- text: "[]"
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24879#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 04 Jan 2023 19:59:57 UTC"
+record: -1
+selected_options:
+- 2
+local_check: false

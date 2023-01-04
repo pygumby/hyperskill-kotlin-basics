@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: "[JANE, PETER, GEORGE]"
+- text: "[[John, Jane], [Mary, Peter], [Paul, George]]"
+- text: "[JOHN, MARY, PAUL]"
+- text: "[[JOHN, JANE], [MARY, PETER], [PAUL, GEORGE]]"
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24371#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 04 Jan 2023 21:18:07 UTC"
+record: -1
+selected_options:
+- 2
+local_check: false

@@ -1,5 +1,5 @@
 package calculator
 
 fun main() {
-    println("Hello, World!")
+    println(readln().split(" ").sumOf { it.toInt() })
 }

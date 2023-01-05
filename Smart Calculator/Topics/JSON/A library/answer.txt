@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "title": "Kotlin in Action",
+      "author": "Dmitry Jemerov et al."
+    },
+    {
+      "title": "Kotlin Design Patterns and Best Practices",
+      "author": "Alexey Soshin"
+    },
+    {
+      "title": "The Joy of Kotlin",
+      "author": "Pierre-Yves Saumont"
+    }
+  ]
+}

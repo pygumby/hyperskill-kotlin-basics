@@ -3,12 +3,12 @@ package calculator
 operator fun Regex.contains(cs: CharSequence): Boolean = this.matches(cs)
 
 fun main(): Unit = when (val input = readln()) {
-    in Regex("""-?\d+\s+-?\d+""") -> {
-        println(input.split(" ").sumOf { it.toInt() })
+    in Regex("""(-?\d+\s+)*-?\d+""") -> {
+        println(input.split(Regex("""\s+""")).sumOf { it.toInt() })
         main()
     }
-    in Regex("""-?\d+""") -> {
-        println(input)
+    "/help" -> {
+        println("The program calculates the sum of numbers")
         main()
     }
     "/exit" -> println("Bye!")

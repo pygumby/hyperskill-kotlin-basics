@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: ISO 31000
+- text: ISO 8601
+- text: GMT
+- text: UTC
+- text: ISO 9001
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19468#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 07 Jan 2023 16:59:11 UTC"
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

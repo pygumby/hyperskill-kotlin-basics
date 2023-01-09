@@ -1,0 +1,42 @@
+<h2>Libraries</h2>
+<html><body><p>If you are already familiar with at least one programming language, you know that any programming language has a human-readable design. Most of them use Latin-script symbols to represent functions, keywords, and operators. However, it's not the language that the machine can understand, that's why we use interpreters, compilers, and assemblers. So, to make the process of creating machine code easier, we need a high-level interface that allows us to operate with verbal commands, which would be transformed into 'zeros and ones' by the program itself.</p>
+<p style="text-align: center;"><img alt="" height="182" src="https://ucarecdn.com/26d464f9-3d04-4ba1-bb4a-c6764d2acb74/" width="652"/></p>
+<p>The same idea can be applied when you want to reuse existing code that provides you with high-level functions and methods, rather than write it by yourself once more. We are there not to talk about tedious copy-paste but the usefulness of programming libraries.</p>
+<p> </p>
+<p>High-level means that each function you're calling orchestrates the low-level work for you. For example, some imaginary function <code class="java">WRITE_DATA</code> under the hood opens a file, writes data to it, and finally closes the file.</p>
+<p> </p>
+<h5 id="what-is-a-library">What is a library</h5>
+<p>A <strong>programming library</strong> is a collection of reusable and redistributable code that has a well-defined interface to use.</p>
+<p>A library provides you with high-level functions and methods. We can expect that a library has documentation to get familiar with the behavior of the inner implementation. You should treat a library as a black box: you have the documentation of its interface, but you don't need to know an implementation. Just like programming languages isolate you from working with machine code, libraries isolate you from working with low-level operations.</p>
+<p>So, what do you think: can a big pile of incoherent functions be a library? Of course, but it's unlikely that someone will use it! Let's try to highlight the main features that we find important in terms of usability. A good library:</p>
+<ul>
+<li>belongs to one domain of knowledge, for example reading and writing to files, nothing more</li>
+<li>provides the documentation</li>
+<li>has a clear interface, where the name of each object reflects its function</li>
+<li>does not have malicious code in it</li>
+<li>has tests</li>
+<li>follows programming language's code style</li>
+</ul>
+<p style="text-align: center;"><img alt="" height="402" src="https://ucarecdn.com/28dce5b8-9575-4196-bdb7-569a9ac880a6/" width="675"/></p>
+<p>Now you know how to understand whether a library you've chosen is a well-written one. How exactly can we use it?</p>
+<h5 id="standard-and-third-party-libraries">Standard and third-party libraries</h5>
+<p>There are several types of libraries, but where can you find them?</p>
+<p>Programming language implementations are the usual software that you can install on your computer, and most implementations come with standard libraries. The <strong>standard library</strong> is a stable and standardized collection of modules for the essential needs of the development process. Usually, standard libraries consist of common utilities like working with the file system, making network connections, or parsing JSON files, and are a part of the programming language specification.</p>
+<p>The standard library can hardly cover all your needs. For example, you may want to make a desktop application or a web crawler, but the standard library doesn't give you handy tools for that. In this case, you can search through the internet to find a third-party library on sites like <a href="https://github.com/" rel="noopener noreferrer nofollow" target="_blank">Github</a>. A <strong>third-party library</strong> is a collection of high-level modules, apart from the standard library of a programming language. Those libraries are often open source.</p>
+<p>To include a library in your program, you should use a keyword and its name. If you use third-party tools, you should look through the documentation and find out how you can install it on your computer first; the authors of a library provide this information in the <a href="https://en.wikipedia.org/wiki/README" rel="noopener noreferrer nofollow" target="_blank">README</a> file.</p>
+<p>So, now you could feel like you've learned all the basics about using libraries. Perhaps you still have a question though: is it more efficient than just writing code by yourself? The answer is: in many cases, yes. </p>
+<h5 id="why-use-libraries">Why use libraries</h5>
+<p>Libraries are not a silver bullet for all programming problems. Not all libraries are mature enough to be used in code production, and some of them are buggy. If the problem is too narrow, it's hard to find a library to solve it even if it exists.</p>
+<p>Let's suppose that a library for your problem exists. We cannot cover all the cases, but we can give you several reasons to use it:</p>
+<ul>
+<li>It reduces the time of developing an end product. We can focus on implementing the logic of the application, not on making auxiliary software.</li>
+<li>The development of a library is community-driven. It means many people support a library, and you can join them if a library is open source, if you want.</li>
+<li>If a library is popular, many companies and programmers use it. It means that the library has been tested and utilized by different people, and a new developer in your team will likely know this library too.</li>
+<li>Libraries have documentation. You can just read a tutorial and start using a library without learning about the inner implementation.</li>
+</ul>
+<p>The main goal of libraries is to prevent people from doing the same work twice. You can follow this rule and make your software without getting distracted by any other issues.</p>
+<p> </p>
+<p>If your code uses a library, you can always replace a library function with your own without breaking the program. You are in control of what you want to use.</p>
+<p> </p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Let's summarize what we've learned so far. In essence, the library is a compilation of code with an understandable interface made for specific situations. Libraries can be standard and third-party. The use of third-party libraries instead of writing your own code can be reasonable in many cases simply because it saves time and effort. Moreover, popular libraries are usually well tested, and if they are open-source, you can even join the community of their supporters.</p></body></html>

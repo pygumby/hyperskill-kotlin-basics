@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: When you want to reduce development time
+- text: When you want to use code from other programming languages
+- text: When you need tested solutions for common tasks
+- text: 'When you want to fully write a program by yourself '
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23175#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 09 Jan 2023 21:07:16 UTC"
+record: -1
+selected_options:
+- 0
+- 2
+local_check: false

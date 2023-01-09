@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Ignores programming language code style
+- text: Interface names do not reflect their function
+- text: Contains malicious code
+- text: Includes a detailed documentation
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23174#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 09 Jan 2023 21:05:05 UTC"
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

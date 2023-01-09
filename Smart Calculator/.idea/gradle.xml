@@ -27,6 +27,11 @@
             <option value="$PROJECT_DIR$/Topics/Date and time standards/Theory" />
             <option value="$PROJECT_DIR$/Topics/JSON/A pet" />
             <option value="$PROJECT_DIR$/Topics/JSON/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Libraries/Bad libraries" />
+            <option value="$PROJECT_DIR$/Topics/Libraries/Features of libraries" />
+            <option value="$PROJECT_DIR$/Topics/Libraries/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Libraries/When to use" />
+            <option value="$PROJECT_DIR$/Topics/Libraries/Where to get" />
             <option value="$PROJECT_DIR$/util" />
           </set>
         </option>

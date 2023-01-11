@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: you import the framework inside the separately created source code and run
+    it
+- text: you start the framework and choose the options you need to implement in its
+    interface
+- text: "the framework is a ready-made solution, just run it"
+- text: you take the framework's templates and extend them with application-specific
+    code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16847#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 11 Jan 2023 17:16:47 UTC"
+record: -1
+selected_options:
+- 3
+local_check: false

@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: The size and complexity of the application you want to write
+- text: The catchy name of the framework
+- text: The popularity of the framework
+- text: Adequacy and clarity of documentation
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6707#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 11 Jan 2023 17:18:55 UTC"
+record: -1
+selected_options:
+- 0
+- 2
+- 3
+local_check: false

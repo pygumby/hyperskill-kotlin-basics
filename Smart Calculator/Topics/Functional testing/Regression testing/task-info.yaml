@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: how unit tests worked in the previous stages of verification.
+- text: the project quickly when there is no time for other tests.
+- text: ' the project from start to end.'
+- text: if everything works correctly after the changes.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13440#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 12 Jan 2023 16:53:30 UTC"
+record: -1
+selected_options:
+- 3
+local_check: false

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Functional_testing-Functional_testing_types" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Functional testing/Functional testing types" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Smart Calculator" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Functional testing/Functional testing types">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Functional testing/Functional testing types/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Functional testing/Functional testing types/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Functional testing/Functional testing types/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

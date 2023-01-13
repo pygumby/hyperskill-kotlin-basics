@@ -1,0 +1,46 @@
+<h2>Unit testing</h2>
+<html><body><h5 id="what-is-unit-testing">What is Unit Testing?</h5>
+<p>There are different types of testing in software engineering, all serving different purposes. We will consider one that is performed by developers: <strong>unit testing.</strong> This is probably the most popular methodology: it implies testing the behavior of a unit of an application. A <strong>unit</strong> is a portion of code that does exactly one task, so it's the smallest testable part of an application.</p>
+<p style="text-align: center;"><img alt="" height="540" src="https://ucarecdn.com/7ea892a8-0817-4748-ad2e-0614b723110d/" width="822"/></p>
+<p>Unit testing is usually done by the author of the tested unit to confirm that the unit does its work well. In object-oriented programming, a unit can be a class or a function. In procedural programming, a unit is a function or a procedure.</p>
+<h5 id="steps-to-test-a-unit">Steps to test a unit</h5>
+<p>The main idea of unit testing is to <strong>isolate</strong> a specific unit and check that it works properly.</p>
+<p>Generally, each unit behaves in a similar way: it consumes input data, performs some action on it and produces output data. We can use this behavior to verify the code. The test goes through the following stages:</p>
+<ul>
+<li>We create two datasets: the input and the expected output;</li>
+<li>We define acceptance criteria: some conditions determining if the unit works as expected (usually, the acceptance criterion is a comparison of the actual output with the expected one);</li>
+<li>We pass the created input dataset to the tested unit;</li>
+<li>The input invokes code of the tested unit;</li>
+<li>The code produces an output;</li>
+<li>The produced output is checked by the acceptance criteria, which compares the actual output with the expected one;</li>
+<li>Acceptance criteria return the result: pass or fail.</li>
+</ul>
+<p><img alt="" src="https://ucarecdn.com/353f4281-fd98-4a00-83c9-f679be18e985/"/></p>
+<p>Note: there is no step called "we thoroughly examine the code".</p>
+<p> </p>
+<p> In unit testing, we know nothing about what the unit actually does with input arguments, but we know exactly what result is expected for each set of input arguments.</p>
+<p> </p>
+<h5 id="manual-vs-automated">Manual Vs Automated</h5>
+<p>All these steps can be carried out manually or automated. It is in fact very uncommon to opt for manual unit testing, and there are a couple of sound reasons for that. First, testing is a really repetitive process: every time you make a small change in your code, you have to retest it. Doing this manually would be daunting. Second, unit testing can be easily automated, so there is simply no reason to do it manually.</p>
+<p>Automated test cases are reusable. Suppose you add a new feature to your program; you can execute existing test cases to check whether the new feature has affected the application.</p>
+<h5 id="benefits">Benefits</h5>
+<p>First, unit testing allows developers to <strong>find bugs</strong> at the <strong>early stages</strong> of development – as you hopefully remember, unit testing is done during the development process, unlike many other testing types. The sooner you find a bug, the less effort you spend on fixing it. It means we can save some time and money!</p>
+<p>Secondly, unit testing protects your code from further <strong>incorrect changes</strong>. Like a butterfly may cause a tornado, even the smallest changes can drastically affect the behavior of your application. In that case, unit testing is a part of regression testing, where we re-run tests to ensure that code still works as expected after it has been changed.</p>
+<p>Finally, unit testing makes the <strong>integration process</strong> easier. The correctness of the whole program depends on each unit and the interaction between them. Since correctness of individual units is approved by unit tests, developers can focus on building interaction between them.</p>
+<h5 id="example-add-two-numbers">Example: Add two numbers</h5>
+<p>Suppose we're developing a calculator that has several basic functions: add, subtract, multiply and divide. The application can be divided into 4 units according to these functions. Let’s try to apply unit testing to the <em>add</em> function which takes two parameters, <em>x</em> and <em>y</em>.</p>
+<pre><code class="language-cpp">x = 2
+y = 2
+expected = 4
+
+output = add(x, y)
+
+if expected == output:
+   print("Passed")
+else:
+   print("Failed")</code></pre>
+<p>The pseudocode consists of three parts. First of all, we initialize the test data. Then, we invoke our test subject: the <em>add</em> function. In the end, we compare the actual result with the expected result. If the <em style="font-size: inherit;">add</em> function returns 4, your test case passed; otherwise, it failed. Easy as that!</p>
+<p>As you can see, unit testing does not depend on the implementation of the unit. There is no need to look under the hood unless our unit tests fail.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>We have covered quite a major topic – unit testing. It is a kind of testing that checks the behavior of the smallest testable pieces of code. Unit testing considers a unit as a black box; it only checks the result of a unit without internal details. It can be automated easily, so it is often used to confirm that the unit still works properly after code has been changed.</p>
+<p>Unit testing is an essential part of a developer's daily work. Even though it is quite time-consuming, it protects your code from bugs and saves you a lot of energy at the end of the day.</p></body></html>

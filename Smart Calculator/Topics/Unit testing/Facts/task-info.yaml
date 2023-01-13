@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: allows to avoid testing of the interaction between units
+- text: isolates a unit to check its behavior
+- text: proves that the whole program works
+- text: verifies code of a unit for incorrect modifications
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7549#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 13 Jan 2023 11:15:35 UTC"
+record: -1
+selected_options:
+- 1
+- 3
+local_check: false

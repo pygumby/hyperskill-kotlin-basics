@@ -1,0 +1,30 @@
+<h2>Build tools</h2>
+<h5 id="what-is-a-build-tool" style="text-align: center;">What is a build tool?</h5>
+<p>A <strong>build tool</strong> is a program that automates the process of creating executable applications from source code. The build process includes compiling sources and linking and packaging the code into a usable or executable form.</p>
+<p style="text-align: center;"><img alt="" height="347" src="https://ucarecdn.com/4c951427-2fc3-4383-ace8-ac16e3f3a307/" width="427"/></p>
+<p>In small projects (like projects for learning), developers can manually invoke the build process. However, this approach is not efficient for larger projects, when it is pretty hard to keep track of what needs to be built. Automating the build process minimizes the risk of human error. Additionally, an automated build tool typically runs faster than someone performing the same steps manually. As a consequence, an automated build process improves the quality of the product and saves time and money.</p>
+<h5 id="what-can-build-tools-do" style="text-align: center;">What can build tools do?</h5>
+<p>Modern build tools can perform a wide variety of tasks that software developers do in their day-to-day activities:</p>
+<ol>
+<li><strong>Downloading and adding dependencies.</strong> This is especially convenient when your project depends on a large number of libraries.</li>
+<li><strong>Compiling source code into bytecode</strong>. Build tools will invoke the compiler for all the files in your project.</li>
+<li><strong>Packaging compiled code.</strong> You will have a production-ready application archive like JAR, APK, or some other.</li>
+<li><strong>Running tests.</strong> For example, testing the application archive every time to check if it works correctly. It allows programmers to avoid bugs after modifying the application.</li>
+<li><strong>Deploying</strong> to a production environment.</li>
+</ol>
+<p>This list of tasks is not complete and may be different depending on the particular build tool used. Some additional features might be available; for example, you can use some tools to generate documentation after the build.</p>
+<h5 id="build-tools-for-java-based-projects" style="text-align: center;">Build tools for Java-based projects</h5>
+<p>There are three main build tools for Java-based projects: <strong>Apache Ant</strong>, <strong>Apache Maven</strong>, and <strong>Gradle</strong>.</p>
+<p><strong>Apache Ant</strong> was released in 2000. It is the oldest of these three build tools. Coders rarely use <strong>Ant</strong> in new projects but it still occurs in practice. You can use this tool together with <strong>Apache Ivy</strong> to manage dependencies.</p>
+<p><strong>Apache Maven</strong> was released in 2004, and now it is one of the most popular choices for Java developers (especially for server-side development). Many projects, both old and new, use Maven as a build tool because of its powerful dependency management possibilities.</p>
+<p><strong>Maven</strong> follows the <em>Convention Over Configuration</em> concept which means that a developer needs to specify only unconventional aspects of the application, and all standard aspects work by default.</p>
+<p><strong>Gradle</strong> is a new tool compared to Ant and Maven. It was released in 2007 and is now standard for Android applications. Also, developers use it for server and desktop development. <strong>Gradle</strong> aims to <em>“combine the power and flexibility of Ant with the dependency management and conventions of Maven into a more effective way to build.”</em></p>
+<p>All of these build tools are free and can be used in any operating system.</p>
+<p> </p>
+<p></p><div class="alert alert-primary">Note: <strong>Apache Maven</strong> and <strong>Gradle</strong> are more than simply build tools. They manage almost the entire lifecycle of an application.</div>
+<p> </p>
+<p>There is also another build tool called <strong>sbt</strong> (<em>Scala Build Tool</em>). It is primarily used for Scala projects but you can use it for Java or Kotlin as well.</p>
+<p>If you are interested, <a href="https://en.wikipedia.org/wiki/List_of_build_automation_software" rel="nofollow noopener noreferrer" target="_blank" title="Link: https://en.wikipedia.org/wiki/List_of_build_automation_software">here</a> you can find a list of build tools for different languages.</p>
+<p> </p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>In summary, a build tool is software that creates executable applications from source code. Using a build tool minimizes the risk of human error, speeds up the process, improves the quality of the product, and saves time and money. Modern build tools do plenty of jobs such as downloading and adding dependencies, compiling source code, packaging compiled code, running tests, deploying to a production environment. For Java-based projects, widely used build tools are "oldie" Apache Ant, popular Apache Maven, and "new" Gradle.</p>

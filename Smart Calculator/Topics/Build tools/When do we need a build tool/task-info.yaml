@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: we are just learning to compile the code and we need hints
+- text: we need to write a Java code
+- text: we need to automate a larger project compiling
+- text: it is impossible to write any code without such tool
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16516#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 16 Jan 2023 12:42:28 UTC"
+record: -1
+selected_options:
+- 2
+custom_name: When do we need a build tool?
+local_check: false

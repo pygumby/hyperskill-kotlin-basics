@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: automates creating executable applications from the source code
+- text: 'builds a program modules library for a user project '
+- text: creates an algorithm from a pseudo code
+- text: ' automates the source code debugging'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16513#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 16 Jan 2023 12:41:40 UTC"
+record: -1
+selected_options:
+- 0
+custom_name: What is a build tool?
+local_check: false

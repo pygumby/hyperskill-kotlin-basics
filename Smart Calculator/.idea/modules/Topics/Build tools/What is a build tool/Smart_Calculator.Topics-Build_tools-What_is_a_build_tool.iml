@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Build_tools-What_is_a_build_tool" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Build tools/What is a build tool" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Smart Calculator" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Build tools/What is a build tool">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Build tools/What is a build tool/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Build tools/What is a build tool/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Build tools/What is a build tool/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

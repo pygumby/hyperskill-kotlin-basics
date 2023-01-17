@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: automates creating executable applications from the source code
 - text: 'builds a program modules library for a user project '
-- text: creates an algorithm from a pseudo code
 - text: ' automates the source code debugging'
+- text: automates creating executable applications from the source code
+- text: creates an algorithm from a pseudo code
 files:
 - name: src/Main.kt
   visible: true

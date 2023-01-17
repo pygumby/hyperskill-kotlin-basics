@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: just open the .jar file
+- text: replace .jar with .zip and open as archive
+- text: replace .jar with .arc and open as archive
+- text: open the .jar file in the Java editor
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/16527#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 17 Jan 2023 16:28:20 UTC"
+record: -1
+selected_options:
+- 1
+local_check: false

@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: "JRE cannot start a <b>.jar</b> file, so you must extract all files from this\
+    \ archive and then start the files."
+- text: A file containing JAR metadata is called MANIFEST.MF.
+- text: It may include images and sound files.
+- text: Aggregating files of an application in JAR makes easier to move the application
+    over a network.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4313#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 17 Jan 2023 16:32:31 UTC"
+record: -1
+selected_options:
+- 1
+- 2
+- 3
+local_check: false

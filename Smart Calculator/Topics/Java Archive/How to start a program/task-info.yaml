@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: java -cp app.jar path.to.Main
+- text: java -jar app.jar
+- text: java app.jar
+- text: java -cp app.jar
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4320#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Tue, 17 Jan 2023 16:27:01 UTC"
+record: -1
+selected_options:
+- 0
+local_check: false

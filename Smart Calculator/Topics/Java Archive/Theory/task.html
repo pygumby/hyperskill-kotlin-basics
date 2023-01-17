@@ -1,0 +1,57 @@
+<h2>Java Archive</h2>
+<h5 id="what-is-a-java-archive" style="text-align: center;">What is a Java Archive?</h5>
+<p>A <strong>Java Archive (JAR)</strong> is a platform-independent file format to pack multiple files together and distribute them as a single unit. So it comes in handy if your application contains lots of files.</p>
+<p style="text-align: center;"><img alt="" height="168" src="https://ucarecdn.com/76368b85-f033-4ac7-9185-dfaa43238e44/" width="168"/></p>
+<p>These are the main benefits of a JAR file:</p>
+<ul>
+<li>it can aggregate multiple files of different types;</li>
+<li>it is a compressed archive (with a <strong>ZIP</strong> algorithm) that reduces the size of the application and makes it easier to move it over a network;</li>
+<li>you can digitally sign it (this feature won't be discussed in this topic).</li>
+</ul>
+<p>A JRE can start an application packed into a JAR, but to create a JAR you need to use a JDK.</p>
+<h5 id="the-structure-of-a-jar-file" style="text-align: center;">The structure of a JAR file</h5>
+<p>A JAR file is simply an aggregation of bytecode files (<code class="language-xml">.class</code>), configuration files (e.g., <code class="language-xml">.json</code>, <code class="language-xml">.xml</code>), images, and even sound clips into a single compressed file. All files except bytecode files are usually called <strong>resources</strong>. It is also recommended that a JAR file contains a special file named <code class="language-xml">MANIFEST.MF</code> in a special folder named <code class="language-xml">META-INF</code>. This file should describe the JAR file itself (a manifest is a kind of metadata): its version, the author, and so on.</p>
+<p>Here is the example of a structure of a JAR file:</p>
+<pre><code class="language-no-highlight">example.jar
+├── META-INF
+│   └── MANIFEST.MF
+├── second
+│   ├── Main.class
+│   └── MyIcon.png
+└── third
+    └── another
+        └── OneMore.class</code></pre>
+<p>Usually, a JAR file has a set of <code class="language-xml">.class</code> files grouped by <strong>packages</strong>. For now, just imagine a package as a directory or some nested directories. In our example, there are two packages: <code class="language-xml">second</code> and <code class="language-xml">third/another</code>. Also, to represent a specific package name<strong> dots</strong> are used<strong> instead of slashes</strong> (so <code class="language-xml">third.another</code> notation would be correct in this case). Finally, there are some rules for naming the packages. For instance, a name can contain letters and digits, but no hyphens (<code class="language-xml">-</code>).</p>
+<p>As you can see, a JAR may have several packages and many <code class="language-xml">.class</code> files and/or resources in these packages.</p>
+<p>The manifest file has a set of headers. The name and the value are separated by a colon (<code class="language-xml">:</code>). Take a look at a small example below:</p>
+<pre><code class="language-xml">Manifest-Version: 1.0
+Created-By: 9.0.1 (Oracle Corporation)
+Main-Class: second.Main
+
+</code></pre>
+<p>The key feature here is the optional header <code class="language-xml">Main-Class</code> that defines the relative path of a class with the <code class="language-xml">main</code> method to start the application. The value shouldn't have the <code class="language-xml">.class</code> extension appended to the class name.</p>
+<p> </p>
+<p></p><div class="alert alert-warning">It's important to remember that the <strong>last line</strong> of the manifest file should end with a <strong>new line or a carriage return</strong>, or it will not be parsed properly.</div>
+<p> </p>
+<h5 id="running-a-jar-file" style="text-align: center;">Running a JAR file</h5>
+<p>There are two ways to run a JAR file, depending on whether you want to use the <code class="language-xml">Main-Class</code> header in the manifest file or not.</p>
+<ul>
+<li>if this header is not present or you want to specify the main class manually, run:</li>
+</ul>
+<pre><code class="language-no-highlight">java -cp app-without-main-class-header.jar path.to.Main</code></pre>
+<p>The last parameter here is the full class name (with packages). The <code class="language-xml">-cp</code> option means <strong>classpath</strong>, i.e., paths to all the JARs which the JRE should scan for bytecode and resources. If you want, you can repeat multiple <code class="language-xml">-cp path-to-Nth.jar</code> pairs of parameters to provide the JRE with multiple different JAR files.</p>
+<ul>
+<li>if this header is present, then run:</li>
+</ul>
+<pre><code class="language-no-highlight">java -jar app-with-main-class-header.jar</code></pre>
+<p>You can try executing both commands locally with these two JAR files (unpack top-level archives):</p>
+<ul>
+<li><a href="https://stepik.org/media/attachments/lesson/123928/app1.zip" rel="nofollow noopener noreferrer" target="_blank">a demo application without the Main-Class header</a> (the path to main is <code class="language-xml">myapp.Main</code>);</li>
+<li><a href="https://stepik.org/media/attachments/lesson/123928/app2.zip" rel="nofollow noopener noreferrer" target="_blank">a demo application with the Main-Class header</a>.</li>
+</ul>
+<p>Both of them print the same line:</p>
+<pre><code class="language-no-highlight">Hello, Java</code></pre>
+<p>Also, you can find some JAR files on the Internet and try running those. At the same time, you can view their internal structure – just replace <code class="language-xml">.jar</code> with <code class="language-xml">.zip</code> and open these files as archives.</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Now you know what a JAR is, what JAR files consist of, and how to run them on your computer. We have not discussed here how to create a JAR. Usually, developers use build tools (like Maven or Gradle) or an IDE (like IntelliJ IDEA or Eclipse), which we cover in other topics. You can also create them just by merging some files into a <code class="language-xml">.zip</code> archive and renaming it into a <code class="language-xml">.jar</code> file.</p>
+<p>If you'd like to know more about the JAR file structure, read the <a href="https://docs.oracle.com/javase/7/docs/technotes/guides/jar/jar.html" rel="nofollow noopener noreferrer" target="_blank" title="Link: https://docs.oracle.com/javase/7/docs/technotes/guides/jar/jar.html">specification</a>.</p>

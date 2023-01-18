@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Gradle uses the default settings and the programmer cannot change them.
+- text: "Gradle does not use settings, only conventions."
+- text: The programmer always needs to set values for all the possible settings.
+- text: Gradle uses the default settings and the programmer can change them when it
+    is necessary.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5112#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 18 Jan 2023 17:05:19 UTC"
+record: -1
+selected_options:
+- 3
+local_check: false

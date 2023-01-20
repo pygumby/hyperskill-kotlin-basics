@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: something to be built or a thing to be done
+- text: a single piece of work which a build performs (e.g. compiling classes)
+- text: always something to be built (e.g. a JAR file or ZIP archive)
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7879#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Jan 2023 15:58:17 UTC"
+record: -1
+selected_options:
+- 0
+local_check: false

@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: It builds a Kotlin application.
+- text: It adds several default tasks in the build file.
+- text: It initializes a new project
+- text: It creates the build.gradle.kts file.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7882#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Jan 2023 16:00:13 UTC"
+record: -1
+selected_options:
+- 2
+- 3
+local_check: false

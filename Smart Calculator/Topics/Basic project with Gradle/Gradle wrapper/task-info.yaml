@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: It is a tool that allows developers to edit the build file
+- text: It is a script that automatically downloads Gradle and runs passed commands
+- text: It is a file that specifies which projects to include in the build
+- text: It is a tool to initialize and build Gradle projects
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7880#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Jan 2023 16:01:30 UTC"
+record: -1
+selected_options:
+- 1
+local_check: false

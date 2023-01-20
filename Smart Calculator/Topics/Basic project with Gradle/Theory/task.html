@@ -1,0 +1,108 @@
+<h2>Basic project with Gradle</h2>
+<p>In this topic, you will learn how to create a simple Gradle project and how Gradle manages it. We assume that you have already installed Gradle on your computer. Otherwise, follow <a href="https://gradle.org/install/" rel="noopener noreferrer nofollow" target="_blank">the installation instructions</a>. To verify that the installation has been successful, run the <code class="language-java">gradle -v</code> command. If you get errors, try to google them, read the docs, or write us a comment describing the issue.</p>
+<h5 id="the-key-concepts-of-gradle" style="text-align: center;">The key concepts of Gradle</h5>
+<p>Let's start with an introduction to the key concepts in Gradle: <strong>projects</strong> and <strong>tasks</strong>.</p>
+<ul>
+<li>A <strong>project</strong> might represent either <strong>something to be built</strong> (e.g. a JAR file or ZIP archive) or <strong>a thing to do</strong> (e.g. deploying the application). Every Gradle build contains one or more projects.</li>
+<li>A <strong>task</strong> is a single piece of work that a build performs. This can include compiling classes, running tests, generating docs, and so on. Every project is essentially a collection of one or several tasks.</li>
+</ul>
+<p>The following picture illustrates the relationships between these concepts:</p>
+<p><img alt="" src="https://ucarecdn.com/2ad089d5-37be-4d25-af1e-b26138a4af76/"/></p>
+<p>In simple cases, a build will contain only a single project with several tasks. This will be a common situation in your learning process. Do not worry, if the concepts look a bit abstract. We will study a more specific example soon.</p>
+<h5 id="initializing-a-basic-project-managed-by-gradle" style="text-align: center;">Initializing a basic project managed by Gradle</h5>
+<p>Let's initialize a new project with Gradle using a terminal in your OS.</p>
+<p> </p>
+<p></p><div class="alert alert-primary">In the future, you will most likely not have to do this manually since modern IDEs can do this for you automatically.</div>
+<p> </p>
+<p>1. Create a new directory to store files of your project and go to it.</p>
+<pre><code class="language-java">mkdir gradle-demo
+cd gradle-demo</code></pre>
+<p>2. Invoke the <code class="language-java">gradle init</code> command to generate a simple project. Modern versions of Gradle will ask you to fill several parameters in a dialogue form. To get acquainted with the process just choose <code class="language-java">basic</code> as the type of project and <code class="language-java">Groovy</code> as the build script DSL.</p>
+<p>This command will produce the following output:</p>
+<pre><code class="language-java">&gt; Task :init
+
+BUILD SUCCESSFUL in 10s
+2 actionable tasks: 2 executed</code></pre>
+<p>Gradle performed some tasks for you and now there is a simple project with the most basic structure:</p>
+<pre><code class="language-java">.
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle</code></pre>
+<p>Here is brief info about all the generated files:</p>
+<ul>
+<li>The <code class="language-java">build.gradle</code> file is a primary file that specifies the Gradle's project, including its tasks and external libraries. For now, this file doesn't contain anything useful, but in real projects it is often updated with new information.</li>
+<li>The files <code class="language-java">gradle-wrapper.jar</code>, <code class="language-java">gradle-wrapper.properties</code>, <code class="language-java">gradlew</code> and <code class="language-java">gradlew.bat</code> belong to Gradle Wrapper which allows you to run Gradle without its manual installation.</li>
+<li>The <code class="language-java">settings.gradle</code> file specifies which projects to include in your build. This file is optional for a build that has only one project, but it is mandatory for a multi-project build.</li>
+</ul>
+<p>Let's build our project invoking the <code class="language-java">gradle build</code> command from the same location where <code class="language-java">build.gradle</code> resides. It will produce an output like this:</p>
+<pre><code class="language-java">&gt; Task :buildEnvironment
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+...
+
+BUILD SUCCESSFUL in 725ms
+1 actionable task: 1 executed</code></pre>
+<p>So, the project was successfully built with one executed task.</p>
+<p> </p>
+<p></p><div class="alert alert-primary">You can also invoke <code class="language-java">build</code> and other commands like <code class="language-java">./gradlew build</code> for Unix-based systems and <code class="language-java">gradlew.bat build</code> for Windows. It will automatically download Gradle and run the specified command. Using wrappers allows developers to start working with a Gradle-based project without having to install it manually.</div>
+<p> </p>
+<h5 id="modifying-the-build-file" style="text-align: center;">Modifying the build file</h5>
+<p>Let's make our build more interesting by adding some properties and one task to the <code class="language-java">build.gradle</code> file using Groovy DSL.</p>
+<pre><code class="language-java">description = "A basic Gradle project"
+
+task helloGradle {
+    doLast {
+        println 'Hello, Gradle!'
+    }
+}</code></pre>
+<p>Here, we set the <code class="language-java">description</code> property and define a simple task that prints a 'hello' message. There is an output after executing the task with the <code class="language-java">gradle -q helloGradle</code> command:</p>
+<pre><code class="language-java">&gt; Task :buildEnvironment
+
+------------------------------------------------------------
+Root project - A basic Gradle project
+------------------------------------------------------------
+
+...
+
+&gt; Task :helloGradle
+Hello, Gradle!
+
+BUILD SUCCESSFUL in 831ms
+2 actionable tasks: 2 executed</code></pre>
+<p>This build was completed with 2 tasks executed. Our new task printed the <code class="language-java">Hello, Gradle!</code> message. In addition, we modified the description of the project in the build. The <code class="language-java">-q</code> argument just simplifies the command output.</p>
+<p> </p>
+<p></p><div class="alert alert-primary">You can also use Kotlin as DSL inside the build file. To allow it, you need to specify Kotlin as DSL when creating a project. In this case, the name of the file will be <code class="language-java">build.gradle.kts</code>.</div>
+<p> </p>
+<h5 id="the-list-of-all-the-tasks" style="text-align: center;">The list of all the tasks</h5>
+<p>If you would like to see all the possible Gradle tasks to perform, just run the <code class="language-java">gradle tasks --all</code> command. The list will include our tasks as well:</p>
+<pre><code class="language-java">&gt; Task :tasks
+
+------------------------------------------------------------
+Tasks runnable from root project - A basic Gradle project
+------------------------------------------------------------
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'gradle-demo'.
+...
+
+Other tasks
+-----------
+helloGradle</code></pre>
+<p>In a real project, the list of tasks will be much larger, because, in addition to standard tasks, it will contain a lot of tasks from various plugins (like Java or Kotlin plugin).</p>
+<p>We've considered all Gradle-related files from the generated simple project in isolation from any source code files.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>You've learned the key concepts of Gradle projects and studied all the files from a simple generated project in isolation from any source code files. Now it's time to combine Gradle together with your favorite programming language!</p>

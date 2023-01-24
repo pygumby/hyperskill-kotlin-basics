@@ -1,0 +1,173 @@
+<h2>Building apps using Gradle</h2>
+<p> We hope you've already got a basic understanding of what Gradle is and how to use it. In this topic, we will consider the basic structure of the <code class="language-java">build.gradle</code> file, and then build and run a small application. The knowledge you obtain here can be used for any JVM-based programming language supported by Gradle (e.g. Java or Kotlin).</p>
+<p> </p>
+<p>This article was written using <strong>Gradle 6.8.1</strong>. There may be some differences for other versions of Gradle. If you have trouble with this article, you can read the comments or just follow the <a href="https://docs.gradle.org/current/samples/sample_building_java_applications_multi_project.html" rel="noopener noreferrer nofollow" target="_blank">official Gradle doc</a> instead of this.</p>
+<p> </p>
+<h5 id="initializing-an-application" style="text-align: center;">Initializing an application</h5>
+<p>We assume that you already have some experience with the terminal of your operating system and will interact with Gradle using it. First of all, create a new empty folder named what you want (e.g., <code class="language-java">demo</code>). In this folder, you need to invoke the <code class="language-java">gradle init</code> command to start initializing a new Gradle-based project. This command will show you a dialogue form to set up the project you need.</p>
+<p>In this form, choose <code class="language-java">application</code> as the type of the project; <strong>Java</strong> or <strong>Kotlin</strong> as the implementation language; and <code class="language-java">org.hyperskill.gradleapp</code> as the project name if you would like to precisely follow our example (but it isn't required). For all other questions, you can choose their default options, since it doesn't matter now.</p>
+<p>Below is an example of choosing options.</p>
+<pre><code class="language-java">Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 2
+
+Select implementation language:
+  1: C++
+  2: Groovy
+  3: Java
+  4: Kotlin
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6] 3
+
+Split functionality across multiple subprojects?:
+  1: no - only one application project
+  2: yes - application and library projects
+Enter selection (default: no - only one application project) [1..2] 
+
+Select build script DSL:
+  1: Groovy
+  2: Kotlin
+Enter selection (default: Groovy) [1..2] 
+
+Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit 4) [1..4]  
+
+Project name (default: demo): org.hyperskill.gradleapp
+Source package (default: org.hyperskill.gradleapp): </code></pre>
+<p>After the initialization is completed, the project structure will be the following:</p>
+<pre><code class="language-java">.
+├── app
+│   ├── build.gradle
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── org
+│       │   │       └── hyperskill
+│       │   │           └── gradleapp
+│       │   │               └── App.java
+│       │   └── resources
+│       └── test
+│           ├── java
+│           │   └── org
+│           │       └── hyperskill
+│           │           └── gradleapp
+│           │               └── AppTest.java
+│           └── resources
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle</code></pre>
+<p>This structure includes a lot of files we have already considered (<code class="language-java">settings.gradle</code>, wrapper files, etc). The most important file called <code class="language-java">build.gradle</code>, which contains tasks and external libraries, is located within the <code class="language-java">app</code> directory. This folder exists because we've chosen <code class="language-java">application</code> as the type of the project and the folder represents our application.</p>
+<p>There is also the <code class="language-java">src</code> directory inside <code class="language-java">app</code>. It contains two sub-directories <code class="language-java">main</code> and <code class="language-java">test</code>. This is a quite standard project structure when using Gradle. In our case, the package <code class="language-java">org.hyperskill.gradleapp</code> has some Java source code (<code class="language-java">App.java</code>).</p>
+<p>If you chose Kotlin as the implementation language, the project structure will be the same except for Kotlin source code files (<code class="language-java">.kt</code> instead of <code class="language-java">.java</code>) and <code class="language-java">kotlin</code> folders instead of <code class="language-java">java</code> ones.</p>
+<p> </p>
+<p>Please note, it is a good practice for Java and Kotlin projects to include the name of your organization in the path to your source code files as a package name like <code class="language-java">org.hyperskill</code>. We follow this recommendation too.</p>
+<p> </p>
+<h5 id="running-the-application" style="text-align: center;">Running the application</h5>
+<p>If you look at the list of available tasks for managing the project using the command <code class="language-java">gradle tasks --all</code>, you will see that the list is fairly long. Here is a shortened version of it:</p>
+<pre><code class="language-java">Application tasks
+-----------------
+run - Runs this project as a JVM application
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+...</code></pre>
+<p>You can use the <code class="language-java">run</code> command to start the application. To do it, just invoke the <code class="language-java">gradle run</code> command or use a Gradle wrapper script for your OS. This command will build and run the application. Here is an output example:</p>
+<pre><code class="language-java">&gt; Task :app:run
+Hello World!
+
+BUILD SUCCESSFUL in 623ms
+2 actionable tasks: 1 executed, 1 up-to-date</code></pre>
+<p>As you can see, the autogenerated application can already display a welcome string. If you get a similar result, it means that everything is OK: your application works and Gradle can manage it!</p>
+<p>If you look at the project structure again, you will see that it has some new files, including files with bytecode (<code class="language-java">App.class</code>, <code class="language-java">AppTest.class</code>). Actually, Gradle built and started the <code class="language-java">App.class</code> file when we invoked the <code class="language-java">run</code> command.</p>
+<p>Now, let's consider the build file (<code class="language-java">build.gradle</code> for Groovy DSL or <code class="language-java">build.gradle.kts</code> for Kotlin DSL) thanks to which we can build our application successfully and run it using Gradle. This file specifies the project structure and adds some tasks and external libraries to the project. We will not present the entire file here, only its main parts.</p>
+<h5 id="plugins" style="text-align: center;">Plugins</h5>
+<p>The <code class="language-java">plugins</code> section adds some plugins to extend the capabilities of the project: e.g., to add new tasks or properties.</p>
+<pre><code class="language-java">plugins {
+    // Apply the application plugin to add support for building a CLI application
+    id("application")
+
+    // Apply the plugin which adds support for Java
+    id("java")
+
+    // Apply the plugin which adds support for Kotlin/JVM
+    id("org.jetbrains.kotlin.jvm")
+}</code></pre>
+<p>Here, <code class="language-java">id</code> is a globally unique identifier, or name, for plugins. Core Gradle plugins are special in that they provide short names, such as <code class="language-java">"java"</code> or <code class="language-java">"application"</code>.</p>
+<p>Basically, plugins for Kotlin and Java know how to build, package, and run tests on the project. The <code class="language-java">application</code> plugin facilitates creating an executable JVM application.</p>
+<p>There is an alternative way to use a plugin in the project. It's more like a legacy way of applying plugins which is not widely used now, but just in case you see it somewhere, here it is:</p>
+<pre><code class="language-java">apply plugin: "application"   // for Groovy DSL
+apply(plugin = "application") // for Kotlin DSL</code></pre>
+<p>There are many other plugins already available for you, and you can find them on the <a href="https://plugins.gradle.org/" rel="nofollow noopener noreferrer" target="_blank">official Gradle Plugins page</a>. A large project can use dozens and hundreds of them. Gradle does not limit the maximum number of plugins used in a project.</p>
+<h5 id="repositories-and-dependencies" style="text-align: center;">Repositories and dependencies</h5>
+<p>Usually, you don't need to write your program from scratch – you use already written pieces of code, either yours or other developers'. This is where the dependency system comes in handy.</p>
+<p>The <code class="language-java">repositories</code> section declares locations from which dependencies will be downloaded and added to the project.</p>
+<pre><code class="language-java">repositories {
+    jcenter()
+}</code></pre>
+<p>There are plenty of public repositories: <strong>JCenter</strong>, <strong>Maven Central</strong>, <strong>Google,</strong> and others. Usually, a description of a dependency says which repository contains it.</p>
+<p>The <code class="language-java">dependencies</code> section is used to add external libraries to the project. Gradle will automatically download them from the repositories and put them in the archive with the application. Right now your <code class="language-java">dependencies</code> section should contain at least a testing library like <code class="language-java">JUnit</code> or something else, depending on your choice when the project was initialized.</p>
+<pre><code class="language-java">dependencies {
+    // Use JUnit test framework.
+    testImplementation 'junit:junit:4.13'
+
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:29.0-jre'
+}
+</code></pre>
+<p>We will take a closer look at repositories and dependencies in the next topics.</p>
+<p> </p>
+<p>This is a standard Gradle build structure. You apply some plugins and specify dependencies for your project. This structure will be the same for any project managed by Gradle.</p>
+<p> </p>
+<h5 id="configurations-for-the-application-plugin" style="text-align: center;">Configurations for the application plugin</h5>
+<p>The auto-generated <code class="language-java">build.gradle(.kts)</code> file has a section that configures the <code class="language-java">application</code> plugin thanks to which the application runs with the <code class="language-java">gradle run</code> command as mentioned above.</p>
+<pre><code class="language-java">application {
+    // Defines the main class for the application
+    mainClassName = "org.hyperskill.gradleapp.App"
+}</code></pre>
+<p>The <code class="language-java">mainClassName</code> property defines a class with the entry point of the application. It allows us to run the application invoking the <code class="language-java">gradle run</code> command.</p>
+<h5 id="generating-and-running-jar-archive" style="text-align: center;">Generating and running Jar archive</h5>
+<p>The classic way to run a JVM-based application is to use the <code class="language-java">java -jar</code> command. This command can be run without Gradle, you only need to have a JAR beforehand.</p>
+<p>So let's build the JAR file for our application:</p>
+<pre><code class="language-java">gradle jar
+
+BUILD SUCCESSFUL in 748ms
+2 actionable tasks: 2 executed
+</code></pre>
+<p>Now, the JAR file is in the <code class="language-java">app/build/libs</code> directory. </p>
+<p> </p>
+<p>If you want to clean the project folder from all generated artifacts, just run the <code class="language-java">gradle clean</code> command.</p>
+<p> </p>
+<p>However, if you now try to run our generated application using the classic approach, there will be a problem:</p>
+<pre><code class="language-java">java -jar app/build/libs/app.jar
+no main manifest attribute, in app/build/libs/app.jar</code></pre>
+<p>The thing is that the application does not contain the <code class="language-xml">Main-Class</code> attribute in the <code class="language-xml">MANIFEST.MF</code> file. So, the JVM does not know the path to the entry point of the application.</p>
+<p>To fix this we need to add the required attribute when generating an archive for the application. Just add the following declaration to the <code class="language-java">build.gradle(.kts)</code> file:</p>
+<pre><code class="language-java">jar {
+    manifest {
+        attributes("Main-Class": "org.hyperskill.gradleapp.App")   // for Groovy DSL
+        attributes("Main-Class" to "org.hyperskill.gradleapp.App") // for Kotlin DSL
+    }
+}</code></pre>
+<p>This code adds the <code class="language-java">Main-Class</code> attribute to the manifest property of the jar task. See the manifest as a map of properties where we put our pair <code class="language-java">Main-Class -&gt; Main</code>.</p>
+<p>So, now when we execute <code class="language-java">gradle jar</code> followed by <code class="language-java">java -jar app/build/libs/app.jar</code>, everything should work as planned and you will see the output line <code class="language-java">Hello world!</code>. What is good about this way of running applications is that <code class="language-java">java -jar</code> command can be run without Gradle, you only need to have a JAR beforehand.</p>
+<h5 id="building-the-application" style="text-align: center;">Building the application</h5>
+<p>If you would like to generate a bundle of the application with all its dependencies and a script to start the application, use the <code class="language-java">gradle build</code> command.</p>
+<pre><code class="language-java">BUILD SUCCESSFUL in 1s
+7 actionable tasks: 7 executed</code></pre>
+<p>If everything is OK, Gradle will have produced the archive in two formats for you: <code class="language-java">app/build/distributions/app.tar</code> and <code class="language-java">app/build/distributions/app.zip</code>. Now, you can distribute your application!</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>In this topic, you've learned how to generate Gradle-based applications with source code in Java or Kotlin as well as how to run this application using both <code class="language-java">gradle run</code> and <code class="language-java">java -jar</code> commands. You have also become familiar with the basic structure of the <code class="language-java">build.gradle(.kts)</code> file and got initial information about plugins, repositories, and dependencies. You will learn more about these things further on.</p>

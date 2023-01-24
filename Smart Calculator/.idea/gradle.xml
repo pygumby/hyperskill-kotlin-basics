@@ -31,6 +31,12 @@
             <option value="$PROJECT_DIR$/Topics/Build tools/What does a build process consist of" />
             <option value="$PROJECT_DIR$/Topics/Build tools/What is a build tool" />
             <option value="$PROJECT_DIR$/Topics/Build tools/When do we need a build tool" />
+            <option value="$PROJECT_DIR$/Topics/Building apps using Gradle/A directory for source files" />
+            <option value="$PROJECT_DIR$/Topics/Building apps using Gradle/Launching an application" />
+            <option value="$PROJECT_DIR$/Topics/Building apps using Gradle/Most important file" />
+            <option value="$PROJECT_DIR$/Topics/Building apps using Gradle/Number of plugins" />
+            <option value="$PROJECT_DIR$/Topics/Building apps using Gradle/Running an application" />
+            <option value="$PROJECT_DIR$/Topics/Building apps using Gradle/Theory" />
             <option value="$PROJECT_DIR$/Topics/Date and time standards/ISO 8601 date strings" />
             <option value="$PROJECT_DIR$/Topics/Date and time standards/ISO 8601 date-time strings" />
             <option value="$PROJECT_DIR$/Topics/Date and time standards/ISO 8601 time interval strings, start time and duration" />

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Building_apps_using_Gradle-Running_an_application" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Building apps using Gradle/Running an application" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Smart Calculator" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Building apps using Gradle/Running an application">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Building apps using Gradle/Running an application/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Building apps using Gradle/Running an application/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Building apps using Gradle/Running an application/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

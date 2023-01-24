@@ -1,0 +1,27 @@
+<h2>Running an application</h2>
+<p>Suppose you have an amazing Gradle-based application.</p>
+<p>Which one of the parts in the <code class="java">build.gradle</code> file is responsible to make it <strong>runnable</strong> using the <code class="java">java -jar</code> command?</p>
+<p>You may need some experiments to solve this problem.</p>
+<pre><code class="java">plugins {
+    // ... here are other plugins ...
+
+    // 1
+    id 'application'
+}
+
+// 2
+jar {
+    manifest {
+        attributes 'Main-Class' : 'path.to.EntryPoint'
+    }
+}
+
+// 3
+application {
+    mainClassName = 'org.hyperskill.gradleapp.App'
+}
+
+// 4
+repositories {
+    jcenter()
+}</code></pre>

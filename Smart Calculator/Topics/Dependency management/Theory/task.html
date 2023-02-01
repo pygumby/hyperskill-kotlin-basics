@@ -1,0 +1,134 @@
+<h2>Dependency management</h2>
+<html><body><p>Small programs that you write when learning a language may not use any external libraries at all. When you need some functionality, you will find it in the standard library or create it yourself. However, it is quite difficult to develop a real application that doesn't use any libraries because they save tons of your time and provide solutions tested by millions of people around the world.</p>
+<p>In this topic, we will learn how to add external libraries to our applications using Gradle.</p>
+<h5 id="how-to-add-dependencies" style="text-align: center;">How to add dependencies?</h5>
+<p>In Gradle terminology, all external libraries are called <strong>dependencies</strong>. As a rule, they are packaged in JAR files. Gradle can automatically download them and add them to the project. It saves a lot of time and solves possible conflicts between versions of libraries.</p>
+<p>Where do we get these dependencies and how do we add them to a project? To use a class, you need to have it locally, and your JVM must know that you have it. If you want to do it manually, you need to find and download such jars on your own and add them to the classpath of your project. Sounds quite tedious, right?</p>
+<p>Fortunately, dependency management is one of the key features of Gradle. You don’t even need a plugin for it. To add an external library to a project, you need to do exactly two steps:</p>
+<ol>
+<li>
+<p><strong>Define a repository</strong> where to search for dependencies.</p>
+</li>
+<li>
+<p><strong>Define a dependency</strong> that you want to include in your project.</p>
+</li>
+</ol>
+<p>Now, let's consider these steps in more detail.</p>
+<h5 id="repository-definition" style="text-align: center;">Repository definition</h5>
+<p>Repositories are just places where libraries are stored. Any project can use zero or more repositories.</p>
+<p>There are different possible formats of repositories:</p>
+<ul>
+<li>a Maven compatible repository (e.g.: <a href="https://mvnrepository.com/repos/central" rel="nofollow noopener noreferrer" target="_blank">Maven Central</a>, <a href="https://bintray.com/bintray/jcenter" rel="nofollow noopener noreferrer" target="_blank">JCenter</a>, <a href="https://maven.google.com/web/index.html" rel="noopener noreferrer nofollow" target="_blank">Google</a>)</li>
+<li>an Ivy compatible repository;</li>
+<li>local (flat) directories.</li>
+</ul>
+<p>It's possible to host repositories like <strong>Maven</strong> or <strong>JCenter</strong> locally in your organization, but that is out of the scope of this tutorial. We will only consider public online versions of them.</p>
+<p>Gradle has four aliases that you can use when adding Maven compatible repositories to the project.</p>
+<ul>
+<li><code class="language-java">mavenCentral()</code>: fetches dependencies from the <a href="https://mvnrepository.com/repos/central" rel="noopener noreferrer nofollow" target="_blank">Maven Central Repository</a>.</li>
+<li><code class="language-java">jcenter()</code>: fetches dependencies from the <a href="https://bintray.com/bintray/jcenter" rel="noopener noreferrer nofollow" target="_blank">Bintray’s JCenter Maven repository</a>.</li>
+<li><code class="language-java">mavenLocal()</code>: fetches dependencies from the local Maven repository.</li>
+<li><code class="language-java">google()</code>: fetches dependencies from <a href="https://maven.google.com/web/index.html" rel="noopener noreferrer nofollow" target="_blank">Google Maven repository</a>.</li>
+</ul>
+<p>Defining a repository in Gradle is a piece of cake. Just add this to your <code class="language-java">build.gradle</code> file:</p>
+<pre><code class="language-java">repositories {
+    mavenCentral()
+    jcenter()
+}</code></pre>
+<p>Also, you can just download the jars you need and place them into some directory on your computer, commonly in the <code class="language-java">libs</code> folder of your project. This comes in handy when the jars you need are not available in public repositories.</p>
+<pre><code class="language-groovy">repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}</code></pre>
+<p>The following picture demonstrates how to add dependencies from different repositories using Gradle.</p>
+<p style="text-align: center;"><img alt="" height="353" src="https://ucarecdn.com/8db83b02-505f-478c-a2a9-ba2a753c26c5/" width="550"/></p>
+<p style="text-align: left;">Now let's find out how to download dependencies from these repositories.</p>
+<h5 id="dependencies-definition" style="text-align: center;">Dependencies definition</h5>
+<p>To add a new dependency to your project, first, you need to identify it by the following attributes: <code class="language-java">group</code>, <code class="language-java">name</code> and <code class="language-java">version</code>. All these attributes are required when you use Maven compatible repositories. If you use other repositories, some attributes might be optional. For example, a flat repository only needs a name and a version.</p>
+<p>There are several ways to find these attributes. Some library maintainers are nice enough to list them on their website or git repository. Also, you can just search for them in your preferred repository.</p>
+<p style="text-align: center;"><img alt="" height="189" src="https://ucarecdn.com/b347cf3f-90ea-4944-b2b8-1b3e29849ff4/" width="901"/></p>
+<p style="text-align: center;">Maven Central search example</p>
+<p>All the dependencies are grouped into a named set of dependencies called <strong>configurations</strong>. Each of them has different characteristics and determines the following points:</p>
+<ul>
+<li>the availability of dependencies on building steps;</li>
+<li>the need to include dependencies in the final build artifact;</li>
+<li>the visibility of dependencies for programmers who use your project as a library.</li>
+</ul>
+<p>The <code class="language-java">'java'</code> and <code class="language-java">'kotlin'</code> plugins add a number of these configurations to your project. There are four of them:</p>
+<ul>
+<li><code class="language-java">implementation</code> configuration means that the dependency is available at compile-time and it can't be exposed to people who use your compiled code as an external library in their own projects. This configuration is considered the default one.</li>
+<li><code class="language-java">compileOnly</code> configuration is used to define dependencies that should only be available at compile-time, but you do not need them at runtime.</li>
+<li><code class="language-java">runtimeOnly</code> is used to define dependencies that you need only during runtime, and not at compile time.</li>
+<li><code class="language-java">api</code> configuration is similar to <code class="language-java">implementation</code>, but will be exposed to the programmers who use your compiled code as a library in their projects.</li>
+</ul>
+<p></p><div class="alert alert-warning">In an existing project, you may see <code class="language-java">compile</code> and <code class="language-java">runtime</code> configurations as well, but they are deprecated now. Consider using <code class="language-java">implementation</code> and <code class="language-java">runtimeOnly</code> instead.</div><p></p>
+<p>There also exist the same configurations only with the <code class="language-java">test</code> prefix (e.g. <code class="language-java">testImplementation</code>). Since tests are compiled and run separately and are not included in the final JAR (as well as their dependencies), they have their own set of dependencies. It helps decrease the size of a JAR, which is especially useful in Android development.</p>
+<p></p><div class="alert alert-primary">Please, note, that at this moment, you do not need to understand everything about configurations. Usually, the type of dependency configuration is already specified when you copy dependency info from an online repository or a website. If you would like to read more about configurations, <a href="https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph" rel="noopener noreferrer nofollow" target="_blank">see the official Gradle docs</a>.</div><p></p>
+<p>When we decided on what dependencies we want and settled on their configurations, we are ready to add them to our <code class="language-java">build.gradle</code>, which is as simple as adding repositories.</p>
+<pre><code class="language-java">dependencies {
+    // This dependency is used by the application.
+    implementation group: 'com.google.guava', name: 'guava', version: '28.0-jre'
+
+    // Use JUnit test framework only for testing
+    testImplementation 'junit:junit:4.12'
+
+    // It is only needed to compile the application
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+}
+</code></pre>
+<p>Here, we add these three dependencies as an example:</p>
+<ul>
+<li><strong>Guava</strong> library, provides useful collections and utils for a project;</li>
+<li><strong>JUnit</strong>, used for testing purposes;</li>
+<li><strong>Lombok</strong>, modifies bytecode at compile time and isn't necessary anymore after compilation.</li>
+</ul>
+<p>As you may have noticed, there are two ways of declaring dependencies: the one where we explicitly declare group, name, and version, and the one where we just list them separated by the colon. Both are perfectly fine and are up to your preferences. Note that Groovy syntax is flexible and you can use either single or double quotes for the dependency string  and optionally enclose it in parentheses. All the following declarations are equally valid:</p>
+<pre><code class="language-java">// 1
+implementation("com.google.guava:guava:28.0-jre")
+
+// 2
+implementation "com.google.guava:guava:28.0-jre"
+
+// 3
+implementation 'com.google.guava:guava:28.0-jre'
+
+// 4
+def guava_version = "28.0-jre"
+implementation "com.google.guava:guava:$guava_version"</code></pre>
+<p></p><div class="alert alert-primary">After adding dependencies in the <code class="language-java">build.gradle</code> file, you can use the libraries in your source code, but do not forget to import them. Gradle will automatically download the libraries from repositories when building the project.</div><p></p>
+<h5 id="colorful-world" style="text-align: center;">Colorful world</h5>
+<p>As an example of using external libraries, we take a look at a program that prints colored text messages.</p>
+<p>1. In the <strong>dependencies</strong> section of the <code class="language-java">build.gradle</code> file we need to include JCDP library:</p>
+<pre><code class="language-java">implementation group: 'com.diogonunes', name: 'JCDP', version: '2.0.3.1'</code></pre>
+<p>2. And then import and use it inside the source code. Here are Java and Kotlin examples.</p>
+<p>Java:</p>
+<pre><code class="language-java">package org.hyperskill.gradleapp;
+
+import com.diogonunes.jcdp.color.ColoredPrinter;
+import com.diogonunes.jcdp.color.api.Ansi;
+
+public class App {
+    public static void main(String[] args) {
+        ColoredPrinter printer = new ColoredPrinter
+                .Builder(1, false).build();
+
+        printer.print("Hello, colorful world!",
+                Ansi.Attribute.BOLD, Ansi.FColor.BLUE, Ansi.BColor.WHITE);
+    }
+}</code></pre>
+<p>Kotlin:</p>
+<pre><code class="language-kotlin">package com.hyperskill.gradleapp
+
+import com.diogonunes.jcdp.color.ColoredPrinter
+import com.diogonunes.jcdp.color.api.Ansi
+
+fun main(args: Array&lt;String&gt;) {
+    val printer = ColoredPrinter.Builder(1, false).build()
+
+    printer.print("Hello, colorful world!",
+            Ansi.Attribute.BOLD, Ansi.FColor.BLUE, Ansi.BColor.WHITE)
+}</code></pre>
+<p>Both programs print the same colored message: <span style="color: #64b0f4;"><strong>Hello, colorful world!</strong></span></p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>You've learned only the basics of dependency management, but this is enough to write programs with external libraries. As you may have noticed, Gradle is a very flexible tool for managing dependencies. It allows you to choose repositories where to download them and also to configure when to use dependencies: during compile-time, during runtime, or when testing, and so on. As an example, we examined a program that prints colored messages using an external library.</p></body></html>

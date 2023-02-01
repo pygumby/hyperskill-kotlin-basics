@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Place its JAR into <b>/libs</b> directory and add to the <b>flatDir</b> block
+- text: Specify it in the dependencies block in <b>build.gradle</b>
+- text: Specify where to download it from the repository block in <b>build.gradle</b>
+- text: Add a task to download it in <b>build.gradle</b>
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5089#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 01 Feb 2023 20:58:40 UTC"
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+local_check: false

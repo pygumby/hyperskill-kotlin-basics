@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: It is a configuration that specifies dependencies for compiling and executing
+    tests.
+- text: It is a tasks to check that dependencies compile successfully
+- text: It is a task to compile tests
+- text: It is a task to check that project compiles successfully
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5115#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 01 Feb 2023 20:55:35 UTC"
+record: -1
+selected_options:
+- 0
+local_check: false

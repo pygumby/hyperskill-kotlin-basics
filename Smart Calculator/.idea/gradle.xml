@@ -43,6 +43,11 @@
             <option value="$PROJECT_DIR$/Topics/Date and time standards/ISO 8601 time interval strings, start time to end time" />
             <option value="$PROJECT_DIR$/Topics/Date and time standards/Standards" />
             <option value="$PROJECT_DIR$/Topics/Date and time standards/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Dependency management/External dependencies" />
+            <option value="$PROJECT_DIR$/Topics/Dependency management/Prerequisites for dependency management" />
+            <option value="$PROJECT_DIR$/Topics/Dependency management/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Dependency management/What does the method do" />
+            <option value="$PROJECT_DIR$/Topics/Dependency management/testCompile" />
             <option value="$PROJECT_DIR$/Topics/Frameworks/Choosing a framework" />
             <option value="$PROJECT_DIR$/Topics/Frameworks/Framework solutions" />
             <option value="$PROJECT_DIR$/Topics/Frameworks/Inversion of Control" />

@@ -11,3 +11,4 @@ content:
 - Gradle basics
 - Basic project with Gradle
 - Building apps using Gradle
+- Dependency management

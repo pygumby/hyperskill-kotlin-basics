@@ -1,0 +1,159 @@
+<h2>Aggregate operations on collections: part 2</h2>
+<p>In previous topics, you have learned and practiced many of the common operations on collections: sorting, filtering, and getting items.</p>
+<p>In this topic, we will learn how to obtain summary information based on the content of the collection. We will see that Kotlin has various handy methods that make this task an easy job.</p>
+<h5 id="counting-elements">Counting elements</h5>
+<p>One of the main tasks when working with collections is counting the elements. Obviously, we can make use of <code class="language-kotlin">size</code>, but an interesting fact is that we can also use a predicate to count the number of matching collection elements.</p>
+<p>To perform this action, we can apply the <code class="language-kotlin">count()</code> method. This methods returns the number of collection elements or the number of the elements in a collection that match the given predicate: for example, we can count the number of even elements or the number of words whose length is greater than 5 or which start with "J".</p>
+<pre><code class="language-kotlin">fun main() {
+    
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val names = listOf("Pablo", "John", "Jane", "Mary", "Peter")
+
+    // number of elements
+    println(numbers.size) // 10
+    println(names.size) // 5
+
+    // number of elements
+    println(numbers.count()) // 10
+    println(names.count()) // 5
+
+    // number of elements that match the condition
+    println(numbers.count { it % 2 == 0 }) // 5
+    println(names.count { it.startsWith("J") }) // 2
+
+}</code></pre>
+<h5 id="distinct-elements">Distinct elements</h5>
+<p>Oftentimes, you do not know if your collection contains elements that appear more than once. For this reason, it is very helpful to know the unique elements in a collection. The <code class="language-kotlin">distinct()</code> methods returns a list with only the distinct elements in the given collection. Also, <code class="language-kotlin">distinctBy()</code> returns a collection containing only the elements with distinct keys returned by the given selector function.</p>
+<pre><code class="language-kotlin">fun main() {
+
+    val numberWithRepeated = listOf(1, 2, 3, 4, 5, 4, 4, 3, 1)
+    val namesWithRepeated = listOf("Pablo", "John", "Jane", "John", "Jane")
+
+    // distinct elements
+    println(numberWithRepeated.distinct()) // [1, 2, 3, 4, 5]
+    println(namesWithRepeated.distinct()) // [Pablo, John, Jane]
+
+    // distinct by a condition
+    println(numberWithRepeated.distinctBy { it % 2 }) // [1, 2]
+    // -&gt; 1 % 2 = 1 -&gt; 2 % 2 = 0 -&gt; 3 % 2 = 1 -&gt; 4 % 2 = 0 -&gt; 5 % 2 = 1
+    println(namesWithRepeated.distinctBy { it.first() }) // [Pablo, John]
+    // -&gt; "Pablo".first() = 'P' -&gt; "John".first() = 'J' -&gt; "Jane".first() = 'J'
+
+}</code></pre>
+<h5 id="sum-elements">Sum elements </h5>
+<p>Sometimes, your collection contains elements that can be added and you may want to know their total value. <code class="language-kotlin">sum()</code> returns the sum of all collection items. You can also use <code class="language-kotlin">sumOf()</code>, which returns the sum of all the values produced by the selector function applied to each element in the collection. Remember, though: these methods only work with numbers, and if the collection is of a different data type, they will throw an exception.</p>
+<pre><code class="language-kotlin">fun main() {
+
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val names = listOf("Pablo", "John", "Jane", "Mary", "Peter")
+
+    // sum of elements
+    println(numbers.sum()) // 55
+
+    // sum of elements that match the condition
+    println(numbers.sumOf { it * 2 }) // 110
+    println(names.sumOf { it.length }) // 22
+    println(numbers.sumOf { if (it % 2 == 0) it else 0 }) // 30
+    println(names.sumOf { if (it.startsWith("J")) it.length else 0 }) // 8
+
+}</code></pre>
+<h5 id="average">Average </h5>
+<p>In certain cases, it is very useful to have the average value of the collection elements. <code class="language-kotlin">average()</code> will return the average value of the items in your collection. Remember, though, that this method only works with numbers, and if the collection is of a different data type, it will throw an exception.</p>
+<pre><code class="language-kotlin">fun main() {
+    
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val names = listOf("Pablo", "John", "Jane", "Mary", "Peter")
+
+    // average of elements
+    println(numbers.average()) // 5.5
+    // average of elements that match the condition
+    println(numbers.filter { it % 2 == 0 }
+        .average()
+    ) // 6.0
+    // average length of names
+    println(names.map { it.length }
+        .average()
+    ) // 4.4
+    // average length of names that start with J
+    println(names.filter { it.startsWith("J") }
+        .map { it.length }
+        .average()
+    ) // 4.0
+
+}</code></pre>
+<h5 id="max-and-min">Max and Min </h5>
+<p>Quite often, you may want to find the maximum and minimum elements in a collection. For that, we have the following methods:</p>
+<ul>
+<li><code class="language-kotlin">minOrNull()</code> returns the smallest element or null if there are no elements.</li>
+<li><code class="language-kotlin">maxOrNull()</code> returns the largest element or null if there are no elements. </li>
+<li><code class="language-kotlin">minByOrNull()</code> with a selector function returns the element with the smallest value. </li>
+<li><code class="language-kotlin">maxByOrNull()</code> with a selector function returns the element with the largest value. </li>
+<li><code class="language-kotlin">minOfOrNull()</code> with a selector function returns the smallest return value of the selector itself.</li>
+<li><code class="language-kotlin">maxOfOrNull()</code> with a selector function returns the largest return value of the selector itself.  </li>
+<li><code class="language-kotlin">minWithOrNull()</code> returns the smallest element according to the comparator.</li>
+<li><code class="language-kotlin">maxWithOrNull()</code> returns the largest element according to the comparator.</li>
+<li><code class="language-kotlin">minOfWithOrNull()</code> returns the smallest selector return value according to the comparator.</li>
+<li><code class="language-kotlin">maxOfWithOrNull()</code> returns the largest selector return value according to the comparator.</li>
+</ul>
+<pre><code class="language-kotlin">fun main() {
+    
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val words = listOf("anne", "michael", "caroline", "dimitry", "emilio")
+  
+    //maxOrNull/minOrNull()
+    println(numbers.maxOrNull()) //10
+    println(numbers.minOrNull()) //1
+    
+    // maxByOrNull/minByOrNull
+    println(words.maxByOrNull { it.length }) // caroline
+    println(words.minByOrNull { it.length }) // anne
+    
+    //maxOfOrNull/minOfOrNull
+    println(words.maxOfOrNull { it.length }) // 8
+    println(words.minOfOrNull { it.length }) // 4
+    
+    // maxByOrNull/minByOrNull
+    println(words.count { it.length &gt; 5 }) // 4
+    println(words.maxByOrNull { it.length &gt; 5 }) // michael
+    println(words.minByOrNull { it.length &gt; 5 }) // anne
+
+    // maxWithOrNull/minWithOrNull
+    println(words.maxWithOrNull(compareBy { it.length })) // caroline
+    println(words.minWithOrNull(compareBy { it.length })) // anne
+
+    // maxOfWithOrNull/minOfWithOrNull
+    println(words.maxOfWithOrNull(naturalOrder()) { it.length }) // 8
+    println(words.minOfWithOrNull(naturalOrder()) { it.length }) // 4
+
+}</code></pre>
+<p>All the methods that end with <code class="language-kotlin">OrNull</code> return <code class="language-kotlin">null</code> on empty collections, when they cannot perform the operation. Alternatively, we can also use  the methods without the <code class="language-kotlin">OrNull</code> option to perform the same tasks, but they throw <code class="language-kotlin">NoSuchElementException</code> on empty collections. </p>
+<pre><code class="language-kotlin">fun main() {
+    
+    // emptyList
+    val emptyWordsList = emptyList&lt;String&gt;()
+    val emptyNumbersList = emptyList&lt;Int&gt;() 
+    
+    println(emptyNumbersList.maxOrNull()) //null
+    println(emptyNumbersList.minOrNull()) //null
+    println(emptyWordsList.maxByOrNull { it.length }) // null
+    println(emptyWordsList.minByOrNull { it.length }) // null
+    println(emptyWordsList.maxOfOrNull { it.length }) // null
+    println(emptyWordsList.minOfOrNull { it.length }) // null
+    println(emptyWordsList.minOfOrNull { it.length }) // null
+    println(emptyWordsList.maxOfWithOrNull(naturalOrder()) { it.length }) // null
+    println(emptyWordsList.minOfWithOrNull(naturalOrder()) { it.length }) // null
+    
+    println(emptyNumbersList.max()) // NoSuchElementException
+    println(emptyNumbersList.min()) // NoSuchElementException
+    println(emptyWordsList.maxOf { it.length })  // NoSuchElementException
+    println(emptyWordsList.minOf { it.length })  // NoSuchElementException
+    println(emptyWordsList.maxBy { it.length })  // NoSuchElementException
+    println(emptyWordsList.minBy { it.length })  // NoSuchElementException
+    println(emptyWordsList.maxOfWith(naturalOrder()) { it.length }) // NoSuchElementException
+    println(emptyWordsList.minOfWith(naturalOrder()) { it.length }) // NoSuchElementException
+}</code></pre>
+<p>It is important to note the difference between <code class="language-kotlin">maxOfOrNull</code>/<code class="language-kotlin">minOfOrNull</code> and <code class="language-kotlin">maxByOrNull</code>/<code class="language-kotlin">minByOrNull</code>. <code class="language-kotlin">maxOfOrNull</code>/<code class="language-kotlin">minOfOfNull</code> return the <strong>largest/smallest </strong>value among <strong>all </strong>the<strong> </strong>values produced by the selector function applied to each collection element or null if the collection is empty. In the above example, the selector is based on the word length. They return 8 (max length) and 4 (min length). Thus, they return the maximum or minimum word length.</p>
+<p>Meanwhile, <code class="language-kotlin">maxByOrNull</code>/<code class="language-kotlin">minByOrNull</code> return the <strong>first </strong>element yielding the <strong>largest/smallest </strong>value of the given function or null if there are no elements. Thus, they will return the first word that has the maximum or minimum length. They return "caroline" (the first word with the max length 8) and "anne" (the first word with the min length 4). Also, we can use a lambda predicate like <code class="language-kotlin">it.length &gt; 5</code> to obtain the first max or min word based on its length because it is the first element that produces the largest (michael) or smallest (anne) value of the given function (<code class="language-kotlin">it.length &gt; 5</code>).</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, you have learned different methods to obtain summary information based on the existing collection values. Using these methods, you will be able to find the number of elements; different elements; as well as mean, maximum, and minimum elements using lambda functions, selectors, and predicates, which will allow you to efficiently perform your tasks.</p>
+<p>It is time to solve some problems to check what you have learned so far. Let's go!</p>

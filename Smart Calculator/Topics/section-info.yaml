@@ -12,3 +12,4 @@ content:
 - Basic project with Gradle
 - Building apps using Gradle
 - Dependency management
+- Aggregate operations on collections  part 2

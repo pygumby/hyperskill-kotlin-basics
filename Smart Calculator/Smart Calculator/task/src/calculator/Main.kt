@@ -1,50 +1,60 @@
 package calculator
 
-operator fun Regex.contains(cs: CharSequence): Boolean = this.matches(cs)
+import com.github.h0tk3y.betterParse.combinators.*
+import com.github.h0tk3y.betterParse.grammar.Grammar
+import com.github.h0tk3y.betterParse.grammar.parseToEnd
+// import com.github.h0tk3y.betterParse.grammar.parser
+// import com.github.h0tk3y.betterParse.lexer.literalToken
+import com.github.h0tk3y.betterParse.lexer.regexToken
+import com.github.h0tk3y.betterParse.parser.Parser
 
-sealed interface Tkn
-data class NumTkn(val text: String): Tkn
-data class PlusTkn(val text: String): Tkn
-data class MinusTkn(val text: String): Tkn
+// Based on @h0tk3y's example on how to implement an arithmetic parser in `better-parse`:
+// https://github.com/h0tk3y/better-parse/blob/master/demo/demo-jvm/src/main/kotlin/com/example/ArithmeticsEvaluator.kt
+class CalcGrammar: Grammar<Int>() {
+    private val num by regexToken("(-?|\\+?)\\d+")
+    // private val lparens by literalToken("(")
+    // private val rparens by literalToken(")")
+    // private val pow by literalToken("^")
+    // private val mul by literalToken("*")
+    // private val div by literalToken("/")
+    private val plus by regexToken("\\++|(--)+ ")
+    private val minus by regexToken("-(--)* ")
+    private val ws by regexToken("\\s+", ignore = true)
 
-fun tokenize(text: String): List<Tkn> = text
-    .split(Regex("""\s+"""))
-    .map { when (it) {
-        in Regex("""-?\d+""") -> NumTkn(it)
-        in Regex("""\+""") -> PlusTkn(it)
-        in Regex("""-""") -> MinusTkn(it)
-        else -> error("Cannot tokenize: $it")
-    } }
+    private val term: Parser<Int> by
+        num use { text.toInt() } // or
+        // (skip(minus) and parser(::term) map { -it }) // or
+        // (skip(lparens) and parser(::rootParser) and skip(rparens))
 
-sealed interface Expr
-data class NumExpr(val n: Int): Expr
-data class AddExpr(val op1: Expr, val op2: Expr): Expr
-data class SubExpr(val op1: Expr, val op2: Expr): Expr
+    // private val powChain by
+        // leftAssociative(term, pow) { a, _, b -> a.toDouble().pow(b.toDouble()).toInt() }
 
-fun parse(
-    tkns: List<Tkn>,
-    operands: ArrayDeque<Tkn> = ArrayDeque<Tkn>(),
-    operators: ArrayDeque<Tkn> = ArrayDeque<Tkn>()
-): Expr = when (val currentTkn = tkns.first()) {
-    is NumTkn ->
+    // private val mulDivChain by
+        // leftAssociative(powChain, mul or div use { type }) { a, op, b -> if (op == div) a / b else a * b }
+
+    private val sumSubChain by
+        leftAssociative(term /* mulDivChain */, plus or minus use { type }) { a, op, b -> if (op == plus) a + b else a - b }
+
+    override val rootParser by sumSubChain
 }
-
-fun eval(expr: Expr): Int = when (expr) {
-    is NumExpr -> expr.n
-    is AddExpr -> eval(expr.op1) + eval(expr.op2)
-    is SubExpr -> eval(expr.op1) - eval(expr.op2)
-}
-
-fun calc(input: String): Int = eval(parse(tokenize(input)))
 
 fun main() {
-    val input = "-2   + 3 - -17      + 4"
-    val tokens = tokenize(input)
-    val exprs = parse(tokens)
-    val res = eval(exprs)
+    val input = readln()
 
-    println("Input:  $input")
-    println("Tokens: $tokens")
-    println("Exprs:  $exprs")
-    println("Res:    $res")
+    if ((input.startsWith("/"))) {
+        when (input.drop(1)) {
+            "help" -> println("The program calculates the sum of numbers")
+            "exit" -> return println("Bye!")
+            else -> println("Unknown command")
+        }
+    } else {
+        if (input == "") return main()
+        try {
+            println(CalcGrammar().parseToEnd(input))
+        } catch (_: Exception) {
+            println("Invalid expression")
+        }
+    }
+
+    main()
 }

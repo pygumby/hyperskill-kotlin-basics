@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/271268/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Mon, 23 Jan 2023 21:25:08 UTC"
+update_date: "Mon, 06 Feb 2023 11:18:02 UTC"
 stages:
 - id: 486
   step: 7809
@@ -167,7 +167,7 @@ topics:
     theory_id: 12069
   - title: IntelliJ IDEA
     theory_id: 3801
-  - title: IDEA Basics
+  - title: IntelliJ IDEA basics
     theory_id: 5819
   - title: Navigation through code
     theory_id: 5824
@@ -183,6 +183,12 @@ topics:
     theory_id: 18049
   - title: Stack and heap memory
     theory_id: 21577
+  - title: Design principles
+    theory_id: 8956
+  - title: Single Responsibility Principle
+    theory_id: 8963
+  - title: Object declarations
+    theory_id: 10698
   - title: Introduction to logging
     theory_id: 5538
   - title: Debugging techniques
@@ -191,12 +197,6 @@ topics:
     theory_id: 14368
   - title: Debugging simple constructs
     theory_id: 15503
-  - title: Design principles
-    theory_id: 8956
-  - title: Single Responsibility Principle
-    theory_id: 8963
-  - title: Object declarations
-    theory_id: 10698
   - title: Advanced debugger features
     theory_id: 16028
   - title: Self-documenting code

@@ -13,3 +13,4 @@ content:
 - Building apps using Gradle
 - Dependency management
 - Aggregate operations on collections  part 2
+- ArrayDeque

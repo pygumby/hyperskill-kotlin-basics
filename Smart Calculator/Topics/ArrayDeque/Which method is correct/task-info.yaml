@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: addLast() and removeFirst()
+- text: first() and last()
+- text: get(0) and get(size-1)
+- text: first() and removeLast()
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25041#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 06 Feb 2023 11:33:50 UTC"
+record: -1
+selected_options:
+- 0
+custom_name: Which method is correct?
+local_check: false

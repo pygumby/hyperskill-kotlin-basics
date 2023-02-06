@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: "Unit, true"
+- text: "true, Jane"
+- text: "John, true"
+- text: "John, Jane"
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25042#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 06 Feb 2023 11:31:55 UTC"
+record: -1
+selected_options:
+- 3
+local_check: false

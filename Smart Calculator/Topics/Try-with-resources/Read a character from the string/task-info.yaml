@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: "Exception in thread \"main\" java.io.IOException: Stream closed"
+- text: Kotlin
+- text: \n
+- text: K
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25241#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 08 Feb 2023 13:59:16 UTC"
+record: -1
+selected_options:
+- 0
+local_check: false

@@ -1,0 +1,21 @@
+<h2>What is the status of the input stream?</h2>
+<p></p>
+<p>Look at this code:</p>
+<pre><code class="language-kotlin">fun main() {
+    FileWriter("file.txt").use {
+        it.write("Kotlin\nJava\nGo\nC++\nC#")
+    }
+    val file = FileReader("file.txt")
+    file.use {
+        val iterator = it.readLines().iterator()
+        while (iterator.hasNext()) {
+            println(iterator.next())
+        }
+    }
+    try {
+        println(file.ready())
+    } catch (e: Exception) {
+        println(e.message)
+    }
+}</code></pre>
+<p>What will be the last line printed to the console?</p>

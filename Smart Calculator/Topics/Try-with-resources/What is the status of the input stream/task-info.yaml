@@ -1,0 +1,29 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Java
+- text: Stream closed
+- text: Kotlin
+- text: C#
+- text: Exception
+- text: Kotlin\nJava\nGo\nC++\nC#
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25240#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 08 Feb 2023 13:58:00 UTC"
+record: -1
+selected_options:
+- 1
+custom_name: What is the status of the input stream?
+local_check: false

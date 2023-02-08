@@ -1,0 +1,14 @@
+<h2>Read a character from the string</h2>
+<p></p>
+<p>We have the following code:</p>
+<pre><code class="language-kotlin">fun main() {
+    FileWriter("file.txt").use {
+        it.write("Kotlin\nJava\nGo\nC++\nC#")
+    }
+    val file = FileReader("file.txt")
+    file.use {
+        // any operations
+    }
+    println(file.read())
+}</code></pre>
+<p>Which character will be read in the line <code class="language-kotlin">println(file.read())</code>?</p>

@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: "No, it may throw NullPointerException."
+- text: "No, it may throw StringIndexOutOfBoundsException."
+- text: "No, it may throw ArithmeticException."
+- text: "Yes, we've checked that the string is not null and the index is within the\
+    \ length of the array."
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25378#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 09 Feb 2023 10:09:36 UTC"
+record: -1
+selected_options:
+- 1
+custom_name: Is the code fully protected?
+local_check: false

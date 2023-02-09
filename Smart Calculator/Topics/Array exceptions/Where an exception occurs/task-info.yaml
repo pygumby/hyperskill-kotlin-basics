@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: val characters = CharArray(0)
+- text: val characters = CharArray(-5)
+- text: val characters = CharArray(555)
+- text: val characters = CharArray(1)
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25375#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 09 Feb 2023 10:15:17 UTC"
+record: -1
+selected_options:
+- 1
+local_check: false

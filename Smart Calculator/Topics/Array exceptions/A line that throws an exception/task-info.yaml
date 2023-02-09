@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: "val s1 = strings[0]"
+- text: "val s2 = strings[3]"
+- text: val s3 = s2 + "abc"
+- text: "val s4 = strings[strings.size]"
+- text: This code compiled without errors
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25379#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 09 Feb 2023 10:17:10 UTC"
+record: -1
+selected_options:
+- 3
+local_check: false

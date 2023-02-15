@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: It allows setting different levels for individual loggers.
+- text: It allows using placeholders in log strings.
+- text: It can write logs to files.
+- text: It can extract the stacktrace from an exception.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25751#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 15 Feb 2023 12:05:37 UTC"
+record: -1
+selected_options:
+- 0
+- 1
+- 2
+- 3
+custom_name: Why is it good?
+local_check: false

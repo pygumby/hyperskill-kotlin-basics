@@ -1,0 +1,29 @@
+<h2>Hands-on practice</h2>
+<p></p>
+<p>Look at this code snippet and the relevant <code class="language-kotlin">logback.xml</code> file and answer what will the logger output to the console.</p>
+<pre><code class="language-kotlin">import org.slf4j.LoggerFactory
+
+class Example {
+    private val LOG = LoggerFactory.getLogger(Example::class.java)
+
+    fun log() {
+        LOG.debug("Don't worry, I'm logging.")
+    }
+}
+
+fun main() {
+    Example().log()
+}</code></pre>
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;appender name="console" class="ch.qos.logback.core.ConsoleAppender"&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;%msg%n&lt;/pattern&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;root level="debug"&gt;
+        &lt;appender-ref ref="console" /&gt;
+    &lt;/root&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>Pay attention both to the logger level and the encoder pattern.</p>

@@ -1,0 +1,180 @@
+<h2>Logback</h2>
+<p>As you already know, developers have a lot of logging tools at their disposal. In this topic, we are going to learn more about a popular logging library named <strong>Logback</strong>. It is a successor to the <strong>Log4j</strong> logging library and is based on similar concepts. Logback is fast in both synchronous and asynchronous logging and offers many useful features, which makes it a good choice for a project of any scale.</p>
+<p>The most important difference between using a Logback logger and simply printing a message to <code class="language-xml">System.out</code> is that each logger has a context. The logger context allows enabling or disabling certain log messages and is responsible for creating logger instances and arranging their hierarchy. Let's take a closer look at all these features.</p>
+<h5 id="adding-logback-to-a-project">Adding Logback to a project</h5>
+<p>Installing Logback is very easy – simply add the dependencies to Maven or Gradle.</p>
+<p>To get started with Logback, you will need to add the <code class="language-xml">logback-classic</code> dependency.</p>
+<p>If you are using Maven, open the <em>pom.xml</em> file and add these lines:</p>
+<pre><code class="language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;
+        &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;
+        &lt;version&gt;1.2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
+<p>If you use Gradle as your build tool, then add the following line to your <em>build.gradle</em> file:</p>
+<pre><code class="language-xml">dependencies {
+    implementation ("ch.qos.logback:logback-classic:1.2.11")
+}</code></pre>
+<p>This library will transitively pull two other dependencies, <code class="language-xml">slf4j-api</code> and <code class="language-xml">logback-core</code>.</p>
+<p><strong>SLF4J</strong> (Simple Logging Facade for Java) is a facade or abstraction for various logging libraries, including Logback. It provides a simple logging API, and Logback implements it natively. You can invoke the SLF4J logger with Logback as its underlying implementation without any overhead.</p>
+<p>The <code class="language-xml">logback-core</code> library lays the foundation for Logback and provides a few ready-made classes for use. They are:</p>
+<ul>
+<li><code class="language-xml">ConsoleAppender</code>, which adds log events to <code class="language-xml">System.out</code> or <code class="language-xml">System.err</code>;</li>
+<li><code class="language-xml">FileAppender</code>, which adds log events to the file;</li>
+<li><code class="language-xml">RollingFileAppender</code>, which adds log events to the file and can change its logging target to another file when a certain condition is met.</li>
+</ul>
+<p>The <code class="language-xml">logback-classic</code> library provides classes that make it possible to send data to external systems. They are:</p>
+<ul>
+<li><code class="language-xml">SMTPAppender</code>, which collects data in packets and sends the contents of the packet to a user-defined email after the occurrence of an event specified by the user;</li>
+<li><code class="language-xml">DBAppender</code>, which adds data to database tables.</li>
+</ul>
+<h5 id="basic-logging">Basic logging</h5>
+<p>Let's create a class <code class="language-xml">Example</code> and declare a few <code class="language-xml">Logger</code> objects.</p>
+<pre><code class="language-kotlin">import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
+class Example {
+    private val LOG_1: Logger = LoggerFactory.getLogger(Example::class.java)
+    private val LOG_2: Logger = LoggerFactory.getLogger("com.example.Example")
+
+    init {
+        LOG_1.info("Information from LOG_1")
+        LOG_2.warn("Warning from LOG_2")
+        LOG_1.info("Are the loggers the same? {}", LOG_1 === LOG_2)
+    }
+}
+
+fun main() {
+    Example()
+}</code></pre>
+<p>As you can see, we don't refer to any Logback class directly. Instead, we invoke SLF4J classes and interfaces, and SLF4J, in turn, delegates logging operations to Logback.</p>
+<p>When creating a logger, we use the <code class="language-xml">getLogger</code> method of the <code class="language-xml">LoggerFactory</code>, which accepts either <code class="language-xml">Class</code> or <code class="language-xml">String</code> as an argument. In both cases, the argument is used as the name of the logger. If a logger with the same name already exists, the method returns the same logger, and if there is no logger with the same name, a new one is created.</p>
+<p>A <code class="language-xml">Logger</code> object has a number of methods, namely <code class="language-xml">trace</code>, <code class="language-xml">debug</code>, <code class="language-xml">info</code>, <code class="language-xml">warn</code>, and <code class="language-xml">error</code>, for outputting a message of the corresponding log request level.</p>
+<p>If we run the above code, we'll get this output:</p>
+<p><img alt="" height="365" name="Снимок экрана от 2023-01-11 11-23-52.png" src="https://ucarecdn.com/395ec2ad-40d6-44ea-bc73-25ddb2e97eac/" width="1847"/></p>
+<p>By default, each log line has the following elements: timestamp, thread name, log request level, logger name, and log message. We will learn how to change this default configuration in the next section.</p>
+<h5 id="message-parameterization">Message parameterization</h5>
+<p>Logback has the ability to add objects or variables to the logs in the message. You can use it to know what kind of error has occurred and why.</p>
+<p>Here is an example:</p>
+<pre><code class="language-kotlin">import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
+class Example {
+    private val LOG: Logger = LoggerFactory.getLogger(Example::class.java)
+
+    init {
+        val result = "Any operation"
+        LOG.info("To track the value of a variable. The result is $result");
+    }
+}
+
+fun main() {
+    Example()
+}</code></pre>
+<p>We can add the variable to logger messages.</p>
+<p><img alt="" height="360" name="Снимок экрана от 2023-01-11 11-35-10.png" src="https://ucarecdn.com/ae1e43cc-5de9-4b66-85a1-589bc8de8981/" width="1845"/></p>
+<p>We can also use this Logback function to output an error along with relevant information:</p>
+<pre><code class="language-kotlin">import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
+class Example {
+    private val LOG: Logger = LoggerFactory.getLogger(Example::class.java)
+
+    init {
+        val number = 1
+        val divisor = 0
+
+        try {
+            val result = number / divisor
+        } catch (e: ArithmeticException) {
+            LOG.error("Something went wrong with divisor $divisor\n$e")
+        }
+    }
+}
+
+fun main() {
+    Example()
+}</code></pre>
+<p>Logback can extract the stack trace, and, as a result, below we can see that due to the fact that we added an exception object to the message, it was displayed in the log. You don't need to add a placeholder to the log message to display an exception object, but in such cases, it must be the last argument passed to the log request method.</p>
+<p><img alt="" height="365" name="Снимок экрана от 2023-01-11 11-42-37.png" src="https://ucarecdn.com/6d0111ba-6392-4409-9f8f-43a6283a3c21/" width="1848"/></p>
+<p>You can read the <a href="https://logback.qos.ch/manual/architecture.html" rel="noopener noreferrer nofollow" target="_blank">documentation</a> for more details about the nuances of adding variables to a logger message.</p>
+<h5 id="fine-tuning-the-logger-configuration">Fine-tuning the logger configuration</h5>
+<p>To configure loggers in Logback, you can use an <em>xml</em> file or a Groovy file. We will configure our logger with an <em>xml</em> file. You will need to create a <em>logback.xml</em> file and place it in the <em>resource</em> folder. This is what the basic settings file will look like:</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;appender name="console" class="ch.qos.logback.core.ConsoleAppender"&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;%d{HH:mm:ss} %-5level %logger{36} - %msg%n&lt;/pattern&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;root level="info"&gt;
+        &lt;appender-ref ref="console" /&gt;
+    &lt;/root&gt;
+&lt;/configuration&gt;</code></pre>
+<p>All logger settings are recorded between the <code class="language-xml">&lt;configuration&gt;</code> tags.</p>
+<p>Next comes the tag <code class="language-xml">&lt;appender&gt;</code>. <strong>Appender</strong> is a tool that allows configuring where and how the logs will be recorded. The <code class="language-xml">name</code> parameter specifies the name of the appender, and the <code class="language-xml">class</code> parameter specifies the class that will implement the appender.</p>
+<p>The <code class="language-xml">&lt;encoder&gt;</code> tag specifies the format in which the logs will be recorded. A log message in the format we defined above would look like this:</p>
+<pre><code class="language-no-highlight">01:15:54 INFO  com.example.Example - Customized message format</code></pre>
+<p>The <code class="language-xml">&lt;root&gt;</code> tag refers to the predefined root logger. Here we have specified the log level <code class="language-xml">level="info"</code>, and the appender <code class="language-xml">&lt;appender-ref ref="console" /&gt;</code> was tied to it.</p>
+<p>In the top line of the settings, you can notice that we used <code class="language-xml">ConsoleAppender</code>. This appender makes it possible to output logs in the console.</p>
+<p>Another standard appender is <code class="language-xml">FileAppender</code>. As you can guess from the name, this appender allows you to write logs to a file.</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+    &lt;appender name="file" class="ch.qos.logback.core.FileAppender"&gt;
+        &lt;file&gt;${user.dir}/logs/example.log&lt;/file&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;root level="info"&gt;
+        &lt;appender-ref ref="file" /&gt;
+    &lt;/root&gt;
+&lt;/configuration&gt;</code></pre>
+<p>This is the most primitive setup for <code class="language-xml">FileAppender</code>. A new addition to the settings is the <code class="language-xml">&lt;file&gt;</code> tag, in which we specify where the file is located and where we want to record logs. Don't worry if this file is not there — it will be created when the application is launched. Thanks to <code class="language-xml">${user.dir}</code>, the log file will appear in the main project folder.</p>
+<h5 id="logger-levels">Logger levels</h5>
+<p>Logback allows you to configure the log level for individual packages and classes. To do this, you will need to go to <em>logback.xml</em> file and then specify the parameters <code class="language-xml">name</code> and <code class="language-xml">level</code>. In the <code class="language-xml">name</code> parameter, specify the path to the package or class in your project, and in the <code class="language-xml">level</code> parameter, specify the logging level that you need. Here is an example of how you can configure a logger level:</p>
+<pre><code class="language-kotlin">import org.slf4j.LoggerFactory
+
+class Example {
+    private val LOG = LoggerFactory.getLogger(Example::class.java)
+
+    fun log() {
+        LOG.warn("WARN level message")
+        LOG.info("INFO level message")
+    }
+}
+
+class LoggerLevelClass {
+    private val LOG = LoggerFactory.getLogger(LoggerLevelClass::class.java)
+
+    fun log() {
+        LOG.debug("DEBUG level message")
+        LOG.info("INFO level message")
+    }
+}
+
+fun main() {
+    Example().log()
+    LoggerLevelClass().log()
+}</code></pre>
+<p>For the classes above, we set up these logger levels:</p>
+<pre><code class="language-xml">&lt;configuration&gt;
+&lt;appender name="console" class="ch.qos.logback.core.ConsoleAppender"&gt;
+    &lt;encoder&gt;
+        &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;
+    &lt;/encoder&gt;
+&lt;/appender&gt;
+
+&lt;logger name="com.example" level="warn"/&gt;
+&lt;logger name="com.example.LoggerLevelClass" level="info"/&gt;
+
+&lt;root level="info"&gt;
+    &lt;appender-ref ref="console" /&gt;
+&lt;/root&gt;
+&lt;/configuration&gt;</code></pre>
+<p>Each logger will output only the messages whose log request level is higher than or equal to the level of the logger. There is a hierarchy in Logback that is based on names. That is, if we have a logger named<strong><em> </em></strong><code class="language-xml">com.logback.first</code>, it will be the parent of a logger called <code class="language-xml">com.logback.first.second</code>, which is the parent of the <code class="language-xml">com.logback logger.first.second.third</code>. This means that you can define logger levels for entire packages. On top of every hierarchy is the root logger. If we run the code, we will see only two log levels of messages:</p>
+<p><img alt="" height="360" name="Снимок экрана от 2023-01-11 16-21-49.png" src="https://ucarecdn.com/3acf0643-7174-402f-a37c-53a2db392b4a/" width="1842"/></p>
+<p>If you want to learn more about the hierarchy in Logback, you can read <a href="https://medium.com/@igorski/log-hierarchy-in-logback-f68d731941e9" rel="noopener noreferrer nofollow" target="_blank">this article</a>.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, you've found out what Logback is for and what functionalities it provides to developers. Thanks to Logback, you will know what actions your program performed. You can also configure loggers for your convenience, monitor packages or classes separately, and easily track errors and their causes.</p>

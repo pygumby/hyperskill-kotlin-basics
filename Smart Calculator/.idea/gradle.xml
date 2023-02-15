@@ -95,6 +95,11 @@
             <option value="$PROJECT_DIR$/Topics/Libraries/Theory" />
             <option value="$PROJECT_DIR$/Topics/Libraries/When to use" />
             <option value="$PROJECT_DIR$/Topics/Libraries/Where to get" />
+            <option value="$PROJECT_DIR$/Topics/Logback/Configuration" />
+            <option value="$PROJECT_DIR$/Topics/Logback/Log request levels" />
+            <option value="$PROJECT_DIR$/Topics/Logback/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Logback/What is Logback" />
+            <option value="$PROJECT_DIR$/Topics/Logback/Why is it good" />
             <option value="$PROJECT_DIR$/Topics/Stack/Hacking the Matrix" />
             <option value="$PROJECT_DIR$/Topics/Stack/The right result of the code" />
             <option value="$PROJECT_DIR$/Topics/Stack/Theory" />

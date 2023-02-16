@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: The test will be passed without any errors
+- text: The test will throw <code>org.opentest4j.AssertionFailedError</code> with
+    a message detailing the cause of the failure
+- text: The test will throw <code>org.opentest4j.AssertionFailedError</code> without
+    any details
+- text: The test will throw an <code>AssertionError</code> without any details
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/24363#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 16 Feb 2023 17:55:34 UTC"
+record: -1
+selected_options:
+- 1
+local_check: false

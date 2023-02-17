@@ -1,0 +1,287 @@
+<h2>Test lifecycle annotations</h2>
+<p>You already know how to write simple tests using a variety of assertion methods and <code class="language-kotlin">@Test</code> annotations. Now, we are going to learn about the test class lifecycle and ways of controlling it with the help of JUnit5 annotations.</p>
+<h5 id="getting-started">Getting started</h5>
+<p>We will use the following <code class="language-kotlin">User</code> class in our example:</p>
+<pre><code class="language-kotlin">private const val MIN_PASSWORD_LENGTH = 8
+
+class User(private val username: String?, private val password: String?) {
+    fun hasStrongPassword(): Boolean {
+        return password != null &amp;&amp; password.length &gt;= MIN_PASSWORD_LENGTH
+    }
+
+    fun hasValidUsername(): Boolean {
+        return !username.isNullOrBlank()
+    }
+
+    val isValid: Boolean
+        get() = hasValidUsername() &amp;&amp; hasStrongPassword()
+
+}</code></pre>
+<p>It has two private <code class="language-kotlin">String</code> fields: <code class="language-kotlin">username</code> and <code class="language-kotlin">password</code>, a constructor that takes two <code class="language-kotlin">String</code> arguments, and three public methods to check if an instance of the class <code class="language-kotlin">User</code> has a valid username, a strong password (which is considered strong if it is at least 8 characters long), and represents a valid <code class="language-kotlin">User</code>, which means that it has a valid username and a strong password.</p>
+<p>Also, we have the following test suite to test the correctness of the implementation of the <code class="language-kotlin">User</code> class methods:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
+
+internal class UserTest {
+    @Test
+    fun hasStrongPassword() {
+        val username = "Alice"
+        val password = "12345678"
+        val user = User(username, password)
+        assertTrue(user.hasStrongPassword())
+    }
+
+    @Test
+    fun hasValidUsername() {
+        val username = "Alice"
+        val password = "12345678"
+        val user = User(username, password)
+        assertTrue(user.hasValidUsername())
+    }
+
+    @Test
+    fun isValid() {
+        val username = "Alice"
+        val password = "12345678"
+        val user = User(username, password)
+        assertTrue(user.isValid)
+    }
+}</code></pre>
+<p>Look at the implementation of these tests. Each of them is completely independent of the others. We are not calling any test in another test, and each test uses a new instance of the <code class="language-kotlin">User</code> class. That may not make much sense in this particular case, but if we are testing more complex classes, we will want to start each time with a clean state of the object being tested.</p>
+<p>This means that we should not create a single instance of a class and share it among all tests, since a certain test may leave some state in the object that might affect the results of other tests. That is why we should execute each test using a new instance of the tested class.</p>
+<p>However, in our case, we initialized a new object of the <code class="language-kotlin">User</code> class in each test method repeating the same code in multiple places, which generally is a bad idea.</p>
+<p>In our example, we wrote just a few tests and the initialization requires only a few lines of code (we even could have done it as a one-liner), but in other projects, we could have classes that require more lines of code to initialize their instances. Also, notice that we tested just the happy path of execution of the <code class="language-kotlin">User</code> class methods, but in a real project, we will have to check every execution path of every method, and this will require us to write many tests. Fortunately, JUnit5 provides us tools using which we can better organize code according to our needs.</p>
+<h5 id="test-class-instance-lifecycle">Test class instance lifecycle</h5>
+<p>First, let's talk about how JUnit5 executes our tests. It creates a new instance of the test class before executing each test method. This way, it ensures execution of individual test methods in isolation to avoid possible side effects produced by any changes of state of the test class instance.</p>
+<p></p><div class="alert alert-primary"><code class="language-kotlin">@TestInstance</code> annotation controls the test class instance lifecycle. It is set to <code class="language-kotlin">TestInstance.Lifecycle.PER_METHOD</code> by default but can be changed if necessary.</div>
+<p>Also, JUnit5 has special annotations to designate any methods as <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle" rel="noopener noreferrer nofollow" target="_blank">lifecycle</a> methods, such as <code class="language-kotlin">@BeforeAll</code>, <code class="language-kotlin">@AfterAll</code>, <code class="language-kotlin">@BeforeEach</code>, or <code class="language-kotlin">@AfterEach</code>. They instruct the framework to execute the designated methods before or after executing actual test methods.</p>
+<p>The annotations <code class="language-kotlin">@BeforeEach</code> and <code class="language-kotlin">@AfterEach</code> indicate, respectively, that the annotated method will be executed before and after each method of the test class annotated with <code class="language-kotlin">@Test</code>, while <code class="language-kotlin">@BeforeAll</code> and <code class="language-kotlin">@AfterAll</code> methods will be executed before or after all the <code class="language-kotlin">@Test</code> methods in the test class.</p>
+<p>In the following example, we create a new test class to see how lifecycle annotations actually work:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.*
+
+class LifeCycleTest {
+
+    constructor(){
+        println("Test Class Constructor")
+    }
+
+    @BeforeEach
+    fun beforeEach() {
+        println("Before each test")
+    }
+
+    @AfterEach
+    fun afterEach() {
+        println("After each test")
+    }
+
+    @Test
+    fun test1() {
+        println("Test 1")
+    }
+
+    @Test
+    fun test2() {
+        println("Test 2")
+    }
+}</code></pre>
+<p></p><div class="alert alert-primary">A test fixture is a fixed state of objects intended to provide a known and fixed environment for running tests.</div>
+<p>Running the tests gives the following output:</p>
+<pre><code class="language-no-highlight">Test Class Constructor
+Before each test
+Test 1
+After each test
+Test Class Constructor
+Before each test
+Test 2
+After each test</code></pre>
+<p>Note that the methods annotated with <code class="language-kotlin">@BeforeAll</code> and <code class="language-kotlin">@AfterAll</code> are static because this way, they can be shared among new test class instances created for each test method. If your test class has ten test methods, the methods annotated with <code class="language-kotlin">@BeforeEach</code> and <code class="language-kotlin">@AfterEach</code> will execute ten times each, while the methods annotated with <code class="language-kotlin">@BeforeAll</code> and <code class="language-kotlin">@AfterAll</code> will execute only once. </p>
+<p>Let's see how it works:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.*
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class LifeCycleTest {
+
+    constructor(){
+        println("Test Class Constructor")
+    }
+
+    @BeforeAll
+    fun beforeAll() {
+        println("Before all tests")
+    }
+
+    @AfterAll
+    fun afterAll() {
+        println("After all tests")
+    }
+
+    @BeforeEach
+    fun beforeEach() {
+        println("Before each test")
+    }
+
+    @AfterEach
+    fun afterEach() {
+        println("After each test")
+    }
+
+    @Test
+    fun test1() {
+        println("Test 1")
+    }
+
+    @Test
+    fun test2() {
+        println("Test 2")
+    }
+}</code></pre>
+<p>The result of the test class will be as follows:</p>
+<pre><code class="language-kotlin">Test Class Constructor
+Before all tests
+Before each test
+Test 1
+After each test
+Before each test
+Test 2
+After each test
+After all tests
+</code></pre>
+<p>The following diagram illustrates this order to help you better understand the test class lifecycle:</p>
+<p><img alt="" height="301" src="https://ucarecdn.com/2e127439-b117-4112-a576-d61a5e649e93/" width="456"/></p>
+<h5 id="test-instance-per-class">Test instance per class</h5>
+<p>In the previous example, we used the @TestInstance annotation (Lifecycle.PER_CLASS), let's talk about it. If for any reason you would like to execute all test methods on the same instance of the test class, JUnit5 allows you to do so by annotating the test class with <code class="language-kotlin">@TestInstance(Lifecycle.PER_CLASS)</code>. In this mode, a new instance of the test class will be created only once, therefore if your test methods rely on a state stored in its non-static variables, you may need to reset that state in <code class="language-kotlin">@BeforeEach</code> or <code class="language-kotlin">@AfterEach</code> methods.</p>
+<p>We will see how <code class="language-kotlin">PER_CLASS</code> works in another example. First, let's add this annotation to our <code class="language-kotlin">LifeCycleTest</code> class:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.*;
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class LifeCycleTest {
+
+    constructor(){
+        println("Test Class Constructor")
+    }
+
+    @BeforeAll
+    fun beforeAll() {
+        println("Before the test fixture")
+    }
+
+    @AfterAll
+    fun afterAll() {
+        println("After the test fixture")
+    }
+
+    @BeforeEach
+    fun beforeEach() {
+        println("Before each test")
+    }
+
+    @AfterEach
+    fun afterEach() {
+        println("After each test")
+    }
+
+    @Test
+    fun test1() {
+        println("Test 1")
+    }
+
+    @Test
+    fun test2() {
+        println("Test 2")
+    }
+}</code></pre>
+<p>Note that since the test class instance is shared among all test methods, there is no need for the <code class="language-kotlin">@BeforeAll</code> and <code class="language-kotlin">@AfterAll</code> methods to be static. Now, let's run it and see what has changed compared to the new instance per test method:</p>
+<pre><code class="language-no-highlight">Test Class Constructor
+Before the test fixture
+Before each test
+Test 1
+After each test
+Before each test
+Test 2
+After each test
+After the test fixture</code></pre>
+<p></p><div class="alert alert-primary">For the per test method test instance lifecycle, remove the <code class="language-kotlin">@TestInstance</code> annotation from your test class or explicitly use <code class="language-kotlin">@TestInstance(TestInstance.Lifecycle.PER_METHOD)</code>.</div>
+<p>The following diagram illustrates the method call sequence:</p>
+<p><img alt="" height="321" src="https://ucarecdn.com/392e5aad-bafe-4341-8095-d947b810514c/" width="435"/></p>
+<p>If you are using this mode and your test methods rely on state stored in instance variables, you may need to reset that state in <code class="language-kotlin">@BeforeEach</code> or <code class="language-kotlin">@AfterEach</code> methods to avoid unexpected side effects.</p>
+<h5 id="using-lifecycle-annotations">Using lifecycle annotations</h5>
+<p>Now, we may rewrite our <code class="language-kotlin">UserTest</code> class and get rid of initialization of <code class="language-kotlin">User</code> instances in each test method:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+
+internal class UserTest {
+    var user: User? = null
+
+    @BeforeEach
+    fun createUser() {
+        val username = "Alice"
+        val password = "12345678"
+        user = User(username, password)
+    }
+
+    @Test
+    fun hasStrongPassword() {
+        assertTrue(user!!.hasStrongPassword())
+    }
+
+    @Test
+    fun hasValidUsername() {
+        assertTrue(user!!.hasValidUsername())
+    }
+
+    @Test
+    fun isValid() {
+        assertTrue(user!!.isValid)
+    }
+}</code></pre>
+<p>In what other cases may lifecycle annotation help? <code class="language-kotlin">@BeforeEach</code> , as you have seen, may be used to set up new instances of the classes being tested. <code class="language-kotlin">@AfterEach</code> is handy to clean up any side effects of the execution of the tests or to provide detailed information about their execution and results. <code class="language-kotlin">@BeforeAll</code> and <code class="language-kotlin">@AfterAll</code> are great for setting up and tearing down the entire test fixture. You may use methods annotated by <code class="language-kotlin">@BeforeAll</code> to create and initialize big data structures, establish connections to data sources, fetch data from databases, remote repositories, or hard drives, and after that close resources and clean everything up in <code class="language-kotlin">@AfterAll</code> methods.</p>
+<p>Putting it all together, we can write the following implementation of our test class with a pre-defined set of input data:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.*
+import org.junit.jupiter.api.Assertions.*
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+internal class UserTest {
+    lateinit var names: Array&lt;String?&gt;
+    lateinit var passwords: Array&lt;String?&gt;
+    lateinit var expectedOutcomes: BooleanArray
+
+    var index = 0
+
+    var user: User? = null
+    var expected = false
+
+    @BeforeAll
+    fun setUp() {
+        names = arrayOf("Alice", "Alice", "Alice", "", null, "    ")
+        passwords = arrayOf("12345678", "123", null, "12345678", "12345678", "12345678")
+        expectedOutcomes = booleanArrayOf(true, false, false, false, false, false)
+    }
+
+    @BeforeEach
+    fun createUser() {
+        user = User(names[index], passwords[index])
+        expected = expectedOutcomes[index]
+    }
+
+    @AfterEach
+    fun incrementIndex() {
+        index++
+    }
+
+    @RepeatedTest(value = 6, name = "user.isValid() test {currentRepetition}/{totalRepetitions}")
+    fun isValid() {
+        assertEquals(expected, user!!.isValid)
+    }
+}</code></pre>
+<p>Here we used <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-repeated-tests" rel="noopener noreferrer nofollow" target="_blank">@RepeatedTest</a> to run the annotated test 6 times (<code class="language-kotlin">value = 6</code>) and defined a custom name for displaying test results. <code class="language-kotlin">{currentRepetition}</code> and <code class="language-kotlin">{totalRepetitions}</code> are placeholders for displaying the current run and the total number of test runs. Here is the output:</p>
+<pre><code class="language-no-highlight">user.isValid() test 1/6
+user.isValid() test 2/6
+user.isValid() test 3/6
+user.isValid() test 4/6
+user.isValid() test 5/6
+user.isValid() test 6/6</code></pre>
+<p>Even in this simple example lifecycle annotations help us create multiple test cases with ease.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>When we write test methods, we do the following: set up, initialize, and assert. If we have many test methods, we have to repeat these lines of code multiple times. We can use lifecycle method annotations <code class="language-kotlin">@BeforeAll</code>, <code class="language-kotlin">@AfterAll</code>, <code class="language-kotlin">@BeforeEach</code>, and <code class="language-kotlin">@AfterEach</code> to better organize code, separate text fixture initialization logic from test case assertions, and control the state of our test class. JUnit uses a new test instance per each test method by default. In the case we need a single test instance for our test class, we can use <code class="language-kotlin">@TestInstance(TestInstance.Lifecycle.PER_CLASS)</code> annotation.</p>

@@ -1,0 +1,37 @@
+<h2>Annotate it</h2>
+<p></p>
+<p>Methods of this test class lack proper annotations:</p>
+<pre><code class="language-kotlin">@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+internal class SampleTests {
+
+    @BeforeAll // 1.
+    fun setup() {
+        println("Executes before anything else")
+    }
+
+    // 2.
+    fun teardown() {
+        println("Executes after anything else")
+    }
+    
+    // 3.
+    fun instantiate() {
+        println("Executes before a test method")
+    }
+
+    @AfterEach
+    fun  // 4.
+            cleanup() {
+        println("Executes after a test method")
+    }
+
+    // 5.
+    fun testSomething() {
+        println("Performs a test")
+    }
+}</code></pre>
+<p>Let's fix it! Write the missing annotations for positions 2, 3, and 5. Write each annotation in a new line and remember that they are case sensitive.</p>
+<p>Example:</p>
+<pre><code class="language-no-highlight">@BeforeAll
+@BeforeEach
+@Test</code></pre>

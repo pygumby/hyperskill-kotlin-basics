@@ -19,3 +19,4 @@ content:
 - Array exceptions
 - Logback
 - JUnit
+- Test lifecycle annotations

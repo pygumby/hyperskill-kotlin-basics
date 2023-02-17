@@ -1,0 +1,54 @@
+<h2>The correct result of the test</h2>
+<p></p>
+<p>We have a class that performs mathematical actions:</p>
+<pre><code class="language-kotlin">class MathUtil {
+
+    fun add(a: Int, b: Int): Int = a + b
+
+    fun multiple(a: Int, b: Int): Int = a * b
+
+    fun devide(a: Int, b: Int): Int = a / b
+}</code></pre>
+<p>We wrote tests to check the performance of the class:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+internal class MathUtilTest {
+    private var result = 5
+    private val mathUtil = MathUtil()
+
+    @AfterEach
+    fun afterEach(){
+        // required code  
+    }
+
+    @Test
+    fun test_Add() {
+        result = mathUtil.add(result, 5)
+        println("test_Add(5,5) =&gt; $result")
+        assertEquals(10, result)
+    }
+
+    @Test
+    fun test_Multiply() {
+        result = mathUtil.multiple(result, 5)
+        println("test_Multiply(5,5) =&gt; $result")
+        assertEquals(25, result)
+    }
+
+    @Test
+    fun test_Devide() {
+        result = mathUtil.devide(result, 5)
+        println("test_Devide(5,5) =&gt; $result")
+        assertEquals(1, result)
+    }
+}</code></pre>
+<p>An error was made when writing the test class, and the tests do not work.<br/>
+The correct conclusion after passing the tests is:</p>
+<pre><code class="language-kotlin">test_Devide(5,5) =&gt; 1
+test_Add(5,5) =&gt; 10
+test_Multiply(5,5) =&gt; 25</code></pre>
+<p>Specify the missing code in the tests.</p>

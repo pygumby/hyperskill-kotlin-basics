@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: PER_TEST
+- text: PER_CLASS
+- text: PER_RUN
+- text: PER_METHOD
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25121#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 17 Feb 2023 16:36:34 UTC"
+record: -1
+selected_options:
+- 1
+- 3
+local_check: false

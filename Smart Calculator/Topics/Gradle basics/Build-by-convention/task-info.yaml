@@ -1,8 +1,8 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: Gradle uses the default settings and the programmer cannot change them.
 - text: "Gradle does not use settings, only conventions."
+- text: Gradle uses the default settings and the programmer cannot change them.
 - text: The programmer always needs to set values for all the possible settings.
 - text: Gradle uses the default settings and the programmer can change them when it
     is necessary.

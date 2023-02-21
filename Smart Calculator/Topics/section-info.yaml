@@ -20,3 +20,4 @@ content:
 - Logback
 - JUnit
 - Test lifecycle annotations
+- Parameterized test

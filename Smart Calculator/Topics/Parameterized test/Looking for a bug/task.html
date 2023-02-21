@@ -1,0 +1,34 @@
+<h2>Looking for a bug</h2>
+<p></p>
+<p>Imagine that you copied a palindrome checker method from <code class="language-kotlin">stackoverflow.com</code> and now want to be sure that it works as you expect. Here is that suspicious code:</p>
+<pre><code class="language-kotlin">class StringUtils {
+    fun isPalindrome(string: String?): Boolean {
+        if (string.isNullOrBlank() || string.length &lt; 2) {
+            return false
+        }
+        var start = 0
+        var end = string.length - 1
+        while (start &lt; end) {
+            if (string[start] != string[end]) {
+                return false
+            }
+            start++
+            end--
+        }
+        return true
+    }
+}</code></pre>
+<p>You quickly wrote a test method with some test cases:</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
+
+internal class StringUtilsTest{
+    @ParameterizedTest
+    @ValueSource(strings = ["rotator", "Stats", "(radar)", "level", "race car"])
+    fun testPalindrome(str: String?) {
+        val stringUtils = StringUtils()
+        assertTrue(stringUtils.isPalindrome(str))
+    }
+}</code></pre>
+<p>Which of the test cases are going to fail when you run this test?</p>

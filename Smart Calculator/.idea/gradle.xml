@@ -103,6 +103,10 @@
             <option value="$PROJECT_DIR$/Topics/Logback/Theory" />
             <option value="$PROJECT_DIR$/Topics/Logback/What is Logback" />
             <option value="$PROJECT_DIR$/Topics/Logback/Why is it good" />
+            <option value="$PROJECT_DIR$/Topics/Parameterized test/Argument sources" />
+            <option value="$PROJECT_DIR$/Topics/Parameterized test/Looking for a bug" />
+            <option value="$PROJECT_DIR$/Topics/Parameterized test/Methods as sources" />
+            <option value="$PROJECT_DIR$/Topics/Parameterized test/Theory" />
             <option value="$PROJECT_DIR$/Topics/Stack/Hacking the Matrix" />
             <option value="$PROJECT_DIR$/Topics/Stack/The right result of the code" />
             <option value="$PROJECT_DIR$/Topics/Stack/Theory" />

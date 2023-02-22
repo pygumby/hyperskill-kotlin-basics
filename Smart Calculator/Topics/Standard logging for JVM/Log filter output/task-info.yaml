@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: "INFO: Info Log"
+- text: "The filter will not work, nothing will be displayed in the console"
+- text: The code causes a compile time error
+- text: "INFO: Info Log\\brWARNING: Warning Log"
+- text: "WARNING: Warning Log"
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25561#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 22 Feb 2023 14:23:55 UTC"
+record: -1
+selected_options:
+- 1
+local_check: false

@@ -22,3 +22,4 @@ content:
 - Test lifecycle annotations
 - Parameterized test
 - Intro to annotations
+- Standard logging for JVM

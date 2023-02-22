@@ -1,0 +1,98 @@
+<h2>Intro to annotations</h2>
+<p> </p>
+<p>Annotations are a very useful and even necessary tool, especially when building complex applications using libraries, like Room for databases, or frameworks like Spring Boot for backend. Having said that, let's look into the basics of annotations and consider some examples.</p>
+<h5 id="annotation">Annotation </h5>
+<p>Annotations offer a way of providing instructions and metadata (data about data) to the compiler, IDE, or framework to handle some complex tasks and make your life easier. This information may be intended just for the IDE to help you write more efficient code or may contain documentation for both yourself and the compiler about some piece of code.</p>
+<p>Metadata is the information about data that makes this data more meaningful, so in our case, the compiler or frameworks will have useful information about our code to perform complex tasks. </p>
+<p>The most common case is using libraries like Room or Retrofit when you develop android apps or frameworks like Spring or Spring Boot. These frameworks come with many built-in annotations, and through them, frameworks will know what you want to do and will do it for you without showing you the complex implementation. You may conceive of an annotation as magic – one word does a lot of work in the background.</p>
+<p>In code, it may be any word starting with the <code class="language-kotlin">@</code> symbol, which we put directly above the specific target or before it. For example, if we want to apply an annotation <code class="language-kotlin">@MyAnnotation</code> to some class <code class="language-kotlin">MyClass</code>, we will do it like this:</p>
+<pre><code class="language-kotlin">// Before the code line
+@MyAnnotation class MyClass {}
+
+// Or directly above it
+@MyAnnotation 
+class MyClass {}</code></pre>
+<p>Annotations will be applied to the closest element as in the example below:</p>
+<pre><code class="language-kotlin">@Suppress("CanBeVal")
+
+var myFirstName = "Alex"           // Suppress annotation will be applied here
+var myFriendName = "Aaron"        // will NOT be applied here</code></pre>
+<p>You can add as many annotations as you want to one target, like in the example below:</p>
+<pre><code class="language-kotlin">//We applied two annotations to one field, and it's totally ok
+@NotNull
+@PrimaryKey(autoGenerate = true)
+var taskId: Long = 0L</code></pre>
+<h5 id="suppress-annotation">Suppress annotation </h5>
+<p>When writing code, you've probably already seen IDE warnings about code style – for example, about using magic numbers. Is it annoying? It is, so let's learn our first annotation – <code class="language-kotlin">@Suppress</code> – which will suppress such warnings.</p>
+<p style="text-align: center;"><img alt="" height="194" name="image.png" src="https://ucarecdn.com/37fdf053-b0f8-44c7-ade8-2ff887760a5b/" width="194"/></p>
+<p><code class="language-kotlin">@Suppress("name of warning")</code> is an annotation that tells the compiler to suppress a specific warning, which is passed in quotation marks in the parentheses. </p>
+<p>In the example below, the variable <code class="language-kotlin">myNumber</code> should be <code class="language-kotlin">val</code> rather than <code class="language-kotlin">var</code>, as it is never modified, so the IDE will warn you about it and suggest replacing it.</p>
+<pre><code class="language-kotlin">fun main() {
+    var number = 5
+    println(number)
+}</code></pre>
+<p> Ok, thanks! But what if you want to keep it <code class="language-kotlin">var</code> for specific reasons and avoid any warnings? Now we will apply <code class="language-kotlin">@Suppress()</code> like in the code snippet below:</p>
+<pre><code class="language-kotlin">fun main() {
+    @Suppress("CanBeVal") var number = 5
+    println(number)
+}</code></pre>
+<p>No warnings now!</p>
+<h5 id="annotation-target">Annotation target </h5>
+<p>Annotation targets are all kinds of annotated elements, such as classes, functions, properties, and expressions. Some annotations can work with specific elements, and some can work with all elements, so it's important to know the target if you are creating a custom annotation or using them. We will learn how to create those in the following topics.</p>
+<p>Now, let's again use <code class="language-kotlin">@Suppress()</code> to target warnings on different elements.</p>
+<p>In the example below, it will work on only<em> </em>one statement – the one directly below the annotation or beside it.</p>
+<pre><code class="language-kotlin">fun main() {
+    @Suppress("CanBeVal") 
+    var number = 45       // Warning will disappear from here
+    var anotherNumber = 5 // Warning will still appear here
+    println(number)
+    println(anotherNumber)
+}</code></pre>
+<p>We can also target a whole function. Consider the example below:</p>
+<pre><code class="language-kotlin">// no warning at all!
+@Suppress("CanBeVal")
+fun main() {
+    var number = 45
+    var anotherNumber = 5
+    println(number)
+    println(anotherNumber)
+}</code></pre>
+<p>Also, we can target a whole class, like in the example below.</p>
+<p><code class="language-kotlin">@Suppress("unused")</code> will suppress any warning about the unused elements.</p>
+<pre><code class="language-kotlin">// Zero warnings 
+@Suppress("unused")
+class MyClass {
+    fun printNumber() {
+        /*..*/
+    }
+
+    fun sumNumber() {
+        /*..*/
+    }
+}</code></pre>
+<p>Last but not least, we can target a whole file by writing <code class="language-kotlin">@file:NameOfAnnotation()</code> at the top of the file.</p>
+<pre><code class="language-kotlin">@file:Suppress("unused")
+
+class MyClass {
+    fun printNumber() {
+        /*..*/
+    }
+
+    fun sumNumber() {
+        /*..*/
+    }
+}
+
+class AnotherClass {
+    fun printNumber() {
+        /*..*/
+    }
+
+    fun sumNumber() {
+        /*..*/
+    }
+}</code></pre>
+<p>If you want to suppress warnings about a variable, you should write "UNUSED_VARIABLE" instead of "unused".</p>
+<p>In fact, you can target even more elements with <code class="language-kotlin">@Suppress</code>, you can see the whole list in the official <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-suppress/#suppress" rel="noopener noreferrer nofollow" target="_blank">documentation</a>.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, we have learned that annotations are a way of providing metadata about code to the IDE, compiler, yourself, or a third party tool like Spring or Spring Boot. They are intended to handle complex tasks and help you easily write efficient code. Also, annotations have specific targets to work with. You've learned how to work with annotations using the <code class="language-kotlin">@Suppress</code> example. Let's have some practice now.</p>

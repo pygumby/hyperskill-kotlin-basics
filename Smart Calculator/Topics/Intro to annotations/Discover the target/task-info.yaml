@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Function
+- text: Another annotation
+- text: Class
+- text: Fields
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22305#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 22 Feb 2023 13:22:53 UTC"
+record: -1
+selected_options:
+- 0
+local_check: false

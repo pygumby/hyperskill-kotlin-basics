@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: All annotations have the same target.
+- text: Annotation is a word starting with the @ symbol.
+- text: Annotations provide metadata only for libraries and frameworks.
+- text: Annotations change the code we write.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22303#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 22 Feb 2023 13:26:40 UTC"
+record: -1
+selected_options:
+- 1
+local_check: false

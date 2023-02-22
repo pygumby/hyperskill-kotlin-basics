@@ -1,0 +1,1 @@
+moshi.adapter(Cat::class.java)

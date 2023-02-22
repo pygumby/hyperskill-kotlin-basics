@@ -1,0 +1,128 @@
+<h2>JSON Moshi Library</h2>
+<br>
+You have already learned about the benefits of transferring data by serializing it into JSON format. Manually converting classes isn't very convenient, but fortunately, there are plenty of libraries available that simplify the process. One of the most popular and frequently used in Android is called <strong>Moshi</strong>.</p>
+
+<p>Moshi's API is much smaller than other well-known libraries like <strong>Jackson</strong> and <strong>Gson</strong>. Gson has more than a thousand methods, while Moshi has only half that number. Moshi also weighs 2-3 times less (just over 100kB compared to Gson's 300kB).</p>
+
+<p>Moshi is fast and requires less memory, making it a great option to choose. In this topic, you'll learn how to use it and find out more about the structure of JSON along the way.</p>
+
+<h5 id="adding-a-library">Adding a library</h5>
+
+<p>To use the Moshi library, we need to add the following dependency to our <code class="language-kotlin">build.gradle.kts</code> file in the <code class="language-kotlin">dependencies</code> section:</p>
+
+<pre><code class="language-kotlin">implementation("com.squareup.moshi:moshi-kotlin:1.11.0")
+</code></pre>
+
+<p>With this in place, our IDE will import the required classes as we write our code.</p>
+
+<p>You can find out more by visiting Moshi's <a target="_blank" target="_blank" target="_blank" target="_blank" target="_blank" href="https://github.com/square/moshi" rel="noopener noreferrer nofollow">GitHub page</a>.</p>
+
+<h5 id="serializing-kotlin-objects-into-json-strings">Serializing Kotlin objects into JSON strings</h5>
+
+<p>We'll start by defining a <code class="language-kotlin">Human</code> class that we can use to perform operations:</p>
+
+<pre><code class="language-kotlin">class Human(var name: String, var age: Int, var friends: Array&lt;String&gt;)</code></pre>
+
+<p>Now let's create an instance of the <code class="language-kotlin">Human</code> class:</p>
+
+<pre><code class="language-kotlin">val human = Human("Mike", 20, arrayOf("Alex", "Valery", "Ann"))
+</code></pre>
+
+<p>To work with Moshi, we need to use the <strong>Builder pattern</strong> to create the following object:</p>
+
+<pre><code class="language-kotlin">val moshi = Moshi.Builder()
+    .add(KotlinJsonAdapterFactory())
+    .build()</code></pre>
+
+<p>Next, we need to create an <code class="language-kotlin">adapter</code> to serialize the <code class="language-kotlin">Human</code> class and pass it the correct reference. This can be done with the Kotlin  <code class="language-kotlin">Classname::class.java</code> feature:</p>
+
+<pre><code class="language-kotlin">val humanAdapter = moshi.adapter(Human::class.java)</code></pre>
+
+<p>That's it! Now we're all set to quickly and conveniently convert our object into a JSON representation. For simplicity, we'll print the string to the output stream. However, in an actual application, we could save the result to a text file or database.</p>
+
+<pre><code class="language-kotlin">print(humanAdapter.toJson(human))
+// {"name":"Mike","age":20,"friends":["Alex","Valery","Ann"]}</code></pre>
+
+<h5 id="deserializing-json-into-kotlin-objects">Deserializing JSON into Kotlin objects </h5>
+
+<p>We've got our adapter ready for the class, so let's try to use it to recreate a new object from a JSON string:</p>
+
+<pre><code class="language-kotlin">val newHumanString = """
+    {"name":"John",
+    "age":25, 
+    "friends":["Mike","Helen"]}""".trimIndent()
+
+val newHuman = humanAdapter.fromJson(newHumanString)</code></pre>
+
+<p>The <code class="language-kotlin">fromJson</code> method doesn't return a <code class="language-kotlin">Human</code>, it returns a <code class="language-kotlin">Human?</code> object. This is because it can be nullable (the <code class="language-kotlin">fromJson</code> method may not recognize the supplied JSON string), so <code class="language-kotlin">?.</code> is used to access it safely.</p>
+
+<p>Now we want to deserialize a more complex structure — a list of class objects.</p>
+
+<p>Because our transformation will involve two classes, <code class="language-kotlin">Human</code> and <code class="language-kotlin">List</code>, we need to pass them in a <code class="language-kotlin">ParameterizedType</code> object. This approach allows us to store information about both classes together so it can be passed to the adapter for use during deserialization:</p>
+
+<pre><code class="language-kotlin">val humanList = listOf(human, newHuman)
+
+val type = Types.newParameterizedType(List::class.java, Human::class.java)
+val humanListAdapter = moshi.adapter&lt;List&lt;Human?&gt;&gt;(type)
+print(humanListAdapter.toJson(humanList)) // [{"name":"Mike","age":20,"friends":["Alex","Valery","Ann"]},{"name":"John","age":25,"friends":["Mike","Helen"]}]</code></pre>
+
+<p>Having created a suitable adapter by combining the <code class="language-kotlin">List</code> and <code class="language-kotlin">Human</code> classes, we can use it to convert a JSON string:</p>
+
+<pre><code class="language-kotlin">val jsonStr =
+    """[{"name":"Nick","age":10,"friends":["Valery"]},
+       {"name":"John","age":25,"friends":[]},
+       {"name":"Kate","age":40,"friends":[]}]
+       """.trimIndent()
+
+val newHumanList = humanListAdapter.fromJson(jsonStr)</code></pre>
+
+<h5 id="working-with-json">Working with JSON</h5>
+
+<p>In the previous section, we learned how to retrieve objects from JSON via deserialization. Now we'll look at some examples of how to make use of them:</p>
+
+<p>It's simple to find out the name of the <code class="language-kotlin">newHuman</code> object we created with our adapter:</p>
+
+<pre><code class="language-kotlin">print(newHuman?.name) // John</code></pre>
+
+<p>We can output more complex data as well. Let's see who John's friends are! </p>
+
+<pre><code class="language-kotlin">print(newHuman?.friends.contentToString()) // [Mike, Helen]</code></pre>
+
+<p>We also created an adapter based on two classes that enabled us to deserialize a list of <code class="language-kotlin">Human</code> objects. Here's what it contains:</p>
+
+<pre><code class="language-kotlin">for (h in newHumanList!!) {
+    print(h?.name + " ")
+} // Nick John Kate</code></pre>
+
+<p>We are sure our list is definitely not null, so use <code class="language-kotlin">!!</code> when we refer to it.</p>
+
+<p>For the final example, let's change our class a little by adding a <code class="language-kotlin">Map</code> that displays subject grades:</p>
+
+<pre><code class="language-kotlin">class Human(var name: String, var age: Int, var friends: Array&lt;String&gt;, var grades: Map&lt;String, String&gt;)
+</code></pre>
+
+<p>Next, create an appropriate <code class="language-kotlin">adapter</code> that includes <code class="language-kotlin">Map</code>:</p>
+
+<pre><code class="language-kotlin">val type = Types.newParameterizedType(List::class.java, Human::class.java, Map::class.java)
+val humanListAdapter = moshi.adapter&lt;List&lt;Human?&gt;&gt;(type)</code></pre>
+
+<p>We finish by converting our objects from a JSON string as we did before:</p>
+
+<pre><code class="language-kotlin">val jsonStr =
+    """[{"name":"Ruslan","age":20,"friends":["Victoria","Valery"],
+        "grades":{"Math":"A","Philosophy":"F","Physics":"D"}},
+        {"name":"Victoria","age":35,"friends":["Ruslan","Anastasia"],
+        "grades":{"Math":"B","Philosophy":"C","Physics":"B"}}]""".trimIndent()
+val humanList = humanListAdapter.fromJson(jsonStr)</code></pre>
+
+<p>But this time, we're also able to display information about people's grades, as shown below:</p>
+
+<pre><code class="language-kotlin">for (h in humanList!!) {
+    println(h?.name + " has a grade of ${h!!.grades["Math"]} in maths")
+}
+// Ruslan has a grade of A in maths
+// Victoria has a grade of B in maths</code></pre>
+
+<h5 id="conclusion">Conclusion</h5>
+
+<p>In this topic, you learned about the advantages of using the Moshi library. You saw how it can be utilized to create JSON strings and convert them back into individual objects or lists of objects. You also discovered how to use these deserialized objects in your programs and improved your understanding of JSON's structure. Now it's time to test this new knowledge! </p>

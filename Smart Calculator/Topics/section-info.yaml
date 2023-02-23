@@ -24,3 +24,4 @@ content:
 - Intro to annotations
 - Standard logging for JVM
 - JSON Moshi Library
+- Kotlinx datetime library

@@ -101,6 +101,11 @@
             <option value="$PROJECT_DIR$/Topics/Java Archive/Theory" />
             <option value="$PROJECT_DIR$/Topics/Java Archive/View internal structure" />
             <option value="$PROJECT_DIR$/Topics/Java Archive/What is JAR" />
+            <option value="$PROJECT_DIR$/Topics/Kotlinx datetime library/Instant class" />
+            <option value="$PROJECT_DIR$/Topics/Kotlinx datetime library/Leap Year" />
+            <option value="$PROJECT_DIR$/Topics/Kotlinx datetime library/Subtracting Instant Objects" />
+            <option value="$PROJECT_DIR$/Topics/Kotlinx datetime library/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Kotlinx datetime library/Using the kotlinx-datetime library" />
             <option value="$PROJECT_DIR$/Topics/Libraries/Bad libraries" />
             <option value="$PROJECT_DIR$/Topics/Libraries/Features of libraries" />
             <option value="$PROJECT_DIR$/Topics/Libraries/Theory" />

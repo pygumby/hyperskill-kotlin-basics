@@ -111,6 +111,12 @@
             <option value="$PROJECT_DIR$/Topics/Libraries/Theory" />
             <option value="$PROJECT_DIR$/Topics/Libraries/When to use" />
             <option value="$PROJECT_DIR$/Topics/Libraries/Where to get" />
+            <option value="$PROJECT_DIR$/Topics/Local date and time/Correctly initiate LocalDate" />
+            <option value="$PROJECT_DIR$/Topics/Local date and time/How many days until" />
+            <option value="$PROJECT_DIR$/Topics/Local date and time/LocalDate constructors" />
+            <option value="$PROJECT_DIR$/Topics/Local date and time/LocalDateTime constructors" />
+            <option value="$PROJECT_DIR$/Topics/Local date and time/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Local date and time/Valid LocalDateTime and LocalDate properties" />
             <option value="$PROJECT_DIR$/Topics/Logback/Configuration" />
             <option value="$PROJECT_DIR$/Topics/Logback/Log request levels" />
             <option value="$PROJECT_DIR$/Topics/Logback/Theory" />

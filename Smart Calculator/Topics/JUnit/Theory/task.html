@@ -1,5 +1,14 @@
 <h2>JUnit</h2>
-<p>In this topic, you will learn about automated unit testing in Kotlin and write your own unit tests. As you probably know, a unit is a piece of code that performs a single task or a unit of work. In most cases, it conforms to a class. You can write and execute tests to check if the methods of that class work as expected.</p><p></p><div class="alert alert-primary"><p>Note that we use <strong>unit</strong> <strong>tests</strong> to test our program without its external dependencies such as databases, web services, and so on, which would fall into the category of <strong>integration</strong> <strong>tests</strong>.</p></div><p></p><p>In Kotlin, methods may return values or change the internal state of objects. To verify the correctness of any method, you may compare the value returned by that method with the expected value or compare the internal state of an object modified by that method with the expected internal state. Of course, you can do the tests manually, but it tends to be tedious and time-consuming. That's why some frameworks were developed to provide convenient tools for automated unit testing. The most popular of them is <a href="https://junit.org/junit5/" rel="noopener noreferrer nofollow" target="_blank">JUnit</a>.</p><h5 id="getting-started">Getting started</h5><p>Let's create a simple calculator that performs basic calculations on integers and checks for even numbers:</p><pre><code class="language-kotlin">object Calculator {
+<p>In this topic, you will learn about automated unit testing in Kotlin and write your own unit tests. As you probably know, a unit is a piece of code that performs a single task or a unit of work. In most cases, it conforms to a class. You can write and execute tests to check if the methods of that class work as expected.</p>
+<p> </p>
+<p></p><div class="alert alert-primary">
+<p>Note that we use <strong>unit</strong> <strong>tests</strong> to test our program without its external dependencies such as databases, web services, and so on, which would fall into the category of <strong>integration</strong> <strong>tests</strong>.</p>
+<p></p></div>
+<p> </p>
+<p>In Kotlin, methods may return values or change the internal state of objects. To verify the correctness of any method, you may compare the value returned by that method with the expected value or compare the internal state of an object modified by that method with the expected internal state. Of course, you can do the tests manually, but it tends to be tedious and time-consuming. That's why some frameworks were developed to provide convenient tools for automated unit testing. The most popular of them is <a href="https://junit.org/junit5/" rel="noopener noreferrer nofollow" target="_blank">JUnit</a>.</p>
+<h5 id="getting-started">Getting started</h5>
+<p>Let's create a simple calculator that performs basic calculations on integers and checks for even numbers:</p>
+<pre><code class="language-kotlin">object Calculator {
     
     fun add(a: Int, b: Int) = a + b
     
@@ -13,11 +22,23 @@
     }
 
     fun isEven(a: Int) = (a % 2) == 0
-}</code></pre><p>Our object has five methods: <code class="language-kotlin">add</code>, <code class="language-kotlin">subtract</code>, <code class="language-kotlin">multiply</code>, <code class="language-kotlin">divide</code>, and <code class="language-kotlin">isEven</code>, which we are going to test.</p><p>In this topic, we will use <strong>JUnit 5</strong> since it is the most recent version of the JUnit framework. JUnit 5 requires Java 8 (or higher) at runtime but can also be used to test code complied with previous versions of the JDK.</p><p>To start working with JUnit 5, you need to add the required dependencies to your project. If you use Gradle<strong> </strong>as your project build tool, add the following dependency to the <code class="language-kotlin">build.gradle</code> file:</p><pre><code class="language-kotlin">dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
-}</code></pre><p>Currently, 5.9.1 is the most recent version of the framework. You can always check <a href="https://search.maven.org/artifact/org.junit.jupiter/junit-jupiter" rel="noopener noreferrer nofollow" target="_blank">Maven central</a> for the most current version of the framework.</p><p>Also, to correctly use Gradle with JUnit 5, add the code below to the top level of the <code class="language-kotlin">build.gradle</code> file:</p><pre><code class="language-kotlin">test {
+}</code></pre>
+<p>Our object has five methods: <code class="language-kotlin">add</code>, <code class="language-kotlin">subtract</code>, <code class="language-kotlin">multiply</code>, <code class="language-kotlin">divide</code>, and <code class="language-kotlin">isEven</code>, which we are going to test.</p>
+<p>In this topic, we will use <strong>JUnit 5</strong> since it is the most recent version of the JUnit framework. JUnit 5 requires Java 8 (or higher) at runtime but can also be used to test code complied with previous versions of the JDK.</p>
+<p>To start working with JUnit 5, you need to add the required dependencies to your project. If you use Gradle<strong> </strong>as your project build tool, add the following dependency to the <code class="language-kotlin">build.gradle</code> file:</p>
+<pre><code class="language-kotlin">dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+}</code></pre>
+<p>Currently, 5.9.2 is the most recent version of the framework. You can always check <a href="https://search.maven.org/artifact/org.junit.jupiter/junit-jupiter" rel="noopener noreferrer nofollow" target="_blank">Maven central</a> for the most current version of the framework.</p>
+<p>Also, to correctly use Gradle with JUnit 5, add the code below to the top level of the <code class="language-kotlin">build.gradle</code> file:</p>
+<pre><code class="language-kotlin">test {
     useJUnitPlatform()
-}</code></pre><p>This tells Gradle to use <code class="language-kotlin">JUnitPlatform</code> to run the tests, otherwise, Gradle will not be able to see your tests and run them. Finally, load the Gradle changes.</p><h5 id="writing-tests">Writing tests</h5><p>Now you are ready to write your first test. Create a class in your project's <em>src/test/kotlin </em>folder and name it <code class="language-kotlin">CalculatorTest</code>. Test classes are named beginning with the name of the class or object they are testing, and ending with "Test"  Alternatively, if you are using IntelliJ IDEA, right-click on the class or object name and select <strong>Generate... </strong>(Alt + Insert), and then <strong>Test...</strong> in the drop-down menu. A pop-up window will appear. Leave the defaults and click OK. The IDE will then create the test class for you.</p><p>Inside the class, add a new method <code class="language-kotlin">testAddition</code> and annotate it with <code class="language-kotlin">@Test</code> from <code class="language-kotlin">org.junit.jupiter.api.Test</code>. This annotation tells the JUnit framework that the method is a unit test method.</p><pre><code class="language-kotlin">import org.junit.jupiter.api.Test
+}</code></pre>
+<p>This tells Gradle to use <code class="language-kotlin">JUnitPlatform</code> to run the tests, otherwise, Gradle will not be able to see your tests and run them. Finally, load the Gradle changes.</p>
+<h5 id="writing-tests">Writing tests</h5>
+<p>Now you are ready to write your first test. Create a class in your project's <em>src/test/kotlin </em>folder and name it <code class="language-kotlin">CalculatorTest</code>. Test classes are named beginning with the name of the class or object they are testing, and ending with "Test"  Alternatively, if you are using IntelliJ IDEA, right-click on the class or object name and select <strong>Generate... </strong>(Alt + Insert), and then <strong>Test...</strong> in the drop-down menu. A pop-up window will appear. Leave the defaults and click OK. The IDE will then create the test class for you.</p>
+<p>Inside the class, add a new method <code class="language-kotlin">testAddition</code> and annotate it with <code class="language-kotlin">@Test</code> from <code class="language-kotlin">org.junit.jupiter.api.Test</code>. This annotation tells the JUnit framework that the method is a unit test method.</p>
+<pre><code class="language-kotlin">import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 
 class CalculatorTest {
@@ -27,7 +48,76 @@ class CalculatorTest {
         val result = Calculator.add(1, 2)
         assertEquals(3, result)
     }
-}</code></pre><p>Test functions should have clear and descriptive names that make it easy to understand the purpose of the test and identify the source of a failure or bug when running multiple tests. A common naming convention is to use the format <code class="language-kotlin">FunctionName_TestCondition_ExpectedOutcome</code>. This helps to clearly communicate the purpose of the test, including the method being tested, the inputs or conditions that the method is being called with, and the expected outcome. For example, <code class="language-kotlin">add_addingOneAndTwo_shouldReturnThree</code>. Another common naming convention is <code class="language-kotlin">When_TestCondition_Expect_ExpectedOutcome</code> which will be used in this topic. Note that there are other naming conventions for test functions. In kotlin, we can write function names with spaces as in the example above using <code class="language-kotlin">``</code>. This improves readability and allows for more human-like naming of tests. It's important to keep the naming consistent across the project so that test cases are easy to understand and identify.</p><p></p><div class="alert alert-primary"><p>It's worth noting that you can also use the <code class="language-kotlin">@DisplayName("A description of the test")</code> annotation to describe your tests while keeping the function name simple. This is rarely used but can be useful in certain cases.</p></div><p></p><p>Inside our test method, we used the <code class="language-kotlin">add</code> method from our <code class="language-kotlin">Calculator</code> which is supposed to return the sum of 1 and 2 provided as arguments. The returned value is stored in the <code class="language-kotlin">result</code> variable. After that, we check if the expected result is the same as the actual returned value stored in <code class="language-kotlin">result</code> using the <code class="language-kotlin">assertEquals</code> method. It compares the expected value (in this case, the sum of 1 and 2 is obviously 3, given as the first argument) with the actual value returned by the method we are testing (given as the second argument) and throws <code class="language-kotlin">AssertionFailedError</code> if they are not equal.</p><p>To run the test in IntelliJ IDEA, click on the green icon in the gutter beside the test method then click the <strong>Run</strong> button or right-click on the test file in the project view panel and select <strong>Run CalculatorTest </strong>in the drop-down menu. The Run panel opens showing the progress and the outcome of the test. In our case, the test should pass:</p><p><img alt="" height="721" src="https://ucarecdn.com/b680947a-7d6f-40fb-ac7a-46fa79d0d658/" width="1366"/></p><p>We'll discuss test running more in this topic. Now go ahead and add other tests for the remaining methods of our <code class="language-kotlin">Calculator</code>.  </p><h5 id="assertions">Assertions</h5><p>The <code class="language-kotlin">Assertions</code> class of the JUnit framework has a lot of overloaded methods that will allow you to test different conditions. In our previous example, we only tested for equality between integers but the same method can be used to test on values of other data types such as strings.</p><p>Here are some useful assertions:</p><table align="center" border="1" cellpadding="1" cellspacing="1"><tbody><tr><td><p><code class="language-kotlin">assertEquals</code></p></td><td><p>tests if the arguments are equal</p></td></tr><tr><td><p><code class="language-kotlin">assertTrue</code></p></td><td><p>tests if a value is <code class="language-kotlin">true</code></p></td></tr><tr><td><p><code class="language-kotlin">assertFalse</code></p></td><td><p>tests if the argument is <code class="language-kotlin">false</code></p></td></tr><tr><td><p><code class="language-kotlin">assertNull</code></p></td><td><p>tests if the argument is <code class="language-kotlin">null</code></p></td></tr><tr><td><p><code class="language-kotlin">assertNotNull</code></p></td><td><p>tests if the argument is not <code class="language-kotlin">null</code></p></td></tr><tr><td><p><code class="language-kotlin">assertThrows</code></p></td><td><p>tests if the argument throws a certain exception</p></td></tr></tbody></table><p> </p><p>All of them have overloads that accept a message of the <code class="language-kotlin">String</code> type which is displayed if the test fails. You may find detailed descriptions of these and other assertions in the <a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html" rel="noopener noreferrer nofollow" target="_blank">official JUnit 5 documentation</a>.</p><p>Assuming you added the tests for the other methods of our <code class="language-kotlin">Calculator</code>, you probably used the method <code class="language-kotlin">assertEquals</code> for all the tests. At this point, you could change the test for <code class="language-kotlin">isEven</code> method to use the <code class="language-kotlin">assertTrue</code> assertion:</p><pre><code class="language-kotlin">...
+}</code></pre>
+<p>Test functions should have clear and descriptive names that make it easy to understand the purpose of the test and identify the source of a failure or bug when running multiple tests. A common naming convention is to use the format <code class="language-kotlin">FunctionName_TestCondition_ExpectedOutcome</code>. This helps to clearly communicate the purpose of the test, including the method being tested, the inputs or conditions that the method is being called with, and the expected outcome. For example, <code class="language-kotlin">add_addingOneAndTwo_shouldReturnThree</code>. Another common naming convention is <code class="language-kotlin">When_TestCondition_Expect_ExpectedOutcome</code> which will be used in this topic. Note that there are other naming conventions for test functions. In kotlin, we can write function names with spaces as in the example above using <code class="language-kotlin">``</code>. This improves readability and allows for more human-like naming of tests. It's important to keep the naming consistent across the project so that test cases are easy to understand and identify.</p>
+<p> </p>
+<p></p><div class="alert alert-primary">
+<p>It's worth noting that you can also use the <code class="language-kotlin">@DisplayName("A description of the test")</code> annotation to describe your tests while keeping the function name simple. This is rarely used but can be useful in certain cases.</p>
+<p></p></div>
+<p> </p>
+<p>Inside our test method, we used the <code class="language-kotlin">add</code> method from our <code class="language-kotlin">Calculator</code> which is supposed to return the sum of 1 and 2 provided as arguments. The returned value is stored in the <code class="language-kotlin">result</code> variable. After that, we check if the expected result is the same as the actual returned value stored in <code class="language-kotlin">result</code> using the <code class="language-kotlin">assertEquals</code> method. It compares the expected value (in this case, the sum of 1 and 2 is obviously 3, given as the first argument) with the actual value returned by the method we are testing (given as the second argument) and throws <code class="language-kotlin">AssertionFailedError</code> if they are not equal.</p>
+<p>To run the test in IntelliJ IDEA, click on the green icon in the gutter beside the test method then click the <strong>Run</strong> button or right-click on the test file in the project view panel and select <strong>Run CalculatorTest </strong>in the drop-down menu. The Run panel opens showing the progress and the outcome of the test. In our case, the test should pass:</p>
+<p><img alt="" height="721" src="https://ucarecdn.com/b680947a-7d6f-40fb-ac7a-46fa79d0d658/" width="1366"/></p>
+<p>We'll discuss test running more in this topic. Now go ahead and add other tests for the remaining methods of our <code class="language-kotlin">Calculator</code>.  </p>
+<h5 id="assertions">Assertions</h5>
+<p>The <code class="language-kotlin">Assertions</code> class of the JUnit framework has a lot of overloaded methods that will allow you to test different conditions. In our previous example, we only tested for equality between integers but the same method can be used to test on values of other data types such as strings.</p>
+<p>Here are some useful assertions:</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<td>
+<p><code class="language-kotlin">assertEquals</code></p>
+</td>
+<td>
+<p>tests if the arguments are equal</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code class="language-kotlin">assertTrue</code></p>
+</td>
+<td>
+<p>tests if a value is <code class="language-kotlin">true</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code class="language-kotlin">assertFalse</code></p>
+</td>
+<td>
+<p>tests if the argument is <code class="language-kotlin">false</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code class="language-kotlin">assertNull</code></p>
+</td>
+<td>
+<p>tests if the argument is <code class="language-kotlin">null</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code class="language-kotlin">assertNotNull</code></p>
+</td>
+<td>
+<p>tests if the argument is not <code class="language-kotlin">null</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code class="language-kotlin">assertThrows</code></p>
+</td>
+<td>
+<p>tests if the argument throws a certain exception</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>All of them have overloads that accept a message of the <code class="language-kotlin">String</code> type which is displayed if the test fails. You may find detailed descriptions of these and other assertions in the <a href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html" rel="noopener noreferrer nofollow" target="_blank">official JUnit 5 documentation</a>.</p>
+<p>Assuming you added the tests for the other methods of our <code class="language-kotlin">Calculator</code>, you probably used the method <code class="language-kotlin">assertEquals</code> for all the tests. At this point, you could change the test for <code class="language-kotlin">isEven</code> method to use the <code class="language-kotlin">assertTrue</code> assertion:</p>
+<pre><code class="language-kotlin">...
 import org.junit.jupiter.api.assertTrue
 
 class CalculatorTest {
@@ -38,7 +128,9 @@ class CalculatorTest {
     fun `when 2 is checked if even expect true`() {
         assertTrue(Calculator.isEven(2))
     }
-}</code></pre><p>We could also add a test to check if our <code class="language-kotlin">division</code> method throws an <code class="language-kotlin">IllegalArgumentException</code> if the second argument provided when calling it is 0:</p><pre><code class="language-kotlin">...
+}</code></pre>
+<p>We could also add a test to check if our <code class="language-kotlin">division</code> method throws an <code class="language-kotlin">IllegalArgumentException</code> if the second argument provided when calling it is 0:</p>
+<pre><code class="language-kotlin">...
 import org.junit.jupiter.api.assertThrows
 
 class CalculatorTest {
@@ -51,13 +143,22 @@ class CalculatorTest {
             Calculator.divide(10, 0)
         }
     }
-}</code></pre><p>Note that this type of exception is passed in angle brackets and the code that throws the exception is placed in as a trailing lambda.</p><h5 id="running-tests">Running tests</h5><p>Now we have a few unit tests which we may run. You can run individual tests by clicking the green icon beside the specific test or run all the tests by clicking the green icon beside the test class.</p><p>Another way to run the tests is by using the terminal window. First, add the following lines to the <code class="language-kotlin">build.gradle</code> file to see a more detailed output for the executed tests:</p><pre><code class="language-kotlin">test {
+}</code></pre>
+<p>Note that this type of exception is passed in angle brackets and the code that throws the exception is placed in as a trailing lambda.</p>
+<h5 id="running-tests">Running tests</h5>
+<p>Now we have a few unit tests which we may run. You can run individual tests by clicking the green icon beside the specific test or run all the tests by clicking the green icon beside the test class.</p>
+<p>Another way to run the tests is by using the terminal window. First, add the following lines to the <code class="language-kotlin">build.gradle</code> file to see a more detailed output for the executed tests:</p>
+<pre><code class="language-kotlin">test {
     ...
     
     testLogging {
         events "passed", "skipped", "failed"
     } 
-}</code></pre><p>After that, run the following command in the Terminal window (make sure you are in your project's root directory):</p><pre><code class="language-no-highlight">./gradlew test</code></pre><p>Once the tests are executed, you will get this output:</p><pre><code class="language-no-highlight">...
+}</code></pre>
+<p>After that, run the following command in the Terminal window (make sure you are in your project's root directory):</p>
+<pre><code class="language-no-highlight">./gradlew test</code></pre>
+<p>Once the tests are executed, you will get this output:</p>
+<pre><code class="language-no-highlight">...
 &gt; Task :test
 CalculatorTest &gt; when adding 1 and 2 expect 3() PASSED
 CalculatorTest &gt; when subtracting 2 from 3 expect 1() PASSED
@@ -66,11 +167,25 @@ CalculatorTest &gt; when dividing 4 by 2 expect 2() PASSED
 CalculatorTest &gt; when 2 is checked if even expect true() PASSED
 CalculatorTest &gt; when dividing by 0 expect IllegalArgumentException() PASSED
 
-BUILD SUCCESSFUL in 3s</code></pre><p>The output shows the task that has been executed, the names of all tests, and the status of their execution.</p><p></p><div class="alert alert-warning"><p>Note that if a test method has an empty body it will be counted as PASSED. If you want to force your test to fail, you have to invoke the fail method inside it.</p></div><p></p><h5 id="test-outcomes">Test outcomes</h5><p>So far, all our tests have passed. This proves that our <code class="language-kotlin">Calculator</code> functions correctly.</p><p>Let's introduce a bug in our code. Change the <code class="language-kotlin">add</code> method for our <code class="language-kotlin">Calculator</code> so that it always returns 0:</p><pre><code class="language-kotlin">object Calculator {
+BUILD SUCCESSFUL in 3s</code></pre>
+<p>The output shows the task that has been executed, the names of all tests, and the status of their execution.</p>
+<p> </p>
+<p></p><div class="alert alert-warning">
+<p>Note that if a test method has an empty body it will be counted as PASSED. If you want to force your test to fail, you have to invoke the fail method inside it.</p>
+<p></p></div>
+<p> </p>
+<h5 id="test-outcomes">Test outcomes</h5>
+<p>So far, all our tests have passed. This proves that our <code class="language-kotlin">Calculator</code> functions correctly.</p>
+<p>Let's introduce a bug in our code. Change the <code class="language-kotlin">add</code> method for our <code class="language-kotlin">Calculator</code> so that it always returns 0:</p>
+<pre><code class="language-kotlin">object Calculator {
     
     fun add(a: Int, b: Int) = 0
     ...
-}</code></pre><p>Run the tests again, using the Terminal:</p><pre><code class="language-no-highlight">./gradlew test</code></pre><p>The <code class="language-kotlin">testAddition</code> test fails as expected:</p><pre><code class="language-no-highlight">...
+}</code></pre>
+<p>Run the tests again, using the Terminal:</p>
+<pre><code class="language-no-highlight">./gradlew test</code></pre>
+<p>The addition test fails as expected:</p>
+<pre><code class="language-no-highlight">...
 &gt; Task :test
 CalculatorTest &gt; when adding 1 and 2 expect 3() FAILED
     org.opentest4j.AssertionFailedError at CalculatorTest.kt:15
@@ -80,7 +195,10 @@ CalculatorTest &gt; when dividing 4 by 2 expect 2() PASSED
 CalculatorTest &gt; when 2 is checked if even expect true() PASSED
 CalculatorTest &gt; when dividing by 0 expect IllegalArgumentException() PASSED
 
-5 tests completed, 1 failed</code></pre><p>The output shows that <code class="language-kotlin">when adding 1 and 2 expect 3</code> failed with an <code class="language-kotlin">AssertionFailedError</code> at line 15 in <code class="language-kotlin">CalculatorTest.kt</code>.</p><p>Sometimes you may want to skip a test that was implemented. Maybe because it's testing a feature that is not yet ready for release or the feature contains bugs that are not yet fixed. To do so, annotate the test method with <code class="language-kotlin">@Disabled</code>:</p><pre><code class="language-kotlin">...
+5 tests completed, 1 failed</code></pre>
+<p>The output shows that <code class="language-kotlin">when adding 1 and 2 expect 3</code> failed with an <code class="language-kotlin">AssertionFailedError</code> at line 15 in <code class="language-kotlin">CalculatorTest.kt</code>.</p>
+<p>Sometimes you may want to skip a test that was implemented. Maybe because it's testing a feature that is not yet ready for release or the feature contains bugs that are not yet fixed. To do so, annotate the test method with <code class="language-kotlin">@Disabled</code>:</p>
+<pre><code class="language-kotlin">...
 
 class CalculatorTest {
     
@@ -89,7 +207,9 @@ class CalculatorTest {
     fun `when adding 1 and 2 expect 3`() {
         ...
     }
-}</code></pre><p>Run the tests again, and you will get a similar output:</p><pre><code class="language-no-highlight">...
+}</code></pre>
+<p>Run the tests again, and you will get a similar output:</p>
+<pre><code class="language-no-highlight">...
 &gt; Task :test
 CalculatorTest &gt; when adding 1 and 2 expect 3() SKIPPED
 CalculatorTest &gt; when subtracting 2 from 3 expect 1() PASSED
@@ -98,4 +218,9 @@ CalculatorTest &gt; when dividing 4 by 2 expect 2() PASSED
 CalculatorTest &gt; when 2 is checked if even expect true() PASSED
 CalculatorTest &gt; when dividing by 0 expect IllegalArgumentException() PASSED
 
-BUILD SUCCESSFUL in 3s</code></pre><p>The test annotated with <code class="language-kotlin">@Disabled</code> is skipped resulting in a successful build.</p><p>Now, fix the faulty method of our <code class="language-kotlin">Calculator</code>. Remove the <code class="language-kotlin">@Disabled</code> annotation from the addition test and then run the tests again — all of them should pass. Excellent! The bug is gone.</p><h5 id="conclusion">Conclusion</h5><p>JUnit framework provides API for unit testing Kotlin classes. With its help, you can set up and run automated tests to check the results of the execution of your units of code against desired criteria. You may run tests from your IDE or use project build tools such as Gradle. If a test fails, JUnit will show a detailed output to help you understand the reasons for it.</p><p>You write tests using assertions, the most frequently used of which is the <code class="language-kotlin">assertEquals</code> method. Running a test can result in either <code class="language-kotlin">SUCCESS</code> if everything works as expected or <code class="language-kotlin">FAILURE</code> if the assertion method throws <code class="language-kotlin">AssertionFailedError</code>.</p>
+BUILD SUCCESSFUL in 3s</code></pre>
+<p>The test annotated with <code class="language-kotlin">@Disabled</code> is skipped resulting in a successful build.</p>
+<p>Now, fix the faulty method of our <code class="language-kotlin">Calculator</code>. Remove the <code class="language-kotlin">@Disabled</code> annotation from the addition test and then run the tests again — all of them should pass. Excellent! The bug is gone.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>JUnit framework provides API for unit testing Kotlin classes. With its help, you can set up and run automated tests to check the results of the execution of your units of code against desired criteria. You may run tests from your IDE or use project build tools such as Gradle. If a test fails, JUnit will show a detailed output to help you understand the reasons for it.</p>
+<p>You write tests using assertions, the most frequently used of which is the <code class="language-kotlin">assertEquals</code> method. Running a test can result in either <code class="language-kotlin">SUCCESS</code> if everything works as expected or <code class="language-kotlin">FAILURE</code> if the assertion method throws <code class="language-kotlin">AssertionFailedError</code>.</p>

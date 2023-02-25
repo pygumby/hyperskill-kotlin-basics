@@ -26,3 +26,4 @@ content:
 - JSON Moshi Library
 - Kotlinx datetime library
 - Local date and time
+- Comparable and Comparator

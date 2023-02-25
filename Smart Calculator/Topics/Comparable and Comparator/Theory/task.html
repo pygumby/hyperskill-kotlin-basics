@@ -1,0 +1,102 @@
+<h2>Comparable and Comparator</h2>
+<p>In Kotlin, Comparable and Comparator are two interfaces that allow developers to compare objects of the same or different classes. Both interfaces are commonly used to sort and order collections of objects based on one or more attributes. This topic will provide an overview of Kotlin's Comparable and Comparator interfaces, explain how they are used, and outline the differences between them.</p>
+<h5 id="kotlin-comparable-interface">Kotlin Comparable interface</h5>
+<p>The Comparable interface is used to define the natural ordering of objects. When a class implements Comparable, it must override the <strong>compareTo()</strong> method:</p>
+<pre><code class="language-kotlin">public operator fun compareTo(other: T): Int</code></pre>
+<p>That method takes an object of the same type as the argument and returns an integer value. This integer value indicates whether the object is less than (returns –1), equal to (returns 0), or greater than (returns 1) the other object being compared.</p>
+<p>For example, consider the following code:</p>
+<pre><code class="language-kotlin">data class Person(val name: String, val age: Int): Comparable&lt;Person&gt; {
+  override fun compareTo(other: Person): Int {
+    return this.age - other.age
+  }
+}
+</code></pre>
+<p>In this code, the <code class="language-kotlin">Person</code> class implements the Comparable interface and overrides the <code class="language-kotlin">compareTo()</code> method. The <code class="language-kotlin">compareTo()</code> method compares <code class="language-kotlin">Person</code> objects based on their age, returning a negative integer if the age of the current object is less than the age of the other object, a positive integer if the age of the current object is greater than the age of the other object, and zero if they are equal.</p>
+<p>Now, if we have a list of <code class="language-kotlin">Person</code> objects, we can sort it by their age as follows:</p>
+<pre><code class="language-kotlin">val people = listOf(Person("Alice", 25), Person("Bob", 30), Person("Charlie", 20))
+val sortedPeople = people.sorted()
+</code></pre>
+<p>In this code, the <code class="language-kotlin">sorted()</code> function uses the natural ordering defined by the <code class="language-kotlin">compareTo()</code> method to sort the list of <code class="language-kotlin">Person</code> objects.</p>
+<p>The class implementing the Comparable interface supports useful extension functions, among them the following:</p>
+<p><strong>coerceAtLeast() </strong>– this function checks whether the calling object is greater than a certain minimum object. It returns the current object if it is greater; otherwise, it returns the minimum object:</p>
+<pre><code class="language-kotlin">fun &lt;T : Comparable&gt; T.coerceAtLeast(minimumValue: T): T</code></pre>
+<p>Example:</p>
+<pre><code class="language-kotlin">fun main() {
+    val people = listOf(
+        Person("Alice", 25), Person("Bob", 30), Person("Charlie", 20)
+    )
+
+    val minimum = Person("Jack", 28)
+    println(people[0].age.coerceAtLeast(minimum.age)) // 28
+    println(people[1].age.coerceAtLeast(minimum.age)) // 30
+}</code></pre>
+<p><strong>coerceAtMost() </strong>– this function checks whether the calling object is smaller than the given maximum object. It returns the current object if it's smaller; otherwise, it returns the maximum object.</p>
+<pre><code class="language-kotlin">fun &lt;T : Comparable&gt; T.coerceAtMost(maximumValue: T): T</code></pre>
+<p>Example:</p>
+<pre><code class="language-kotlin">fun main() {
+    val people = listOf(
+        Person("Alice", 25), Person("Bob", 30), Person("Charlie", 20)
+    )
+
+    val maximum = Person("Jack", 28)
+    println(people[0].age.coerceAtMost(maximum.age)) // 25
+    println(people[1].age.coerceAtMost(maximum.age)) // 28
+}</code></pre>
+<p><strong>coerceIn() </strong>– this function checks whether the calling object lies within a certain range between the minimum and maximum values. It returns the object if it is within the range, the minimum if the object is less than the minimum, or the maximum if the object is greater than the maximum.</p>
+<pre><code class="language-kotlin">fun &lt;T : Comparable&gt; T.coerceIn(
+    minimumValue: T?, 
+    maximumValue: T?
+): T</code></pre>
+<p>Example:</p>
+<pre><code class="language-kotlin">fun main() {
+
+    println(25.coerceIn(18..28)) // 25
+    println(15.coerceIn(18..28)) // 18
+    println(30.coerceIn(18..28)) // 28
+}</code></pre>
+<h5 id="kotlin-comparator-interface">Kotlin Comparator interface</h5>
+<p>The Comparator interface is used to define a custom ordering of objects. When a class implements Comparator, it must override the <strong>compare()</strong> method, which takes two objects of the same type as arguments and returns an integer value. It returns zero if the arguments are equal, a negative number if the first argument is less than the second, or a positive number if the first argument is greater than the second. Here's how it works:</p>
+<pre><code class="language-kotlin">data class Person(val name: String, val age: Int)
+
+class PersonAgeComparator : Comparator&lt;Person&gt; {
+    override fun compare(p1: Person, p2: Person): Int {
+        return p1.age - p2.age
+    }
+}</code></pre>
+<p>In this example, we have a <code class="language-kotlin">Person</code> data class and a <code class="language-kotlin">PersonAgeComparator</code> class, which implements the <code class="language-kotlin">Comparator&lt;Person&gt;</code> interface. The <code class="language-kotlin">compare()</code> method takes two <code class="language-kotlin">Person</code> objects as arguments and compares them by their age. If the age of <code class="language-kotlin">p1</code> is smaller than that of <code class="language-kotlin">p2</code>, a negative number is returned. If the age of <code class="language-kotlin">p1</code> is greater age than than that of <code class="language-kotlin">p2</code>, a positive number is returned. If the ages are equal, a zero is returned.</p>
+<p>Example of using a Comparator interface instance:</p>
+<pre><code class="language-kotlin">data class Person(val name: String, val age: Int)
+
+fun main() {
+    val ageComparator = Comparator&lt;Person&gt; { p1, p2 -&gt; p1.age - p2.age }
+
+    val people = listOf(
+        Person("Alice", 25), Person("Bob", 30), Person("Charlie", 20))
+    val sortedPeople = people.sortedWith(ageComparator)
+    println(sortedPeople)
+}
+</code></pre>
+<p>Printed output:</p>
+<pre><code class="language-kotlin">[Person(name=Charlie, age=20), Person(name=Alice, age=25), Person(name=Bob, age=30)]</code></pre>
+<p>In this code, <code class="language-kotlin">ageComparator</code> is an instance of the Comparator interface that compares <code class="language-kotlin">Person</code> objects based on their age. The <code class="language-kotlin">sortedWith()</code> function sorts the list of <code class="language-kotlin">Person</code> objects using the custom ordering defined by <code class="language-kotlin">ageComparator</code>.</p>
+<p>The Comparator interface has interesting methods, among them the following:</p>
+<p><strong>reversed()</strong> – this function takes the comparator as an argument and returns a comparator with the reversed ordering of the passed comparator:</p>
+<pre><code class="language-kotlin">fun &lt;T&gt; Comparator&lt;T&gt;.reversed(): Comparator&lt;T&gt;</code></pre>
+<p>Example:</p>
+<pre><code class="language-kotlin">data class Person(val name: String, val age: Int)
+
+fun main() {
+    val ageComparator = Comparator&lt;Person&gt; { p1, p2 -&gt; p1.age - p2.age }.reversed()
+
+    val people = listOf(
+        Person("Alice", 25), Person("Bob", 30), Person("Charlie", 20))
+    val sortedPeople = people.sortedWith(ageComparator)
+    println(sortedPeople)
+}</code></pre>
+<p>Printed output:</p>
+<pre><code class="language-kotlin">[Person(name=Bob, age=30), Person(name=Alice, age=25), Person(name=Charlie, age=20)]</code></pre>
+<p>You can see more methods in <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparator/" rel="noopener noreferrer nofollow" target="_blank">Kotlin documentation</a>.</p>
+<h5 id="differences-between-comparable-and-comparator">Differences between Comparable and Comparator</h5>
+<p>The main difference between Comparable and Comparator is that Comparable defines the natural ordering of objects, while Comparator defines a custom ordering of objects. When objects of the same class are being compared, it's recommended to implement Comparable to provide a natural ordering for them. When objects of different classes are compared or custom orderings are required, it's recommended to implement Comparator.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>Comparable and Comparator are powerful interfaces that allow developers to sort and order collections of objects based on one or more attributes. When objects of the same class are being compared, implement Comparable to provide a natural ordering. When objects of different classes are compared or custom orderings are required, implement Comparator. The Kotlin standard library provides many functions that accept Comparators, allowing developers to sort and order collections in a simple and efficient way. Now, let's solve some problems in order to better remember the material.</p>

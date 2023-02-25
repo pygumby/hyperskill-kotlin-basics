@@ -1,0 +1,20 @@
+type: code
+custom_name: Which book is cheaper?
+files:
+- name: src/Main.kt
+  visible: true
+  text: "class Book(val title: String, val author: String, val price: Double)\n\n\
+    fun main() {\n    val books = listOf(\n        Book(\"The Great Gatsby\", \"F.\
+    \ Scott Fitzgerald\", 12.99),\n        Book(\"To Kill a Mockingbird\", \"Harper\
+    \ Lee\", 10.99),\n        Book(\"1984\", \"George Orwell\", 8.99),\n        Book(\"\
+    The Catcher in the Rye\", \"J.D. Salinger\", 9.99)\n    )\n\n    val sortedBooks\
+    \ = books.sortedWith(Comparator { \n        // put your code here\n    })\n\n\
+    \    sortedBooks.forEach { println(\"${it.title} - ${it.author} - ${it.price}\"\
+    ) }\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25978#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 25 Feb 2023 13:04:27 UTC"
+record: -1

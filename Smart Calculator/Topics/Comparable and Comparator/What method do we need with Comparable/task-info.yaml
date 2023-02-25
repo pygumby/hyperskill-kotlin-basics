@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: coerceIn()
+- text: compareTo()
+- text: comparator()
+- text: main()
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25973#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 25 Feb 2023 12:55:44 UTC"
+record: -1
+selected_options:
+- 1
+custom_name: What method do we need with Comparable?
+local_check: false

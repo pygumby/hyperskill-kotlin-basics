@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: This interface compares two objects of a certain type and arranges them in
+    an order.
+- text: This interface is used to define a custom ordering of objects.
+- text: This interface is used to define the natural ordering of objects.
+- text: It provides a comparison function for imposing a total ordering between instances
+    of the type T.
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25970#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 25 Feb 2023 13:05:26 UTC"
+record: -1
+selected_options:
+- 2
+local_check: false

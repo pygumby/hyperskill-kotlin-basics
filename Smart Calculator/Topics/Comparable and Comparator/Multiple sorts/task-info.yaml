@@ -1,0 +1,17 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    data class User(val name: String, val age: Int, val email: String)
+
+    class UserComparator : Comparator<User> {
+        // write your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25976#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 25 Feb 2023 12:55:03 UTC"
+record: -1
